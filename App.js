@@ -15,12 +15,13 @@ import React, {Fragment} from 'react';
 // 导航路由表
 import RootStack from './src/routers/index';
 import {StatusBar, SafeAreaView} from 'react-native';
+import Theme from './src/styles/theme';
 
 const App = () => {
     return (
         <RootStack>
             <SafeAreaView>
-                <StatusBar backgroundColor={'#f4511e'} barStyle={'light-content'}/>
+                <StatusBar backgroundColor={Theme.primary} barStyle={'light-content'}/>
             </SafeAreaView>
         </RootStack>
     );

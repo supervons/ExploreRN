@@ -1,8 +1,13 @@
+/**
+ * Created by supervons on 2018/12/20.
+ * 导航配置文件
+ * router config file
+ */
 import React from 'react';
 import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
 import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
-
+import Theme from '../styles/theme';
 /**
  * 底部导航栏
  * Bottom navigation bar
@@ -74,9 +79,9 @@ const Router = createStackNavigator({
         headerMode: 'screen',
         defaultNavigationOptions:{ //共享头部属性设置
             headerStyle: {
-                backgroundColor: '#f4511e',
+                backgroundColor: Theme.primary,
             },
-            headerTintColor: '#fff',
+            headerTintColor: Theme.white,
             headerTitleStyle: {
                 fontWeight: 'bold',
             }
