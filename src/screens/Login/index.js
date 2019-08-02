@@ -4,12 +4,14 @@
  * user login page
  */
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, StatusBar} from 'react-native';
+import Theme from '../../styles/theme';
+import { Button, Input } from 'react-native-elements';
 
 export default class MainPage extends Component {
 
     static navigationOptions = {
-        title: '欢迎登录'
+        header: null,
     };
 
     constructor(props) {
@@ -18,7 +20,15 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+                <StatusBar backgroundColor={Theme.white} barStyle={'light-content'}/>
+                <Input
+                    placeholder='用户名'
+                />
+                <Button
+                    title="登录"
+                    onPress={()=>this.props.navigation.replace('MainPage')}
+                />
             </View>
         );
     }

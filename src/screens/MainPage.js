@@ -8,21 +8,13 @@ import {View} from 'react-native';
 
 export default class MainPage extends Component {
 
-    static navigationOptions = {
-        title: '首页',
-        gesturesEnabled: false,
-        headerStyle: {                                 //导航栏样式设置
-            backgroundColor: '#8bc9ff',
-        },
-    };
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <View style={{height:300, width: 300, backgroundColor: "#000000"}}>
+            <View style={{flex:1, backgroundColor: "#000000"}}>
             </View>
         );
     }
