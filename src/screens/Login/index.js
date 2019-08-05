@@ -1,5 +1,5 @@
 /**
- * Created by supervons on 2018/12/20.
+ * Created by supervons on 2019/08/02.
  * 登录页
  * user login page
  */
@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 import {View, StatusBar} from 'react-native';
 import Theme from '../../styles/theme';
 import { Button, Input, Avatar, Badge } from 'react-native-elements';
+import Axios from '../../utils/axios/Axios';
 
 export default class MainPage extends Component {
 
@@ -16,6 +17,15 @@ export default class MainPage extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount(): void {
+        const params = {loginId: '', passWord: ''};
+        Axios.POST('/user/loginAction', params).then(resp => {
+            // alert(JSON.stringify(resp));
+        }).catch(resp =>{
+            // alert(resp)
+        });
     }
 
     render() {
