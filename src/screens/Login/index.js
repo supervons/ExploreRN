@@ -4,10 +4,11 @@
  * user login page
  */
 import React, {Component} from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, StatusBar, YellowBox} from 'react-native';
 import Theme from '../../styles/theme';
 import { Button, Input, Avatar, Badge } from 'react-native-elements';
 import Axios from '../../utils/axios/Axios';
+import Toast from '../../components/toast';
 
 export default class MainPage extends Component {
 
@@ -20,11 +21,18 @@ export default class MainPage extends Component {
     }
 
     componentDidMount(): void {
+        // 忽略部分警告
+        YellowBox.ignoreWarnings([
+            'Warning: componentWillMount is deprecated',
+            'Warning: componentWillReceiveProps is deprecated',
+            'Module RCTImageLoader requires',
+        ]);
+
         const params = {loginId: '', passWord: ''};
         Axios.POST('/user/loginAction', params).then(resp => {
             // alert(JSON.stringify(resp));
         }).catch(resp =>{
-            // alert(resp)
+            Toast.showToast(resp);
         });
     }
 

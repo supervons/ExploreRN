@@ -4,6 +4,7 @@
  * Axios-based network request component
  */
 import axios from 'axios';
+import Toast from '../../components/toast';
 
 let defaultConfig = {
     timeout: 3000,
@@ -14,7 +15,7 @@ let defaultConfig = {
 };
 let instance = axios;
 // 请求地址 host
-const commonHosts = 'http://localhost:8080/commonProject';
+const commonHosts = 'http://192.168.0.116:8080/commonProject';
 
 class Axios {
     constructor(props) {
@@ -60,7 +61,7 @@ class Axios {
 async function get(url, callback) {
     try {
         let response = await instance.get(url).catch(resp => {
-            alert(resp.message);
+            Toast.showToast(resp.message);
         });
         // 判断业务逻辑返回状态值
         if (response.code.toUpperCase() === 'SUCCESS') {
@@ -76,7 +77,7 @@ async function get(url, callback) {
 async function post(url, params, callback) {
     try {
         let response = await instance.post(url, params).catch(resp => {
-            alert(resp.message);
+            Toast.showToast(resp.message);
         });
         // 判断业务逻辑返回状态值
         if (response.code.toUpperCase() === 'SUCCESS') {
@@ -85,7 +86,7 @@ async function post(url, params, callback) {
             return Promise.reject(response.msg)
         }
     } catch (e) {
-        console.log(e);
+        console.log('---->' + e);
     }
 }
 
