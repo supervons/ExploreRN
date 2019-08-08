@@ -9,6 +9,8 @@ import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
+import {Icon} from 'react-native-elements';
+
 /**
  * 底部导航栏
  * Bottom navigation bar
@@ -20,18 +22,30 @@ const Tabs = createMaterialTopTabNavigator({
         navigationOptions: ({navigation}) => ({
             title: '首页',
             tabBarLabel: '主页',
+            tabBarIcon: ({focused}) => {
+                return focused ? <Icon name={'home'} color={Theme.tabSelected}/> :
+                    <Icon name={'home'} color={Theme.tabUnSelected}/>;
+            },
         }),
     },
     News: {
         screen: MainPage,
         navigationOptions: ({navigation}) => ({
-            tabBarLabel: '新闻',
+            tabBarLabel: '发现',
+            tabBarIcon: ({focused}) => {
+                return focused ? <Icon name={'explore'} color={Theme.tabSelected}/> :
+                    <Icon name={'explore'} color={Theme.tabUnSelected}/>;
+            },
         }),
     },
     PersonalCenter: {
         screen: My,
         navigationOptions: ({navigation}) => ({
             tabBarLabel: '我的',
+            tabBarIcon: ({focused}) => {
+                return focused ? <Icon name={'person'} color={Theme.tabSelected}/> :
+                    <Icon name={'person'} color={Theme.tabUnSelected}/>;
+            },
         }),
     },
 }, {
@@ -44,8 +58,8 @@ const Tabs = createMaterialTopTabNavigator({
             minWidth: 50,
             maxHeight: 50,
         },
-        activeTintColor: '#0094ed', // 文字和图片选中颜色
-        inactiveTintColor: '#999', // 文字和图片未选中颜色
+        activeTintColor: Theme.tabSelected, // 文字和图片选中颜色
+        inactiveTintColor: Theme.tabUnSelected, // 文字和图片未选中颜色
         pressOpacity: 0.8,
         showIcon: true, // android 默认不显示 icon, 需要设置为 true 才会显示
         indicatorStyle: {
@@ -69,7 +83,7 @@ const Tabs = createMaterialTopTabNavigator({
  */
 const Router = createStackNavigator({
         Login: { // 登录界面
-            screen: Login,
+            screen: Tabs,
         },
         My: { // 我的页面
             screen: My,
