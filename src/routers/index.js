@@ -20,8 +20,7 @@ const Tabs = createMaterialTopTabNavigator({
     MainPage: {
         screen: MainPage,
         navigationOptions: ({navigation}) => ({
-            title: '首页',
-            tabBarLabel: '主页',
+            tabBarLabel: '首页',
             tabBarIcon: ({focused}) => {
                 return focused ? <Icon name={'home'} color={Theme.tabSelected}/> :
                     <Icon name={'home'} color={Theme.tabUnSelected}/>;
@@ -83,7 +82,7 @@ const Tabs = createMaterialTopTabNavigator({
  */
 const Router = createStackNavigator({
         Login: { // 登录界面
-            screen: Tabs,
+            screen: Login,
         },
         My: { // 我的页面
             screen: My,

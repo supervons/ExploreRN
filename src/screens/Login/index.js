@@ -21,12 +21,8 @@ export default class MainPage extends Component {
     }
 
     componentDidMount(): void {
-        // 忽略部分警告
-        YellowBox.ignoreWarnings([
-            'Warning: componentWillMount is deprecated',
-            'Warning: componentWillReceiveProps is deprecated',
-            'Module RCTImageLoader requires',
-        ]);
+        // 忽略警告
+        console.disableYellowBox = true;
     }
 
     render() {

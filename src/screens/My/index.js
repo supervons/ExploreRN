@@ -4,8 +4,8 @@
  * my page
  */
 import React, {Component} from 'react';
-import {StatusBar, View} from 'react-native';
-import {ListItem, Divider, Avatar, Icon} from 'react-native-elements';
+import {View} from 'react-native';
+import {ListItem, Avatar, Icon} from 'react-native-elements';
 
 const list = [
     {
@@ -55,8 +55,8 @@ export default class MainPage extends Component {
                                 title={item.title}
                                 leftIcon={<Icon name={item.icon} color={item.color}/>}
                                 rightIcon={{name: 'keyboard-arrow-right'}}
+                                bottomDivider={true}
                             />
-                            <Divider style={{backgroundColor: '#000000'}}/>
                         </View>
                     ))
                 }
