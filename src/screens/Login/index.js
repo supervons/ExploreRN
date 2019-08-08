@@ -40,9 +40,11 @@ export default class MainPage extends Component {
                     source={require('../../resource/image/avatar/logo.png')}
                 />
                 <Input
+                    containerStyle={{marginTop:35, margin: 15}}
                     placeholder='用户名'
                 />
                 <Input
+                    containerStyle={{margin: 15}}
                     secureTextEntry={true}
                     placeholder='密码'
                 />

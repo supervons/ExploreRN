@@ -4,19 +4,29 @@
  * my page
  */
 import React, {Component} from 'react';
-import {View} from 'react-native';
-import { ListItem } from 'react-native-elements'
+import {StatusBar, View} from 'react-native';
+import {ListItem, Divider, Avatar, Icon} from 'react-native-elements';
 
 const list = [
     {
-        title: 'Appointments',
-        icon: 'av-timer'
+        key: 1,
+        title: '基本信息',
+        icon: 'person',
+        color: '#058bb3'
     },
     {
-        title: 'Trips',
-        icon: 'flight-takeoff'
+        key: 2,
+        title: '收藏',
+        icon: 'favorite',
+        color: '#ff616f'
     },
-]
+    {
+        key: 3,
+        title: '设置',
+        icon: 'settings',
+        color: '#140002',
+    },
+];
 
 export default class MainPage extends Component {
 
@@ -27,13 +37,27 @@ export default class MainPage extends Component {
     render() {
         return (
             <View>
+                <View style={{alignItems: 'center'}}>
+                    <Avatar
+                        onPress={()=>alert('更换头像')}
+                        containerStyle={{marginTop: 25, marginBottom: 15}}
+                        rounded
+                        size="xlarge"
+                        source={require('../../resource/image/avatar/logo.png')}
+                    />
+                </View>
                 {
                     list.map((item, i) => (
-                        <ListItem
-                            key={i}
-                            title={item.title}
-                            leftIcon={{ name: item.icon }}
-                        />
+                        <View>
+                            <ListItem
+                                onPress={()=>alert(item.title)}
+                                key={i}
+                                title={item.title}
+                                leftIcon={<Icon name={item.icon} color={item.color}/>}
+                                rightIcon={{name: 'keyboard-arrow-right'}}
+                            />
+                            <Divider style={{backgroundColor: '#000000'}}/>
+                        </View>
                     ))
                 }
             </View>
