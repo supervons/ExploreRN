@@ -7,6 +7,7 @@ import React from 'react';
 import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
 import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
+import My from '../screens/My/index';
 import Theme from '../styles/theme';
 /**
  * 底部导航栏
@@ -28,7 +29,7 @@ const Tabs = createMaterialTopTabNavigator({
         }),
     },
     PersonalCenter: {
-        screen: MainPage,
+        screen: My,
         navigationOptions: ({navigation}) => ({
             tabBarLabel: '我的',
         }),
@@ -69,6 +70,9 @@ const Tabs = createMaterialTopTabNavigator({
 const Router = createStackNavigator({
         Login: { // 登录界面
             screen: Login,
+        },
+        My: { // 我的页面
+            screen: My,
         },
         MainPage: {
             screen: Tabs,

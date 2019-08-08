@@ -1,5 +1,5 @@
 /**
- * Created by supervons on 2018/12/20.
+ * Created by supervons on 2019/08/08.
  * 用户主界面
  * user main page
  */
@@ -14,7 +14,7 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <View style={{flex:1, backgroundColor: "#000000"}}>
+            <View style={{flex:1, backgroundColor: "#ffffff"}}>
             </View>
         );
     }

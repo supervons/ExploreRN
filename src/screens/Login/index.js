@@ -27,13 +27,6 @@ export default class MainPage extends Component {
             'Warning: componentWillReceiveProps is deprecated',
             'Module RCTImageLoader requires',
         ]);
-
-        const params = {loginId: '', passWord: ''};
-        Axios.POST('/user/loginAction', params).then(resp => {
-            // alert(JSON.stringify(resp));
-        }).catch(resp =>{
-            Toast.showToast(resp);
-        });
     }
 
     render() {
