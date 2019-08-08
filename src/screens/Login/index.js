@@ -4,10 +4,10 @@
  * user login page
  */
 import React, {Component} from 'react';
-import {View, StatusBar, YellowBox} from 'react-native';
+import {View, StatusBar} from 'react-native';
 import Theme from '../../styles/theme';
-import { Button, Input, Avatar, Badge } from 'react-native-elements';
-import Axios from '../../utils/axios/Axios';
+import { Button, Input, Avatar } from 'react-native-elements';
+import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 
 export default class MainPage extends Component {
@@ -18,11 +18,26 @@ export default class MainPage extends Component {
 
     constructor(props) {
         super(props);
+        this.state={
+            loginId: '',
+            passWord: ''
+        }
     }
 
     componentDidMount(): void {
         // 忽略警告
         console.disableYellowBox = true;
+    }
+
+    login(){
+        if(!this.state.loginId || !this.state.passWord){
+            Toast.showToast('请您先完善登录信息！');
+            return;
+        }
+        const params = {loginId: this.state.loginId, passWord: this.state.passWord};
+        userAction.userLogin(params).then(resp =>{
+            this.props.navigation.replace('MainPage')
+        })
     }
 
     render() {
@@ -38,17 +53,19 @@ export default class MainPage extends Component {
                 <Input
                     containerStyle={{marginTop:35, margin: 15}}
                     placeholder='用户名'
-                />
+                    onChangeText={(text) => this.setState({loginId: text})}
+                    vauel={this.state.loginId}/>
                 <Input
                     containerStyle={{margin: 15}}
                     secureTextEntry={true}
                     placeholder='密码'
-                />
+                    onChangeText={(text) => this.setState({passWord: text})}
+                    vauel={this.state.passWord}/>
                 <Button
                     buttonStyle={{width: 300}}
                     containerStyle={{ marginTop: 30}}
                     title="登录"
-                    onPress={()=>this.props.navigation.replace('MainPage')}
+                    onPress={()=>this.login()}
                 />
             </View>
         );

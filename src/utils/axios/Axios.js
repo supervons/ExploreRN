@@ -65,7 +65,7 @@ async function get(url, callback) {
         });
         // 判断业务逻辑返回状态值
         if (response.code.toUpperCase() === 'SUCCESS') {
-            return response.data;
+            return response;
         } else {
             return Promise.reject(response.msg)
         }
@@ -81,7 +81,7 @@ async function post(url, params, callback) {
         });
         // 判断业务逻辑返回状态值
         if (response.code.toUpperCase() === 'SUCCESS') {
-            return response.data;
+            return response;
         } else {
             return Promise.reject(response.msg)
         }
