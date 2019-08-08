@@ -10,6 +10,7 @@ export default {
     light: '#DAE1E7',
     dark: '#444',
     black: '#000',
-    tabSelected: '#0094ed',
+    commonBackColor: '#eef0f2',
+    tabSelected: '#f4511E',
     tabUnSelected: '#999'
 };

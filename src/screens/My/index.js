@@ -6,6 +6,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 import {ListItem, Avatar, Icon} from 'react-native-elements';
+import Theme from '../../styles/theme';
 
 const list = [
     {
@@ -36,7 +37,7 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{flex:1, backgroundColor: Theme.commonBackColor}}>
                 <View style={{alignItems: 'center'}}>
                     <Avatar
                         onPress={()=>alert('更换头像')}
