@@ -13,20 +13,20 @@ const list = [
         key: 1,
         title: '基本信息',
         icon: 'person',
-        color: '#058bb3'
+        color: '#058bb3',
     },
     {
         key: 2,
         title: '收藏',
         icon: 'favorite',
-        color: '#ff616f'
+        color: '#ff616f',
     },
     {
         key: 3,
         title: '设置',
         icon: 'settings',
         color: '#140002',
-    },
+    }
 ];
 
 export default class MainPage extends Component {
@@ -37,10 +37,10 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <View style={{flex:1, backgroundColor: Theme.commonBackColor}}>
+            <View style={{flex: 1, backgroundColor: Theme.commonBackColor}}>
                 <View style={{alignItems: 'center'}}>
                     <Avatar
-                        onPress={()=>alert('更换头像')}
+                        onPress={() => alert('更换头像')}
                         containerStyle={{marginTop: 25, marginBottom: 15}}
                         rounded
                         size="xlarge"
@@ -49,16 +49,14 @@ export default class MainPage extends Component {
                 </View>
                 {
                     list.map((item, i) => (
-                        <View>
-                            <ListItem
-                                onPress={()=>alert(item.title)}
-                                key={i}
-                                title={item.title}
-                                leftIcon={<Icon name={item.icon} color={item.color}/>}
-                                rightIcon={{name: 'keyboard-arrow-right'}}
-                                bottomDivider={true}
-                            />
-                        </View>
+                        <ListItem
+                            onPress={() => alert(item.title)}
+                            key={i}
+                            title={item.title}
+                            leftIcon={<Icon name={item.icon} color={item.color}/>}
+                            rightIcon={{name: 'keyboard-arrow-right'}}
+                            bottomDivider={true}
+                        />
                     ))
                 }
             </View>
