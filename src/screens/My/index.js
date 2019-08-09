@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import {ListItem, Avatar, Icon} from 'react-native-elements';
 import Theme from '../../styles/theme';
+import Header from '../../components/header-component';
 
 const list = [
     {
@@ -20,12 +21,6 @@ const list = [
         title: '收藏',
         icon: 'favorite',
         color: '#ff616f',
-    },
-    {
-        key: 3,
-        title: '设置',
-        icon: 'settings',
-        color: '#140002',
     }
 ];
 
@@ -38,6 +33,11 @@ export default class MainPage extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: Theme.commonBackColor}}>
+                <Header
+                    rightColor={'#fff'}
+                    type={"antdesign"}
+                    rightIcon={"setting"}
+                    rightOnPress={()=>alert('1235')}/>
                 <View style={{alignItems: 'center'}}>
                     <Avatar
                         onPress={() => alert('更换头像')}

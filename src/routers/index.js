@@ -51,7 +51,7 @@ const Tabs = createMaterialTopTabNavigator({
     animationEnabled: false, // 切换页面时是否有动画效果
     tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
     swipeEnabled: true, // 是否可以左右滑动切换tab
-    lazy: true,
+    lazy: false,
     tabBarOptions: {
         tabStyle: {
             minWidth: 50,
@@ -82,7 +82,7 @@ const Tabs = createMaterialTopTabNavigator({
  */
 const Router = createStackNavigator({
         Login: { // 登录界面
-            screen: Login,
+            screen: Tabs,
         },
         My: { // 我的页面
             screen: My,
@@ -93,16 +93,7 @@ const Router = createStackNavigator({
     },
     { // 定义配置
         initialRouteName: 'Login', //设置初始路由为登录界面
-        headerMode: 'screen',
-        defaultNavigationOptions:{ //共享头部属性设置
-            headerStyle: {
-                backgroundColor: Theme.primary,
-            },
-            headerTintColor: Theme.white,
-            headerTitleStyle: {
-                fontWeight: 'bold',
-            }
-        }
+        headerMode: 'none'
     },
 );
 
