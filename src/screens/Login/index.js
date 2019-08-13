@@ -19,8 +19,8 @@ export default class MainPage extends Component {
     constructor(props) {
         super(props);
         this.state={
-            loginId: '',
-            passWord: ''
+            loginId: '18888888888',
+            passWord: '123456'
         }
     }
 

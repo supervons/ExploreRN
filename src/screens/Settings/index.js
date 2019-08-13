@@ -1,21 +1,25 @@
 /**
- * Created by supervons on 2019/08/08.
+ * Created by supervons on 2019/08/12.
  * 设置页面
- * my page
+ * settings page
  */
 import React, {Component} from 'react';
-import {View} from 'react-native';
-import {ListItem, Avatar, Icon} from 'react-native-elements';
+import {View, Linking} from 'react-native';
+import {ListItem} from 'react-native-elements';
 import Theme from '../../styles/theme';
-import Header from '../../components/header-component';
-
 const list = [
     {
         key: 1,
-        title: '版本信息',
+        title: '修改密码',
         color: '#058bb3',
-        onPress: (navigation)=> alert('版本信息')
-    }
+        onPress: (navigation)=> alert('暂无')
+    },
+    {
+        key: 2,
+        title: '系统信息',
+        color: '#058bb3',
+        onPress: (navigation)=> navigation.push('VersionInfo')
+    },
 ];
 
 export default class Settings extends Component {
@@ -25,6 +29,7 @@ export default class Settings extends Component {
     };
 
     render() {
+
         return (
             <View style={{flex: 1, backgroundColor: Theme.commonBackColor}}>
                 {
@@ -33,6 +38,7 @@ export default class Settings extends Component {
                             onPress={()=>item.onPress(this.props.navigation)}
                             key={i}
                             title={item.title}
+                            rightTitle={item.rightTitle}
                             rightIcon={{name: 'keyboard-arrow-right'}}
                             bottomDivider={true}
                         />

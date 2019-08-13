@@ -8,6 +8,7 @@ import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator}
 import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
 import Settings from '../screens/Settings/index';
+import VersionInfo from '../screens/Settings/version/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import {Icon} from 'react-native-elements';
@@ -91,8 +92,11 @@ const Router = createStackNavigator({
         My: { // 我的页面
             screen: My,
         },
-        Settings: {
+        Settings: { // 设置页面
             screen: Settings,
+        },
+        VersionInfo: { // 版本信息页面
+            screen: VersionInfo,
         },
     },
     { // 定义配置
