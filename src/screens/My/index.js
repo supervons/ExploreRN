@@ -7,7 +7,6 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import {ListItem, Avatar, Icon} from 'react-native-elements';
 import Theme from '../../styles/theme';
-import Header from '../../components/header-component';
 
 const list = [
     {
@@ -15,13 +14,30 @@ const list = [
         title: '基本信息',
         icon: 'person',
         color: '#058bb3',
+        onPress: () => alert('1'),
     },
     {
         key: 2,
         title: '收藏',
         icon: 'favorite',
         color: '#ff616f',
-    }
+        onPress: () => alert('2'),
+    },
+    {
+        key: 3,
+        title: '设置',
+        icon: 'settings',
+        color: '#36648b',
+        onPress: (navigation) => navigation.push('Settings'),
+    },
+    {
+        key: 4,
+        title: '退出登录',
+        icon: 'arrow-forward',
+        color: '#a2b5cd',
+        hiddenRightIcon: true,
+        onPress: (navigation) => navigation.replace('Login'),
+    },
 ];
 
 export default class MainPage extends Component {
@@ -33,11 +49,6 @@ export default class MainPage extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: Theme.commonBackColor}}>
-                <Header
-                    rightColor={'#fff'}
-                    type={"antdesign"}
-                    rightIcon={"setting"}
-                    rightOnPress={()=>alert('1235')}/>
                 <View style={{alignItems: 'center'}}>
                     <Avatar
                         onPress={() => alert('更换头像')}
@@ -50,11 +61,12 @@ export default class MainPage extends Component {
                 {
                     list.map((item, i) => (
                         <ListItem
-                            onPress={() => alert(item.title)}
+                            onPress={() => item.onPress(this.props.navigation)}
                             key={i}
                             title={item.title}
                             leftIcon={<Icon name={item.icon} color={item.color}/>}
-                            rightIcon={{name: 'keyboard-arrow-right'}}
+                            rightIcon={<Icon name={'keyboard-arrow-right'}
+                                             color={item.hiddenRightIcon ? '#ffffff' : '#000000'}/>}
                             bottomDivider={true}
                         />
                     ))

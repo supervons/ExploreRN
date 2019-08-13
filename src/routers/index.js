@@ -7,6 +7,7 @@ import React from 'react';
 import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
 import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
+import Settings from '../screens/Settings/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import {Icon} from 'react-native-elements';
@@ -82,18 +83,30 @@ const Tabs = createMaterialTopTabNavigator({
  */
 const Router = createStackNavigator({
         Login: { // 登录界面
+            screen: Login,
+        },
+        MainPage: {
             screen: Tabs,
         },
         My: { // 我的页面
             screen: My,
         },
-        MainPage: {
-            screen: Tabs,
+        Settings: {
+            screen: Settings,
         },
     },
     { // 定义配置
         initialRouteName: 'Login', //设置初始路由为登录界面
-        headerMode: 'none'
+        headerMode:'screen',
+        defaultNavigationOptions:{ //共享头部属性设置
+            headerStyle: {
+                backgroundColor: Theme.primary,
+            },
+            headerTintColor: Theme.white,
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            }
+        }
     },
 );
 

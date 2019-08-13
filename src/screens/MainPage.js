@@ -6,7 +6,6 @@
 import React, {Component} from 'react';
 import {StatusBar, View, Platform} from 'react-native';
 import Theme from '../styles/theme';
-import Header from '../components/header-component';
 
 export default class MainPage extends Component {
 
@@ -17,7 +16,6 @@ export default class MainPage extends Component {
     render() {
         return (
             <View style={{flex:1, backgroundColor: "#ffffff"}}>
-                <Header/>
                 <StatusBar backgroundColor={Theme.primary} barStyle={'light-content'}/>
             </View>
         );
