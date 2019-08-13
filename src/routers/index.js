@@ -1,10 +1,12 @@
 /**
- * Created by supervons on 2018/12/20.
+ * Created by supervons on 2019/08/13.
  * 导航配置文件
  * router config file
  */
 import React from 'react';
 import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
+import StackViewStyleInterpolator from
+        'react-navigation-stack/src/views/StackView/StackViewStyleInterpolator';
 import MainPage from '../screens/MainPage';
 import Login from '../screens/Login/index';
 import Settings from '../screens/Settings/index';
@@ -102,6 +104,15 @@ const Router = createStackNavigator({
     { // 定义配置
         initialRouteName: 'Login', //设置初始路由为登录界面
         headerMode:'screen',
+        transitionConfig: () => ({
+            /**
+             * 1、从右向左：  forHorizontal；
+             * 2、从下向上：  forVertical；
+             * 3、安卓那种的从下向上： forFadeFromBottomAndroid；
+             * 4、无动画：  forInitial。
+             */
+            screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+        }),
         defaultNavigationOptions:{ //共享头部属性设置
             headerStyle: {
                 backgroundColor: Theme.primary,
