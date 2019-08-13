@@ -15,7 +15,8 @@ let defaultConfig = {
 };
 let instance = axios;
 // 请求地址 host
-const commonHosts = 'http://192.168.0.116:8080/commonProject';
+// const commonHosts = 'http://192.168.0.116:8080/commonProject';
+const commonHosts = 'http://www.superfys.top:8080/commonProject';
 
 class Axios {
     constructor(props) {
@@ -61,13 +62,18 @@ class Axios {
 async function get(url, callback) {
     try {
         let response = await instance.get(url).catch(resp => {
-            Toast.showToast(resp.message);
+            return resp;
         });
-        // 判断业务逻辑返回状态值
-        if (response.code.toUpperCase() === 'SUCCESS') {
-            return response;
+        // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
+        if (response.code) {
+            // 判断业务逻辑返回状态值
+            if (response.code.toUpperCase() === 'SUCCESS') {
+                return response;
+            } else {
+                return Promise.reject(response.msg)
+            }
         } else {
-            return Promise.reject(response.msg)
+            return Promise.reject(response.message)
         }
     } catch (e) {
         console.log(e);
@@ -77,13 +83,18 @@ async function get(url, callback) {
 async function post(url, params, callback) {
     try {
         let response = await instance.post(url, params).catch(resp => {
-            Toast.showToast(resp.message);
+            return resp;
         });
-        // 判断业务逻辑返回状态值
-        if (response.code.toUpperCase() === 'SUCCESS') {
-            return response;
+        // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
+        if (response.code) {
+            // 判断业务逻辑返回状态值
+            if (response.code.toUpperCase() === 'SUCCESS') {
+                return response;
+            } else {
+                return Promise.reject(response.msg)
+            }
         } else {
-            return Promise.reject(response.msg)
+            return Promise.reject(response.message)
         }
     } catch (e) {
         console.log('---->' + e);
