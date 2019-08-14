@@ -80,6 +80,25 @@ const Tabs = createMaterialTopTabNavigator({
 });
 
 /**
+ * 自定义动画参数，通过在跳转页面中增加 transitionType: '类型' 来进行动画设置，默认 forHorizontal（从右往左）
+ * @param sceneProps
+ * @returns {*}
+ * @constructor
+ */
+function TransitionConfiguration(sceneProps) {
+    const {scene} = sceneProps;
+    const {route} = scene;
+    const params = route.params || {};
+    const transitionType = params.transitionType;
+    if (transitionType && transitionType !== '') {
+        return StackViewStyleInterpolator[transitionType];
+    } else {
+        return StackViewStyleInterpolator.forHorizontal;
+    }
+}
+
+
+/**
  * 路由表配置，第一个为启动时页面
  * Routing table configuration, the first one is the startup page
  * @type {NavigationContainer}
@@ -103,25 +122,25 @@ const Router = createStackNavigator({
     },
     { // 定义配置
         initialRouteName: 'Login', //设置初始路由为登录界面
-        headerMode:'screen',
-        transitionConfig: () => ({
+        headerMode: 'screen',
+        transitionConfig: (sceneProps) => ({
             /**
              * 1、从右向左：  forHorizontal；
              * 2、从下向上：  forVertical；
              * 3、安卓那种的从下向上： forFadeFromBottomAndroid；
              * 4、无动画：  forInitial。
              */
-            screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+            screenInterpolator: TransitionConfiguration(sceneProps),
         }),
-        defaultNavigationOptions:{ //共享头部属性设置
+        defaultNavigationOptions: { //共享头部属性设置
             headerStyle: {
                 backgroundColor: Theme.primary,
             },
             headerTintColor: Theme.white,
             headerTitleStyle: {
                 fontWeight: 'bold',
-            }
-        }
+            },
+        },
     },
 );
 

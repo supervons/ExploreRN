@@ -11,14 +11,17 @@ const list = [
     {
         key: 1,
         title: '修改密码',
-        color: '#058bb3',
         onPress: (navigation)=> alert('暂无')
     },
     {
         key: 2,
         title: '系统信息',
-        color: '#058bb3',
         onPress: (navigation)=> navigation.push('VersionInfo')
+    },
+    {
+        key: 3,
+        title: '更换皮肤',
+        onPress: (navigation)=> navigation.push('VersionInfo', {transitionType: 'forFadeToBottomAndroid'})
     },
 ];
 
