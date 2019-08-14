@@ -4,7 +4,7 @@
  * settings page
  */
 import React, {Component} from 'react';
-import {View, Linking} from 'react-native';
+import {View} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import Theme from '../../styles/theme';
 const list = [

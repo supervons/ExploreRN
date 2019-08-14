@@ -5,7 +5,7 @@
  */
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import {ListItem, Avatar} from 'react-native-elements';
+import {ListItem} from 'react-native-elements';
 import Theme from '../../../styles/theme';
 import DeviceInfo from 'react-native-device-info'
 

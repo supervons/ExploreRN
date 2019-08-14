@@ -8,6 +8,7 @@ import {createAppContainer, createMaterialTopTabNavigator, createStackNavigator}
 import StackViewStyleInterpolator from
         'react-navigation-stack/src/views/StackView/StackViewStyleInterpolator';
 import MainPage from '../screens/MainPage';
+import Explore from '../screens/Explore/index';
 import Login from '../screens/Login/index';
 import Settings from '../screens/Settings/index';
 import VersionInfo from '../screens/Settings/version/index';
@@ -32,7 +33,7 @@ const Tabs = createMaterialTopTabNavigator({
         }),
     },
     News: {
-        screen: MainPage,
+        screen: Explore,
         navigationOptions: ({navigation}) => ({
             tabBarLabel: '发现',
             tabBarIcon: ({focused}) => {
@@ -109,6 +110,9 @@ const Router = createStackNavigator({
         },
         MainPage: {
             screen: Tabs,
+        },
+        Explore: { // 发现页面
+            screen: Explore,
         },
         My: { // 我的页面
             screen: My,
