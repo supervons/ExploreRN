@@ -11,6 +11,10 @@ import Theme from '../../styles/theme';
 import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 
+// 用户 token
+global.jwtToken ="";
+// 用户信息
+global.userInfo = {};
 export default class MainPage extends Component {
 
     static navigationOptions = {
@@ -37,6 +41,8 @@ export default class MainPage extends Component {
         }
         const params = {loginId: this.state.loginId, passWord: this.state.passWord};
         userAction.userLogin(params).then(resp => {
+            jwtToken = resp.auxiliaryData.jwtToken;
+            userInfo = resp.data;
             this.props.navigation.replace('MainPage');
         });
     }

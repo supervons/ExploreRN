@@ -6,11 +6,19 @@
 import React, {Component} from 'react';
 import {StatusBar, View} from 'react-native';
 import Theme from '../../styles/theme';
+import newsAction from '../../actions/news';
 
 export default class Explore extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount(): void {
+        const params = {pageNo: 1, itemNo: 2};
+        newsAction.getNewsList(params).then(resp => {
+            alert(JSON.stringify(resp))
+        });
     }
 
     render() {

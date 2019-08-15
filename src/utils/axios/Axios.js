@@ -9,14 +9,13 @@ import Toast from '../../components/toast';
 let defaultConfig = {
     timeout: 3000,
     headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
 };
 let instance = axios;
 // 请求地址 host
-// const commonHosts = 'http://192.168.0.116:8080/commonProject';
-const commonHosts = 'http://www.superfys.top:8080/commonProject';
+const commonHosts = 'http://192.168.0.116:8080/commonProject';
+// const commonHosts = 'http://www.superfys.top:8080/commonProject';
 
 class Axios {
     constructor(props) {
@@ -28,6 +27,8 @@ class Axios {
 
         // 发起请求前拦截
         instance.interceptors.request.use((config) => {
+            // 增加通用token
+            config.headers.jwtToken = jwtToken;
             return config;
         }, (error) => {
             console.log(error);

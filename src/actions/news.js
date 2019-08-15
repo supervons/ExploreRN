@@ -2,12 +2,12 @@ import Axios from '../utils/axios/Axios';
 import Toast from '../components/toast';
 
 /**
- * 用户登录
- * @param params {loginId, passWord}
+ * 新闻列表接口
+ * @param params {pageNo, itemNo}
  * @returns {Promise<any | never>}
  */
-const userLogin = params => {
-    return Axios.POST('/user/loginAction', params).then(resp => {
+const getNewsList = params => {
+    return Axios.POST('/news/queryNewsInfo', params).then(resp => {
         return Promise.resolve(resp);
     }).catch(resp =>{
         Toast.showToast(resp);
@@ -16,5 +16,5 @@ const userLogin = params => {
 };
 
 module.exports = {
-    userLogin,
+    getNewsList,
 };
