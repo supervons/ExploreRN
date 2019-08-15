@@ -17,7 +17,7 @@ export default class Explore extends Component {
     componentDidMount(): void {
         const params = {pageNo: 1, itemNo: 2};
         newsAction.getNewsList(params).then(resp => {
-            alert(JSON.stringify(resp))
+            console.log(JSON.stringify(resp))
         });
     }
 
