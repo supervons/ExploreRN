@@ -14,7 +14,7 @@ const list = [
         title: '基本信息',
         icon: 'person',
         color: '#058bb3',
-        onPress: () => alert('1'),
+        onPress: (navigation) => navigation.push('BaseInfo'),
     },
     {
         key: 2,

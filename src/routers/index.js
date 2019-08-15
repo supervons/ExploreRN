@@ -12,6 +12,7 @@ import Explore from '../screens/Explore/index';
 import Login from '../screens/Login/index';
 import Settings from '../screens/Settings/index';
 import VersionInfo from '../screens/Settings/version/index';
+import BaseInfo from '../screens/Settings/baseInfo/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import {Icon} from 'react-native-elements';
@@ -122,6 +123,9 @@ const Router = createStackNavigator({
         },
         VersionInfo: { // 版本信息页面
             screen: VersionInfo,
+        },
+        BaseInfo: { // 个人基本信息页面
+            screen: BaseInfo,
         },
     },
     { // 定义配置
