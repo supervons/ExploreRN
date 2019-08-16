@@ -15,6 +15,21 @@ const userLogin = params => {
     });
 };
 
+/**
+ * 修改用户信息 目前支持姓名，手机号及地址
+ * @param params {loginId, passWord}
+ * @returns {Promise<any | never>}
+ */
+const updateUserInfo = params => {
+    return Axios.POST('/user/updateUser', params).then(resp => {
+        return Promise.resolve(resp);
+    }).catch(resp =>{
+        Toast.showToast(resp);
+        return Promise.reject(resp);
+    });
+};
+
 module.exports = {
     userLogin,
+    updateUserInfo
 };

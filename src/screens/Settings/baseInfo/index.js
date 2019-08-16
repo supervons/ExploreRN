@@ -5,42 +5,91 @@
  */
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import {ListItem} from 'react-native-elements';
+import {ListItem, Button} from 'react-native-elements';
 import Theme from '../../../styles/theme';
+import Toast from '../../../components/toast';
+import userAction from '../../../actions/user';
 
+let _this;
 export default class BaseInfo extends Component {
+
+    constructor(props) {
+        super(props);
+        _this = this;
+        this.state = {
+            userInfo: {},
+            saveButtonShow: false,
+        };
+    }
 
     static navigationOptions = {
         headerTitle: '个人基本信息',
+        headerRight: (
+            <Button
+                type="clear"
+                onPress={() => _this.changeSaveButtonState()}
+                icon={{
+                    name: 'edit',
+                    size: 20,
+                    color: 'white',
+                }}
+            />
+        ),
     };
 
-    getUserInfo (){
+    componentDidMount(): void {
+        this.setState({userInfo: userInfo});
+    }
+
+    changeSaveButtonState(type) {
+        // 当保存接口成功调用时，type为true，其余则不更新全局的userInfo
+        if(type){
+            this.setState({saveButtonShow: !this.state.saveButtonShow});
+            userInfo = this.state.userInfo;
+        }else{
+            this.setState({userInfo: userInfo, saveButtonShow: !this.state.saveButtonShow});
+        }
+    }
+
+    updateUserInfo(){
+        userAction.updateUserInfo(this.state.userInfo).then(resp=>{
+            Toast.showToast(resp.msg);
+            this.changeSaveButtonState(true);
+        });
+    }
+
+    getUserInfo() {
         const userInfoJson = [
             {
-                key: 0,
+                key: 'loginId',
                 title: '账号',
-                rightTitle: userInfo.loginId
+                rightTitle: this.state.userInfo.loginId,
+                editable: false,
             },
             {
-                key: 1,
+                key: 'userName',
                 title: '姓名',
-                rightTitle: userInfo.userName
+                rightTitle: this.state.userInfo.userName,
+                editable: true,
             },
             {
-                key: 2,
+                key: 'userSex',
                 title: '性别',
-                rightTitle: userInfo.userSex
+                rightTitle: this.state.userInfo.userSex,
+                editable: false,
             },
             {
-                key: 3,
+                key: 'userCellPhone',
                 title: '手机号',
-                rightTitle: userInfo.userCellPhone
+                rightTitle: this.state.userInfo.userCellPhone,
+                editable: true,
             },
             {
-                key: 4,
+                key: 'userAddress',
                 title: '地址',
-                rightTitle: userInfo.userAddress
-            }
+                rightTitle: this.state.userInfo.userAddress,
+                editable: true,
+            },
         ];
         return userInfoJson;
     }
@@ -49,16 +98,47 @@ export default class BaseInfo extends Component {
         const userInfo = this.getUserInfo();
         return (
             <View style={{flex: 1, backgroundColor: Theme.commonBackColor}}>
-                {
+                {this.state.saveButtonShow ?
+                    userInfo.map((item, i) => (
+                        item.editable ?
+                            <ListItem
+                                key={i}
+                                title={item.title}
+                                bottomDivider={true}
+                                input={{
+                                    onChangeText: (text) => this.setState( {userInfo: {...this.state.userInfo,[item.key]: text}}),
+                                    value: this.state.userInfo[item.key], inputStyle: {paddingTop: 0, alignItems: 'center'},
+                                }}
+                            /> :
+                            <ListItem
+                                key={i}
+                                rightTitleStyle={{width: 170, textAlign: 'right'}}
+                                title={item.title}
+                                bottomDivider={true}
+                                rightSubtitle={item.rightTitle}
+                            />
+                    )) :
                     userInfo.map((item, i) => (
                         <ListItem
                             key={i}
-                            rightTitleStyle={{width: 170, textAlign:'right'}}
+                            rightTitleStyle={{width: 170, textAlign: 'right'}}
                             title={item.title}
                             bottomDivider={true}
-                            rightTitle={item.rightTitle}
+                            rightSubtitle={item.rightTitle}
                         />
                     ))
+                }
+                {
+                    this.state.saveButtonShow ?
+                        <Button
+                            icon={{
+                                name: 'save',
+                                color: 'white',
+                            }}
+                            buttonStyle={{marginTop: 15, backgroundColor: Theme.primary}}
+                            title="保存"
+                            onPress={() => this.updateUserInfo()}
+                        /> : null
                 }
             </View>
         );
