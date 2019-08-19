@@ -5,6 +5,7 @@
  */
 import axios from 'axios';
 import Constants from '../../common/constants';
+import Loading from '../../common/loading'
 
 let defaultConfig = {
     timeout: 3000,
@@ -29,16 +30,20 @@ class Axios {
         instance.interceptors.request.use((config) => {
             // 增加通用token
             config.headers.jwtToken = jwtToken;
+            Loading.show();
             return config;
         }, (error) => {
+            Loading.hide();
             console.log(error);
             return Promise.reject(error);
         });
 
         // 响应回调前拦截
         instance.interceptors.response.use((response) => {
+            Loading.hide();
             return response.data;
         }, (error) => {
+            Loading.hide();
             return Promise.reject(error);
         });
     }
