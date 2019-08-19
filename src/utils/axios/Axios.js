@@ -76,7 +76,7 @@ async function get(url, callback) {
             if (response.code.toUpperCase() === 'SUCCESS') {
                 return response;
             } else {
-                return Promise.reject(response.msg)
+                return Promise.reject(response.msg || response.message)
             }
         } else {
             return Promise.reject(response.message)
@@ -97,7 +97,7 @@ async function post(url, params, callback) {
             if (response.code.toUpperCase() === 'SUCCESS') {
                 return response;
             } else {
-                return Promise.reject(response.msg)
+                return Promise.reject(response.msg || response.message)
             }
         } else {
             return Promise.reject(response.message)
