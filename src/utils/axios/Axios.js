@@ -4,7 +4,7 @@
  * Axios-based network request component
  */
 import axios from 'axios';
-import Toast from '../../components/toast';
+import Constants from '../../common/constants';
 
 let defaultConfig = {
     timeout: 3000,
@@ -14,7 +14,7 @@ let defaultConfig = {
 };
 let instance = axios;
 // 请求地址 host
-const commonHosts = 'http://192.168.0.116:8080/commonProject';
+const commonHosts = Constants.serverUrl;
 // const commonHosts = 'http://www.superfys.top:8080/commonProject';
 
 class Axios {
