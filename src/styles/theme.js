@@ -12,5 +12,7 @@ export default {
     black: '#000',
     commonBackColor: '#eef0f2',
     tabSelected: '#f4511E',
-    tabUnSelected: '#999'
+    tabUnSelected: '#999',
+    loadingBackgroundColor: 'rgba(0,0,0,0.3)',
+    loadingTextColor: '#fff'
 };
