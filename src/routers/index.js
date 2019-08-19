@@ -10,9 +10,9 @@ import StackViewStyleInterpolator from
 import MainPage from '../screens/MainPage';
 import Explore from '../screens/Explore/index';
 import Login from '../screens/Login/index';
-import Settings from '../screens/Settings/index';
-import VersionInfo from '../screens/Settings/version/index';
-import BaseInfo from '../screens/Settings/baseInfo/index';
+import Settings from '../screens/My/settings/index';
+import VersionInfo from '../screens/My/settings/version/index';
+import BaseInfo from '../screens/My/baseInfo/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import {Icon} from 'react-native-elements';
