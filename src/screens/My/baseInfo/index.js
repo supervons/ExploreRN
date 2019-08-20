@@ -9,9 +9,11 @@ import { ListItem, Button } from 'react-native-elements';
 import Theme from '../../../styles/theme';
 import Toast from '../../../components/toast';
 import userAction from '../../../actions/user';
+import { USER_INFO } from '../../../common/redux/action/userActionTypes';
+import { connect } from 'react-redux';
 
 let _this;
-export default class BaseInfo extends Component {
+class BaseInfo extends Component {
   constructor(props) {
     super(props);
     _this = this;
@@ -45,6 +47,7 @@ export default class BaseInfo extends Component {
     if (type) {
       this.setState({ saveButtonShow: !this.state.saveButtonShow });
       userInfo = this.state.userInfo;
+      this.props.setUserInfo(this.state.userInfo);
     } else {
       this.setState({
         userInfo: userInfo,
@@ -150,3 +153,24 @@ export default class BaseInfo extends Component {
     );
   }
 }
+
+// 取出 store 中的数据
+const mapStateToProps = state => {
+  return {
+    userInfo: state.UserReducer.userInfo
+  };
+};
+
+// Dispatch 方法
+const mapDispatchToProps = dispatch => {
+  return {
+    setUserInfo: userInfo => {
+      dispatch({ type: USER_INFO, userInfo: userInfo });
+    }
+  };
+};
+
+export default (BaseInfo = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BaseInfo));
