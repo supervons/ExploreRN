@@ -6,35 +6,37 @@
  * Provide basic configuration information
  * constants.js provides configuration such as server address, page number, device type, device number, version number, etc.
  */
-import {Platform} from 'react-native'
-import DeviceInfo from 'react-native-device-info'
+import { Platform } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 
 export default {
-    serverUrl: 'http://192.168.0.116:8080/commonProject',
-    pageSize: 10,
-    deviceType: Platform.OS.toUpperCase(),
-    deviceInfo: {
-        UniqueID: DeviceInfo.getUniqueID(),
-        Manufacturer: DeviceInfo.getManufacturer(),
-        Brand: DeviceInfo.getBrand(),
-        Model: DeviceInfo.getModel(),
-        DeviceId: DeviceInfo.getDeviceId(),
-        SystemName: DeviceInfo.getSystemName(),
-        SystemVersion: DeviceInfo.getSystemVersion(),
-        BundleId: DeviceInfo.getBundleId(),
-        ApplicationName: DeviceInfo.getApplicationName(),
-        BuildNumber: DeviceInfo.getBuildNumber(),
-        Version: DeviceInfo.getVersion(),
-        ReadableVersion: DeviceInfo.getReadableVersion(),
-        DeviceName: DeviceInfo.getDeviceName(),
-        UserAgent: DeviceInfo.getUserAgent(),
-        DeviceLocale: DeviceInfo.getDeviceLocale(),
-        DeviceCountry: DeviceInfo.getDeviceCountry(),
-        IPAddress: DeviceInfo.getIPAddress(),
-        MACAddress: DeviceInfo.getMACAddress(),
-        TotalMemory: DeviceInfo.getTotalMemory(),
-        MaxMemory: DeviceInfo.getMaxMemory()
-    },
-    deviceNo: DeviceInfo.getUniqueID().replace('-').substr(0, 12),
-    versionName: DeviceInfo.getVersion()
-}
+  serverUrl: 'http://192.168.0.116:8080/commonProject',
+  pageSize: 10,
+  deviceType: Platform.OS.toUpperCase(),
+  deviceInfo: {
+    UniqueID: DeviceInfo.getUniqueID(),
+    Manufacturer: DeviceInfo.getManufacturer(),
+    Brand: DeviceInfo.getBrand(),
+    Model: DeviceInfo.getModel(),
+    DeviceId: DeviceInfo.getDeviceId(),
+    SystemName: DeviceInfo.getSystemName(),
+    SystemVersion: DeviceInfo.getSystemVersion(),
+    BundleId: DeviceInfo.getBundleId(),
+    ApplicationName: DeviceInfo.getApplicationName(),
+    BuildNumber: DeviceInfo.getBuildNumber(),
+    Version: DeviceInfo.getVersion(),
+    ReadableVersion: DeviceInfo.getReadableVersion(),
+    DeviceName: DeviceInfo.getDeviceName(),
+    UserAgent: DeviceInfo.getUserAgent(),
+    DeviceLocale: DeviceInfo.getDeviceLocale(),
+    DeviceCountry: DeviceInfo.getDeviceCountry(),
+    IPAddress: DeviceInfo.getIPAddress(),
+    MACAddress: DeviceInfo.getMACAddress(),
+    TotalMemory: DeviceInfo.getTotalMemory(),
+    MaxMemory: DeviceInfo.getMaxMemory()
+  },
+  deviceNo: DeviceInfo.getUniqueID()
+    .replace('-')
+    .substr(0, 12),
+  versionName: DeviceInfo.getVersion()
+};

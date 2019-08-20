@@ -7,14 +7,16 @@ import Toast from '../components/toast';
  * @returns {Promise<any | never>}
  */
 const getNewsList = params => {
-    return Axios.POST('/news/queryNewsInfo', params).then(resp => {
-        return Promise.resolve(resp);
-    }).catch(resp =>{
-        Toast.showToast(resp);
-        return Promise.reject(resp);
+  return Axios.POST('/news/queryNewsInfo', params)
+    .then(resp => {
+      return Promise.resolve(resp);
+    })
+    .catch(resp => {
+      Toast.showToast(resp);
+      return Promise.reject(resp);
     });
 };
 
 module.exports = {
-    getNewsList,
+  getNewsList
 };

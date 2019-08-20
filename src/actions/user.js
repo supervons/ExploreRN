@@ -7,11 +7,13 @@ import Toast from '../components/toast';
  * @returns {Promise<any | never>}
  */
 const userLogin = params => {
-    return Axios.POST('/user/loginAction', params).then(resp => {
-        return Promise.resolve(resp);
-    }).catch(resp =>{
-        Toast.showToast(resp);
-        return Promise.reject(resp);
+  return Axios.POST('/user/loginAction', params)
+    .then(resp => {
+      return Promise.resolve(resp);
+    })
+    .catch(resp => {
+      Toast.showToast(resp);
+      return Promise.reject(resp);
     });
 };
 
@@ -21,15 +23,17 @@ const userLogin = params => {
  * @returns {Promise<any | never>}
  */
 const updateUserInfo = params => {
-    return Axios.POST('/user/updateUser', params).then(resp => {
-        return Promise.resolve(resp);
-    }).catch(resp =>{
-        Toast.showToast(resp);
-        return Promise.reject(resp);
+  return Axios.POST('/user/updateUser', params)
+    .then(resp => {
+      return Promise.resolve(resp);
+    })
+    .catch(resp => {
+      Toast.showToast(resp);
+      return Promise.reject(resp);
     });
 };
 
 module.exports = {
-    userLogin,
-    updateUserInfo
+  userLogin,
+  updateUserInfo
 };

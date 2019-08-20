@@ -10,20 +10,20 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 
 // 导航路由表
 import RootStack from './src/routers/index';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import Loading from './src/common/loading';
 
 const App = () => {
-    return (
-        <View style={{flex: 1}}>
-            <RootStack/>
-            <Loading/>
-        </View>
-    );
+  return (
+    <View style={{ flex: 1 }}>
+      <RootStack />
+      <Loading />
+    </View>
+  );
 };
 
 export default App;
