@@ -10,12 +10,18 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Theme from '../../styles/theme';
 import userAction from '../../actions/user';
 import Toast from '../../components/toast';
+import { connect } from 'react-redux';
+import {
+  USER_TOKEN,
+  USER_INFO
+} from '../../common/redux/action/userActionTypes';
 
 // 用户 token
 global.jwtToken = '';
 // 用户信息
 global.userInfo = {};
-export default class MainPage extends Component {
+
+class Login extends Component {
   static navigationOptions = {
     header: null
   };
@@ -29,8 +35,12 @@ export default class MainPage extends Component {
   }
 
   componentDidMount(): void {
-    // 忽略警告
-    console.disableYellowBox = true;
+    // 判断 redux-persist 缓存中是否有数据，有则取出直接登录
+    if (this.props.userToken && this.props.userInfo) {
+      jwtToken = this.props.userToken;
+      userInfo = this.props.userInfo;
+      this.props.navigation.replace('MainPage');
+    }
   }
 
   login() {
@@ -43,6 +53,8 @@ export default class MainPage extends Component {
       passWord: this.state.passWord
     };
     userAction.userLogin(params).then(resp => {
+      this.props.setToken(resp.auxiliaryData.jwtToken);
+      this.props.setUserInfo(resp.data);
       jwtToken = resp.auxiliaryData.jwtToken;
       userInfo = resp.data;
       this.props.navigation.replace('MainPage');
@@ -94,3 +106,28 @@ export default class MainPage extends Component {
     );
   }
 }
+
+// 取出 store 中的数据
+const mapStateToProps = state => {
+  return {
+    userToken: state.UserReducer.userToken,
+    userInfo: state.UserReducer.userInfo
+  };
+};
+
+// Dispatch 方法
+const mapDispatchToProps = dispatch => {
+  return {
+    setToken: userToken => {
+      dispatch({ type: USER_TOKEN, userToken: userToken });
+    },
+    setUserInfo: userInfo => {
+      dispatch({ type: USER_INFO, userInfo: userInfo });
+    }
+  };
+};
+
+export default (Login = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login));

@@ -7,6 +7,11 @@ import React, { Component } from 'react';
 import { View, Alert } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import Theme from '../../styles/theme';
+import { connect } from 'react-redux';
+import {
+  USER_TOKEN,
+  USER_INFO
+} from '../../common/redux/action/userActionTypes';
 
 const list = [
   {
@@ -14,7 +19,7 @@ const list = [
     title: '基本信息',
     icon: 'person',
     color: '#058bb3',
-    onPress: navigation => navigation.push('BaseInfo')
+    onPress: props => props.navigation.push('BaseInfo')
   },
   {
     key: 2,
@@ -28,7 +33,7 @@ const list = [
     title: '设置',
     icon: 'settings',
     color: '#36648b',
-    onPress: navigation => navigation.push('Settings')
+    onPress: props => props.navigation.push('Settings')
   },
   {
     key: 4,
@@ -36,7 +41,7 @@ const list = [
     icon: 'arrow-forward',
     color: '#a2b5cd',
     hiddenRightIcon: true,
-    onPress: navigation =>
+    onPress: props =>
       Alert.alert('退出登录', '退出后，下次需要重新登录', [
         {
           text: '取消',
@@ -45,14 +50,16 @@ const list = [
         {
           text: '确定',
           onPress: () => {
-            navigation.replace('Login');
+            props.setToken('');
+            props.setUserInfo('');
+            props.navigation.replace('Login');
           }
         }
       ])
   }
 ];
 
-export default class MainPage extends Component {
+class MyPage extends Component {
   constructor(props) {
     super(props);
   }
@@ -71,7 +78,7 @@ export default class MainPage extends Component {
         </View>
         {list.map((item, i) => (
           <ListItem
-            onPress={() => item.onPress(this.props.navigation)}
+            onPress={() => item.onPress(this.props)}
             key={i}
             title={item.title}
             leftIcon={<Icon name={item.icon} color={item.color} />}
@@ -88,3 +95,28 @@ export default class MainPage extends Component {
     );
   }
 }
+
+// 取出 store 中的数据
+const mapStateToProps = state => {
+  return {
+    userToken: state.UserReducer.userToken,
+    userInfo: state.UserReducer.userInfo
+  };
+};
+
+// Dispatch 方法
+const mapDispatchToProps = dispatch => {
+  return {
+    setToken: userToken => {
+      dispatch({ type: USER_TOKEN, userInfo: userToken });
+    },
+    setUserInfo: userInfo => {
+      dispatch({ type: USER_INFO, userInfo: userInfo });
+    }
+  };
+};
+
+export default (MyPage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyPage));
