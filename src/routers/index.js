@@ -71,7 +71,7 @@ const Tabs = createMaterialTopTabNavigator(
     animationEnabled: false, // 切换页面时是否有动画效果
     tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
     swipeEnabled: true, // 是否可以左右滑动切换tab
-    lazy: false,
+    lazy: true,
     tabBarOptions: {
       tabStyle: {
         minWidth: 50,

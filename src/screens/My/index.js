@@ -4,7 +4,7 @@
  * my page
  */
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import Theme from '../../styles/theme';
 
@@ -36,7 +36,19 @@ const list = [
     icon: 'arrow-forward',
     color: '#a2b5cd',
     hiddenRightIcon: true,
-    onPress: navigation => navigation.replace('Login')
+    onPress: navigation =>
+      Alert.alert('退出登录', '退出后，下次需要重新登录', [
+        {
+          text: '取消',
+          onPress: () => {}
+        },
+        {
+          text: '确定',
+          onPress: () => {
+            navigation.replace('Login');
+          }
+        }
+      ])
   }
 ];
 
