@@ -5,9 +5,11 @@
  */
 import { combineReducers } from 'redux';
 import UserReducer from './userReducer';
+import SettingReducer from './settingReducer';
 
 const rootReducer = combineReducers({
-  UserReducer
+  UserReducer,
+  SettingReducer
 });
 
 export default rootReducer;

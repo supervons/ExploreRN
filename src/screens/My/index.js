@@ -37,6 +37,14 @@ const list = [
   },
   {
     key: 4,
+    title: '系统特性',
+    icon: 'invert-colors',
+    color: '#36fffb',
+    onPress: props =>
+      props.navigation.push('SystemIntroduction', { type: true })
+  },
+  {
+    key: 5,
     title: '退出登录',
     icon: 'arrow-forward',
     color: '#a2b5cd',

@@ -16,6 +16,7 @@ import Login from '../screens/Login/index';
 import Settings from '../screens/My/settings/index';
 import VersionInfo from '../screens/My/settings/version/index';
 import BaseInfo from '../screens/My/baseInfo/index';
+import SystemIntroduction from '../screens/SystemIntroduction/index';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import { Icon } from 'react-native-elements';
@@ -147,11 +148,15 @@ const Router = createStackNavigator(
     BaseInfo: {
       // 个人基本信息页面
       screen: BaseInfo
+    },
+    SystemIntroduction: {
+      // 系统介绍界面
+      screen: SystemIntroduction
     }
   },
   {
     // 定义配置
-    initialRouteName: 'Login', //设置初始路由为登录界面
+    initialRouteName: 'SystemIntroduction', //设置初始路由为登录界面
     headerMode: 'screen',
     transitionConfig: sceneProps => ({
       /**

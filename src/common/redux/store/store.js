@@ -14,7 +14,7 @@ const middleWares = [thunk];
 const persistConfig = {
   key: 'root', // 对于数据 key 的定义
   storage, // 选择的存储引擎
-  whitelist: ['UserReducer'] // 白名单，位于数组中的会被缓存
+  whitelist: ['UserReducer', 'SettingReducer'] // 白名单，位于数组中的会被缓存
 };
 
 // 对 reducers 的封装处理
