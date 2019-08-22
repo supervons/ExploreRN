@@ -5,13 +5,7 @@
  */
 import React, { Component } from 'react';
 import { DeviceEventEmitter, View } from 'react-native';
-import {
-  CheckBox,
-  ListItem,
-  Divider,
-  Text,
-  Button
-} from 'react-native-elements';
+import { CheckBox, ListItem, Divider, Button } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
 import commonStyles from '../../../../styles/commonStyles';
 
@@ -43,9 +37,9 @@ const colorList = [
   }
 ];
 
-export default class VersionInfo extends Component {
+export default class ThemeChange extends Component {
   static navigationOptions = {
-    headerTitle: '皮肤更换'
+    headerTitle: '更换皮肤'
   };
 
   render() {
@@ -75,7 +69,11 @@ export default class VersionInfo extends Component {
           bottomDivider={true}
           input={{
             placeholder: '#ffffff/white',
-            onChangeText: text => DeviceEventEmitter.emit('theme_change', text),
+            onChangeText: text => {
+              if (text.length > 3) {
+                DeviceEventEmitter.emit('theme_change', text);
+              }
+            },
             inputStyle: {
               paddingTop: 0,
               alignItems: 'center',
