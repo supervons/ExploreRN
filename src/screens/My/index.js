@@ -31,18 +31,18 @@ const list = [
   },
   {
     key: 3,
-    title: '设置',
-    icon: 'settings',
-    color: '#36648b',
-    onPress: props => props.navigation.push('Settings')
-  },
-  {
-    key: 4,
     title: '系统特性',
     icon: 'invert-colors',
     color: '#36fffb',
     onPress: props =>
       props.navigation.push('SystemIntroduction', { type: true })
+  },
+  {
+    key: 4,
+    title: '设置',
+    icon: 'settings',
+    color: '#36648b',
+    onPress: props => props.navigation.push('Settings')
   },
   {
     key: 5,
