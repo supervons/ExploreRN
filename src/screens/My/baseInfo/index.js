@@ -152,7 +152,10 @@ class BaseInfo extends Component {
               name: 'save',
               color: 'white'
             }}
-            buttonStyle={{ marginTop: 15, backgroundColor: Theme.primary }}
+            buttonStyle={{
+              marginTop: 15,
+              backgroundColor: this.props.screenProps.themeColor
+            }}
             title="保存"
             onPress={() => this.updateUserInfo()}
           />

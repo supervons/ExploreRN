@@ -5,7 +5,6 @@
  */
 import React, { Component } from 'react';
 import { StatusBar, View, Text, StyleSheet } from 'react-native';
-import Theme from '../styles/theme';
 import Swiper from 'react-native-swiper';
 
 export default class MainPage extends Component {
@@ -16,7 +15,10 @@ export default class MainPage extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-        <StatusBar backgroundColor={Theme.primary} barStyle={'light-content'} />
+        <StatusBar
+          backgroundColor={this.props.screenProps.themeColor}
+          barStyle={'light-content'}
+        />
         <View style={styles.wrapper}>
           <Swiper showsButtons={true}>
             <View style={styles.slide1}>

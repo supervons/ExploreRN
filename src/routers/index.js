@@ -15,6 +15,7 @@ import Explore from '../screens/Explore/index';
 import Login from '../screens/Login/index';
 import Settings from '../screens/My/settings/index';
 import VersionInfo from '../screens/My/settings/version/index';
+import ThemeChange from '../screens/My/settings/theme-change/index';
 import BaseInfo from '../screens/My/baseInfo/index';
 import SystemIntroduction from '../screens/SystemIntroduction/index';
 import My from '../screens/My/index';
@@ -30,11 +31,11 @@ const Tabs = createMaterialTopTabNavigator(
   {
     MainPage: {
       screen: MainPage,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: ({ navigation, screenProps }) => ({
         tabBarLabel: '首页',
         tabBarIcon: ({ focused }) => {
           return focused ? (
-            <Icon name={'home'} color={Theme.tabSelected} />
+            <Icon name={'home'} color={screenProps.themeColor} />
           ) : (
             <Icon name={'home'} color={Theme.tabUnSelected} />
           );
@@ -43,11 +44,11 @@ const Tabs = createMaterialTopTabNavigator(
     },
     News: {
       screen: Explore,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: ({ navigation, screenProps }) => ({
         tabBarLabel: '发现',
         tabBarIcon: ({ focused }) => {
           return focused ? (
-            <Icon name={'explore'} color={Theme.tabSelected} />
+            <Icon name={'explore'} color={screenProps.themeColor} />
           ) : (
             <Icon name={'explore'} color={Theme.tabUnSelected} />
           );
@@ -56,11 +57,11 @@ const Tabs = createMaterialTopTabNavigator(
     },
     PersonalCenter: {
       screen: My,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: ({ navigation, screenProps }) => ({
         tabBarLabel: '我的',
         tabBarIcon: ({ focused }) => {
           return focused ? (
-            <Icon name={'person'} color={Theme.tabSelected} />
+            <Icon name={'person'} color={screenProps.themeColor} />
           ) : (
             <Icon name={'person'} color={Theme.tabUnSelected} />
           );
@@ -78,7 +79,7 @@ const Tabs = createMaterialTopTabNavigator(
         minWidth: 50,
         maxHeight: 50
       },
-      activeTintColor: Theme.tabSelected, // 文字和图片选中颜色
+      activeTintColor: '#000000', // 文字和图片选中颜色
       inactiveTintColor: Theme.tabUnSelected, // 文字和图片未选中颜色
       pressOpacity: 0.8,
       showIcon: true, // android 默认不显示 icon, 需要设置为 true 才会显示
@@ -145,6 +146,10 @@ const Router = createStackNavigator(
       // 版本信息页面
       screen: VersionInfo
     },
+    ThemeChange: {
+      // 皮肤更换页面
+      screen: ThemeChange
+    },
     BaseInfo: {
       // 个人基本信息页面
       screen: BaseInfo
@@ -167,16 +172,16 @@ const Router = createStackNavigator(
        */
       screenInterpolator: TransitionConfiguration(sceneProps)
     }),
-    defaultNavigationOptions: {
-      //共享头部属性设置
+    defaultNavigationOptions: ({ navigation, screenProps }) => ({
+      // 共享头部属性设置
       headerStyle: {
-        backgroundColor: Theme.primary
+        backgroundColor: screenProps.themeColor
       },
-      headerTintColor: Theme.white,
+      headerTintColor: screenProps.titleColor,
       headerTitleStyle: {
         fontWeight: 'bold'
       }
-    }
+    })
   }
 );
 

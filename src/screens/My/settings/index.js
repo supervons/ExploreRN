@@ -23,10 +23,11 @@ const list = [
   {
     key: 3,
     title: '更换皮肤',
-    onPress: navigation =>
-      navigation.push('VersionInfo', {
+    onPress: navigation => {
+      navigation.push('ThemeChange', {
         transitionType: 'forFadeToBottomAndroid'
-      })
+      });
+    }
   }
 ];
 

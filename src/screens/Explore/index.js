@@ -21,10 +21,6 @@ export default class Explore extends Component {
   }
 
   render() {
-    return (
-      <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-        <StatusBar backgroundColor={Theme.primary} barStyle={'light-content'} />
-      </View>
-    );
+    return <View style={{ flex: 1, backgroundColor: '#ffffff' }} />;
   }
 }
