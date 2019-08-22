@@ -11,6 +11,7 @@ import Toast from '../../../components/toast';
 import userAction from '../../../actions/user';
 import { USER_INFO } from '../../../common/redux/action/userActionTypes';
 import { connect } from 'react-redux';
+import commonStyles from '../../../styles/commonStyles';
 
 let _this;
 class BaseInfo extends Component {
@@ -108,6 +109,7 @@ class BaseInfo extends Component {
               item.editable ? (
                 <ListItem
                   key={i}
+                  containerStyle={commonStyles.itemPadding}
                   title={item.title}
                   bottomDivider={true}
                   input={{
@@ -116,12 +118,17 @@ class BaseInfo extends Component {
                         userInfo: { ...this.state.userInfo, [item.key]: text }
                       }),
                     value: this.state.userInfo[item.key],
-                    inputStyle: { paddingTop: 0, alignItems: 'center' }
+                    inputStyle: {
+                      paddingTop: 0,
+                      alignItems: 'center',
+                      fontSize: 15
+                    }
                   }}
                 />
               ) : (
                 <ListItem
                   key={i}
+                  containerStyle={commonStyles.itemPadding}
                   rightTitleStyle={{ width: 170, textAlign: 'right' }}
                   title={item.title}
                   bottomDivider={true}
@@ -132,6 +139,7 @@ class BaseInfo extends Component {
           : userInfo.map((item, i) => (
               <ListItem
                 key={i}
+                containerStyle={commonStyles.itemPadding}
                 rightTitleStyle={{ width: 170, textAlign: 'right' }}
                 title={item.title}
                 bottomDivider={true}

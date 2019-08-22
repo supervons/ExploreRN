@@ -8,6 +8,7 @@ import { View } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
 import DeviceInfo from 'react-native-device-info';
+import commonStyles from '../../../../styles/commonStyles';
 
 const list = [
   {
@@ -45,6 +46,7 @@ export default class VersionInfo extends Component {
             key={i}
             rightTitleStyle={{ width: 170, textAlign: 'right' }}
             title={item.title}
+            containerStyle={commonStyles.itemPadding}
             bottomDivider={true}
             rightTitle={item.rightTitle}
           />

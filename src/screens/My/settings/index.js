@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import Theme from '../../../styles/theme';
+import commonStyles from '../../../styles/commonStyles';
 
 const list = [
   {
@@ -42,6 +43,7 @@ export default class Settings extends Component {
             onPress={() => item.onPress(this.props.navigation)}
             key={i}
             title={item.title}
+            containerStyle={commonStyles.itemPadding}
             rightTitle={item.rightTitle}
             rightIcon={{ name: 'keyboard-arrow-right' }}
             bottomDivider={true}

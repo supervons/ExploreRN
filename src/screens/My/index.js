@@ -12,6 +12,7 @@ import {
   USER_TOKEN,
   USER_INFO
 } from '../../common/redux/action/userActionTypes';
+import commonStyles from '../../styles/commonStyles';
 
 const list = [
   {
@@ -89,6 +90,7 @@ class MyPage extends Component {
             onPress={() => item.onPress(this.props)}
             key={i}
             title={item.title}
+            containerStyle={commonStyles.itemPadding}
             leftIcon={<Icon name={item.icon} color={item.color} />}
             rightIcon={
               <Icon
