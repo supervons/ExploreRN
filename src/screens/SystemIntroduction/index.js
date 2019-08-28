@@ -9,6 +9,7 @@ import Swiper from 'react-native-swiper';
 import { Button } from 'react-native-elements';
 import { FIRST_INSTALL } from '../../common/redux/action/settingActionTypes';
 import { connect } from 'react-redux';
+import * as Animatable from 'react-native-animatable';
 
 class SystemIntroduction extends Component {
   static navigationOptions = {
@@ -61,10 +62,12 @@ class SystemIntroduction extends Component {
   renderItem(style, title, enTitle, component) {
     return (
       <View style={style}>
-        <View style={{ margin: 30 }}>
-          <Text style={styles.text}>{title}</Text>
-          <Text style={styles.text}>{enTitle}</Text>
-        </View>
+        <Animatable.View animation="zoomInUp">
+          <View style={{ margin: 30 }}>
+            <Text style={styles.text}>{title}</Text>
+            <Text style={styles.text}>{enTitle}</Text>
+          </View>
+        </Animatable.View>
         {component}
       </View>
     );
@@ -75,7 +78,7 @@ class SystemIntroduction extends Component {
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <StatusBar hidden={true} barStyle={'light-content'} />
         <View style={styles.wrapper}>
-          <Swiper loop={false}>
+          <Swiper loop={false} loadMinimal={false}>
             {this.state.introductionMap.map((item, i) =>
               this.renderItem(
                 item.style,
