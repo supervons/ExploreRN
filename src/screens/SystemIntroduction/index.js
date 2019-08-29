@@ -4,12 +4,13 @@
  * System function introduction page, Can be used as the first screen to enter the system for the first time
  */
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { Button } from 'react-native-elements';
 import { FIRST_INSTALL } from '../../common/redux/action/settingActionTypes';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
+import commonStyles from '../../styles/commonStyles';
 
 class SystemIntroduction extends Component {
   static navigationOptions = {
@@ -21,17 +22,17 @@ class SystemIntroduction extends Component {
     this.state = {
       introductionMap: [
         {
-          style: styles.slide1,
+          style: commonStyles.slide1,
           title: '本项目包含了大量的 RN 组件',
           enTitle: 'This project contains a large number of RN components'
         },
         {
-          style: styles.slide2,
+          style: commonStyles.slide2,
           title: '源码 github 不断更新',
           enTitle: 'Source code github often updated'
         },
         {
-          style: styles.slide3,
+          style: commonStyles.slide3,
           title: '欢迎你的加入与关注',
           enTitle: 'Welcome to join and star',
           component: (
@@ -61,11 +62,13 @@ class SystemIntroduction extends Component {
 
   renderItem(style, title, enTitle, component) {
     return (
-      <View style={style}>
+      <View style={[style, { flex: 1 }]}>
         <Animatable.View animation="zoomInUp">
           <View style={{ margin: 30 }}>
-            <Text style={styles.text}>{title}</Text>
-            <Text style={styles.text}>{enTitle}</Text>
+            <Text style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>
+              {title}
+            </Text>
+            <Text style={commonStyles.text}>{enTitle}</Text>
           </View>
         </Animatable.View>
         {component}
@@ -77,7 +80,7 @@ class SystemIntroduction extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <StatusBar hidden={true} barStyle={'light-content'} />
-        <View style={styles.wrapper}>
+        <View style={{ flex: 1 }}>
           <Swiper loop={false} loadMinimal={false}>
             {this.state.introductionMap.map((item, i) =>
               this.renderItem(
@@ -114,31 +117,3 @@ export default (SystemIntroduction = connect(
   mapStateToProps,
   mapDispatchToProps
 )(SystemIntroduction));
-
-const styles = StyleSheet.create({
-  wrapper: { flex: 1 },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB'
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5'
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9'
-  },
-  text: {
-    marginTop: 25,
-    color: '#fff',
-    fontSize: 22,
-    fontWeight: 'bold'
-  }
-});

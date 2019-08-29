@@ -61,25 +61,6 @@ export default class Explore extends Component {
 }
 
 const styles = StyleSheet.create({
-  wrapper: { height: 150 },
-  slide1: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB'
-  },
-  slide2: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5'
-  },
-  slide3: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9'
-  },
   text: {
     color: '#fff',
     fontSize: 30,

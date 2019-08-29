@@ -4,8 +4,9 @@
  * user main page
  */
 import React, { Component } from 'react';
-import { StatusBar, View, Text, StyleSheet } from 'react-native';
+import { StatusBar, View, Text } from 'react-native';
 import Swiper from 'react-native-swiper';
+import commonStyles from '../styles/commonStyles';
 
 export default class MainPage extends Component {
   constructor(props) {
@@ -19,16 +20,16 @@ export default class MainPage extends Component {
           backgroundColor={this.props.screenProps.themeColor}
           barStyle={'light-content'}
         />
-        <View style={styles.wrapper}>
+        <View style={{ height: 150 }}>
           <Swiper showsButtons={true}>
-            <View style={styles.slide1}>
-              <Text style={styles.text}>这是首页swiper</Text>
+            <View style={[commonStyles.slide1, { height: 150 }]}>
+              <Text style={commonStyles.text}>这是首页swiper</Text>
             </View>
-            <View style={styles.slide2}>
-              <Text style={styles.text}>react-native棒棒</Text>
+            <View style={[commonStyles.slide2, { height: 150 }]}>
+              <Text style={commonStyles.text}>react-native棒棒</Text>
             </View>
-            <View style={styles.slide3}>
-              <Text style={styles.text}>Hermes引擎快快快</Text>
+            <View style={[commonStyles.slide3, { height: 150 }]}>
+              <Text style={commonStyles.text}>Hermes引擎快快快</Text>
             </View>
           </Swiper>
         </View>
@@ -36,30 +37,3 @@ export default class MainPage extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: { height: 150 },
-  slide1: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB'
-  },
-  slide2: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5'
-  },
-  slide3: {
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9'
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
-  }
-});

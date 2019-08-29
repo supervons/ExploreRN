@@ -10,7 +10,27 @@ import { StyleSheet } from 'react-native';
  * ListItem padding top and bottom uniform set 10
  */
 const commonStyles = StyleSheet.create({
-  itemPadding: { paddingTop: 10, paddingBottom: 10 }
+  itemPadding: { paddingTop: 10, paddingBottom: 10 },
+  slide1: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB'
+  },
+  slide2: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5'
+  },
+  slide3: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9'
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  }
 });
 
 export default commonStyles;
