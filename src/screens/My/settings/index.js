@@ -13,7 +13,9 @@ const list = [
   {
     key: 1,
     title: '修改密码',
-    onPress: navigation => alert('暂无')
+    onPress: navigation => {
+      navigation.push('UpdatePassword');
+    }
   },
   {
     key: 2,

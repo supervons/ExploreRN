@@ -16,6 +16,7 @@ import Login from '../screens/Login/index';
 import Settings from '../screens/My/settings/index';
 import VersionInfo from '../screens/My/settings/version/index';
 import ThemeChange from '../screens/My/settings/theme-change/index';
+import UpdatePassword from '../screens/My/settings/update-password/index';
 import BaseInfo from '../screens/My/baseInfo/index';
 import SystemIntroduction from '../screens/SystemIntroduction/index';
 import My from '../screens/My/index';
@@ -157,6 +158,10 @@ const Router = createStackNavigator(
     SystemIntroduction: {
       // 系统介绍界面
       screen: SystemIntroduction
+    },
+    UpdatePassword: {
+      // 修改密码界面
+      screen: UpdatePassword
     }
   },
   {

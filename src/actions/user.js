@@ -33,7 +33,24 @@ const updateUserInfo = params => {
     });
 };
 
+/**
+ * 修改密码
+ * @param params {loginId, passWord}
+ * @returns {Promise<any | never>}
+ */
+const updatePassword = params => {
+  return Axios.POST('/user/updatePassword', params)
+    .then(resp => {
+      return Promise.resolve(resp);
+    })
+    .catch(resp => {
+      Toast.showToast(resp);
+      return Promise.reject(resp);
+    });
+};
+
 module.exports = {
   userLogin,
-  updateUserInfo
+  updateUserInfo,
+  updatePassword
 };
