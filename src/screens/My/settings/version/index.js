@@ -4,11 +4,12 @@
  * version info page
  */
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Clipboard } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
 import DeviceInfo from 'react-native-device-info';
 import commonStyles from '../../../../styles/commonStyles';
+import Toast from '../../../../components/toast';
 
 const list = [
   {
@@ -29,7 +30,11 @@ const list = [
   {
     key: 3,
     title: '联系邮箱',
-    rightTitle: 'supervons@sina.com'
+    rightTitle: 'supervons@sina.com',
+    onPress: text => {
+      Toast.showToast('复制邮箱成功，请粘贴使用');
+      Clipboard.setString(text);
+    }
   }
 ];
 
@@ -44,6 +49,9 @@ export default class VersionInfo extends Component {
         {list.map((item, i) => (
           <ListItem
             key={i}
+            onPress={() =>
+              item.onPress ? item.onPress(item.rightTitle) : console.log('')
+            }
             rightTitleStyle={{ width: 170, textAlign: 'right' }}
             title={item.title}
             containerStyle={commonStyles.itemPadding}
