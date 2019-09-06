@@ -35,18 +35,21 @@ export default class UpdatePassword extends Component {
       {
         key: 'oldPassword',
         title: '原密码',
+        placeholder: '输入原密码',
         rightTitle: this.state.userInfo.oldPassword,
         editable: false
       },
       {
         key: 'newPassword',
         title: '新密码',
+        placeholder: '输入新密码',
         rightTitle: this.state.userInfo.newPassword,
         editable: true
       },
       {
         key: 'confirmPassword',
-        title: '再次输入新密码',
+        title: '确认密码',
+        placeholder: '再次输入新密码',
         rightTitle: this.state.userInfo.confirmPassword,
         editable: false
       }
@@ -90,6 +93,7 @@ export default class UpdatePassword extends Component {
                 this.setState({
                   userInfo: { ...this.state.userInfo, [item.key]: text }
                 }),
+              placeholder: item.placeholder,
               autoFocus: i === 0 ? true : false,
               secureTextEntry: true,
               value: this.state.userInfo[item.key],
