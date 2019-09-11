@@ -70,10 +70,17 @@ export default class UpdatePassword extends Component {
       ) {
         Toast.showToast('两次输入新密码不一致!');
       } else {
-        this.state.userInfo.loginId = userInfo.loginId;
-        userAction.updatePassword(this.state.userInfo).then(resp => {
-          Toast.showToast(resp.msg);
-        });
+        if (
+          this.state.userInfo.oldPassword === this.state.userInfo.newPassword
+        ) {
+          Toast.showToast('请输入不同的新密码噢!');
+        } else {
+          this.state.userInfo.loginId = userInfo.loginId;
+          userAction.updatePassword(this.state.userInfo).then(resp => {
+            Toast.showToast(resp.msg);
+            this.props.navigation.pop(2);
+          });
+        }
       }
     }
   }
