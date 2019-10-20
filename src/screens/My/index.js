@@ -46,6 +46,13 @@ const list = [
   },
   {
     key: 5,
+    title: '扫一扫',
+    icon: 'art-track',
+    color: '#36648b',
+    onPress: props => props.navigation.push('Scanner')
+  },
+  {
+    key: 6,
     title: '退出登录',
     icon: 'arrow-forward',
     color: '#a2b5cd',

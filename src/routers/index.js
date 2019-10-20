@@ -19,6 +19,8 @@ import ThemeChange from '../screens/My/settings/theme-change/index';
 import UpdatePassword from '../screens/My/settings/update-password/index';
 import BaseInfo from '../screens/My/baseInfo/index';
 import SystemIntroduction from '../screens/SystemIntroduction/index';
+import Scanner from '../screens/Scanner/scanner';
+import ScannerResult from '../screens/Scanner/scannerResult';
 import My from '../screens/My/index';
 import Theme from '../styles/theme';
 import { Icon } from 'react-native-elements';
@@ -162,6 +164,14 @@ const Router = createStackNavigator(
     UpdatePassword: {
       // 修改密码界面
       screen: UpdatePassword
+    },
+    Scanner: {
+      // 扫一扫及拍照界面
+      screen: Scanner
+    },
+    ScannerResult: {
+      // 扫一扫及拍照结果界面
+      screen: ScannerResult
     }
   },
   {
