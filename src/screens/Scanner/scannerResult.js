@@ -4,9 +4,7 @@
  * explore page
  */
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, TouchableOpacity, View, Animated, Easing } from 'react-native';
-import { RNCamera } from 'react-native-camera';
-import Toast from '../../components/toast';
+import { StyleSheet, Text, Image, View, Animated } from 'react-native';
 export default class Scanner extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +24,7 @@ export default class Scanner extends Component {
     return (
         <View style={styles.container}>
             <View style={styles.rectangleContainer}>
-              <Text>{this.props.navigation.state.params.scannerResult || []}</Text>
+              <Text>{this.props.navigation.state.params.scannerResult || ''}</Text>
               <Image style={{height: 300, width: 300}} source={this.props.navigation.state.params.imageUri == null ? require('../../resource/image/avatar/logo.png') : {uri: this.props.navigation.state.params.imageUri}}/>
             </View>
         </View>

@@ -14,6 +14,7 @@ export default class Scanner extends Component {
       moveAnim: new Animated.Value(0),
       imageUri: null
     }
+    this.isBarcodeRead = false;
   }
 
   static navigationOptions = {
@@ -37,9 +38,10 @@ export default class Scanner extends Component {
   };
 
   onBarCodeRead = (result) => {
-    Toast.showToast(JSON.stringify(result));
-    this.props.navigation.push('ScannerResult', {scannerResult: result})
-    return;
+    if (!this.isBarcodeRead) {
+      this.isBarcodeRead = true;
+      this.props.navigation.navigate('ScannerResult', {imageUri: null, scannerResult: JSON.stringify(result)})
+    }
   };
 
   takePicture = async() => {
@@ -47,7 +49,7 @@ export default class Scanner extends Component {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
       this.setState({imageUri: data.uri});
-      this.props.navigation.push('ScannerResult', {imageUri: data.uri})
+      this.props.navigation.push('ScannerResult', {imageUri: data.uri, scannerResult: ''})
     }
   };
 
