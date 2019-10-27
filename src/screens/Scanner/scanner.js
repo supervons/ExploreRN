@@ -19,19 +19,23 @@ export default class Scanner extends Component {
     super(props);
     this.state = {
       moveAnim: new Animated.Value(0),
-      imageUri: null,
       FlashMode: false,
       showCamera: true
     };
     this.isBarcodeRead = false;
   }
 
+  // 去掉导航条设置，全屏扫描
   static navigationOptions = {
     header: null
   };
 
   componentDidMount() {
     this.startAnimation();
+    // 监听当结果页返回时，重新启动相机监听扫描事件
+    this.props.navigation.addListener("didFocus", () =>
+        this.setState({showCamera : true})
+    )
   }
 
   startAnimation = () => {
@@ -43,9 +47,12 @@ export default class Scanner extends Component {
     }).start(() => this.startAnimation());
   };
 
+  // 扫描事件
   onBarCodeRead = result => {
     if (!this.isBarcodeRead) {
       this.isBarcodeRead = true;
+      // 卸载扫一扫组件，否则还会持续扫描
+      this.setState({showCamera: false})
       this.props.navigation.navigate('ScannerResult', {
         imageUri: null,
         scannerResult: JSON.stringify(result)
@@ -53,11 +60,12 @@ export default class Scanner extends Component {
     }
   };
 
+  // 拍照事件
   takePicture = async () => {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      this.setState({ imageUri: data.uri });
+      this.setState({showCamera: false})
       this.props.navigation.push('ScannerResult', {
         imageUri: data.uri,
         scannerResult: ''
