@@ -4,6 +4,7 @@
 
 # 安装依赖
     npm install
+    # 如果是 iOS 则需要执行以下操作
     cd ios && pod install 
 # 运行
     android: react-native run-android
