@@ -64,9 +64,9 @@ PODS:
     - React
   - react-native-camera/RN (3.8.0):
     - React
-  - react-native-spinkit (1.0.2):
+  - react-native-spinkit (1.4.1):
     - React
-  - react-native-webview (6.9.0):
+  - react-native-webview (6.11.1):
     - React
   - React-RCTActionSheet (0.60.5):
     - React-Core (= 0.60.5)
@@ -93,7 +93,7 @@ PODS:
     - React-Core (= 0.60.5)
   - RNDeviceInfo (2.3.2):
     - React
-  - RNGestureHandler (1.3.0):
+  - RNGestureHandler (1.4.1):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -200,9 +200,9 @@ SPEC CHECKSUMS:
   React-jsi: 4d8c9efb6312a9725b18d6fc818ffc103f60fec2
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
-  react-native-camera: 3e52a28e4f437b566302e574bed0f77eeab3f737
-  react-native-spinkit: 9a5d2f95aa975d5660fd3e76b7eac38e7329e46c
-  react-native-webview: f72ac4078e115dfa741cc588acb1cca25566457d
+  react-native-camera: 21cf4ed26cf432ceb1fae959aa6924943fd6f714
+  react-native-spinkit: da294fd828216ad211fe36a5c14c1e09f09e62db
+  react-native-webview: 0658813bcc4b6c22f3cbb035a2227aa896a8cbc0
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24
@@ -213,11 +213,11 @@ SPEC CHECKSUMS:
   React-RCTText: b074d89033583d4f2eb5faf7ea2db3a13c7553a2
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
-  RNDeviceInfo: bdc3e922b2ed0f086e9d9ab534e61bc316f08576
-  RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
+  RNDeviceInfo: 17e34f6dd902f08d88cbe2c0b7a01be948d43641
+  RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: adee08f8c1b3177c9c5ab1941e5f1338cd979f58
+PODFILE CHECKSUM: c87b6076f724c6353e8b3e767b6eaf1c5318e368
 
 COCOAPODS: 1.8.3
