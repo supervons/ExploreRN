@@ -54,7 +54,7 @@ class SystemIntroduction extends Component {
   }
 
   // 组件加载之前就判断是否是第一次启动
-  componentWillMount(): void {
+  componentWillMount() {
     if (!this.props.firstInstall && !this.props.navigation.state.params) {
       this.props.navigation.replace('Login');
     }

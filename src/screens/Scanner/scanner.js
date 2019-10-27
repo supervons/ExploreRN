@@ -4,79 +4,123 @@
  * explore page
  */
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, TouchableOpacity, View, Animated, Easing } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Animated,
+  Easing
+} from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import Toast from '../../components/toast';
+import {Icon, IconType} from 'react-native-elements';
 export default class Scanner extends Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       moveAnim: new Animated.Value(0),
-      imageUri: null
-    }
+      imageUri: null,
+      FlashMode: false,
+      showCamera: true
+    };
     this.isBarcodeRead = false;
   }
 
   static navigationOptions = {
-    headerTitle: '扫一扫'
+    header: null
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.startAnimation();
   }
 
   startAnimation = () => {
-    this.state.moveAnim.setValue(0);
-    Animated.timing(
-        this.state.moveAnim,
-        {
-          toValue: -200,
-          duration: 3500,
-          easing: Easing.linear
-        }
-    ).start(() => this.startAnimation());
+    this.state.moveAnim.setValue(-200);
+    Animated.timing(this.state.moveAnim, {
+      toValue: 0,
+      duration: 1500,
+      easing: Easing.linear
+    }).start(() => this.startAnimation());
   };
 
-  onBarCodeRead = (result) => {
+  onBarCodeRead = result => {
     if (!this.isBarcodeRead) {
       this.isBarcodeRead = true;
-      this.props.navigation.navigate('ScannerResult', {imageUri: null, scannerResult: JSON.stringify(result)})
+      this.props.navigation.navigate('ScannerResult', {
+        imageUri: null,
+        scannerResult: JSON.stringify(result)
+      });
     }
   };
 
-  takePicture = async() => {
+  takePicture = async () => {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      this.setState({imageUri: data.uri});
-      this.props.navigation.push('ScannerResult', {imageUri: data.uri, scannerResult: ''})
+      this.setState({ imageUri: data.uri });
+      this.props.navigation.push('ScannerResult', {
+        imageUri: data.uri,
+        scannerResult: ''
+      });
     }
   };
 
+  // 闪光灯开关
+  _changeFlashMode() {
+    this.setState({
+      FlashMode: !this.state.FlashMode
+    });
+  }
+
   render() {
     return (
-        <View style={styles.container}>
+      <View style={styles.container}>
+        {this.state.showCamera ? (
           <RNCamera
-              ref={ref => {
-                this.camera = ref;
-              }}
-              style={styles.preview}
-              type={RNCamera.Constants.Type.back}
-              flashMode={RNCamera.Constants.FlashMode.off}
-              onBarCodeRead={this.onBarCodeRead}
+            ref={ref => {
+              this.camera = ref;
+            }}
+            style={styles.preview}
+            type={RNCamera.Constants.Type.back}
+            flashMode={this.state.FlashMode ? 1 : 0}
+            onBarCodeRead={this.onBarCodeRead}
           >
             <View style={styles.rectangleContainer}>
-              <View style={styles.rectangle}/>
-              <Animated.View style={[
-                styles.border,
-                {transform: [{translateY: this.state.moveAnim}]}]}/>
-              <Text style={styles.rectangleText}>将二维码放入框内，即可自动扫描</Text>
-              <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
-                <Text style={{ backgroundColor: '#000000', color: '#ffffff', marginTop: 20, fontSize: 14 }}> 点击拍照 </Text>
-              </TouchableOpacity>
+              <View style={styles.rectangle} />
+              <Animated.View
+                style={[
+                  styles.border,
+                  { transform: [{ translateY: this.state.moveAnim }] }
+                ]}
+              />
+              <Text style={styles.rectangleText}>
+                将二维码放入框内，即可自动扫描
+              </Text>
+              <View style={{ flexDirection: 'row', marginTop: 15 }}>
+                <TouchableOpacity
+                  onPress={()=>this.props.navigation.goBack()}
+                >
+                  <Icon name='keyboard-arrow-left' size={36} color={'green'}/>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={this.takePicture.bind(this)}
+                  style={{marginLeft: 25}}
+                >
+                  <Icon name='camera' size={36} color={'green'}/>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={this._changeFlashMode.bind(this)}
+                  style={{marginLeft: 25}}
+                >
+                  <Icon name='highlight' size={36} color={this.state.FlashMode ? 'green' : 'gray'}/>
+                </TouchableOpacity>
+              </View>
             </View>
           </RNCamera>
-        </View>
+        ) : (
+          <View />
+        )}
+      </View>
     );
   }
 }
@@ -89,7 +133,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
   preview: {
     flex: 1,
@@ -116,8 +160,8 @@ const styles = StyleSheet.create({
   },
   border: {
     flex: 0,
-    width: 200,
+    width: 195,
     height: 2,
-    backgroundColor: '#00FF00',
+    backgroundColor: '#00FF00'
   }
 });

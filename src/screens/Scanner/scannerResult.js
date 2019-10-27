@@ -8,26 +8,32 @@ import { StyleSheet, Text, Image, View, Animated } from 'react-native';
 export default class Scanner extends Component {
   constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       moveAnim: new Animated.Value(0)
-    }
+    };
   }
 
   static navigationOptions = {
     headerTitle: '扫描或拍照结果'
   };
 
-  componentDidMount(){
-  }
+  componentDidMount() {}
 
   render() {
     return (
-        <View style={styles.container}>
-            <View style={styles.rectangleContainer}>
-              <Text>{this.props.navigation.state.params.scannerResult || ''}</Text>
-              <Image style={{height: 300, width: 300}} source={this.props.navigation.state.params.imageUri == null ? require('../../resource/image/avatar/logo.png') : {uri: this.props.navigation.state.params.imageUri}}/>
-            </View>
+      <View style={styles.container}>
+        <View style={styles.rectangleContainer}>
+          <Text>{this.props.navigation.state.params.scannerResult || ''}</Text>
+          <Image
+            style={{ height: 300, width: 300 }}
+            source={
+              this.props.navigation.state.params.imageUri == null
+                ? require('../../resource/image/avatar/logo.png')
+                : { uri: this.props.navigation.state.params.imageUri }
+            }
+          />
         </View>
+      </View>
     );
   }
 }
@@ -69,6 +75,6 @@ const styles = StyleSheet.create({
     flex: 0,
     width: 200,
     height: 2,
-    backgroundColor: '#00FF00',
+    backgroundColor: '#00FF00'
   }
 });
