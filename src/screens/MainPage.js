@@ -16,10 +16,7 @@ export default class MainPage extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-        <StatusBar
-          backgroundColor={this.props.screenProps.themeColor}
-          barStyle={'light-content'}
-        />
+        <StatusBar backgroundColor={this.props.screenProps.themeColor} barStyle={'light-content'} />
         <View style={{ height: 150 }}>
           <Swiper showsButtons={true}>
             <View style={[commonStyles.slide1, { height: 150 }]}>
