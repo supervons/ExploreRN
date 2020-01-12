@@ -4,11 +4,7 @@
  * router config file
  */
 import React from 'react';
-import {
-  createAppContainer,
-  createMaterialTopTabNavigator,
-  createStackNavigator
-} from 'react-navigation';
+import { createAppContainer, createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 import StackViewStyleInterpolator from 'react-navigation-stack/src/views/StackView/StackViewStyleInterpolator';
 import MainPage from '../screens/MainPage';
 import Explore from '../screens/Explore/index';

@@ -58,21 +58,13 @@ export default class UpdatePassword extends Component {
   }
 
   updatePassword() {
-    if (
-      !this.state.userInfo.oldPassword ||
-      !this.state.userInfo.newPassword ||
-      !this.state.userInfo.confirmPassword
-    ) {
+    if (!this.state.userInfo.oldPassword || !this.state.userInfo.newPassword || !this.state.userInfo.confirmPassword) {
       Toast.showToast('请输入原密码和新密码!');
     } else {
-      if (
-        this.state.userInfo.newPassword !== this.state.userInfo.confirmPassword
-      ) {
+      if (this.state.userInfo.newPassword !== this.state.userInfo.confirmPassword) {
         Toast.showToast('两次输入新密码不一致!');
       } else {
-        if (
-          this.state.userInfo.oldPassword === this.state.userInfo.newPassword
-        ) {
+        if (this.state.userInfo.oldPassword === this.state.userInfo.newPassword) {
           Toast.showToast('请输入不同的新密码噢!');
         } else {
           this.state.userInfo.loginId = userInfo.loginId;

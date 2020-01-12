@@ -14,7 +14,7 @@ import React, { Component } from 'react';
 
 // 导航路由表
 import RootStack from './src/routers/index';
-import {View, DeviceEventEmitter, AppState} from 'react-native';
+import { View, DeviceEventEmitter, AppState } from 'react-native';
 import Loading from './src/common/loading';
 import { Provider } from 'react-redux';
 import configureStore from './src/common/redux/store/store';
@@ -40,15 +40,15 @@ export default class App extends Component {
     AppState.addEventListener('change', this._handleAppStateChange);
   }
 
-  _handleAppStateChange = (nextAppState) => {
-    if(nextAppState == 'inactive'){
-      console.log('挂起')
-    }else if(nextAppState == 'active'){
-      console.log('进入')
-    }else{
-      console.log('app杀死')
+  _handleAppStateChange = nextAppState => {
+    if (nextAppState == 'inactive') {
+      console.log('挂起');
+    } else if (nextAppState == 'active') {
+      console.log('进入');
+    } else {
+      console.log('app杀死');
     }
-  }
+  };
 
   render(): * {
     return (

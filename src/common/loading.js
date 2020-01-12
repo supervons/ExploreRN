@@ -6,13 +6,7 @@
  * In the required interface call Loading.show () to display, Loading.hide () to hide
  */
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator,
-  Dimensions
-} from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, Dimensions } from 'react-native';
 import Spinkit from 'react-native-spinkit';
 import Theme from '../styles/theme';
 
@@ -69,12 +63,7 @@ class Loading extends Component {
               zIndex: 999
             }}
           >
-            <Spinkit
-              isVisible={this.state.show}
-              size={40}
-              type={this.state.type[random]}
-              color={color}
-            />
+            <Spinkit isVisible={this.state.show} size={40} type={this.state.type[random]} color={color} />
             <Text
               style={{
                 marginLeft: 10,

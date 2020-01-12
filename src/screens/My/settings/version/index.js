@@ -49,9 +49,7 @@ export default class VersionInfo extends Component {
         {list.map((item, i) => (
           <ListItem
             key={i}
-            onPress={() =>
-              item.onPress ? item.onPress(item.rightTitle) : console.log('')
-            }
+            onPress={() => (item.onPress ? item.onPress(item.rightTitle) : console.log(''))}
             rightTitleStyle={{ width: 170, textAlign: 'right' }}
             title={item.title}
             containerStyle={commonStyles.itemPadding}

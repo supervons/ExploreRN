@@ -12,9 +12,7 @@ export default function HeaderComponent(props) {
   return (
     <Header
       backgroundColor={Theme.primary}
-      containerStyle={
-        Platform.OS === 'ios' ? {} : { paddingTop: 5, height: 50 }
-      }
+      containerStyle={Platform.OS === 'ios' ? {} : { paddingTop: 5, height: 50 }}
       rightComponent={
         <Icon
           onPress={props.rightOnPress}

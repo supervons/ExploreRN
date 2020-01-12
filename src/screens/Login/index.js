@@ -11,10 +11,7 @@ import Theme from '../../styles/theme';
 import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 import { connect } from 'react-redux';
-import {
-  USER_TOKEN,
-  USER_INFO
-} from '../../common/redux/action/userActionTypes';
+import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
 
 // 用户 token
 global.jwtToken = '';
@@ -63,11 +60,7 @@ class Login extends Component {
 
   render() {
     return (
-      <KeyboardAwareScrollView
-        extraHeight={120}
-        enableOnAndroid={true}
-        enableResetScrollToCoords={true}
-      >
+      <KeyboardAwareScrollView extraHeight={120} enableOnAndroid={true} enableResetScrollToCoords={true}>
         <View
           style={{
             flex: 1,

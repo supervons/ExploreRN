@@ -8,10 +8,7 @@ import { View, Alert } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import Theme from '../../styles/theme';
 import { connect } from 'react-redux';
-import {
-  USER_TOKEN,
-  USER_INFO
-} from '../../common/redux/action/userActionTypes';
+import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
 import commonStyles from '../../styles/commonStyles';
 
 const list = [
@@ -34,8 +31,7 @@ const list = [
     title: '系统特性',
     icon: 'invert-colors',
     color: '#36fffb',
-    onPress: props =>
-      props.navigation.push('SystemIntroduction', { type: true })
+    onPress: props => props.navigation.push('SystemIntroduction', { type: true })
   },
   {
     key: 4,
@@ -99,12 +95,7 @@ class MyPage extends Component {
             title={item.title}
             containerStyle={commonStyles.itemPadding}
             leftIcon={<Icon name={item.icon} color={item.color} />}
-            rightIcon={
-              <Icon
-                name={'keyboard-arrow-right'}
-                color={item.hiddenRightIcon ? '#ffffff' : '#000000'}
-              />
-            }
+            rightIcon={<Icon name={'keyboard-arrow-right'} color={item.hiddenRightIcon ? '#ffffff' : '#000000'} />}
             bottomDivider={true}
           />
         ))}
