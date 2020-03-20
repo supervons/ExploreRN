@@ -4,7 +4,7 @@
  * user login page
  */
 import React, { Component } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, Dimensions } from 'react-native';
 import { Button, Input, Avatar } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Theme from '../../styles/theme';
@@ -12,12 +12,13 @@ import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 import { connect } from 'react-redux';
 import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
-
+import RNSVCustomKeyboard from '../../../src/components/index.js';
 // 用户 token
 global.jwtToken = '';
 // 用户信息
 global.userInfo = {};
 
+const width = Dimensions.get('window').width;
 class Login extends Component {
   static navigationOptions = {
     header: null
@@ -81,12 +82,14 @@ class Login extends Component {
             onChangeText={text => this.setState({ loginId: text })}
             vauel={this.state.loginId}
           />
-          <Input
-            containerStyle={{ margin: 15 }}
+          <RNSVCustomKeyboard
+            style={{ width: width * 0.96, borderBottomColor: '#939DA6', borderBottomWidth: 1 }}
             secureTextEntry={true}
-            placeholder="密码"
+            random={true}
+            keyboardType={'string'}
+            placeholder={'请输入密码'}
+            placeholderTextColor={'#E0E0E0'}
             onChangeText={text => this.setState({ passWord: text })}
-            vauel={this.state.passWord}
           />
           <Button
             buttonStyle={{ width: 300 }}
