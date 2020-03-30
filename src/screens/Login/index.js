@@ -12,7 +12,7 @@ import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 import { connect } from 'react-redux';
 import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
-import RNSVCustomKeyboard from '../../../src/components/index.js';
+import RNSVCustomKeyboard from 'react-native-supervons-custom-keyboard';
 // 用户 token
 global.jwtToken = '';
 // 用户信息
@@ -86,9 +86,10 @@ class Login extends Component {
             style={{ width: width * 0.96, borderBottomColor: '#939DA6', borderBottomWidth: 1 }}
             secureTextEntry={true}
             random={true}
+            valueStyle={{ fontSize: 18, left: 1 }}
             keyboardType={'string'}
-            placeholder={'请输入密码'}
-            placeholderTextColor={'#E0E0E0'}
+            placeholder={'密码'}
+            placeholderTextColor={'#CACACB'}
             onChangeText={text => this.setState({ passWord: text })}
           />
           <Button
