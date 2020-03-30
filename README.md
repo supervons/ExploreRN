@@ -9,3 +9,6 @@
 # 运行
     android: react-native run-android
     ios: Xcode选择AwesomeProject.xcworkspace启动
+# 测试账号
+    用户名：test
+    密码：test

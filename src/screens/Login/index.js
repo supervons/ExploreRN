@@ -87,6 +87,7 @@ class Login extends Component {
             secureTextEntry={true}
             random={true}
             valueStyle={{ fontSize: 18, left: 1 }}
+            secureTextStyle={{ fontSize: 10 }}
             keyboardType={'string'}
             placeholder={'密码'}
             placeholderTextColor={'#CACACB'}
