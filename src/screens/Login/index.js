@@ -12,7 +12,7 @@ import userAction from '../../actions/user';
 import Toast from '../../components/toast';
 import { connect } from 'react-redux';
 import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
-import RNSVCustomKeyboard from 'react-native-supervons-custom-keyboard';
+import { SecurityKeyboardInput } from 'react-native-supervons-custom-keyboard';
 // 用户 token
 global.jwtToken = '';
 // 用户信息
@@ -82,7 +82,7 @@ class Login extends Component {
             onChangeText={text => this.setState({ loginId: text })}
             vauel={this.state.loginId}
           />
-          <RNSVCustomKeyboard
+          <SecurityKeyboardInput
             style={{ width: width * 0.96, borderBottomColor: '#939DA6', borderBottomWidth: 1 }}
             secureTextEntry={true}
             random={true}
