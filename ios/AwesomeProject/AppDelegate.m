@@ -6,7 +6,7 @@
  */
 
 #import "AppDelegate.h"
-
+#import "Orientation.h"
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -28,6 +28,16 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+
+/*
+    禁用随系统横竖屏切换后，强制使横屏切换生效
+
+    After disabling horizontal and vertical screen switching with the system,
+    force horizontal screen switching to take effect
+*/
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+  return [Orientation getOrientation];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

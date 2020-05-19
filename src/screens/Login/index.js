@@ -35,8 +35,8 @@ class Login extends Component {
   componentDidMount(): void {
     // 判断 redux-persist 缓存中是否有数据，有则取出直接登录
     if (this.props.userToken && this.props.userInfo) {
-      jwtToken = this.props.userToken;
-      userInfo = this.props.userInfo;
+      global.jwtToken = this.props.userToken;
+      global.userInfo = this.props.userInfo;
       this.props.navigation.replace('MainPage');
     }
   }
@@ -53,8 +53,8 @@ class Login extends Component {
     userAction.userLogin(params).then(resp => {
       this.props.setToken(resp.auxiliaryData.jwtToken);
       this.props.setUserInfo(resp.data);
-      jwtToken = resp.auxiliaryData.jwtToken;
-      userInfo = resp.data;
+      global.jwtToken = resp.auxiliaryData.jwtToken;
+      global.userInfo = resp.data;
       this.props.navigation.replace('MainPage');
     });
   }
