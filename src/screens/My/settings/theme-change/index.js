@@ -8,6 +8,9 @@ import { DeviceEventEmitter, View } from 'react-native';
 import { CheckBox, ListItem, Divider, Button } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
 import commonStyles from '../../../../styles/commonStyles';
+import BasePage from '../../../../common/BasePage';
+import { connect } from 'react-redux';
+import { THEME_COLOR } from '../../../../common/redux/action/settingActionTypes';
 
 const colorList = [
   {
@@ -37,13 +40,24 @@ const colorList = [
   }
 ];
 
-export default class ThemeChange extends Component {
-  static navigationOptions = {
+class ThemeChange extends BasePage {
+  navigationOptions = {
     headerTitle: '更换皮肤'
   };
 
-  render() {
-    const currentColor = this.props.screenProps.themeColor;
+  constructor(props) {
+    super(props);
+    this.state = {
+      themeColor: ''
+    };
+  }
+
+  componentDidMount(): void {
+    this.setState({ themeColor: this.props.themeColor });
+  }
+
+  renderView() {
+    const currentColor = this.state.themeColor;
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         <Divider style={{ backgroundColor: 'black', marginTop: 30 }} />
@@ -59,6 +73,8 @@ export default class ThemeChange extends Component {
             checked={currentColor === item.value}
             onPress={() => {
               DeviceEventEmitter.emit('theme_change', item.value);
+              this.setState({ themeColor: item.value });
+              this.props.setThemeColor(item.value);
             }}
           />
         ))}
@@ -88,7 +104,7 @@ export default class ThemeChange extends Component {
           }}
           buttonStyle={{
             marginTop: 15,
-            backgroundColor: this.props.screenProps.themeColor
+            backgroundColor: currentColor
           }}
           title="确定"
           onPress={() => this.props.navigation.pop()}
@@ -97,3 +113,24 @@ export default class ThemeChange extends Component {
     );
   }
 }
+
+// 取出 store 中的数据
+const mapStateToProps = state => {
+  return {
+    themeColor: state.SettingReducer.themeColor
+  };
+};
+
+// Dispatch 方法
+const mapDispatchToProps = dispatch => {
+  return {
+    setThemeColor: themeColor => {
+      dispatch({ type: THEME_COLOR, themeColor: themeColor });
+    }
+  };
+};
+
+export default (ThemeChange = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ThemeChange));

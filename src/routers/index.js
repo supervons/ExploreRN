@@ -32,6 +32,7 @@ const Tabs = createMaterialTopTabNavigator(
       screen: MainPage,
       navigationOptions: ({ navigation, screenProps }) => ({
         tabBarLabel: '首页',
+        header: 'none',
         tabBarIcon: ({ focused }) => {
           return focused ? (
             <Icon name={'home'} color={screenProps.themeColor} />
@@ -72,7 +73,7 @@ const Tabs = createMaterialTopTabNavigator(
     animationEnabled: false, // 切换页面时是否有动画效果
     tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
     swipeEnabled: true, // 是否可以左右滑动切换tab
-    lazy: true,
+    lazy: false,
     tabBarOptions: {
       tabStyle: {
         minWidth: 50,
@@ -173,7 +174,7 @@ const Router = createStackNavigator(
   {
     // 定义配置
     initialRouteName: 'SystemIntroduction', //设置初始路由为登录界面
-    headerMode: 'screen',
+    headerMode: 'none',
     transitionConfig: sceneProps => ({
       /**
        * 1、从右向左：  forHorizontal；

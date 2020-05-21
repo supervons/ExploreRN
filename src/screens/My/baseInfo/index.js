@@ -12,9 +12,13 @@ import userAction from '../../../actions/user';
 import { USER_INFO } from '../../../common/redux/action/userActionTypes';
 import { connect } from 'react-redux';
 import commonStyles from '../../../styles/commonStyles';
+import BasePage from '../../../common/BasePage';
 
 let _this;
-class BaseInfo extends Component {
+class BaseInfo extends BasePage {
+  navigationOptions = {
+    headerTitle: '基本信息'
+  };
   constructor(props) {
     super(props);
     _this = this;
@@ -100,7 +104,7 @@ class BaseInfo extends Component {
     return userInfoJson;
   }
 
-  render() {
+  renderView() {
     const userInfo = this.getUserInfo();
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
@@ -181,7 +185,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default (BaseInfo = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BaseInfo));
+)(BaseInfo);

@@ -3,12 +3,19 @@
  * 发现页面
  * explore page
  */
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, ScrollView, Text, View } from 'react-native';
 import newsAction from '../../actions/news';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import BasePages from '../../common/BasePage';
 
-export default class Explore extends Component {
+export default class Explore extends BasePages {
+  navigationOptions = {
+    leftComponent: {
+      text: '发现'
+    }
+  };
+
   constructor(props) {
     super(props);
   }
@@ -20,7 +27,7 @@ export default class Explore extends Component {
     });
   }
 
-  render() {
+  renderView() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <ScrollableTabView

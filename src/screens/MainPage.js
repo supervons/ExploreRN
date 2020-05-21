@@ -3,21 +3,32 @@
  * 用户主界面
  * user main page
  */
-import React, { Component } from 'react';
-import { StatusBar, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import CarouselComponent from '../components/carousel';
+import BasePage from '../common/BasePage';
 
-export default class MainPage extends Component {
+// @connect(state => ({ userInfo: userReducer.userInfo }))
+class MainPage extends BasePage {
+  navigationOptions = {
+    leftComponent: {
+      text: '首页'
+    }
+  };
+
   constructor(props) {
     super(props);
   }
 
-  render() {
+  componentDidMount(): void {}
+
+  renderView() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-        <StatusBar backgroundColor={this.props.screenProps.themeColor} barStyle={'light-content'} />
         <CarouselComponent />
       </View>
     );
   }
 }
+
+export default MainPage;

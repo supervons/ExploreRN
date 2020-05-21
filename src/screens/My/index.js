@@ -4,12 +4,15 @@
  * my page
  */
 import React, { Component } from 'react';
-import { View, Alert } from 'react-native';
+import { View, Alert, StatusBar, ScrollView, SafeAreaView } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
 import Theme from '../../styles/theme';
 import { connect } from 'react-redux';
 import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
 import commonStyles from '../../styles/commonStyles';
+import HeaderComponent from '../../components/header-component';
+import Loading from '../../common/loading';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const list = [
   {
@@ -78,7 +81,15 @@ class MyPage extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+      <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+        <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
+        <StatusBar
+          animated={false}
+          hidden={false}
+          backgroundColor={'transparent'}
+          translucent={true}
+          barStyle={'light-content'}
+        />
         <View style={{ alignItems: 'center' }}>
           <Avatar
             onPress={() => alert('更换头像')}
@@ -99,7 +110,7 @@ class MyPage extends Component {
             bottomDivider={true}
           />
         ))}
-      </View>
+      </ScrollView>
     );
   }
 }

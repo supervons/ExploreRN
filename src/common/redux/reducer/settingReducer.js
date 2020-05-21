@@ -3,12 +3,14 @@
  * 系统相关设置，是否第一次安装启动
  * System related settings, whether to start the first time
  */
-import { FIRST_INSTALL } from '../action/settingActionTypes';
+import { FIRST_INSTALL, THEME_COLOR } from '../action/settingActionTypes';
 import { handleActions } from 'redux-actions';
+import Theme from '../../../styles/theme';
 
 // 初始化数据
 const initialState = {
-  firstInstall: true
+  firstInstall: true,
+  themeColor: Theme.primary
 };
 
 const handler = {};
@@ -21,4 +23,11 @@ handler[FIRST_INSTALL] = (state, action) => {
   };
 };
 
+handler[THEME_COLOR] = (state, action) => {
+  const { themeColor } = action;
+  return {
+    ...state,
+    themeColor
+  };
+};
 export default handleActions(handler, initialState);

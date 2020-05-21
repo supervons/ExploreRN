@@ -4,7 +4,7 @@
  * user login page
  */
 import React, { Component } from 'react';
-import { View, StatusBar, Dimensions } from 'react-native';
+import { View, StatusBar, Dimensions, DeviceEventEmitter } from 'react-native';
 import { Button, Input, Avatar } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Theme from '../../styles/theme';
@@ -39,6 +39,10 @@ class Login extends Component {
       global.userInfo = this.props.userInfo;
       this.props.navigation.replace('MainPage');
     }
+    // Give the redux themeColor, emit router theme change
+    DeviceEventEmitter.emit('theme_change', this.props.themeColor);
+    // Global navigation for not in router pages
+    global.navigation = this.props.navigation;
   }
 
   login() {
@@ -109,7 +113,8 @@ class Login extends Component {
 const mapStateToProps = state => {
   return {
     userToken: state.UserReducer.userToken,
-    userInfo: state.UserReducer.userInfo
+    userInfo: state.UserReducer.userInfo,
+    themeColor: state.SettingReducer.themeColor
   };
 };
 

@@ -10,6 +10,7 @@ import Theme from '../../../../styles/theme';
 import DeviceInfo from 'react-native-device-info';
 import commonStyles from '../../../../styles/commonStyles';
 import Toast from '../../../../components/toast';
+import BasePage from '../../../../common/BasePage';
 
 const list = [
   {
@@ -38,12 +39,12 @@ const list = [
   }
 ];
 
-export default class VersionInfo extends Component {
-  static navigationOptions = {
+export default class VersionInfo extends BasePage {
+  navigationOptions = {
     headerTitle: '系统信息'
   };
 
-  render() {
+  renderView() {
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         {list.map((item, i) => (

@@ -65,9 +65,7 @@ class SystemIntroduction extends Component {
       <View style={[style, { flex: 1 }]}>
         <Animatable.View animation="zoomInUp">
           <View style={{ margin: 30 }}>
-            <Text style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>
-              {title}
-            </Text>
+            <Text style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>{title}</Text>
             <Text style={commonStyles.text}>{enTitle}</Text>
           </View>
         </Animatable.View>
@@ -83,12 +81,7 @@ class SystemIntroduction extends Component {
         <View style={{ flex: 1 }}>
           <Swiper loop={false} loadMinimal={false}>
             {this.state.introductionMap.map((item, i) =>
-              this.renderItem(
-                item.style,
-                item.title,
-                item.enTitle,
-                item.component
-              )
+              this.renderItem(item.style, item.title, item.enTitle, item.component)
             )}
           </Swiper>
         </View>

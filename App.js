@@ -14,7 +14,7 @@ import React, { Component } from 'react';
 
 // 导航路由表
 import RootStack from './src/routers/index';
-import { View, DeviceEventEmitter, AppState } from 'react-native';
+import { SafeAreaView, DeviceEventEmitter, AppState } from 'react-native';
 import Loading from './src/common/loading';
 import { Provider } from 'react-redux';
 import configureStore from './src/common/redux/store/store';
@@ -55,15 +55,14 @@ export default class App extends Component {
       // 外层需 Provider 包裹， PersistGate 中的 loading 需为一个组件，否则在启动页后会有短暂黑屏
       <Provider store={store}>
         <PersistGate loading={null} persistor={persist}>
-          <View style={{ flex: 1 }}>
-            <RootStack
-              screenProps={{
-                themeColor: this.state.color,
-                titleColor: '#ffffff'
-              }}
-            />
-            <Loading />
-          </View>
+          <RootStack
+            screenProps={{
+              themeColor: this.state.color,
+              titleColor: '#ffffff'
+            }}
+          />
+          <Loading />
+          <SafeAreaView style={{ backgroundColor: '#ffffff' }} />
         </PersistGate>
       </Provider>
     );

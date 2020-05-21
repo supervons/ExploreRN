@@ -10,9 +10,13 @@ import Theme from '../../../../styles/theme';
 import commonStyles from '../../../../styles/commonStyles';
 import Toast from '../../../../components/toast';
 import userAction from '../../../../actions/user';
+import BasePage from '../../../../common/BasePage';
 
 let _this;
-export default class UpdatePassword extends Component {
+export default class UpdatePassword extends BasePage {
+  navigationOptions = {
+    headerTitle: '修改密码'
+  };
   constructor(props) {
     super(props);
     _this = this;
@@ -77,7 +81,7 @@ export default class UpdatePassword extends Component {
     }
   }
 
-  render() {
+  renderView() {
     const userInfo = this.getUserInfo();
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>

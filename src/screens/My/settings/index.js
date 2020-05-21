@@ -8,6 +8,8 @@ import { View } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import Theme from '../../../styles/theme';
 import commonStyles from '../../../styles/commonStyles';
+import HeaderComponent from '../../../components/header-component';
+import BasePage from '../../../common/BasePage';
 
 const list = [
   {
@@ -33,12 +35,12 @@ const list = [
   }
 ];
 
-export default class Settings extends Component {
-  static navigationOptions = {
+export default class Settings extends BasePage {
+  navigationOptions = {
     headerTitle: '设置'
   };
 
-  render() {
+  renderView() {
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         {list.map((item, i) => (
