@@ -4,16 +4,15 @@
  * explore page
  */
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, SafeAreaView, StatusBar, Platform } from 'react-native';
 import newsAction from '../../actions/news';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import BasePages from '../../common/BasePage';
+import TabBarView from './component/TabBarView';
 
 export default class Explore extends BasePages {
   navigationOptions = {
-    leftComponent: {
-      text: '发现'
-    }
+    header: null
   };
 
   constructor(props) {
@@ -30,14 +29,19 @@ export default class Explore extends BasePages {
   renderView() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+        <View style={{ backgroundColor: this.props.screenProps.themeColor, height: Platform.OS === 'ios' ? 0 : 18 }} />
         <ScrollableTabView
-          tabBarActiveTextColor={this.props.screenProps.themeColor}
+          tabBarBackgroundColor={this.props.screenProps.themeColor}
+          tabBarActiveTextColor={'#ffffff'}
+          tabBarInactiveTextColor={'#D3D3D3'}
+          prerenderingSiblingsNumber={1}
           tabBarUnderlineStyle={{
-            backgroundColor: this.props.screenProps.themeColor
+            backgroundColor: '#ffffff'
           }}
-          style={{ height: 800 }}
+          renderTabBar={res => <TabBarView themeColor={this.props.screenProps.themeColor} />}
         >
           <ScrollView
+            key={'news'}
             style={{
               backgroundColor: '#9DD6EB'
             }}
@@ -60,6 +64,14 @@ export default class Explore extends BasePages {
             tabLabel="活动"
           >
             <Text style={styles.text}>活动</Text>
+          </ScrollView>
+          <ScrollView
+            style={{
+              backgroundColor: '#9DD6EB'
+            }}
+            tabLabel="其他"
+          >
+            <Text style={styles.text}>其他</Text>
           </ScrollView>
         </ScrollableTabView>
       </View>

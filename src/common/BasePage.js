@@ -23,6 +23,7 @@ export default class BasePages extends Component {
     return (
       <View style={{ flex: 1 }}>
         <HeaderComponent
+          header={this.navigationOptions.header}
           title={this.navigationOptions.headerTitle}
           leftComponent={this.navigationOptions.leftComponent}
         />
