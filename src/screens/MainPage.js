@@ -8,7 +8,6 @@ import { View } from 'react-native';
 import CarouselComponent from '../components/carousel';
 import BasePage from '../common/BasePage';
 
-// @connect(state => ({ userInfo: userReducer.userInfo }))
 class MainPage extends BasePage {
   navigationOptions = {
     leftComponent: {
@@ -19,8 +18,6 @@ class MainPage extends BasePage {
   constructor(props) {
     super(props);
   }
-
-  componentDidMount(): void {}
 
   renderView() {
     return (
