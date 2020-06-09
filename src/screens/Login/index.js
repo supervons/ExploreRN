@@ -4,7 +4,7 @@
  * user login page
  */
 import React, { Component } from 'react';
-import { View, StatusBar, Dimensions, DeviceEventEmitter } from 'react-native';
+import { View, Text, StatusBar, Dimensions, DeviceEventEmitter } from 'react-native';
 import { Button, Input, Avatar } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Theme from '../../styles/theme';
@@ -117,6 +117,7 @@ class Login extends Component {
             title="登录"
             onPress={() => this.login()}
           />
+          <Text style={{ width: 300, marginTop: 5 }}> ©copyright xxx 版权所有</Text>
         </View>
       </KeyboardAwareScrollView>
     );
