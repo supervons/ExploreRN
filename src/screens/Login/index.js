@@ -81,20 +81,34 @@ class Login extends Component {
             source={require('../../resource/image/avatar/logo.png')}
           />
           <Input
-            containerStyle={{ marginTop: 35, margin: 15 }}
+            containerStyle={{
+              width: 300,
+              marginTop: 15,
+              marginBottom: 15,
+              backgroundColor: '#DCDCDC',
+              borderRadius: 15
+            }}
+            inputContainerStyle={{
+              borderBottomWidth: 0
+            }}
             placeholder="用户名"
             onChangeText={text => this.setState({ loginId: text })}
             vauel={this.state.loginId}
           />
           <SecurityKeyboardInput
-            style={{ width: width * 0.96, borderBottomColor: '#939DA6', borderBottomWidth: 1 }}
+            style={{
+              width: 300,
+              backgroundColor: '#DCDCDC',
+              borderRadius: 15
+            }}
             secureTextEntry={true}
             random={true}
-            valueStyle={{ fontSize: 18, left: 1 }}
-            secureTextStyle={{ fontSize: 10 }}
+            valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
+            secureTextStyle={{ left: 12, fontSize: 10 }}
+            cursorStyle={{ left: 8 }}
             keyboardType={'string'}
             placeholder={'密码'}
-            placeholderTextColor={'#CACACB'}
+            placeholderTextColor={'#B1B1B2'}
             onChangeText={text => this.setState({ passWord: text })}
           />
           <Button
