@@ -73,7 +73,7 @@ class Login extends Component {
             alignItems: 'center'
           }}
         >
-          <StatusBar backgroundColor={Theme.white} barStyle={'light-content'} />
+          <StatusBar backgroundColor={Theme.white} barStyle={'dark-content'} />
           <Avatar
             containerStyle={{ marginTop: 100 }}
             rounded

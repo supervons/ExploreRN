@@ -13,6 +13,7 @@ import Theme from '../../styles/theme';
 import { useDispatch } from 'react-redux';
 import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes';
 import commonStyles from '../../styles/commonStyles';
+import RNImagePicker from 'react-native-image-picker';
 
 export default function MyPage(props) {
   const dispatch = useDispatch();
@@ -53,6 +54,14 @@ export default function MyPage(props) {
       onPress: () => props.navigation.push('Scanner')
     },
     {
+      key: 53,
+      title: '图片选择',
+      icon: 'image',
+      color: '#36648b',
+      hiddenRightIcon: true,
+      onPress: () => uploadFile()
+    },
+    {
       key: 6,
       title: '退出登录',
       icon: 'arrow-forward',
@@ -75,6 +84,55 @@ export default function MyPage(props) {
         ])
     }
   ]);
+
+  /**
+   * 拍照或图片配置信息，可以对图片质量进行设置
+   */
+  let options = {
+    cameraType: 'back',
+    mediaType: 'photo',
+    videoQuality: 'high',
+    durationLimit: 10,
+    maxWidth: 300,
+    maxHeight: 300,
+    quality: 0.8,
+    angle: 0,
+    allowsEditing: true,
+    noData: false,
+    storageOptions: {
+      skipBackup: true
+    }
+  };
+
+  /**
+   * 文件上传示例
+   */
+  function uploadFile() {
+    RNImagePicker.launchImageLibrary(options, res => {
+      let formData = new FormData();
+      let file = { uri: res.uri, type: 'multipart/form-data', name: 'image.png' };
+      formData.append('File', file);
+      formData.append('Name', '2');
+      formData.append('Path', 'w');
+      formData.append('OwnerId', '2');
+
+      // TODO 群友提供测试上传接口，慎用
+      // fetch('https://test.popbadminton.com/pan/api/files/upload?v=1.0', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   },
+      //   body: formData
+      // })
+      //   .then(response => response.json())
+      //   .then(res => {
+      //     alert(JSON.stringify(res));
+      //   })
+      //   .catch(res => {
+      //     alert(JSON.stringify(res));
+      //   });
+    });
+  }
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
