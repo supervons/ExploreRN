@@ -2,9 +2,21 @@
 
 # project instruction
 
-    Since there are many devastating upgrades after 0.60.0, it is too difficult to upgrade from the bottom (for now), so re-development based on the higher version
+    Explore the features of the new version of RN, integrate components, and build your own wheels! Welcome to join us:
+    qq group: 783071253
+    Email: supervons@sina.com
 
 Old version address: (not old, 0.59.8) https://github.com/supervons/commonProject
+
+# Features
+
+| Function name | Brief description | Use component name and version |
+| ------------- | -------------------------------- | - -------------------------------------------------- -------- |
+| 1. Picture selection | Choose a picture in the album, or take a photo | react-native-image-picker@2.3.4 |
+| 2. Scan | Scan the QR code to get the information in the QR code | react-native-camera@3.8.0 |
+| 3. Skin change | Change system navigation head and button colors | react-navigation@3.11.1 |
+| 4.Redux Family Bucket | Use of redux and middleware | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3 .0 |
+| 5. Network request | Unified package network request | axios@0.19.0 |
 
 # Installation dependencies
 
@@ -21,13 +33,3 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 
     Username: test
     Password: test
-
-# Features
-
-| Function name | Brief description | Use component name and version |
-| ------------- | -------------------------------- | - -------------------------------------------------- -------- |
-| 1. Picture selection | Choose a picture in the album, or take a photo | react-native-image-picker@2.3.4 |
-| 2. Scan | Scan the QR code to get the information in the QR code | react-native-camera@3.8.0 |
-| 3. Skin change | Change system navigation head and button colors | react-navigation@3.11.1 |
-| 4.Redux Family Bucket | Use of redux and middleware | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3 .0 |
-| 5. Network request | Unified package network request | axios@0.19.0 |
