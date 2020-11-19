@@ -11,7 +11,7 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 # Features
 
 | Function name | Brief description | Use component name and version |
-| ------------- | -------------------------------- | - -------------------------------------------------- -------- |
+| ------------- | -------------------------------- | ------------------------------------------------------------ |
 | 1. Picture selection | Choose a picture in the album, or take a photo | react-native-image-picker@2.3.4 |
 | 2. Scan | Scan the QR code to get the information in the QR code | react-native-camera@3.8.0 |
 | 3. Skin change | Change system navigation head and button colors | react-navigation@3.11.1 |
