@@ -70,7 +70,7 @@ PODS:
     - React
   - react-native-spinkit (1.0.2):
     - React
-  - react-native-webview (6.9.0):
+  - react-native-webview (6.11.1):
     - React
   - React-RCTActionSheet (0.60.5):
     - React-Core (= 0.60.5)
@@ -214,7 +214,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 32d1ad2c0024ca36161ae0d5c2117e2d6c441f11
   react-native-orientation: d4a97266b06ec8d45d74e626656a730ebbebbb6f
   react-native-spinkit: 9a5d2f95aa975d5660fd3e76b7eac38e7329e46c
-  react-native-webview: f72ac4078e115dfa741cc588acb1cca25566457d
+  react-native-webview: f11ac6c8bcaba5b71ddda1c12a10c8ea059b080f
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24

@@ -7,6 +7,7 @@ import React from 'react';
 import { View } from 'react-native';
 import CarouselComponent from '../components/carousel';
 import ChartsComponent from '../components/charts';
+import ChartsLiquidFill from '../components/chartsLiquidfill';
 import BasePage from '../common/BasePage';
 
 class MainPage extends BasePage {
@@ -25,6 +26,7 @@ class MainPage extends BasePage {
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <CarouselComponent />
         <ChartsComponent />
+        <ChartsLiquidFill />
       </View>
     );
   }
