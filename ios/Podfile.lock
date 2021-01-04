@@ -101,6 +101,8 @@ PODS:
     - React
   - RNVectorIcons (6.6.0):
     - React
+  - toolbar-android (0.1.0-rc.2):
+    - React
   - yoga (0.60.5.React)
 
 DEPENDENCIES:
@@ -132,6 +134,7 @@ DEPENDENCIES:
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "toolbar-android (from `../node_modules/@react-native-community/toolbar-android`)"
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -195,6 +198,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  toolbar-android:
+    :path: "../node_modules/@react-native-community/toolbar-android"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -228,6 +233,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: bdc3e922b2ed0f086e9d9ab534e61bc316f08576
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  toolbar-android: 404f4450b203597e7b417f714ff417bed562a1be
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
 PODFILE CHECKSUM: c87b6076f724c6353e8b3e767b6eaf1c5318e368

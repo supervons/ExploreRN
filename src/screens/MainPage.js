@@ -4,7 +4,7 @@
  * user main page
  */
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import CarouselComponent from '../components/carousel';
 import ChartsComponent from '../components/charts';
 import ChartsLiquidFill from '../components/chartsLiquidfill';
@@ -23,11 +23,11 @@ class MainPage extends BasePage {
 
   renderView() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+      <ScrollView style={{ flex: 1, backgroundColor: '#ffffff' }}>
         <CarouselComponent />
         <ChartsComponent />
         <ChartsLiquidFill />
-      </View>
+      </ScrollView>
     );
   }
 }
