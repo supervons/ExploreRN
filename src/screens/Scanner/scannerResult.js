@@ -3,39 +3,24 @@
  * 扫一扫及拍照结果页面
  * explore page
  */
-import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View, Animated } from 'react-native';
-export default class Scanner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      moveAnim: new Animated.Value(0)
-    };
-  }
-
-  static navigationOptions = {
-    headerTitle: '扫描或拍照结果'
-  };
-
-  componentDidMount() {}
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.rectangleContainer}>
-          <Text>{this.props.navigation.state.params.scannerResult || ''}</Text>
-          <Image
-            style={{ height: 300, width: 300 }}
-            source={
-              this.props.navigation.state.params.imageUri == null
-                ? require('../../resource/image/avatar/logo.png')
-                : { uri: this.props.navigation.state.params.imageUri }
-            }
-          />
-        </View>
+import React from 'react';
+import { StyleSheet, Text, Image, View } from 'react-native';
+export default function Scanner(props) {
+  return (
+    <View style={styles.container}>
+      <View style={styles.rectangleContainer}>
+        <Text>{props.navigation.state.params.scannerResult || ''}</Text>
+        <Image
+          style={{ height: 300, width: 300 }}
+          source={
+            props.navigation.state.params.imageUri == null
+              ? require('../../resource/image/avatar/logo.png')
+              : { uri: props.navigation.state.params.imageUri }
+          }
+        />
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

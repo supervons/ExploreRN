@@ -4,16 +4,9 @@
  * explore page
  */
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Animated,
-  Easing
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Animated, Easing } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import {Icon, IconType} from 'react-native-elements';
+import { Icon, IconType } from 'react-native-elements';
 export default class Scanner extends Component {
   constructor(props) {
     super(props);
@@ -33,9 +26,7 @@ export default class Scanner extends Component {
   componentDidMount() {
     this.startAnimation();
     // 监听当结果页返回时，重新启动相机监听扫描事件
-    this.props.navigation.addListener("didFocus", () =>
-        this.setState({showCamera : true})
-    )
+    this.props.navigation.addListener('didFocus', () => this.setState({ showCamera: true }));
   }
 
   startAnimation = () => {
@@ -52,7 +43,7 @@ export default class Scanner extends Component {
     if (!this.isBarcodeRead) {
       this.isBarcodeRead = true;
       // 卸载扫一扫组件，否则还会持续扫描
-      this.setState({showCamera: false})
+      this.setState({ showCamera: false });
       this.props.navigation.navigate('ScannerResult', {
         imageUri: null,
         scannerResult: JSON.stringify(result)
@@ -65,7 +56,7 @@ export default class Scanner extends Component {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      this.setState({showCamera: false})
+      this.setState({ showCamera: false });
       this.props.navigation.push('ScannerResult', {
         imageUri: data.uri,
         scannerResult: ''
@@ -95,32 +86,17 @@ export default class Scanner extends Component {
           >
             <View style={styles.rectangleContainer}>
               <View style={styles.rectangle} />
-              <Animated.View
-                style={[
-                  styles.border,
-                  { transform: [{ translateY: this.state.moveAnim }] }
-                ]}
-              />
-              <Text style={styles.rectangleText}>
-                将二维码放入框内，即可自动扫描
-              </Text>
+              <Animated.View style={[styles.border, { transform: [{ translateY: this.state.moveAnim }] }]} />
+              <Text style={styles.rectangleText}>将二维码放入框内，即可自动扫描</Text>
               <View style={{ flexDirection: 'row', marginTop: 15 }}>
-                <TouchableOpacity
-                  onPress={()=>this.props.navigation.goBack()}
-                >
-                  <Icon name='keyboard-arrow-left' size={36} color={'green'}/>
+                <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                  <Icon name="keyboard-arrow-left" size={36} color={'green'} />
                 </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={this.takePicture.bind(this)}
-                  style={{marginLeft: 25}}
-                >
-                  <Icon name='camera' size={36} color={'green'}/>
+                <TouchableOpacity onPress={this.takePicture.bind(this)} style={{ marginLeft: 25 }}>
+                  <Icon name="camera" size={36} color={'green'} />
                 </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={this._changeFlashMode.bind(this)}
-                  style={{marginLeft: 25}}
-                >
-                  <Icon name='highlight' size={36} color={this.state.FlashMode ? 'green' : 'gray'}/>
+                <TouchableOpacity onPress={this._changeFlashMode.bind(this)} style={{ marginLeft: 25 }}>
+                  <Icon name="highlight" size={36} color={this.state.FlashMode ? 'green' : 'gray'} />
                 </TouchableOpacity>
               </View>
             </View>
