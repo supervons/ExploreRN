@@ -5,10 +5,10 @@
  */
 import React from 'react';
 import { ScrollView } from 'react-native';
-import CarouselComponent from '../components/carousel';
-import ChartsComponent from '../components/charts';
-import ChartsLiquidFill from '../components/chartsLiquidfill';
-import BasePage from '../common/BasePage';
+import CarouselComponent from '../../components/carousel';
+import ChartsComponent from '../../components/charts';
+import ChartsLiquidFill from '../../components/chartsLiquidfill';
+import BasePage from '../../common/BasePage';
 
 class MainPage extends BasePage {
   navigationOptions = {

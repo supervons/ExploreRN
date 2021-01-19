@@ -4,99 +4,13 @@
  * router config file
  */
 import React from 'react';
-import { createAppContainer, createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import StackViewStyleInterpolator from 'react-navigation-stack/src/views/StackView/StackViewStyleInterpolator';
-import MainPage from '../screens/MainPage';
-import Explore from '../screens/Explore/index';
-import Login from '../screens/Login/index';
-import Settings from '../screens/My/settings/index';
-import VersionInfo from '../screens/My/settings/version/index';
-import ThemeChange from '../screens/My/settings/theme-change/index';
-import UpdatePassword from '../screens/My/settings/update-password/index';
-import BaseInfo from '../screens/My/baseInfo/index';
-import SystemIntroduction from '../screens/SystemIntroduction/index';
-import Scanner from '../screens/Scanner/scanner';
-import ScannerResult from '../screens/Scanner/scannerResult';
-import My from '../screens/My/index';
-import Theme from '../styles/theme';
-import { Icon } from 'react-native-elements';
-
-/**
- * 底部导航栏
- * Bottom navigation bar
- * @type {NavigationContainer}
- */
-const Tabs = createMaterialTopTabNavigator(
-  {
-    MainPage: {
-      screen: MainPage,
-      navigationOptions: ({ navigation, screenProps }) => ({
-        tabBarLabel: '首页',
-        header: 'none',
-        tabBarIcon: ({ focused }) => {
-          return focused ? (
-            <Icon name={'home'} color={screenProps.themeColor} />
-          ) : (
-            <Icon name={'home'} color={Theme.tabUnSelected} />
-          );
-        }
-      })
-    },
-    News: {
-      screen: Explore,
-      navigationOptions: ({ navigation, screenProps }) => ({
-        tabBarLabel: '发现',
-        tabBarIcon: ({ focused }) => {
-          return focused ? (
-            <Icon name={'explore'} color={screenProps.themeColor} />
-          ) : (
-            <Icon name={'explore'} color={Theme.tabUnSelected} />
-          );
-        }
-      })
-    },
-    PersonalCenter: {
-      screen: My,
-      navigationOptions: ({ navigation, screenProps }) => ({
-        tabBarLabel: '我的',
-        tabBarIcon: ({ focused }) => {
-          return focused ? (
-            <Icon name={'person'} color={screenProps.themeColor} />
-          ) : (
-            <Icon name={'person'} color={Theme.tabUnSelected} />
-          );
-        }
-      })
-    }
-  },
-  {
-    animationEnabled: false, // 切换页面时是否有动画效果
-    tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
-    swipeEnabled: true, // 是否可以左右滑动切换tab
-    lazy: false,
-    tabBarOptions: {
-      tabStyle: {
-        minWidth: 50,
-        maxHeight: 50
-      },
-      activeTintColor: '#000000', // 文字和图片选中颜色
-      inactiveTintColor: Theme.tabUnSelected, // 文字和图片未选中颜色
-      pressOpacity: 0.8,
-      showIcon: true, // android 默认不显示 icon, 需要设置为 true 才会显示
-      indicatorStyle: {
-        height: 0 // 如TabBar下面显示有一条线，可以设高度为0后隐藏
-      },
-      style: {
-        backgroundColor: '#fff' // TabBar 背景色
-      },
-      labelStyle: {
-        fontSize: 13,
-        marginTop: 3,
-        marginBottom: 0
-      }
-    }
-  }
-);
+import Explore from '../screens/explore/index';
+import Login from '../screens/login/index';
+import SystemIntroduction from '../screens/systemIntroduction/index';
+import { HomeRouter } from './homeRouter';
+import { MyRouter } from './myRouter';
 
 /**
  * 自定义动画参数，通过在跳转页面中增加 transitionType: '类型' 来进行动画设置，默认 forHorizontal（从右往左）
@@ -127,49 +41,12 @@ const Router = createStackNavigator(
       // 登录界面
       screen: Login
     },
-    MainPage: {
-      screen: Tabs
-    },
     Explore: {
       // 发现页面
       screen: Explore
     },
-    My: {
-      // 我的页面
-      screen: My
-    },
-    Settings: {
-      // 设置页面
-      screen: Settings
-    },
-    VersionInfo: {
-      // 版本信息页面
-      screen: VersionInfo
-    },
-    ThemeChange: {
-      // 皮肤更换页面
-      screen: ThemeChange
-    },
-    BaseInfo: {
-      // 个人基本信息页面
-      screen: BaseInfo
-    },
-    SystemIntroduction: {
-      // 系统介绍界面
-      screen: SystemIntroduction
-    },
-    UpdatePassword: {
-      // 修改密码界面
-      screen: UpdatePassword
-    },
-    Scanner: {
-      // 扫一扫及拍照界面
-      screen: Scanner
-    },
-    ScannerResult: {
-      // 扫一扫及拍照结果界面
-      screen: ScannerResult
-    }
+    ...HomeRouter,
+    ...MyRouter
   },
   {
     // 定义配置
