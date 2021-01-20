@@ -928,6 +928,11 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
+"@react-native-community/toolbar-android@0.1.0-rc.2":
+  version "0.1.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/toolbar-android/-/toolbar-android-0.1.0-rc.2.tgz#86cae655836afacc52d4063062cc59837d1a8640"
+  integrity sha512-UCblqsitOcoYxVc6QzcaqCKogeRnePPMw7cbGvW5GI/GXIwQel8Kge9d910W3MUPUzw3pFzhIZVug6U3W067Pg==
+
 "@react-navigation/core@~3.5.1":
   version "3.5.1"
   resolved "https://registry.npm.taobao.org/@react-navigation/core/download/@react-navigation/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
@@ -2250,7 +2255,12 @@ escape-html@~1.0.3:
   resolved "https://registry.npm.taobao.org/escape-html/download/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
-escape-string-regexp@1.0.5, escape-string-regexp@^1.0.5:
+escape-string-regexp@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+
+escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/escape-string-regexp/download/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
@@ -3819,6 +3829,11 @@ jetifier@^1.6.2:
   resolved "https://registry.npm.taobao.org/jetifier/download/jetifier-1.6.3.tgz#61a95b29aefddfe3b6d81ee956f5e99f8b9cba19"
   integrity sha1-YalbKa793+O22B7pVvXpn4ucuhk=
 
+jetifier@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.6.tgz#fec8bff76121444c12dc38d2dad6767c421dab68"
+  integrity sha512-JNAkmPeB/GS2tCRqUzRPsTOHpGDah7xP18vGJfIjZC+W2sxEHbxgJxetIjIqhjQ3yYbYNEELkM/spKLtwoOSUQ==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npm.taobao.org/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -5358,6 +5373,16 @@ react-native-device-info@^2.3.2:
   resolved "https://registry.npm.taobao.org/react-native-device-info/download/react-native-device-info-2.3.2.tgz#db2b8f135aaf2515583e367ab791dcc7d2f0d14c"
   integrity sha1-2yuPE1qvJRVYPjZ6t5Hcx9Lw0Uw=
 
+react-native-echarts-liquidfill@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-echarts-liquidfill/-/react-native-echarts-liquidfill-1.0.1.tgz#71c9c0ef8c65b76213d8abe55fb0fa6cc9af6541"
+  integrity sha512-S7lF/v4cIOPA7I875XaIDsHOrkoaTt06H4Sjrivwya7XMxgYjefJMwXY5u8e9SzXA23eTV4e1CJlku24VAJ9qQ==
+
+react-native-echarts-pro@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-echarts-pro/-/react-native-echarts-pro-1.2.4.tgz#8562b4ef11fcda5dc16be4848ed72f442a1d079c"
+  integrity sha512-jEIuXPuLTBgADVdLdjR2RMbxeK+sjZr/Pt19gRhCpoYH2uJkbOZUprorQbxi0Oe4j2l3xUW6fI8gLUapojG5tQ==
+
 react-native-elements@^1.1.0:
   version "1.2.6"
   resolved "https://registry.npm.taobao.org/react-native-elements/download/react-native-elements-1.2.6.tgz#fda0f49ddf87abdb287de1ec9bc057c103430455"
@@ -5382,6 +5407,11 @@ react-native-gesture-handler@^1.3.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-image-picker@^2.3.4:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-2.4.0.tgz#33231ac6d7794193d595b4e13ca6167fc4d523ef"
+  integrity sha512-vve5vcrFlV0lzU4bzY40CsOAEPMr036KlyIH181DN14y+T7i3hsl+PZ6vip4/fJdjLnedv5alLN2ddb46kHhkA==
+
 react-native-iphone-x-helper@^1.0.3:
   version "1.2.1"
   resolved "https://registry.npm.taobao.org/react-native-iphone-x-helper/download/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
@@ -5394,6 +5424,11 @@ react-native-keyboard-aware-scroll-view@^0.8.0:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-orientation@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-orientation/-/react-native-orientation-3.1.3.tgz#d45803841fe94b6cce9acbe904fd5ca191a3711e"
+  integrity sha512-A0h0E+2f95X4avmhaBG1ZT8WDxBACA/q//JN2eF1E7kq8AJVxt5XDiavv+aSBkBlqFsfF3bIS+T/DB5mXmnxuA==
 
 react-native-ratings@^6.3.0:
   version "6.5.0"
@@ -5454,6 +5489,11 @@ react-native-status-bar-height@^2.2.0:
   resolved "https://registry.npm.taobao.org/react-native-status-bar-height/download/react-native-status-bar-height-2.4.0.tgz#de8cee4bb733a196167210d2d0bc1fa10acba3e3"
   integrity sha1-3ozuS7czoZYWchDS0LwfoQrLo+M=
 
+react-native-supervons-custom-keyboard@^1.3.13:
+  version "1.3.13"
+  resolved "https://registry.yarnpkg.com/react-native-supervons-custom-keyboard/-/react-native-supervons-custom-keyboard-1.3.13.tgz#8b61ec5adbe08c50cd1c9d03488197ab438b1034"
+  integrity sha512-/CPXpu1TVoD4s3btu/CcVroz5rqYyn65S7EpAvagbGpsuGmsy+FVfHes8YNzglpI3J54A/xHo4a8DflSNJdR6g==
+
 react-native-swiper@^1.6.0-nightly.3:
   version "1.6.0-rc.3"
   resolved "https://registry.npm.taobao.org/react-native-swiper/download/react-native-swiper-1.6.0-rc.3.tgz#ece82906d908c6a78a0b75fa41982ffc2cd2fb20"
@@ -5477,12 +5517,12 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native-webview@^6.9.0:
-  version "6.11.1"
-  resolved "https://registry.npm.taobao.org/react-native-webview/download/react-native-webview-6.11.1.tgz#51fab0838ef9bdf3efd0d3f27147dddda5119f94"
-  integrity sha1-Ufqwg475vfPv0NPycUfd3aURn5Q=
+react-native-webview@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.0.0.tgz#d667cbcc772e963fe88a4156290d25fe47ed43b0"
+  integrity sha512-gzID5ebCFVNkxreuabClymo6QkJbXCLEtiIUY9QAhxY58HsDUp8x0YzDVEROYyEJ4ghL71koAOeQRDNAgNnh1w==
   dependencies:
-    escape-string-regexp "1.0.5"
+    escape-string-regexp "2.0.0"
     invariant "2.2.4"
 
 react-native@0.60.5:
