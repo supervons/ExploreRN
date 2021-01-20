@@ -1,9 +1,4 @@
-/**
- * Created by supervons on 2019/08/20.
- * 皮肤更换页面
- * Skin replacement page
- */
-import React, { Component } from 'react';
+import React from 'react';
 import { DeviceEventEmitter, View } from 'react-native';
 import { CheckBox, ListItem, Divider, Button } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
@@ -12,6 +7,11 @@ import BasePage from '../../../../common/BasePage';
 import { connect } from 'react-redux';
 import { THEME_COLOR } from '../../../../common/redux/action/settingActionTypes';
 
+/**
+ * Created by supervons on 2019/08/20.
+ * 皮肤更换页面
+ * Skin replacement page
+ */
 const colorList = [
   {
     key: 0,

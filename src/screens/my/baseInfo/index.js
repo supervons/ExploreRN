@@ -1,9 +1,4 @@
-/**
- * Created by supervons on 2019/08/15.
- * 基本信息页面
- * base info page
- */
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { ListItem, Button } from 'react-native-elements';
 import Theme from '../../../styles/theme';
@@ -14,6 +9,11 @@ import { connect } from 'react-redux';
 import commonStyles from '../../../styles/commonStyles';
 import BasePage from '../../../common/BasePage';
 
+/**
+ * Created by supervons on 2019/08/15.
+ * 基本信息页面
+ * base info page
+ */
 let _this;
 class BaseInfo extends BasePage {
   navigationOptions = {

@@ -1,11 +1,3 @@
-/**
- * Created by supervons on 2019/08/08.
- * 我的页面
- * my page
- * Update by supervons on 2020/05/22.
- * 使用 Hooks 方式重写，压缩代码量
- * Use Hooks to rewrite and compress the amount of code
- */
 import React, { useState } from 'react';
 import { View, Alert, StatusBar, ScrollView, SafeAreaView } from 'react-native';
 import { ListItem, Avatar, Icon } from 'react-native-elements';
@@ -15,6 +7,14 @@ import { USER_TOKEN, USER_INFO } from '../../common/redux/action/userActionTypes
 import commonStyles from '../../styles/commonStyles';
 import RNImagePicker from 'react-native-image-picker';
 
+/**
+ * Created by supervons on 2019/08/08.
+ * 我的页面
+ * my page
+ * Update by supervons on 2020/05/22.
+ * 使用 Hooks 方式重写，压缩代码量
+ * Use Hooks to rewrite and compress the amount of code
+ */
 export default function MyPage(props) {
   const dispatch = useDispatch();
   const [list, setList] = useState([

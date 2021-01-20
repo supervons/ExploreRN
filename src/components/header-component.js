@@ -1,13 +1,13 @@
-/**
- * Created by supervons on 2019/08/09.
- * hooks 方式统一封装头部 header 组件
- * header component
- */
 import React from 'react';
 import { Platform, SafeAreaView, TouchableHighlight, StatusBar, View } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 
+/**
+ * Created by supervons on 2019/08/09.
+ * hooks 方式统一封装头部 header 组件
+ * header component
+ */
 export default function HeaderComponent(props) {
   const { themeColor } = useSelector(state => ({
     themeColor: state.SettingReducer.themeColor

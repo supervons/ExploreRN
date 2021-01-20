@@ -1,9 +1,4 @@
-/**
- * Created by supervons on 2019/09/06.
- * 修改密码页面
- * update password page
- */
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { Button, ListItem } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
@@ -12,6 +7,11 @@ import Toast from '../../../../components/toast';
 import userAction from '../../../../actions/user';
 import BasePage from '../../../../common/BasePage';
 
+/**
+ * Created by supervons on 2019/09/06.
+ * 修改密码页面
+ * update password page
+ */
 let _this;
 export default class UpdatePassword extends BasePage {
   navigationOptions = {

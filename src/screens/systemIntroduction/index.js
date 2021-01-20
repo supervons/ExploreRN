@@ -1,8 +1,3 @@
-/**
- * Created by supervons on 2019/08/21.
- * 系统功能介绍界面，可以用做第一次进入系统的首屏
- * System function introduction page, Can be used as the first screen to enter the system for the first time
- */
 import React, { Component } from 'react';
 import { View, Text, StatusBar } from 'react-native';
 import Swiper from 'react-native-swiper';
@@ -12,6 +7,11 @@ import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
 import commonStyles from '../../styles/commonStyles';
 
+/**
+ * Created by supervons on 2019/08/21.
+ * 系统功能介绍界面，可以用做第一次进入系统的首屏
+ * System function introduction page, Can be used as the first screen to enter the system for the first time
+ */
 class SystemIntroduction extends Component {
   static navigationOptions = {
     header: null

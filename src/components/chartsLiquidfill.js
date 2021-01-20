@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import RNEChartsLiquidFill from 'react-native-echarts-liquidfill';
+
 /**
  * @desc liquidfill demo
  * @author supervons

@@ -1,14 +1,14 @@
-/**
- * Created by supervons on 2019/08/08.
- * 用户主界面
- * user main page
- */
 import React from 'react';
 import { ScrollView, View, TouchableOpacity, StyleSheet, Text, Dimensions } from 'react-native';
 import CarouselComponent from '../../components/carousel';
 import BasePage from '../../common/BasePage';
 import { Icon } from 'react-native-elements';
 
+/**
+ * Created by supervons on 2019/08/08.
+ * 用户主界面
+ * user main page
+ */
 const { width } = Dimensions.get('window');
 class MainPage extends BasePage {
   navigationOptions = {

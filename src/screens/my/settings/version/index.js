@@ -1,9 +1,4 @@
-/**
- * Created by supervons on 2019/08/12.
- * 版本信息页面
- * version info page
- */
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Clipboard } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import Theme from '../../../../styles/theme';
@@ -12,6 +7,11 @@ import commonStyles from '../../../../styles/commonStyles';
 import Toast from '../../../../components/toast';
 import BasePage from '../../../../common/BasePage';
 
+/**
+ * Created by supervons on 2019/08/12.
+ * 版本信息页面
+ * version info page
+ */
 const list = [
   {
     key: 0,

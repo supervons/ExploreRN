@@ -4,9 +4,9 @@
  * explore page
  */
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, SafeAreaView, StatusBar, Platform } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Platform } from 'react-native';
 import newsAction from '../../actions/news';
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 import BasePages from '../../common/BasePage';
 import TabBarView from './component/TabBarView';
 

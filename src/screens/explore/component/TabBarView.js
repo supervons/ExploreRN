@@ -1,11 +1,11 @@
+import React from 'react';
+import { View, Text, Animated, Platform, Dimensions, TouchableOpacity } from 'react-native';
+
 /**
  * Created by supervons on 2020/05/22.
  * hooks 方式封装自定义 tabBar 组件，使得选中 tab 字体变大并加粗
  * The hooks method encapsulates the custom tabBar component, making the selected tab font larger and bolder
  */
-import React from 'react';
-import { View, Text, Animated, Platform, Dimensions, TouchableOpacity } from 'react-native';
-
 const width = Dimensions.get('window').width;
 export default function TabBarView(props) {
   /**

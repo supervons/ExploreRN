@@ -2,6 +2,7 @@ import React, { useImperativeHandle, forwardRef, useState } from 'react';
 import { AsyncStorage, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Modal } from '@ant-design/react-native';
 import RNImagePicker from 'react-native-image-picker';
+
 /**
  * @desc 选择相册或拍照组件
  * @author fengys

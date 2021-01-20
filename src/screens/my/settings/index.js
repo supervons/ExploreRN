@@ -1,16 +1,15 @@
+import React from 'react';
+import { View } from 'react-native';
+import { ListItem } from 'react-native-elements';
+import Theme from '../../../styles/theme';
+import commonStyles from '../../../styles/commonStyles';
+import BasePage from '../../../common/BasePage';
+
 /**
  * Created by supervons on 2019/08/12.
  * 设置页面
  * settings page
  */
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import { ListItem } from 'react-native-elements';
-import Theme from '../../../styles/theme';
-import commonStyles from '../../../styles/commonStyles';
-import HeaderComponent from '../../../components/header-component';
-import BasePage from '../../../common/BasePage';
-
 const list = [
   {
     key: 1,

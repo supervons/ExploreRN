@@ -1,12 +1,13 @@
+import React, { Component } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, Animated, Easing } from 'react-native';
+import { RNCamera } from 'react-native-camera';
+import { Icon } from 'react-native-elements';
+
 /**
  * Created by supervons on 2019/10/20.
  * 扫一扫及拍照页面
  * explore page
  */
-import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Animated, Easing } from 'react-native';
-import { RNCamera } from 'react-native-camera';
-import { Icon, IconType } from 'react-native-elements';
 export default class Scanner extends Component {
   constructor(props) {
     super(props);

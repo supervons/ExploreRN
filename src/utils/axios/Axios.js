@@ -1,12 +1,12 @@
+import axios from 'axios';
+import Constants from '../../common/constants';
+import Loading from '../../common/loading';
+
 /**
  * Created by supervons on 2019/08/05.
  * 基于 axios 的网络请求组件
  * Axios-based network request component
  */
-import axios from 'axios';
-import Constants from '../../common/constants';
-import Loading from '../../common/loading';
-
 let defaultConfig = {
   timeout: 3000,
   headers: {

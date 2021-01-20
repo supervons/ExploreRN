@@ -1,13 +1,13 @@
+import React, { useState } from 'react';
+import Swiper from 'react-native-swiper';
+import { Text, View } from 'react-native';
+import commonStyles from '../styles/commonStyles';
+
 /**
  * Created by supervons on 2020/04/15.
  * 使用 Hooks 重写首页轮播组件
  * use Hooks rewrite homepage carousel component
  */
-import React, { useState, useEffect } from 'react';
-import Swiper from 'react-native-swiper';
-import { Text, View } from 'react-native';
-import commonStyles from '../styles/commonStyles';
-
 export default function CarouselComponent() {
   const [introduction] = useState({
     title_1: 'This is SWiper',
