@@ -10,6 +10,7 @@ import Explore from '../screens/explore/index';
 import My from '../screens/my/index';
 import Theme from '../styles/theme';
 import { Icon } from 'react-native-elements';
+import eChartsDemoPage from '../screens/home/eChartsDemo/eChartsDemoPage';
 
 /**
  * 底部导航栏
@@ -91,6 +92,9 @@ const Tabs = createMaterialTopTabNavigator(
 export const HomeRouter = {
   MainPage: {
     screen: Tabs
+  },
+  eChartsDemoPage: {
+    screen: eChartsDemoPage
   }
 };
 

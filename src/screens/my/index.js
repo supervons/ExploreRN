@@ -47,13 +47,6 @@ export default function MyPage(props) {
       onPress: () => props.navigation.push('Settings')
     },
     {
-      key: 5,
-      title: '扫一扫',
-      icon: 'art-track',
-      color: '#36648b',
-      onPress: () => props.navigation.push('Scanner')
-    },
-    {
       key: 53,
       title: '图片选择',
       icon: 'image',

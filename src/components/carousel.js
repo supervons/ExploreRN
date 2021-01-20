@@ -10,9 +10,9 @@ import commonStyles from '../styles/commonStyles';
 
 export default function CarouselComponent() {
   const [introduction] = useState({
-    title_1: '这是首页swiper',
-    title_2: 'react-native棒棒',
-    title_3: 'Hermes引擎快快快'
+    title_1: 'This is SWiper',
+    title_2: 'react-native good job',
+    title_3: 'Hermes so fast'
   });
   return (
     <View style={{ height: 150 }}>
