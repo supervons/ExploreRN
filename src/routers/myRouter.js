@@ -1,12 +1,17 @@
-import My from '../screens/my';
-import Settings from '../screens/my/settings';
-import VersionInfo from '../screens/my/settings/version';
-import ThemeChange from '../screens/my/settings/theme-change';
-import BaseInfo from '../screens/my/baseInfo';
-import SystemIntroduction from '../screens/systemIntroduction';
-import UpdatePassword from '../screens/my/settings/update-password';
-import Scanner from '../screens/scanner/scanner';
-import ScannerResult from '../screens/scanner/scannerResult';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from "@react-navigation/stack";
+import React from "react";
+import My from "../screens/my";
+import Settings from "../screens/my/settings";
+import VersionInfo from "../screens/my/settings/version";
+import ThemeChange from "../screens/my/settings/theme-change";
+import BaseInfo from "../screens/my/baseInfo";
+import SystemIntroduction from "../screens/systemIntroduction";
+import UpdatePassword from "../screens/my/settings/update-password";
+import Scanner from "../screens/scanner/scanner";
+import ScannerResult from "../screens/scanner/scannerResult";
 
 /**
  * @desc The my page route collection
@@ -14,42 +19,70 @@ import ScannerResult from '../screens/scanner/scannerResult';
  * @date 2021/01/19
  */
 
-export const MyRouter = {
-  My: {
-    // 我的页面
-    screen: My
+const MyStack = createStackNavigator();
+
+/**
+ * 总体导航配置
+ * 其中，Main为带tabBar的主页面
+ */
+const routeInfo = [
+  {
+    name: "My",
+    options: { title: "我的页面" },
+    component: My,
   },
-  Settings: {
-    // 设置页面
-    screen: Settings
+  {
+    name: "Settings",
+    options: { title: "设置" },
+    component: Settings,
   },
-  VersionInfo: {
-    // 版本信息页面
-    screen: VersionInfo
+  {
+    name: "VersionInfo",
+    options: { title: "版本信息" },
+    component: VersionInfo,
   },
-  ThemeChange: {
-    // 皮肤更换页面
-    screen: ThemeChange
+  {
+    name: "ThemeChange",
+    options: { title: "换肤" },
+    component: ThemeChange,
   },
-  BaseInfo: {
-    // 个人基本信息页面
-    screen: BaseInfo
+  {
+    name: "BaseInfo",
+    options: { title: "基本信息" },
+    component: BaseInfo,
   },
-  SystemIntroduction: {
-    // 系统介绍界面
-    screen: SystemIntroduction
+  {
+    name: "SystemIntroduction",
+    options: { title: "欢迎页" },
+    component: SystemIntroduction,
   },
-  UpdatePassword: {
-    // 修改密码界面
-    screen: UpdatePassword
+  {
+    name: "UpdatePassword",
+    options: { title: "修改密码" },
+    component: UpdatePassword,
   },
-  Scanner: {
-    // 扫一扫及拍照界面
-    screen: Scanner
+  {
+    name: "Scanner",
+    options: { title: "扫一扫" },
+    component: Scanner,
   },
-  ScannerResult: {
-    // 扫一扫及拍照结果界面
-    screen: ScannerResult
-  }
-};
+  {
+    name: "ScannerResult",
+    options: { title: "扫描结果" },
+    component: ScannerResult,
+  },
+];
+const pageViewRouter = [];
+routeInfo.map((res) => {
+  pageViewRouter.push(
+    <MyStack.Screen
+      key={res.name}
+      name={res.name}
+      component={res.component}
+      options={{ ...res.options }}
+    />,
+  );
+});
+export const MyRouter = pageViewRouter;
+
 exports.default = MyRouter;

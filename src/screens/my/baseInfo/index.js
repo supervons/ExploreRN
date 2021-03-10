@@ -1,13 +1,13 @@
-import React from 'react';
-import { View } from 'react-native';
-import { ListItem, Button } from 'react-native-elements';
-import Theme from '../../../styles/theme';
-import Toast from '../../../components/toast';
-import userAction from '../../../actions/user';
-import { USER_INFO } from '../../../common/redux/action/userActionTypes';
-import { connect } from 'react-redux';
-import commonStyles from '../../../styles/commonStyles';
-import BasePage from '../../../common/BasePage';
+import React from "react";
+import { View } from "react-native";
+import { ListItem, Button } from "react-native-elements";
+import Theme from "../../../styles/theme";
+import Toast from "../../../components/toast";
+import userAction from "../../../actions/user";
+import { USER_INFO } from "../../../common/redux/action/userActionTypes";
+import { connect } from "react-redux";
+import commonStyles from "../../../styles/commonStyles";
+import BasePage from "../../../common/BasePage";
 
 /**
  * Created by supervons on 2019/08/15.
@@ -17,30 +17,30 @@ import BasePage from '../../../common/BasePage';
 let _this;
 class BaseInfo extends BasePage {
   navigationOptions = {
-    headerTitle: '基本信息'
+    headerTitle: "基本信息",
   };
   constructor(props) {
     super(props);
     _this = this;
     this.state = {
       userInfo: {},
-      saveButtonShow: false
+      saveButtonShow: false,
     };
   }
 
   static navigationOptions = {
-    headerTitle: '个人基本信息',
+    headerTitle: "个人基本信息",
     headerRight: (
       <Button
         type="clear"
         onPress={() => _this.changeSaveButtonState()}
         icon={{
-          name: 'edit',
+          name: "edit",
           size: 20,
-          color: 'white'
+          color: "white",
         }}
       />
-    )
+    ),
   };
 
   componentDidMount(): void {
@@ -56,13 +56,13 @@ class BaseInfo extends BasePage {
     } else {
       this.setState({
         userInfo: userInfo,
-        saveButtonShow: !this.state.saveButtonShow
+        saveButtonShow: !this.state.saveButtonShow,
       });
     }
   }
 
   updateUserInfo() {
-    userAction.updateUserInfo(this.state.userInfo).then(resp => {
+    userAction.updateUserInfo(this.state.userInfo).then((resp) => {
       Toast.showToast(resp.msg);
       this.changeSaveButtonState(true);
     });
@@ -71,35 +71,35 @@ class BaseInfo extends BasePage {
   getUserInfo() {
     const userInfoJson = [
       {
-        key: 'loginId',
-        title: '账号',
+        key: "loginId",
+        title: "账号",
         rightTitle: this.state.userInfo.loginId,
-        editable: false
+        editable: false,
       },
       {
-        key: 'userName',
-        title: '姓名',
+        key: "userName",
+        title: "姓名",
         rightTitle: this.state.userInfo.userName,
-        editable: true
+        editable: true,
       },
       {
-        key: 'userSex',
-        title: '性别',
+        key: "userSex",
+        title: "性别",
         rightTitle: this.state.userInfo.userSex,
-        editable: false
+        editable: false,
       },
       {
-        key: 'userCellPhone',
-        title: '手机号',
+        key: "userCellPhone",
+        title: "手机号",
         rightTitle: this.state.userInfo.userCellPhone,
-        editable: true
+        editable: true,
       },
       {
-        key: 'userAddress',
-        title: '地址',
+        key: "userAddress",
+        title: "地址",
         rightTitle: this.state.userInfo.userAddress,
-        editable: true
-      }
+        editable: true,
+      },
     ];
     return userInfoJson;
   }
@@ -117,34 +117,34 @@ class BaseInfo extends BasePage {
                   title={item.title}
                   bottomDivider={true}
                   input={{
-                    onChangeText: text =>
+                    onChangeText: (text) =>
                       this.setState({
-                        userInfo: { ...this.state.userInfo, [item.key]: text }
+                        userInfo: { ...this.state.userInfo, [item.key]: text },
                       }),
                     value: this.state.userInfo[item.key],
                     inputStyle: {
                       paddingTop: 0,
-                      alignItems: 'center',
-                      fontSize: 15
-                    }
+                      alignItems: "center",
+                      fontSize: 15,
+                    },
                   }}
                 />
               ) : (
                 <ListItem
                   key={i}
                   containerStyle={commonStyles.itemPadding}
-                  rightTitleStyle={{ width: 170, textAlign: 'right' }}
+                  rightTitleStyle={{ width: 170, textAlign: "right" }}
                   title={item.title}
                   bottomDivider={true}
                   rightSubtitle={item.rightTitle}
                 />
-              )
+              ),
             )
           : userInfo.map((item, i) => (
               <ListItem
                 key={i}
                 containerStyle={commonStyles.itemPadding}
-                rightTitleStyle={{ width: 170, textAlign: 'right' }}
+                rightTitleStyle={{ width: 170, textAlign: "right" }}
                 title={item.title}
                 bottomDivider={true}
                 rightSubtitle={item.rightTitle}
@@ -153,12 +153,11 @@ class BaseInfo extends BasePage {
         {this.state.saveButtonShow ? (
           <Button
             icon={{
-              name: 'save',
-              color: 'white'
+              name: "save",
+              color: "white",
             }}
             buttonStyle={{
               marginTop: 15,
-              backgroundColor: this.props.screenProps.themeColor
             }}
             title="保存"
             onPress={() => this.updateUserInfo()}
@@ -170,22 +169,19 @@ class BaseInfo extends BasePage {
 }
 
 // 取出 store 中的数据
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    userInfo: state.UserReducer.userInfo
+    userInfo: state.UserReducer.userInfo,
   };
 };
 
 // Dispatch 方法
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setUserInfo: userInfo => {
+    setUserInfo: (userInfo) => {
       dispatch({ type: USER_INFO, userInfo: userInfo });
-    }
+    },
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BaseInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(BaseInfo);

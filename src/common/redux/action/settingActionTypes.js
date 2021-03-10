@@ -8,10 +8,10 @@
  * 是否第一次打开 app，用于第一次启动时，展示系统特性
  * Whether to open the app for the first time, for the first time, show system features
  */
-export const FIRST_INSTALL = 'FIRST_INSTALL';
+export const FIRST_INSTALL = "FIRST_INSTALL";
 
 /**
  * 系统主题颜色
  * System theme color
  */
-export const THEME_COLOR = 'THEME_COLOR';
+export const THEME_COLOR = "THEME_COLOR";

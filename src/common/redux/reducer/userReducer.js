@@ -1,5 +1,5 @@
-import { USER_TOKEN, USER_INFO } from '../action/userActionTypes';
-import { handleActions } from 'redux-actions';
+import { USER_TOKEN, USER_INFO } from "../action/userActionTypes";
+import { handleActions } from "redux-actions";
 
 /**
  * Created by supervons on 2019/08/20.
@@ -8,8 +8,8 @@ import { handleActions } from 'redux-actions';
  */
 // 初始化数据
 const initialState = {
-  userToken: '',
-  userInfo: {}
+  userToken: "",
+  userInfo: {},
 };
 
 const handler = {};
@@ -18,7 +18,7 @@ handler[USER_TOKEN] = (state, action) => {
   const { userToken } = action;
   return {
     ...state,
-    userToken
+    userToken,
   };
 };
 
@@ -26,7 +26,7 @@ handler[USER_INFO] = (state, action) => {
   const { userInfo } = action;
   return {
     ...state,
-    userInfo
+    userInfo,
   };
 };
 

@@ -5,12 +5,18 @@
  * loading component
  * In the required interface call Loading.show () to display, Loading.hide () to hide
  */
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, Dimensions } from 'react-native';
-import Spinkit from 'react-native-spinkit';
-import Theme from '../styles/theme';
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  Dimensions,
+} from "react-native";
+import Spinkit from "react-native-spinkit";
+import Theme from "../styles/theme";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 let _this = null;
 
@@ -21,18 +27,18 @@ class Loading extends Component {
     this.state = {
       show: false,
       type: [
-        'CircleFlip',
-        'Bounce',
-        'Wave',
-        'FadingCircle',
-        'FadingCircleAlt',
-        'WanderingCubes',
-        'Pulse',
-        'ChasingDots',
-        'ThreeBounce',
-        'Circle',
-        '9CubeGrid'
-      ]
+        "CircleFlip",
+        "Bounce",
+        "Wave",
+        "FadingCircle",
+        "FadingCircleAlt",
+        "WanderingCubes",
+        "Pulse",
+        "ChasingDots",
+        "ThreeBounce",
+        "Circle",
+        "9CubeGrid",
+      ],
     };
   }
 
@@ -47,7 +53,7 @@ class Loading extends Component {
     // 随机动画
     const random = (Math.random().toFixed(1) * 11).toFixed(0) % 11;
     // 随机颜色
-    const color = '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+    const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16);
     if (this.state.show) {
       return (
         <View style={styles.LoadingPage}>
@@ -57,20 +63,23 @@ class Loading extends Component {
               height: 100,
               backgroundColor: Theme.loadingBackgroundColor,
               opacity: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
               borderRadius: 7,
-              zIndex: 999
-            }}
-          >
-            <Spinkit isVisible={this.state.show} size={40} type={this.state.type[random]} color={color} />
+              zIndex: 999,
+            }}>
+            <Spinkit
+              isVisible={this.state.show}
+              size={40}
+              type={this.state.type[random]}
+              color={color}
+            />
             <Text
               style={{
                 marginLeft: 10,
                 color: Theme.loadingTextColor,
-                marginTop: 10
-              }}
-            >
+                marginTop: 10,
+              }}>
               正在加载...
             </Text>
           </View>
@@ -85,13 +94,13 @@ class Loading extends Component {
 export default Loading;
 const styles = StyleSheet.create({
   LoadingPage: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: "rgba(0,0,0,0)",
     width: width,
     height: height,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

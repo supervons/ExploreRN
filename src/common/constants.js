@@ -6,15 +6,15 @@
  * Provide basic configuration information
  * constants.js provides configuration such as server address, page number, device type, device number, version number, etc.
  */
-import { Platform } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+import { Platform } from "react-native";
+import DeviceInfo from "react-native-device-info";
 
 export default {
-  serverUrl: 'http://47.93.31.98:8080/commonProject',
+  serverUrl: "http://47.93.31.98:8080/commonProject",
   pageSize: 10,
   deviceType: Platform.OS.toUpperCase(),
   deviceInfo: {
-    UniqueID: DeviceInfo.getUniqueID(),
+    UniqueID: DeviceInfo.getUniqueId(),
     Manufacturer: DeviceInfo.getManufacturer(),
     Brand: DeviceInfo.getBrand(),
     Model: DeviceInfo.getModel(),
@@ -28,15 +28,13 @@ export default {
     ReadableVersion: DeviceInfo.getReadableVersion(),
     DeviceName: DeviceInfo.getDeviceName(),
     UserAgent: DeviceInfo.getUserAgent(),
-    DeviceLocale: DeviceInfo.getDeviceLocale(),
-    DeviceCountry: DeviceInfo.getDeviceCountry(),
-    IPAddress: DeviceInfo.getIPAddress(),
-    MACAddress: DeviceInfo.getMACAddress(),
+    // DeviceLocale: DeviceInfo.getDeviceLocale(),
+    // DeviceCountry: DeviceInfo.getDeviceCountry(),
+    // IPAddress: DeviceInfo.getIPAddress(),
+    // MACAddress: DeviceInfo.getMACAddress(),
     TotalMemory: DeviceInfo.getTotalMemory(),
-    MaxMemory: DeviceInfo.getMaxMemory()
+    MaxMemory: DeviceInfo.getMaxMemory(),
   },
-  deviceNo: DeviceInfo.getUniqueID()
-    .replace('-')
-    .substr(0, 12),
-  versionName: DeviceInfo.getVersion()
+  deviceNo: DeviceInfo.getUniqueId().replace("-").substr(0, 12),
+  versionName: DeviceInfo.getVersion(),
 };

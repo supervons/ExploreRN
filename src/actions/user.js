@@ -1,17 +1,17 @@
-import Axios from '../utils/axios/Axios';
-import Toast from '../components/toast';
+import Axios from "../utils/axios/Axios";
+import Toast from "../components/toast";
 
 /**
  * 用户登录
  * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
-const userLogin = params => {
-  return Axios.POST('/user/loginAction', params)
-    .then(resp => {
+const userLogin = (params) => {
+  return Axios.POST("/user/loginAction", params)
+    .then((resp) => {
       return Promise.resolve(resp);
     })
-    .catch(resp => {
+    .catch((resp) => {
       Toast.showToast(resp);
       return Promise.reject(resp);
     });
@@ -22,12 +22,12 @@ const userLogin = params => {
  * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
-const updateUserInfo = params => {
-  return Axios.POST('/user/updateUser', params)
-    .then(resp => {
+const updateUserInfo = (params) => {
+  return Axios.POST("/user/updateUser", params)
+    .then((resp) => {
       return Promise.resolve(resp);
     })
-    .catch(resp => {
+    .catch((resp) => {
       Toast.showToast(resp);
       return Promise.reject(resp);
     });
@@ -38,12 +38,12 @@ const updateUserInfo = params => {
  * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
-const updatePassword = params => {
-  return Axios.POST('/user/updatePassword', params)
-    .then(resp => {
+const updatePassword = (params) => {
+  return Axios.POST("/user/updatePassword", params)
+    .then((resp) => {
       return Promise.resolve(resp);
     })
-    .catch(resp => {
+    .catch((resp) => {
       Toast.showToast(resp);
       return Promise.reject(resp);
     });
@@ -52,5 +52,5 @@ const updatePassword = params => {
 module.exports = {
   userLogin,
   updateUserInfo,
-  updatePassword
+  updatePassword,
 };

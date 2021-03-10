@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import UserReducer from './userReducer';
-import SettingReducer from './settingReducer';
+import { combineReducers } from "redux";
+import UserReducer from "./userReducer";
+import SettingReducer from "./settingReducer";
 
 /**
  * Created by supervons on 2019/08/20.
@@ -9,7 +9,7 @@ import SettingReducer from './settingReducer';
  */
 const rootReducer = combineReducers({
   UserReducer,
-  SettingReducer
+  SettingReducer,
 });
 
 export default rootReducer;

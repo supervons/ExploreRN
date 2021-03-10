@@ -5,6 +5,7 @@
     Explore the features of the new version of RN, integrate components, and build your own wheels! Welcome to join us:
     qq group: 783071253
     Email: supervons@sina.com
+    RN Version:0.63.4
 
 Old version address: (not old, 0.59.8) https://github.com/supervons/commonProject
 

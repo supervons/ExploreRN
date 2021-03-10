@@ -1,8 +1,7 @@
-import React from 'react';
-import { View } from 'react-native';
-import ChartsComponent from '../../../components/charts';
-import ChartsLiquidFill from '../../../components/chartsLiquidfill';
-import HeaderComponent from '../../../components/header-component';
+import React from "react";
+import { View } from "react-native";
+import ChartsComponent from "../../../components/charts";
+import ChartsLiquidFill from "../../../components/chartsLiquidfill";
 
 /**
  * @desc 图表示例
@@ -12,7 +11,6 @@ import HeaderComponent from '../../../components/header-component';
 export default function eChartsDemoPage() {
   return (
     <View style={{ flex: 1 }}>
-      <HeaderComponent title={'图表示例'} />
       <ChartsComponent />
       <ChartsLiquidFill />
     </View>

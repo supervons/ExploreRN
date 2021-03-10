@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Swiper from 'react-native-swiper';
-import { Text, View } from 'react-native';
-import commonStyles from '../styles/commonStyles';
+import React, { useState } from "react";
+import Swiper from "../components/SwiperComponent";
+import { Text, View } from "react-native";
+import commonStyles from "../styles/commonStyles";
 
 /**
  * Created by supervons on 2020/04/15.
@@ -10,9 +10,9 @@ import commonStyles from '../styles/commonStyles';
  */
 export default function CarouselComponent() {
   const [introduction] = useState({
-    title_1: 'This is SWiper',
-    title_2: 'react-native good job',
-    title_3: 'Hermes so fast'
+    title_1: "This is SWiper",
+    title_2: "react-native good job",
+    title_3: "Hermes so fast",
   });
   return (
     <View style={{ height: 150 }}>
