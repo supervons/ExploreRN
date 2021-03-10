@@ -53,7 +53,7 @@ const routeInfo = [
   },
   {
     name: "SystemIntroduction",
-    options: { title: "欢迎页" },
+    options: { title: "欢迎页", header: () => null },
     component: SystemIntroduction,
   },
   {

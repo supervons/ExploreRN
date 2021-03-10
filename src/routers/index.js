@@ -22,7 +22,9 @@ export class HomeStackScreen extends React.Component {
           screenOptions={{
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}>
-          <HomeStack.Screen name={"登录"} component={Login} />
+          <HomeStack.Screen name={"登录"}
+                            options={{ header: () => null}}
+                            component={Login} />
           {HomeRouter}
           {MyRouter}
         </HomeStack.Navigator>
