@@ -1,9 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { View } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
 import Theme from "../../../styles/theme";
-import commonStyles from "../../../styles/commonStyles";
-import BasePage from "../../../common/BasePage";
 
 /**
  * Created by supervons on 2019/08/12.
@@ -34,12 +32,8 @@ const list = [
   },
 ];
 
-export default class Settings extends BasePage {
-  navigationOptions = {
-    headerTitle: "设置",
-  };
-
-  renderView() {
+export default class Settings extends Component {
+  render() {
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         {list.map((item, i) => (

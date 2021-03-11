@@ -1,11 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Clipboard } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import DeviceInfo from "react-native-device-info";
-import commonStyles from "../../../../styles/commonStyles";
 import Toast from "../../../../components/toast";
-import BasePage from "../../../../common/BasePage";
 
 /**
  * Created by supervons on 2019/08/12.
@@ -39,12 +37,8 @@ const list = [
   },
 ];
 
-export default class VersionInfo extends BasePage {
-  navigationOptions = {
-    headerTitle: "系统信息",
-  };
-
-  renderView() {
+export default class VersionInfo extends Component {
+  render() {
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         {list.map((item, i) => (

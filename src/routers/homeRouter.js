@@ -56,7 +56,7 @@ const Main = () => (
   <Tab.Navigator
     initialRouteName={"LoginPage"}
     tabBarOptions={{
-      activeTintColor: "#7B8B6F"
+      activeTintColor: "#7B8B6F",
     }}>
     {tabBarInfo.map((res) => {
       return (

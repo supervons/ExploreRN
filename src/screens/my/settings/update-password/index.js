@@ -1,37 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { View } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
 import Toast from "../../../../components/toast";
 import userAction from "../../../../actions/user";
-import BasePage from "../../../../common/BasePage";
 
 /**
  * Created by supervons on 2019/09/06.
  * 修改密码页面
  * update password page
  */
-let _this;
-export default class UpdatePassword extends BasePage {
-  navigationOptions = {
-    headerTitle: "修改密码",
-  };
+export default class UpdatePassword extends Component {
   constructor(props) {
     super(props);
-    _this = this;
     this.state = {
       userInfo: {},
       saveButtonShow: false,
     };
-  }
-
-  static navigationOptions = {
-    headerTitle: "修改密码",
-  };
-
-  componentDidMount(): void {
-    // this.setState({ userInfo: userInfo });
   }
 
   getUserInfo() {
@@ -89,32 +75,42 @@ export default class UpdatePassword extends BasePage {
     }
   }
 
-  renderView() {
+  render() {
     const userInfo = this.getUserInfo();
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
         {userInfo.map((item, i) => (
-          <ListItem
-            key={i}
-            containerStyle={commonStyles.itemPadding}
-            title={item.title}
-            bottomDivider={true}
-            input={{
-              onChangeText: (text) =>
-                this.setState({
-                  userInfo: { ...this.state.userInfo, [item.key]: text },
-                }),
-              placeholder: item.placeholder,
-              autoFocus: i === 0 ? true : false,
-              secureTextEntry: true,
-              value: this.state.userInfo[item.key],
-              inputStyle: {
-                paddingTop: 0,
-                alignItems: "center",
-                fontSize: 15,
-              },
-            }}
-          />
+          <ListItem bottomDivider key={i}>
+            <ListItem.Content
+              key={i}
+              containerStyle={commonStyles.itemPadding}
+              bottomDivider={true}
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <ListItem.Title>{item.title}</ListItem.Title>
+              </View>
+              <ListItem.Input
+                onChangeText={(text) =>
+                  this.setState({
+                    userInfo: { ...this.state.userInfo, [item.key]: text },
+                  })
+                }
+                placeholder={item.placeholder}
+                secureTextEntry={true}
+                value={this.state.userInfo[item.key]}
+                input={{
+                  inputStyle: {
+                    paddingTop: 0,
+                    alignItems: "center",
+                    fontSize: 15,
+                  },
+                }}
+              />
+            </ListItem.Content>
+          </ListItem>
         ))}
         <Button
           icon={{

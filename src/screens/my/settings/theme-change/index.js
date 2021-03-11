@@ -1,9 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { DeviceEventEmitter, View } from "react-native";
 import { CheckBox, ListItem, Divider, Button } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
-import BasePage from "../../../../common/BasePage";
 import { connect } from "react-redux";
 import { THEME_COLOR } from "../../../../common/redux/action/settingActionTypes";
 
@@ -40,11 +39,7 @@ const colorList = [
   },
 ];
 
-class ThemeChange extends BasePage {
-  navigationOptions = {
-    headerTitle: "更换皮肤",
-  };
-
+class ThemeChange extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,7 +51,7 @@ class ThemeChange extends BasePage {
     this.setState({ themeColor: this.props.themeColor });
   }
 
-  renderView() {
+  render() {
     const currentColor = this.state.themeColor;
     return (
       <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>

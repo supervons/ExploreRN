@@ -3,18 +3,13 @@
  * 发现页面
  * explore page
  */
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, ScrollView, Text, View, Platform } from "react-native";
 import newsAction from "../../actions/news";
 import ScrollableTabView from "../../components/SwiperComponent";
-import BasePages from "../../common/BasePage";
 import TabBarView from "./component/TabBarView";
 
-export default class Explore extends BasePages {
-  navigationOptions = {
-    header: null,
-  };
-
+export default class Explore extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,7 +21,7 @@ export default class Explore extends BasePages {
     });
   }
 
-  renderView() {
+  render() {
     return (
       <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
         <View
