@@ -27,7 +27,6 @@ global.jwtToken = "";
 // 用户信息
 global.userInfo = {};
 
-const width = Dimensions.get("window").width;
 class Login extends Component {
   static navigationOptions = {
     header: null,

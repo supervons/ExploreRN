@@ -32,40 +32,38 @@ const list = [
   },
 ];
 
-export default class Settings extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
-        {list.map((item, i) => (
-          <ListItem
-            containerStyle={{ alignItems: "center" }}
-            onPress={() => item.onPress(this.props.navigation)}
-            key={i}
-            bottomDivider>
-            <ListItem.Content
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Icon name={item.icon} color={item.color} />
-                <ListItem.Title
-                  style={{
-                    marginLeft: 5,
-                  }}>
-                  {item.title}
-                </ListItem.Title>
-              </View>
-              <ListItem.Subtitle>
-                <Icon
-                  name={"keyboard-arrow-right"}
-                  color={item.hiddenRightIcon ? "#ffffff" : "#000000"}
-                />
-              </ListItem.Subtitle>
-            </ListItem.Content>
-          </ListItem>
-        ))}
-      </View>
-    );
-  }
+export default function Settings() {
+  return (
+    <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+      {list.map((item, i) => (
+        <ListItem
+          containerStyle={{ alignItems: "center" }}
+          onPress={() => item.onPress(this.props.navigation)}
+          key={i}
+          bottomDivider>
+          <ListItem.Content
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Icon name={item.icon} color={item.color} />
+              <ListItem.Title
+                style={{
+                  marginLeft: 5,
+                }}>
+                {item.title}
+              </ListItem.Title>
+            </View>
+            <ListItem.Subtitle>
+              <Icon
+                name={"keyboard-arrow-right"}
+                color={item.hiddenRightIcon ? "#ffffff" : "#000000"}
+              />
+            </ListItem.Subtitle>
+          </ListItem.Content>
+        </ListItem>
+      ))}
+    </View>
+  );
 }

@@ -22,7 +22,7 @@ export function HomeStackScreen() {
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <HomeStack.Screen
-          name={"登录"}
+          name={"Login"}
           options={{ header: () => null }}
           component={Login}
         />

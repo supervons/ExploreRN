@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { ListItem, Button } from "react-native-elements";
 import Theme from "../../../styles/theme";
@@ -15,93 +15,82 @@ import commonStyles from "../../../styles/commonStyles";
  */
 let _this;
 
-class BaseInfo extends Component {
-  constructor(props) {
-    super(props);
-    _this = this;
-    this.state = {
-      userInfo: {},
-      saveButtonShow: false,
-    };
-  }
+function BaseInfo() {
+  const [userInfo] = useState(getUserInfo());
+  const [saveButtonShow, setSaveButtonShow] = useState(false);
 
-  static navigationOptions = {
-    headerTitle: "个人基本信息",
-    headerRight: (
-      <Button
-        type="clear"
-        onPress={() => _this.changeSaveButtonState()}
-        icon={{
-          name: "edit",
-          size: 20,
-          color: "white",
-        }}
-      />
-    ),
-  };
+  // static navigationOptions = {
+  //   headerTitle: "个人基本信息",
+  //   headerRight: (
+  //     <Button
+  //       type="clear"
+  //       onPress={() => _changeSaveButtonState()}
+  //       icon={{
+  //         name: "edit",
+  //         size: 20,
+  //         color: "white",
+  //       }}
+  //     />
+  //   ),
+  // };
 
-  componentDidMount(): void {
-    this.setState({ userInfo: userInfo });
-  }
-
-  changeSaveButtonState(type) {
+  function changeSaveButtonState(type) {
     // 当保存接口成功调用时，type为true，其余则不更新全局的userInfo
     if (type) {
-      this.setState({ saveButtonShow: !this.state.saveButtonShow });
-      userInfo = this.state.userInfo;
-      this.props.setUserInfo(this.state.userInfo);
+      setSaveButtonShow(!saveButtonShow);
+      props.setUserInfo(userInfo);
     } else {
-      this.setState({
-        userInfo: userInfo,
-        saveButtonShow: !this.state.saveButtonShow,
+      setState({
+        userInfo: global.userInfo,
+        saveButtonShow: !saveButtonShow,
       });
     }
   }
 
-  updateUserInfo() {
-    userAction.updateUserInfo(this.state.userInfo).then((resp) => {
+  function updateUserInfo() {
+    userAction.updateUserInfo(userInfo).then((resp) => {
       Toast.showToast(resp.msg);
-      this.changeSaveButtonState(true);
+      changeSaveButtonState(true);
     });
   }
 
-  getUserInfo() {
+  function getUserInfo() {
     const userInfoJson = [
       {
         key: "loginId",
         title: "账号",
-        rightTitle: this.state.userInfo.loginId,
+        rightTitle: global.userInfo.loginId,
         editable: false,
       },
       {
         key: "userName",
         title: "姓名",
-        rightTitle: this.state.userInfo.userName,
+        rightTitle: global.userInfo.userName,
         editable: true,
       },
       {
         key: "userSex",
         title: "性别",
-        rightTitle: this.state.userInfo.userSex,
+        rightTitle: global.userInfo.userSex,
         editable: false,
       },
       {
         key: "userCellPhone",
         title: "手机号",
-        rightTitle: this.state.userInfo.userCellPhone,
+        rightTitle: global.userInfo.userCellPhone,
         editable: true,
       },
       {
         key: "userAddress",
         title: "地址",
-        rightTitle: this.state.userInfo.userAddress,
+        rightTitle: global.userInfo.userAddress,
         editable: true,
       },
     ];
     return userInfoJson;
   }
 
-  _renderItemView(i, title, rightTitle) {
+  function _renderItemView(i, title, rightTitle) {
     return (
       <ListItem bottomDivider key={i}>
         <ListItem.Content
@@ -122,67 +111,63 @@ class BaseInfo extends Component {
     );
   }
 
-  render() {
-    const userInfo = this.getUserInfo();
-    return (
-      <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
-        {this.state.saveButtonShow
-          ? userInfo.map((item, i) =>
-              item.editable ? (
-                <ListItem bottomDivider key={i}>
-                  <ListItem.Content
-                    key={i}
-                    containerStyle={commonStyles.itemPadding}
-                    bottomDivider={true}
-                    input={{
-                      onChangeText: (text) =>
-                        this.setState({
-                          userInfo: {
-                            ...this.state.userInfo,
-                            [item.key]: text,
-                          },
-                        }),
-                      value: this.state.userInfo[item.key],
-                      inputStyle: {
-                        paddingTop: 0,
-                        alignItems: "center",
-                        fontSize: 15,
-                      },
-                    }}
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                    }}>
-                    <View
-                      style={{ flexDirection: "row", alignItems: "center" }}>
-                      <ListItem.Title>{item.title}</ListItem.Title>
-                    </View>
-                    <ListItem.Subtitle>{item.rightTitle}</ListItem.Subtitle>
-                  </ListItem.Content>
-                </ListItem>
-              ) : (
-                this._renderItemView(i, item.title, item.rightTitle)
-              ),
-            )
-          : userInfo.map((item, i) =>
-              this._renderItemView(i, item.title, item.rightTitle),
-            )}
-        {this.state.saveButtonShow ? (
-          <Button
-            icon={{
-              name: "save",
-              color: "white",
-            }}
-            buttonStyle={{
-              marginTop: 15,
-            }}
-            title="保存"
-            onPress={() => this.updateUserInfo()}
-          />
-        ) : null}
-      </View>
-    );
-  }
+  return (
+    <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+      {saveButtonShow
+        ? global.userInfo.map((item, i) =>
+            item.editable ? (
+              <ListItem bottomDivider key={i}>
+                <ListItem.Content
+                  key={i}
+                  containerStyle={commonStyles.itemPadding}
+                  bottomDivider={true}
+                  input={{
+                    onChangeText: (text) =>
+                      setState({
+                        userInfo: {
+                          ...userInfo,
+                          [item.key]: text,
+                        },
+                      }),
+                    value: userInfo[item.key],
+                    inputStyle: {
+                      paddingTop: 0,
+                      alignItems: "center",
+                      fontSize: 15,
+                    },
+                  }}
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <ListItem.Title>{item.title}</ListItem.Title>
+                  </View>
+                  <ListItem.Subtitle>{item.rightTitle}</ListItem.Subtitle>
+                </ListItem.Content>
+              </ListItem>
+            ) : (
+              _renderItemView(i, item.title, item.rightTitle)
+            ),
+          )
+        : userInfo.map((item, i) =>
+            _renderItemView(i, item.title, item.rightTitle),
+          )}
+      {saveButtonShow ? (
+        <Button
+          icon={{
+            name: "save",
+            color: "white",
+          }}
+          buttonStyle={{
+            marginTop: 15,
+          }}
+          title="保存"
+          onPress={() => updateUserInfo()}
+        />
+      ) : null}
+    </View>
+  );
 }
 
 // 取出 store 中的数据

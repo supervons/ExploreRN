@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/core";
 import { View, Alert, StatusBar, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Avatar, Icon } from "react-native-elements";
 import Theme from "../../styles/theme";
@@ -7,7 +8,6 @@ import {
   USER_TOKEN,
   USER_INFO,
 } from "../../common/redux/action/userActionTypes";
-import commonStyles from "../../styles/commonStyles";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**
@@ -20,6 +20,7 @@ import commonStyles from "../../styles/commonStyles";
  */
 export default function MyPage(props) {
   const dispatch = useDispatch();
+  const route = useNavigation();
   const [list, setList] = useState([
     {
       key: 1,
@@ -75,7 +76,7 @@ export default function MyPage(props) {
             onPress: () => {
               dispatch({ type: USER_TOKEN, value: "" });
               dispatch({ type: USER_INFO, value: {} });
-              props.navigation.replace("Login");
+              route.replace("Login");
             },
           },
         ]),

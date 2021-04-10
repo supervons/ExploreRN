@@ -37,30 +37,28 @@ const list = [
   },
 ];
 
-export default class VersionInfo extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
-        {list.map((item, i) => (
-          <ListItem
-            bottomDivider
-            key={i}
-            onPress={() =>
-              item.onPress ? item.onPress(item.rightTitle) : console.log("")
-            }>
-            <ListItem.Content
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <ListItem.Title>{item.title}</ListItem.Title>
-              </View>
-              <ListItem.Subtitle>{item.rightTitle}</ListItem.Subtitle>
-            </ListItem.Content>
-          </ListItem>
-        ))}
-      </View>
-    );
-  }
+export default function VersionInfo() {
+  return (
+    <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+      {list.map((item, i) => (
+        <ListItem
+          bottomDivider
+          key={i}
+          onPress={() =>
+            item.onPress ? item.onPress(item.rightTitle) : console.log("")
+          }>
+          <ListItem.Content
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <ListItem.Title>{item.title}</ListItem.Title>
+            </View>
+            <ListItem.Subtitle>{item.rightTitle}</ListItem.Subtitle>
+          </ListItem.Content>
+        </ListItem>
+      ))}
+    </View>
+  );
 }
