@@ -8,6 +8,7 @@ import {
   CardStyleInterpolators,
 } from "@react-navigation/stack";
 import React from "react";
+import { SafeAreaView } from "react-native";
 import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
@@ -21,6 +22,7 @@ import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
 import MainPage from "../screens/home/MainPage";
 import Explore from "../screens/explore/index";
 import My from "../screens/my/index";
+import { PersistGate } from "redux-persist/integration/react";
 const HomeStack = createStackNavigator();
 /**
  * 底部导航组件配置
@@ -30,21 +32,21 @@ const tabBarInfo = [
     name: "MainPage",
     component: MainPage,
     tabBarLabel: "首页",
-    selectIcon: <Icon size={30} name={"home"} color={"#7B8B6F"} />,
+    selectIcon: <Icon size={35} name={"home"} color={"#7B8B6F"} />,
     defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
   },
   {
     name: "Explore",
     component: Explore,
     tabBarLabel: "发现",
-    selectIcon: <Icon size={30} name={"explore"} color={"#7B8B6F"} />,
+    selectIcon: <Icon size={35} name={"explore"} color={"#7B8B6F"} />,
     defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
   },
   {
     name: "My",
     component: My,
     tabBarLabel: "我的",
-    selectIcon: <Icon size={30} name={"person"} color={"#7B8B6F"} />,
+    selectIcon: <Icon size={35} name={"person"} color={"#7B8B6F"} />,
     defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
   },
 ];
@@ -83,7 +85,10 @@ const Main = () => (
 const routeInfo = [
   {
     name: "MainPage",
-    options: { title: "", header: () => null },
+    options: {
+      title: "",
+      header: () => <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />,
+    },
     component: Main,
   },
   {

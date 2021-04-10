@@ -14,25 +14,23 @@ import { MyRouter } from "./myRouter";
 import { NavigationContainer } from "@react-navigation/native";
 
 const HomeStack = createStackNavigator();
-export class HomeStackScreen extends React.Component {
-  render() {
-    return (
-      <NavigationContainer>
-        <HomeStack.Navigator
-          screenOptions={{
-            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          }}>
-          <HomeStack.Screen
-            name={"登录"}
-            options={{ header: () => null }}
-            component={Login}
-          />
-          {HomeRouter}
-          {MyRouter}
-        </HomeStack.Navigator>
-      </NavigationContainer>
-    );
-  }
+export function HomeStackScreen() {
+  return (
+    <NavigationContainer>
+      <HomeStack.Navigator
+        screenOptions={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}>
+        <HomeStack.Screen
+          name={"登录"}
+          options={{ header: () => null }}
+          component={Login}
+        />
+        {HomeRouter}
+        {MyRouter}
+      </HomeStack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 exports.default = HomeStackScreen;
