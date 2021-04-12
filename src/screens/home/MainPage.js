@@ -55,7 +55,7 @@ export default function MainPage(props) {
   function renderFunView() {
     return (
       <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-        {demoList.map((res) => {
+        {demoList.map(res => {
           return (
             <TouchableOpacity
               onPress={() => {

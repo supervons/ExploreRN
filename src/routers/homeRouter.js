@@ -60,7 +60,7 @@ const Main = () => (
     tabBarOptions={{
       activeTintColor: "#7B8B6F",
     }}>
-    {tabBarInfo.map((res) => {
+    {tabBarInfo.map(res => {
       return (
         <Tab.Screen
           key={res.name}
@@ -98,7 +98,7 @@ const routeInfo = [
   },
 ];
 const pageViewRouter = [];
-routeInfo.map((res) => {
+routeInfo.map(res => {
   pageViewRouter.push(
     <HomeStack.Screen
       key={res.name}
