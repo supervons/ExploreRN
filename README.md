@@ -11,20 +11,24 @@
 
 # 功能
 
-| 功能名称      | 简述                             | 使用组件名称及版本                                           |
-| ------------- | -------------------------------- | ------------------------------------------------------------ |
-| 1.图片选择    | 选择相册中的图片，亦或进行拍照   | react-native-image-picker@2.3.4                              |
-| 2.扫一扫      | 扫一扫二维码，获取二维码中的信息 | react-native-camera@3.8.0                                    |
-| 3.换肤        | 更换系统导航头部及按钮颜色       | react-navigation@3.11.1                                      |
-| 4.Redux全家桶 | redux及中间件的使用              | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3.0 |
-| 5.网络请求    | 统一封装网络请求                 | axios@0.19.0                                                 |
+| 功能名称     | 简述                             | 使用组件名称及版本                                           |
+| ------------ | -------------------------------- | ------------------------------------------------------------ |
+| 图片选择     | 选择相册中的图片，亦或进行拍照   | react-native-image-picker@2.3.4                              |
+| 扫一扫       | 扫一扫二维码，获取二维码中的信息 | react-native-camera@3.8.0                                    |
+| 换肤         | 更换系统导航头部及按钮颜色       | react-navigation@3.11.1                                      |
+| UI库         | 整体UI库                         | react-native-elements@3.1.0                                  |
+| Redux全家桶  | redux及中间件的使用              | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3.0 |
+| 网络请求     | 统一封装网络请求                 | axios@0.19.0                                                 |
+| 基于hook重写 | 基于hook重写class页面            | react@17.0.1                                                 |
 
 
 # 安装依赖
 
-    npm install
-    # 如果是 iOS 则需要执行以下操作
-    cd ios && pod install 
+```shell
+npm install
+# 如果是 iOS 则需要执行以下操作，确保网络畅通
+cd ios && pod install 
+```
 
 # 运行
 
