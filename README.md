@@ -5,7 +5,7 @@
     探索新版本RN特性，集成组件，造自己的轮子！欢迎加入我们：
     qq群：783071253
     邮箱：supervons@sina.com
-    当前RN版本：0.63.4
+    当前RN版本：0.64.0
 
 老版本地址：（也不老，0.59.8）https://github.com/supervons/commonProject
 
