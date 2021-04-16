@@ -50,7 +50,7 @@ export default class Scanner extends Component {
   };
 
   // 扫描事件
-  onBarCodeRead = (result) => {
+  onBarCodeRead = result => {
     if (!this.isBarcodeRead) {
       this.isBarcodeRead = true;
       // 卸载扫一扫组件，否则还会持续扫描
@@ -87,7 +87,7 @@ export default class Scanner extends Component {
       <View style={styles.container}>
         {this.state.showCamera ? (
           <RNCamera
-            ref={(ref) => {
+            ref={ref => {
               this.camera = ref;
             }}
             style={styles.preview}

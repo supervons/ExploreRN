@@ -12,7 +12,7 @@ import TabBarView from "./component/TabBarView";
 export default function Explore() {
   useEffect(() => {
     const params = { pageNo: 1, itemNo: 2 };
-    newsAction.getNewsList(params).then((resp) => {
+    newsAction.getNewsList(params).then(resp => {
       console.log(JSON.stringify(resp));
     });
   }, []);
@@ -30,7 +30,7 @@ export default function Explore() {
         tabBarUnderlineStyle={{
           backgroundColor: "#ffffff",
         }}
-        renderTabBar={(res) => <TabBarView />}>
+        renderTabBar={res => <TabBarView />}>
         <ScrollView
           key={"news"}
           style={{

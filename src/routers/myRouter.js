@@ -73,7 +73,7 @@ const routeInfo = [
   },
 ];
 const pageViewRouter = [];
-routeInfo.map((res) => {
+routeInfo.map(res => {
   pageViewRouter.push(
     <MyStack.Screen
       key={res.name}
