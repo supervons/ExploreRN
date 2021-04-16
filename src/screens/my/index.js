@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, StatusBar, ScrollView, SafeAreaView } from "react-native";
-import { ListItem, Avatar, Icon } from "react-native-elements";
+import { ListItem, Icon } from "react-native-elements";
 import Theme from "../../styles/theme";
 import { useDispatch } from "react-redux";
 import {
   USER_TOKEN,
   USER_INFO,
 } from "../../common/redux/action/userActionTypes";
+import RotateImage from "../../components/RotateImage";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**
@@ -142,15 +143,7 @@ export default function MyPage(props) {
         translucent={true}
         barStyle={"light-content"}
       />
-      <View style={{ alignItems: "center" }}>
-        <Avatar
-          onPress={() => alert("更换头像")}
-          containerStyle={{ marginTop: 25, marginBottom: 15 }}
-          rounded
-          size="xlarge"
-          source={require("../../resource/image/avatar/logo.png")}
-        />
-      </View>
+      <RotateImage />
       {list.map((item, i) => (
         <ListItem
           containerStyle={{ alignItems: "center" }}
