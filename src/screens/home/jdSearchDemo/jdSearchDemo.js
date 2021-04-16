@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   StyleSheet,
   Button,
@@ -15,8 +15,23 @@ import { Dimensions, ScrollView, Text, View } from "react-native";
  * @date 2021/04/16
  */
 const { width } = Dimensions.get("window");
-export default function jdSearchDemo() {
+export default function jdSearchDemo(props) {
   const [offsetY, setOffsetY] = useState(0);
+  const scrollViewRef = useRef();
+
+  useEffect(() => {
+    // auto scroll
+    setTimeout(() => {
+      scrollViewRef.current.scrollToEnd({ animated: true });
+    }, 1000);
+    setTimeout(() => {
+      scrollViewRef.current.scrollTo({
+        x: 0,
+        y: 0,
+        animated: true,
+      });
+    }, 1500);
+  }, []);
 
   /**
    * 滑动监听事件，动态监听滚动条高度
@@ -93,8 +108,11 @@ export default function jdSearchDemo() {
       <StatusBar backgroundColor={"red"} barStyle={"light-content"} />
       {title()}
       <ScrollView
+        ref={scrollViewRef}
         onScroll={onScroll}
         stickyHeaderIndices={[1]}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
         style={{
           zIndex: -1,
           marginTop: -60,
@@ -131,7 +149,7 @@ export default function jdSearchDemo() {
             justifyContent: "center",
             alignItems: "center",
           }}>
-          <Button onPress={() => alert(1)} title={"Back Home"} />
+          <Button onPress={() => props.navigation.pop()} title={"Back Home"} />
         </View>
       </ScrollView>
     </View>
