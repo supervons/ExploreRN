@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { View, Text, StatusBar, DeviceEventEmitter } from "react-native";
-import { Button, Input, Avatar } from "react-native-elements";
+import { Button, Input } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Theme from "../../styles/theme";
 import userAction from "../../actions/user";
@@ -16,6 +16,7 @@ import {
   USER_INFO,
 } from "../../common/redux/action/userActionTypes";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import RotateImage from "../../components/RotateImage";
 // 用户 token
 global.jwtToken = "";
 // 用户信息
@@ -85,14 +86,10 @@ export default function Login(props) {
           alignItems: "center",
         }}>
         <StatusBar backgroundColor={Theme.white} barStyle={"dark-content"} />
-        <Avatar
-          containerStyle={{ marginTop: 100 }}
-          rounded
-          size="xlarge"
-          source={require("../../resource/image/avatar/logo.png")}
-        />
+        <RotateImage style={{ marginTop: 100 }} />
         <Input
           containerStyle={{
+            marginTop: 10,
             width: 300,
             marginBottom: 15,
             backgroundColor: "#DCDCDC",

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Animated } from "react-native";
 import { Avatar } from "react-native-elements";
 /**
@@ -6,7 +6,10 @@ import { Avatar } from "react-native-elements";
  * @author supervons
  * @date 2021/04/16
  */
-export default function RotateImage() {
+export default function RotateImage(props) {
+  useEffect(() => {
+    fadeIn();
+  }, []);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
@@ -32,7 +35,13 @@ export default function RotateImage() {
 
   return (
     <Animated.View
-      style={[{ alignItems: "center", transform: [{ rotateZ: degNum }] }]}>
+      style={[
+        {
+          alignItems: "center",
+          transform: [{ rotateZ: degNum }],
+          ...props.style,
+        },
+      ]}>
       <Avatar
         onPress={fadeIn}
         containerStyle={{ marginTop: 25, marginBottom: 15 }}
