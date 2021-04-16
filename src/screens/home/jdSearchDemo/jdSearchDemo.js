@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, TextInput } from "react-native";
+import { StyleSheet, Button, TextInput, TouchableOpacity } from "react-native";
 import { Dimensions, ScrollView, Text, View } from "react-native";
 
 /**
@@ -30,6 +30,7 @@ export default function jdSearchDemo() {
   function title() {
     return (
       <View
+        pointerEvents="box-none"
         style={{
           backgroundColor: "#00000000",
           height: 50,
@@ -43,7 +44,11 @@ export default function jdSearchDemo() {
           }}>
           京东购物狂欢！！！
         </Text>
-        <Text style={{ position: "absolute", right: 50, top: 20 }}>扫一扫</Text>
+        <TouchableOpacity onPress={() => alert("ss")}>
+          <Text style={{ position: "absolute", right: 50, top: 20 }}>
+            扫一扫
+          </Text>
+        </TouchableOpacity>
         <Text style={{ position: "absolute", right: 5, top: 20 }}>消息</Text>
       </View>
     );
