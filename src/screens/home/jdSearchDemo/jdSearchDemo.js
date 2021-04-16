@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  StatusBar,
+} from "react-native";
 import { Dimensions, ScrollView, Text, View } from "react-native";
 
 /**
@@ -32,37 +39,65 @@ export default function jdSearchDemo() {
       <View
         pointerEvents="box-none"
         style={{
-          backgroundColor: "#00000000",
           height: 50,
         }}>
-        <Text
-          style={{
-            opacity: 1 - offsetY / 30,
-            position: "absolute",
-            left: 20,
-            top: 20,
-          }}>
-          京东购物狂欢！！！
-        </Text>
-        <TouchableOpacity onPress={() => alert("ss")}>
-          <Text style={{ position: "absolute", right: 50, top: 20 }}>
-            扫一扫
-          </Text>
-        </TouchableOpacity>
-        <Text style={{ position: "absolute", right: 5, top: 20 }}>消息</Text>
+        <Image
+          style={[
+            styles.titleImage,
+            {
+              opacity: 1 - offsetY / 30,
+            },
+          ]}
+          resizeMode={"contain"}
+          source={require("../../../resource/image/jdSearch/react.png")}
+        />
+        {rightIcon(
+          "扫一扫",
+          50,
+          require("../../../resource/image/jdSearch/scanner.png"),
+        )}
+        {rightIcon(
+          "消息",
+          10,
+          require("../../../resource/image/jdSearch/msg.png"),
+        )}
       </View>
     );
   }
 
+  function rightIcon(title, right, imageSource) {
+    return (
+      <TouchableOpacity
+        style={{
+          justifyContent: "center",
+          position: "absolute",
+          right: right,
+        }}
+        onPress={() => alert("scanner")}>
+        <View
+          style={{
+            alignItems: "center",
+          }}>
+          <Image
+            resizeMode={"contain"}
+            style={{ height: 20, width: 20, marginBottom: 5 }}
+            source={imageSource}
+          />
+          <Text style={{ color: "#fff" }}>{title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar backgroundColor={"red"} barStyle={"light-content"} />
       {title()}
       <ScrollView
         onScroll={onScroll}
         stickyHeaderIndices={[1]}
         style={{
           zIndex: -1,
-          marginTop: -50,
+          marginTop: -60,
           backgroundColor: "#ffffff",
         }}>
         <View style={{ height: 50, backgroundColor: "red" }} />
@@ -74,7 +109,6 @@ export default function jdSearchDemo() {
             style={[
               styles.textInput,
               {
-                zIndex: 99,
                 width: width * 0.95 - 3 * offsetY,
               },
             ]}
@@ -106,5 +140,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+  },
+  titleImage: {
+    position: "absolute",
+    left: 20,
+    height: 40,
+    width: 40,
   },
 });
