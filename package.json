@@ -11,6 +11,7 @@
     "link-adb": "adb kill-server && adb server && adb shell"
   },
   "dependencies": {
+    "@ant-design/react-native": "^4.0.7",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/viewpager": "^4.2.2",
     "@react-navigation/bottom-tabs": "5.6.1",

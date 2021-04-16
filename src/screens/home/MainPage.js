@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   ScrollView,
   View,
@@ -39,6 +39,13 @@ export default function MainPage(props) {
       name: "gallery",
       routeName: "",
     },
+    {
+      key: "jdSearch",
+      icon: "search",
+      color: "#965454",
+      name: "JDSearch",
+      routeName: "jdSearchDemo",
+    },
   ];
   /**
    * 跳转demo页面
@@ -54,7 +61,11 @@ export default function MainPage(props) {
    */
   function renderFunView() {
     return (
-      <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}>
         {demoList.map(res => {
           return (
             <TouchableOpacity
@@ -73,11 +84,17 @@ export default function MainPage(props) {
       </View>
     );
   }
+
   return (
-    <ScrollView style={{ backgroundColor: "#ffffff" }}>
-      <CarouselComponent />
-      {renderFunView()}
-    </ScrollView>
+    <View>
+      <ScrollView
+        style={{
+          backgroundColor: "#ffffff",
+        }}>
+        <CarouselComponent />
+        {renderFunView()}
+      </ScrollView>
+    </View>
   );
 }
 const styles = StyleSheet.create({

@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native";
 import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
+import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
 
 /**
  * @desc The my page route collection
@@ -95,6 +96,14 @@ const routeInfo = [
     name: "eChartsDemoPage",
     options: { title: "图表示例" },
     component: eChartsDemoPage,
+  },
+  {
+    name: "jdSearchDemo",
+    options: {
+      title: "仿京东头部搜索",
+      header: () => <SafeAreaView style={{ backgroundColor: "red" }} />,
+    },
+    component: jdSearchDemo,
   },
 ];
 const pageViewRouter = [];
