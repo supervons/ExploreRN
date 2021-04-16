@@ -102,17 +102,28 @@ export default function jdSearchDemo() {
         }}>
         <View style={{ height: 50, backgroundColor: "red" }} />
         <View style={styles.textInputView}>
-          <TextInput
-            underlineColor={"transparent"}
-            placeholder={"请输入您要咨询的问题"}
-            placeholderTextColor={"#9DA3B8"}
+          <View
             style={[
               styles.textInput,
               {
                 width: width * 0.95 - 3 * offsetY,
               },
-            ]}
-          />
+            ]}>
+            <Image
+              style={{
+                height: 20,
+                width: 20,
+                marginRight: 5,
+              }}
+              resizeMode={"contain"}
+              source={require("../../../resource/image/jdSearch/search.png")}
+            />
+            <TextInput
+              underlineColor={"transparent"}
+              placeholder={"请输入您要咨询的问题"}
+              placeholderTextColor={"#9DA3B8"}
+            />
+          </View>
         </View>
         <View
           style={{
@@ -140,6 +151,9 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+    flexDirection: "row",
+    paddingHorizontal: 10,
+    alignItems: "center",
   },
   titleImage: {
     position: "absolute",
