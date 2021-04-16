@@ -28,7 +28,7 @@ export default function MyPage(props) {
       title: "基本信息",
       icon: "person",
       color: "#058bb3",
-      onPress: () => props.navigation.push("BaseInfo"),
+      onPress: () => route.push("BaseInfo"),
     },
     {
       key: 2,
@@ -42,15 +42,14 @@ export default function MyPage(props) {
       title: "系统特性",
       icon: "invert-colors",
       color: "#36fffb",
-      onPress: () =>
-        props.navigation.push("SystemIntroduction", { type: true }),
+      onPress: () => route.push("SystemIntroduction", { type: true }),
     },
     {
       key: 4,
       title: "设置",
       icon: "settings",
       color: "#36648b",
-      onPress: () => props.navigation.push("Settings"),
+      onPress: () => route.push("Settings"),
     },
     {
       key: 53,
