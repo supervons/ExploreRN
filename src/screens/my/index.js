@@ -133,7 +133,9 @@ export default function MyPage(props) {
   }
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+    <ScrollView
+      alwaysBounceVertical={false}
+      style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
       <StatusBar
         animated={false}

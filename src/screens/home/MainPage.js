@@ -88,6 +88,7 @@ export default function MainPage(props) {
   return (
     <View>
       <ScrollView
+        alwaysBounceVertical={false}
         style={{
           backgroundColor: "#ffffff",
         }}>

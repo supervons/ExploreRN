@@ -32,6 +32,7 @@ export default function Explore() {
         }}
         renderTabBar={res => <TabBarView />}>
         <ScrollView
+          alwaysBounceVertical={false}
           key={"news"}
           style={{
             backgroundColor: "#9DD6EB",
