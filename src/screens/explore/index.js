@@ -4,19 +4,22 @@
  * explore page
  */
 import React, { useEffect } from "react";
-import {
-  StyleSheet,
-  ScrollView,
-  Text,
-  View,
-  Platform,
-  StatusBar,
-} from "react-native";
+import { useDispatch } from "react-redux";
+import { StyleSheet, ScrollView, Text, View, StatusBar } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 import newsAction from "../../actions/news";
 import ScrollableTabView from "../../components/SwiperComponent";
 import TabBarView from "./component/TabBarView";
+import { SELECT_TAB_BAR } from "../../common/redux/action/settingActionTypes";
 
 export default function Explore() {
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    navigation.addListener("tabPress", () => {
+      dispatch({ type: SELECT_TAB_BAR, selectTabBar: "explore" });
+    });
+  }, [navigation]);
   useEffect(() => {
     const params = { pageNo: 1, itemNo: 2 };
     newsAction.getNewsList(params).then(resp => {
@@ -37,7 +40,7 @@ export default function Explore() {
         tabBarUnderlineStyle={{
           backgroundColor: "#ffffff",
         }}
-        renderTabBar={res => <TabBarView />}>
+        renderTabBar={() => <TabBarView />}>
         <ScrollView
           alwaysBounceVertical={false}
           key={"news"}

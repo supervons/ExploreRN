@@ -11,7 +11,10 @@ import CarouselComponent from "../../components/carousel";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/core";
 import { useDispatch, useSelector } from "react-redux";
-import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
+import {
+  INITIAL_PAGE,
+  SELECT_TAB_BAR,
+} from "../../common/redux/action/settingActionTypes";
 
 /**
  * Created by supervons on 2019/08/08.
@@ -19,14 +22,20 @@ import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
  * user main page
  */
 const { width } = Dimensions.get("window");
-export default function MainPage(props) {
+export default function MainPage() {
   const dispatch = useDispatch();
+
+  const navigation = useNavigation();
   const { userInfo, userToken } = useSelector(state => ({
     userInfo: state.UserReducer.userInfo,
     userToken: state.UserReducer.userToken,
   }));
 
-  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.addListener("tabPress", () => {
+      dispatch({ type: SELECT_TAB_BAR, selectTabBar: "homes" });
+    });
+  }, [navigation]);
 
   /**
    * Save user info and init route page.

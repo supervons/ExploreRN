@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
@@ -9,7 +9,10 @@ import {
   USER_INFO,
 } from "../../common/redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
-import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
+import {
+  INITIAL_PAGE,
+  SELECT_TAB_BAR,
+} from "../../common/redux/action/settingActionTypes";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**
@@ -21,9 +24,17 @@ import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
  * Use Hooks to rewrite and compress the amount of code
  */
 export default function MyPage() {
-  const dispatch = useDispatch();
   const route = useNavigation();
-  const [list, setList] = useState([
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.addListener("tabPress", () => {
+      dispatch({ type: SELECT_TAB_BAR, selectTabBar: "my" });
+    });
+  }, [navigation]);
+
+  const [list] = useState([
     {
       key: 1,
       title: "基本信息",
@@ -91,21 +102,21 @@ export default function MyPage() {
   /**
    * 拍照或图片配置信息，可以对图片质量进行设置
    */
-  let options = {
-    cameraType: "back",
-    mediaType: "photo",
-    videoQuality: "high",
-    durationLimit: 10,
-    maxWidth: 300,
-    maxHeight: 300,
-    quality: 0.8,
-    angle: 0,
-    allowsEditing: true,
-    noData: false,
-    storageOptions: {
-      skipBackup: true,
-    },
-  };
+  // let options = {
+  //   cameraType: "back",
+  //   mediaType: "photo",
+  //   videoQuality: "high",
+  //   durationLimit: 10,
+  //   maxWidth: 300,
+  //   maxHeight: 300,
+  //   quality: 0.8,
+  //   angle: 0,
+  //   allowsEditing: true,
+  //   noData: false,
+  //   storageOptions: {
+  //     skipBackup: true,
+  //   },
+  // };
 
   /**
    * 文件上传示例

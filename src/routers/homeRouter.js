@@ -3,10 +3,7 @@
  * @author supervons
  * @date 2021/03/10
  */
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { SafeAreaView } from "react-native";
 import { Icon } from "react-native-elements";
@@ -23,7 +20,7 @@ import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
 import MainPage from "../screens/home/MainPage";
 import Explore from "../screens/explore/index";
 import My from "../screens/my/index";
-import { PersistGate } from "redux-persist/integration/react";
+import AnimatedIcon from "../components/AnimatedIcon";
 const HomeStack = createStackNavigator();
 /**
  * 底部导航组件配置
@@ -33,21 +30,21 @@ const tabBarInfo = [
     name: "MainPage",
     component: MainPage,
     tabBarLabel: "首页",
-    selectIcon: <Icon size={35} name={"home"} color={"#7B8B6F"} />,
+    selectIcon: <AnimatedIcon iconName={"home"} />,
     defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
   },
   {
     name: "Explore",
     component: Explore,
     tabBarLabel: "发现",
-    selectIcon: <Icon size={35} name={"explore"} color={"#7B8B6F"} />,
+    selectIcon: <AnimatedIcon iconName={"explore"} />,
     defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
   },
   {
     name: "My",
     component: My,
     tabBarLabel: "我的",
-    selectIcon: <Icon size={35} name={"person"} color={"#7B8B6F"} />,
+    selectIcon: <AnimatedIcon iconName={"person"} />,
     defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
   },
 ];
@@ -57,7 +54,7 @@ const tabBarInfo = [
 const Tab = createBottomTabNavigator();
 const Main = () => (
   <Tab.Navigator
-    initialRouteName={"LoginPage"}
+    lazy={false}
     tabBarOptions={{
       activeTintColor: "#7B8B6F",
     }}>
@@ -118,5 +115,3 @@ routeInfo.map(res => {
   );
 });
 export const HomeRouter = pageViewRouter;
-
-exports.default = HomeRouter;
