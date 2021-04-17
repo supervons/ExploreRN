@@ -99,6 +99,9 @@ export default function Login(props) {
           vauel={loginId}
         />
         <SecurityKeyboardInput
+          keyboardHeader={() => {
+            return <Text>欢迎加入！一起ExploreRN！</Text>;
+          }}
           style={{
             width: 300,
             backgroundColor: "#DCDCDC",

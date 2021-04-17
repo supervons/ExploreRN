@@ -21,6 +21,33 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 | Network request | Unified package network request | axios@0.19.0 |
 | Refactoring based Hook | Refactoring class page based on hook | react@17.0.1 |
 
+
+# Project Structure
+
+```
+|-- android	// android
+|-- ios	// iOS
+| -- src	// project folder
+|   | -- actions	// interface-related directories
+|   | --common	// common configuration constant directory
+|   | -- components	// System-level component catalog
+|   |--hook// Custom hook directory
+|   | -- redux	// redux-related directories
+|   |   |-- action
+|   |   |-- reducer
+|   |   |-- store
+|   | -- resource	// resource directory
+|   | -- routers	// route navigation directory
+|   | -- screens	// System page directory
+|   | --styles	// system common style directory
+|   | -- utils	// System tool catalog
+| -- App .js	// Entry file
+| -- buildAndroid.sh	// android packaging script
+| -- package.json	// This needless to say
+| -- package-lock.json	// i.e
+|-- . preettierrc	// Prettierrc code format the directory
+```
+
 # Installation dependencies
 
 ```sh

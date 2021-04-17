@@ -21,6 +21,31 @@
 | 网络请求     | 统一封装网络请求                 | axios@0.19.0                                                 |
 | 基于hook重写 | 基于hook重写class页面            | react@17.0.1                                                 |
 
+# 项目结构
+
+```
+|-- android	// android 目录
+|-- ios	// iOS 目录
+|-- src	// 项目文件夹
+|   |-- actions	// 接口相关目录
+|   |-- common	// 通用配置常量目录
+|   |-- components	// 系统级组件目录
+|   |-- hook	// 自定义hook目录
+|   |-- redux	// redux相关目录
+|   |   |-- action
+|   |   |-- reducer
+|   |   |-- store
+|   |-- resource	// 资源目录
+|   |-- routers	// 路由导航目录
+|   |-- screens	// 系统页面目录
+|   |-- styles	// 系统通用样式目录
+|   |-- utils	// 系统工具目录
+|-- App.js	// 入口文件
+|-- buildAndroid.sh	// android打包脚本
+|-- package.json	// 这个就不用说了
+|-- package-lock.json	// 同上
+|-- .prettierrc	// prettierrc 代码格式化目录
+```
 
 # 安装依赖
 
