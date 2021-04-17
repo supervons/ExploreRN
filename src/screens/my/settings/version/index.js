@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { View, Clipboard } from "react-native";
-import { Icon, ListItem } from "react-native-elements";
+import React from "react";
+import { View } from "react-native";
+import { ListItem } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import DeviceInfo from "react-native-device-info";
 import Toast from "../../../../components/toast";
+import Clipboard from "@react-native-community/clipboard";
 
 /**
  * Created by supervons on 2019/08/12.
@@ -30,7 +31,7 @@ const list = [
     key: 3,
     title: "联系邮箱",
     rightTitle: "supervons@sina.com",
-    onPress: (text) => {
+    onPress: text => {
       Toast.showToast("复制邮箱成功，请粘贴使用");
       Clipboard.setString(text);
     },

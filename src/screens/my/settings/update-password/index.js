@@ -49,7 +49,7 @@ export default function UpdatePassword(props) {
           Toast.showToast("请输入不同的新密码噢!");
         } else {
           userInfo.loginId = userInfo.loginId;
-          userAction.updatePassword(userInfo).then((resp) => {
+          userAction.updatePassword(userInfo).then(resp => {
             Toast.showToast(resp.msg);
             this.props.navigation.pop(2);
           });
@@ -73,7 +73,7 @@ export default function UpdatePassword(props) {
               <ListItem.Title>{item.title}</ListItem.Title>
             </View>
             <ListItem.Input
-              onChangeText={(text) =>
+              onChangeText={text =>
                 setUserInfo({ ...userInfo, [item.key]: text })
               }
               placeholder={item.placeholder}

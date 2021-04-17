@@ -11,7 +11,7 @@
  */
 import React, { useEffect } from "react";
 import { HomeStackScreen } from "./src/routers/index";
-import { SafeAreaView, AppState, StatusBar } from "react-native";
+import { AppState, StatusBar } from "react-native";
 import Loading from "./src/common/loading";
 import { Provider } from "react-redux";
 import configureStore from "./src/common/redux/store/store";

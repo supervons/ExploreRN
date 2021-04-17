@@ -18,9 +18,7 @@ import commonStyles from "../../styles/commonStyles";
  * Hook update
  */
 export default function SystemIntroduction(props) {
-  const firstInstall = useSelector(
-    (state) => state.SettingReducer.firstInstall,
-  );
+  const firstInstall = useSelector(state => state.SettingReducer.firstInstall);
   const dispatch = useDispatch();
   const route = new useNavigation();
   const [introductionMap] = useState([

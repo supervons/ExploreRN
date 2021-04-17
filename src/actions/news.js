@@ -6,12 +6,12 @@ import Toast from "../components/toast";
  * @param params {pageNo, itemNo}
  * @returns {Promise<any | never>}
  */
-const getNewsList = (params) => {
+const getNewsList = params => {
   return Axios.POST("/news/queryNewsInfo", params)
-    .then((resp) => {
+    .then(resp => {
       return Promise.resolve(resp);
     })
-    .catch((resp) => {
+    .catch(resp => {
       Toast.showToast(resp);
       return Promise.reject(resp);
     });

@@ -43,13 +43,13 @@ const colorList = [
 ];
 
 export default function ThemeChange(props) {
-  const themeColor = useSelector((state) => state.SettingReducer.themeColor);
+  const themeColor = useSelector(state => state.SettingReducer.themeColor);
   const dispatch = useDispatch();
 
   return (
     <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <Divider style={{ backgroundColor: "black", marginTop: 30 }} />
-      {colorList.map((item) => (
+      {colorList.map(item => (
         <CheckBox
           key={item.key}
           textStyle={{ color: "#ffffff" }}
@@ -72,7 +72,7 @@ export default function ThemeChange(props) {
         bottomDivider={true}
         input={{
           placeholder: "#ffffff/white",
-          onChangeText: (text) => {
+          onChangeText: text => {
             if (text.length > 3) {
               DeviceEventEmitter.emit("theme_change", text);
             }

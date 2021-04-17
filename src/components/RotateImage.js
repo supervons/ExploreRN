@@ -7,9 +7,6 @@ import { Avatar } from "react-native-elements";
  * @date 2021/04/16
  */
 export default function RotateImage(props) {
-  useEffect(() => {
-    fadeIn();
-  }, []);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeIn = () => {
     Animated.timing(fadeAnim, {

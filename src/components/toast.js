@@ -1,4 +1,4 @@
-import Toaster from 'react-native-root-toast';
+import Toaster from "react-native-root-toast";
 
 /**
  * Created by supervons on 2019/08/05.
@@ -13,9 +13,9 @@ export default class Toast {
    */
   static showToast(
     message,
-    duration = 'SHORT',
-    position = 'CENTER',
-    shadow = false
+    duration = "SHORT",
+    position = "CENTER",
+    shadow = false,
   ) {
     Toaster.show(message, {
       duration: Toaster.durations[duration],
@@ -23,7 +23,7 @@ export default class Toast {
       shadow: shadow,
       animation: true,
       hideOnPress: true,
-      delay: 0
+      delay: 0,
     });
   }
 }

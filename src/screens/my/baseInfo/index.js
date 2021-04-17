@@ -48,7 +48,7 @@ function BaseInfo() {
   }
 
   function updateUserInfo() {
-    userAction.updateUserInfo(userInfo).then((resp) => {
+    userAction.updateUserInfo(userInfo).then(resp => {
       Toast.showToast(resp.msg);
       changeSaveButtonState(true);
     });
@@ -122,7 +122,7 @@ function BaseInfo() {
                   containerStyle={commonStyles.itemPadding}
                   bottomDivider={true}
                   input={{
-                    onChangeText: (text) =>
+                    onChangeText: text =>
                       setState({
                         userInfo: {
                           ...userInfo,
@@ -171,16 +171,16 @@ function BaseInfo() {
 }
 
 // 取出 store 中的数据
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     userInfo: state.UserReducer.userInfo,
   };
 };
 
 // Dispatch 方法
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    setUserInfo: (userInfo) => {
+    setUserInfo: userInfo => {
       dispatch({ type: USER_INFO, userInfo: userInfo });
     },
   };
