@@ -5,16 +5,9 @@
  */
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  View,
-  Text,
-  StatusBar,
-  DeviceEventEmitter,
-  ScrollView,
-} from "react-native";
+import { View, Text, DeviceEventEmitter, ScrollView } from "react-native";
 import { Button, Input } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import Theme from "../../styles/theme";
 import userAction from "../../actions/user";
 import Toast from "../../components/toast";
 import {
@@ -91,12 +84,6 @@ export default function Login(props) {
           justifyContent: "flex-start",
           alignItems: "center",
         }}>
-        <StatusBar
-          animated={false}
-          backgroundColor={"transparent"}
-          translucent={true}
-          barStyle={"dark-content"}
-        />
         <RotateImage style={{ marginTop: 100 }} />
         <Input
           containerStyle={{

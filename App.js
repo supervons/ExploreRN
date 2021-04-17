@@ -11,7 +11,7 @@
  */
 import React, { useEffect } from "react";
 import { HomeStackScreen } from "./src/routers/index";
-import { SafeAreaView, AppState } from "react-native";
+import { SafeAreaView, AppState, StatusBar } from "react-native";
 import Loading from "./src/common/loading";
 import { Provider } from "react-redux";
 import configureStore from "./src/common/redux/store/store";
@@ -38,6 +38,12 @@ export default function App() {
     // 外层需 Provider 包裹， PersistGate 中的 loading 需为一个组件，否则在启动页后会有短暂黑屏
     <Provider store={store}>
       <PersistGate loading={null} persistor={persist}>
+        <StatusBar
+          animated={false}
+          backgroundColor={"transparent"}
+          translucent={true}
+          barStyle={"dark-content"}
+        />
         <HomeStackScreen />
         <Loading />
         <SafeAreaView style={{ backgroundColor: "#ffffff" }} />

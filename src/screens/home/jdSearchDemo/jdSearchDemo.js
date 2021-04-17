@@ -25,11 +25,12 @@ export default function jdSearchDemo(props) {
       scrollViewRef.current.scrollToEnd({ animated: true });
     }, 1000);
     setTimeout(() => {
-      scrollViewRef.current.scrollTo({
-        x: 0,
-        y: 0,
-        animated: true,
-      });
+      scrollViewRef.current &&
+        scrollViewRef.current.scrollTo({
+          x: 0,
+          y: 0,
+          animated: true,
+        });
     }, 1500);
   }, []);
 
@@ -55,6 +56,7 @@ export default function jdSearchDemo(props) {
         pointerEvents="box-none"
         style={{
           height: 50,
+          marginTop: StatusBar.currentHeight,
         }}>
         <Image
           style={[
@@ -87,7 +89,6 @@ export default function jdSearchDemo(props) {
           justifyContent: "center",
           position: "absolute",
           right: right,
-          top: StatusBar.currentHeight,
         }}
         onPress={() => alert("scanner")}>
         <View
@@ -105,8 +106,7 @@ export default function jdSearchDemo(props) {
     );
   }
   return (
-    <View style={{ flex: 1 }}>
-      <StatusBar backgroundColor={"red"} barStyle={"light-content"} />
+    <View style={{ flex: 1, backgroundColor: "red" }}>
       {title()}
       <ScrollView
         ref={scrollViewRef}
@@ -116,7 +116,7 @@ export default function jdSearchDemo(props) {
         showsVerticalScrollIndicator={false}
         style={{
           zIndex: -1,
-          marginTop: -30,
+          marginTop: -60,
           backgroundColor: "#ffffff",
         }}>
         <View style={{ height: 50, backgroundColor: "red" }} />
@@ -178,7 +178,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 20,
     height: 40,
-    top: StatusBar.currentHeight,
     width: 40,
   },
 });

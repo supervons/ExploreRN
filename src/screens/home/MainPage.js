@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   Dimensions,
-  StatusBar,
 } from "react-native";
 import CarouselComponent from "../../components/carousel";
 import { Icon } from "react-native-elements";
@@ -93,12 +92,6 @@ export default function MainPage(props) {
         style={{
           backgroundColor: "#ffffff",
         }}>
-        <StatusBar
-          animated={false}
-          backgroundColor={"transparent"}
-          translucent={true}
-          barStyle={"dark-content"}
-        />
         <CarouselComponent />
         {renderFunView()}
       </ScrollView>
