@@ -46,7 +46,6 @@ export default function App() {
         />
         <HomeStackScreen />
         <Loading />
-        <SafeAreaView style={{ backgroundColor: "#ffffff" }} />
       </PersistGate>
     </Provider>
   );

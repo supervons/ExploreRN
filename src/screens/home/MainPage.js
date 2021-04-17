@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   ScrollView,
   View,
@@ -9,6 +9,9 @@ import {
 } from "react-native";
 import CarouselComponent from "../../components/carousel";
 import { Icon } from "react-native-elements";
+import { useNavigation } from "@react-navigation/core";
+import { useDispatch, useSelector } from "react-redux";
+import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
 
 /**
  * Created by supervons on 2019/08/08.
@@ -17,6 +20,26 @@ import { Icon } from "react-native-elements";
  */
 const { width } = Dimensions.get("window");
 export default function MainPage(props) {
+  const dispatch = useDispatch();
+  const { userInfo, userToken } = useSelector(state => ({
+    userInfo: state.UserReducer.userInfo,
+    userToken: state.UserReducer.userToken,
+  }));
+
+  const navigation = useNavigation();
+
+  /**
+   * Save user info and init route page.
+   */
+  useEffect(() => {
+    global.userInfo = userInfo;
+    global.userToken = userToken;
+    dispatch({
+      type: INITIAL_PAGE,
+      initialPage: "MainPage",
+    });
+  }, []);
+
   const demoList = [
     {
       key: "charts",
@@ -52,7 +75,7 @@ export default function MainPage(props) {
    * @param routeName
    */
   function toDemo(routeName) {
-    props.navigation.push(routeName);
+    navigation.navigate(routeName);
   }
 
   /**

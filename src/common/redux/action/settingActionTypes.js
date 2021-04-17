@@ -11,6 +11,12 @@
 export const FIRST_INSTALL = "FIRST_INSTALL";
 
 /**
+ * 启动页
+ * System theme color
+ */
+export const INITIAL_PAGE = "INITIAL_PAGE";
+
+/**
  * 系统主题颜色
  * System theme color
  */

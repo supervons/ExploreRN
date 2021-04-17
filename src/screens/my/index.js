@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
-import { View, Alert, StatusBar, ScrollView, SafeAreaView } from "react-native";
+import { View, Alert, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 import Theme from "../../styles/theme";
 import { useDispatch } from "react-redux";
@@ -9,6 +9,7 @@ import {
   USER_INFO,
 } from "../../common/redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
+import { INITIAL_PAGE } from "../../common/redux/action/settingActionTypes";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**
@@ -76,6 +77,10 @@ export default function MyPage() {
             onPress: () => {
               dispatch({ type: USER_TOKEN, value: "" });
               dispatch({ type: USER_INFO, value: {} });
+              dispatch({
+                type: INITIAL_PAGE,
+                initialPage: "Login",
+              });
               route.replace("Login");
             },
           },

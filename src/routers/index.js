@@ -12,12 +12,19 @@ import Login from "../screens/login/index";
 import { HomeRouter } from "./homeRouter";
 import { MyRouter } from "./myRouter";
 import { NavigationContainer } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
 const HomeStack = createStackNavigator();
 export function HomeStackScreen() {
+  // Dynamic initial page
+  const { initialPage } = useSelector(state => ({
+    initialPage: state.SettingReducer.initialPage,
+  }));
+
   return (
     <NavigationContainer>
       <HomeStack.Navigator
+        initialRouteName={initialPage}
         screenOptions={{
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>

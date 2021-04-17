@@ -1,4 +1,8 @@
-import { FIRST_INSTALL, THEME_COLOR } from "../action/settingActionTypes";
+import {
+  FIRST_INSTALL,
+  THEME_COLOR,
+  INITIAL_PAGE,
+} from "../action/settingActionTypes";
 import { handleActions } from "redux-actions";
 import Theme from "../../../styles/theme";
 /**
@@ -10,6 +14,7 @@ import Theme from "../../../styles/theme";
 // 初始化数据
 const initialState = {
   firstInstall: true,
+  initialPage: "Login",
   themeColor: Theme.primary,
 };
 
@@ -20,6 +25,14 @@ handler[FIRST_INSTALL] = (state, action) => {
   return {
     ...state,
     firstInstall,
+  };
+};
+
+handler[INITIAL_PAGE] = (state, action) => {
+  const { initialPage } = action;
+  return {
+    ...state,
+    initialPage,
   };
 };
 
