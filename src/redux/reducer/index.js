@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import UserReducer from "./userReducer";
 import SettingReducer from "./settingReducer";
+import HookReducer from "./hookReducer";
 
 /**
  * Created by supervons on 2019/08/20.
@@ -10,6 +11,7 @@ import SettingReducer from "./settingReducer";
 const rootReducer = combineReducers({
   UserReducer,
   SettingReducer,
+  HookReducer,
 });
 
 export default rootReducer;

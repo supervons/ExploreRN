@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
@@ -6,10 +6,8 @@ import Theme from "../../styles/theme";
 import { useDispatch } from "react-redux";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
-import {
-  INITIAL_PAGE,
-  SELECT_TAB_BAR,
-} from "../../redux/action/settingActionTypes";
+import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
+import { useTabBarStatus } from "../../hook/useTabBarStatus";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**
@@ -21,15 +19,9 @@ import {
  * Use Hooks to rewrite and compress the amount of code
  */
 export default function MyPage() {
+  useTabBarStatus("my");
   const route = useNavigation();
   const dispatch = useDispatch();
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    navigation.addListener("tabPress", () => {
-      dispatch({ type: SELECT_TAB_BAR, selectTabBar: "my" });
-    });
-  }, [navigation]);
 
   const [list] = useState([
     {

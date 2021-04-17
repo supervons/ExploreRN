@@ -14,10 +14,10 @@ export default function AnimatedIcon(props) {
     person: <Icon size={35} name={"person"} color={"#7B8B6F"} />,
   };
   const { selectTabBar } = useSelector(state => ({
-    selectTabBar: state.SettingReducer.selectTabBar,
+    selectTabBar: state.HookReducer.selectTabBar,
   }));
   useEffect(() => {
-    if (selectTabBar === "explore") {
+    if (selectTabBar === "explore" && props.iconName === selectTabBar) {
       fadeIn();
     }
   }, [selectTabBar]);

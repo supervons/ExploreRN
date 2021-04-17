@@ -17,12 +17,6 @@ export const FIRST_INSTALL = "FIRST_INSTALL";
 export const INITIAL_PAGE = "INITIAL_PAGE";
 
 /**
- * 当前选中tab-bar
- * Currently select tab-bar
- */
-export const SELECT_TAB_BAR = "SELECT_TAB_BAR";
-
-/**
  * 系统主题颜色
  * System theme color
  */

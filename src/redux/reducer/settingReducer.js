@@ -45,6 +45,7 @@ handler[SELECT_TAB_BAR] = (state, action) => {
     selectTabBar,
   };
 };
+
 handler[THEME_COLOR] = (state, action) => {
   const { themeColor } = action;
   return {
