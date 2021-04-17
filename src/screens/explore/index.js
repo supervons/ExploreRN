@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/core";
 import newsAction from "../../actions/news";
 import ScrollableTabView from "../../components/SwiperComponent";
 import TabBarView from "./component/TabBarView";
-import { SELECT_TAB_BAR } from "../../common/redux/action/settingActionTypes";
+import { SELECT_TAB_BAR } from "../../redux/action/settingActionTypes";
 
 export default function Explore() {
   const navigation = useNavigation();

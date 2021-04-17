@@ -5,7 +5,7 @@ import { CheckBox, ListItem, Divider, Button } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
 import { connect } from "react-redux";
-import { THEME_COLOR } from "../../../../common/redux/action/settingActionTypes";
+import { THEME_COLOR } from "../../../../redux/action/settingActionTypes";
 
 /**
  * Created by supervons on 2019/08/20.

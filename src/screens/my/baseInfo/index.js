@@ -4,7 +4,7 @@ import { ListItem, Button } from "react-native-elements";
 import Theme from "../../../styles/theme";
 import Toast from "../../../components/toast";
 import userAction from "../../../actions/user";
-import { USER_INFO } from "../../../common/redux/action/userActionTypes";
+import { USER_INFO } from "../../../redux/action/userActionTypes";
 import { connect } from "react-redux";
 import commonStyles from "../../../styles/commonStyles";
 

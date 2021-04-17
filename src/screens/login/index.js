@@ -10,10 +10,7 @@ import { Button, Input } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import userAction from "../../actions/user";
 import Toast from "../../components/toast";
-import {
-  USER_TOKEN,
-  USER_INFO,
-} from "../../common/redux/action/userActionTypes";
+import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import RotateImage from "../../components/RotateImage";
 // 用户 token

@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   INITIAL_PAGE,
   SELECT_TAB_BAR,
-} from "../../common/redux/action/settingActionTypes";
+} from "../../redux/action/settingActionTypes";
 
 /**
  * Created by supervons on 2019/08/08.

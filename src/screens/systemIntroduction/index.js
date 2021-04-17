@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/core";
 import { View, Text, StatusBar } from "react-native";
 import Swiper from "../../components/SwiperComponent";
 import { Button } from "react-native-elements";
-import { FIRST_INSTALL } from "../../common/redux/action/settingActionTypes";
+import { FIRST_INSTALL } from "../../redux/action/settingActionTypes";
 import { connect } from "react-redux";
 import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";

@@ -14,7 +14,7 @@ import { HomeStackScreen } from "./src/routers/index";
 import { AppState, StatusBar } from "react-native";
 import Loading from "./src/common/loading";
 import { Provider } from "react-redux";
-import configureStore from "./src/common/redux/store/store";
+import configureStore from "./src/redux/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 
 // 引入 redux 及 redux-persist 配置后的变量供使用

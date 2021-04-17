@@ -4,15 +4,12 @@ import { View, Alert, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 import Theme from "../../styles/theme";
 import { useDispatch } from "react-redux";
-import {
-  USER_TOKEN,
-  USER_INFO,
-} from "../../common/redux/action/userActionTypes";
+import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
 import {
   INITIAL_PAGE,
   SELECT_TAB_BAR,
-} from "../../common/redux/action/settingActionTypes";
+} from "../../redux/action/settingActionTypes";
 // import RNImagePicker from 'react-native-image-picker';
 
 /**

@@ -5,7 +5,7 @@ import {
   SELECT_TAB_BAR,
 } from "../action/settingActionTypes";
 import { handleActions } from "redux-actions";
-import Theme from "../../../styles/theme";
+import Theme from "../../styles/theme";
 /**
  * Created by supervons on 2019/08/20.
  * 系统相关设置，是否第一次安装启动
