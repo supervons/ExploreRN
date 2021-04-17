@@ -11,7 +11,7 @@ export default function RotateImage(props) {
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 888,
+      duration: 288,
       useNativeDriver: true,
     }).start(() => fadeOut());
   };
@@ -19,7 +19,7 @@ export default function RotateImage(props) {
   const fadeOut = () => {
     Animated.timing(fadeAnim, {
       toValue: 0,
-      duration: 888,
+      duration: 288,
       useNativeDriver: true,
     }).start();
   };
@@ -27,7 +27,7 @@ export default function RotateImage(props) {
   // mapping to convert a 0-1 range to a 0-360 deg'range
   const degNum = fadeAnim.interpolate({
     inputRange: [0, 0.5, 1],
-    outputRange: ["0deg", "180deg", "360deg"], //输出值
+    outputRange: ["0deg", "30deg", "70deg"], //输出值
   });
 
   return (
