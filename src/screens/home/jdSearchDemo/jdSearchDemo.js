@@ -87,6 +87,7 @@ export default function jdSearchDemo(props) {
           justifyContent: "center",
           position: "absolute",
           right: right,
+          top: StatusBar.currentHeight,
         }}
         onPress={() => alert("scanner")}>
         <View
@@ -115,7 +116,7 @@ export default function jdSearchDemo(props) {
         showsVerticalScrollIndicator={false}
         style={{
           zIndex: -1,
-          marginTop: -60,
+          marginTop: -30,
           backgroundColor: "#ffffff",
         }}>
         <View style={{ height: 50, backgroundColor: "red" }} />
@@ -177,6 +178,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 20,
     height: 40,
+    top: StatusBar.currentHeight,
     width: 40,
   },
 });

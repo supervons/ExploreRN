@@ -19,7 +19,7 @@ import RotateImage from "../../components/RotateImage";
  * 使用 Hooks 方式重写，压缩代码量
  * Use Hooks to rewrite and compress the amount of code
  */
-export default function MyPage(props) {
+export default function MyPage() {
   const dispatch = useDispatch();
   const route = useNavigation();
   const [list, setList] = useState([
@@ -28,7 +28,7 @@ export default function MyPage(props) {
       title: "基本信息",
       icon: "person",
       color: "#058bb3",
-      onPress: () => route.push("BaseInfo"),
+      onPress: () => route.navigate("BaseInfo"),
     },
     {
       key: 2,
@@ -42,14 +42,14 @@ export default function MyPage(props) {
       title: "系统特性",
       icon: "invert-colors",
       color: "#36fffb",
-      onPress: () => route.push("SystemIntroduction", { type: true }),
+      onPress: () => route.navigate("SystemIntroduction", { type: true }),
     },
     {
       key: 4,
       title: "设置",
       icon: "settings",
       color: "#36648b",
-      onPress: () => route.push("Settings"),
+      onPress: () => route.navigate("Settings"),
     },
     {
       key: 53,
@@ -137,18 +137,11 @@ export default function MyPage(props) {
       alwaysBounceVertical={false}
       style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
-      <StatusBar
-        animated={false}
-        hidden={false}
-        backgroundColor={"transparent"}
-        translucent={true}
-        barStyle={"light-content"}
-      />
       <RotateImage />
       {list.map((item, i) => (
         <ListItem
           containerStyle={{ alignItems: "center" }}
-          onPress={() => item.onPress(this.props)}
+          onPress={() => item.onPress()}
           key={i}
           bottomDivider>
           <ListItem.Content

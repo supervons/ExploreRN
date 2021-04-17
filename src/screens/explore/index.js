@@ -4,7 +4,14 @@
  * explore page
  */
 import React, { useEffect } from "react";
-import { StyleSheet, ScrollView, Text, View, Platform } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+} from "react-native";
 import newsAction from "../../actions/news";
 import ScrollableTabView from "../../components/SwiperComponent";
 import TabBarView from "./component/TabBarView";
@@ -20,7 +27,7 @@ export default function Explore() {
     <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
       <View
         style={{
-          height: Platform.OS === "ios" ? 0 : 18,
+          height: StatusBar.currentHeight,
         }}
       />
       <ScrollableTabView

@@ -17,19 +17,19 @@ export default function Settings() {
       key: 1,
       title: "修改密码",
       onPress: () => {
-        route.push("UpdatePassword");
+        route.navigate("UpdatePassword");
       },
     },
     {
       key: 2,
       title: "系统信息",
-      onPress: () => route.push("VersionInfo"),
+      onPress: () => route.navigate("VersionInfo"),
     },
     {
       key: 3,
       title: "更换皮肤",
       onPress: () => {
-        route.push("ThemeChange", {
+        route.navigate("ThemeChange", {
           transitionType: "forFadeToBottomAndroid",
         });
       },

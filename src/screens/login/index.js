@@ -5,7 +5,13 @@
  */
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { View, Text, StatusBar, DeviceEventEmitter } from "react-native";
+import {
+  View,
+  Text,
+  StatusBar,
+  DeviceEventEmitter,
+  ScrollView,
+} from "react-native";
 import { Button, Input } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Theme from "../../styles/theme";
@@ -85,7 +91,12 @@ export default function Login(props) {
           justifyContent: "flex-start",
           alignItems: "center",
         }}>
-        <StatusBar backgroundColor={Theme.white} barStyle={"dark-content"} />
+        <StatusBar
+          animated={false}
+          backgroundColor={"transparent"}
+          translucent={true}
+          barStyle={"dark-content"}
+        />
         <RotateImage style={{ marginTop: 100 }} />
         <Input
           containerStyle={{
