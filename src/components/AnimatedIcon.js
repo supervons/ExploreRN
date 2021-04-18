@@ -48,43 +48,25 @@ export default function AnimatedIcon(props) {
     inputRange: [0, 0.5, 1],
     outputRange: [0, -5, 5], //输出值
   });
+
+  function commonAnimatedView(transformObject, iconName) {
+    return (
+      <Animated.View
+        style={[
+          {
+            alignItems: "center",
+            transform: [transformObject],
+            ...props.style,
+          },
+        ]}>
+        <Icon size={35} name={iconName} color={"#7B8B6F"} />
+      </Animated.View>
+    );
+  }
   const renderItem = {
-    home: (
-      <Animated.View
-        style={[
-          {
-            alignItems: "center",
-            transform: [{ scale: homeAnimated }],
-            ...props.style,
-          },
-        ]}>
-        <Icon size={35} name={"home"} color={"#7B8B6F"} />
-      </Animated.View>
-    ),
-    explore: (
-      <Animated.View
-        style={[
-          {
-            alignItems: "center",
-            transform: [{ rotateZ: exploreAnimated }],
-            ...props.style,
-          },
-        ]}>
-        <Icon size={35} name={"explore"} color={"#7B8B6F"} />
-      </Animated.View>
-    ),
-    person: (
-      <Animated.View
-        style={[
-          {
-            alignItems: "center",
-            transform: [{ translateX: personAnimated }],
-            ...props.style,
-          },
-        ]}>
-        <Icon size={35} name={"person"} color={"#7B8B6F"} />
-      </Animated.View>
-    ),
+    home: commonAnimatedView({ scale: homeAnimated }, "home"),
+    explore: commonAnimatedView({ rotateZ: exploreAnimated }, "explore"),
+    person: commonAnimatedView({ translateX: personAnimated }, "person"),
   };
 
   return renderItem[props.iconName];
