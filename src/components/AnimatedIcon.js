@@ -8,16 +8,11 @@ import { useSelector } from "react-redux";
  * @date 2021/04/17
  */
 export default function AnimatedIcon(props) {
-  const icon = {
-    home: <Icon size={35} name={"home"} color={"#7B8B6F"} />,
-    explore: <Icon size={35} name={"explore"} color={"#7B8B6F"} />,
-    person: <Icon size={35} name={"person"} color={"#7B8B6F"} />,
-  };
   const { selectTabBar } = useSelector(state => ({
     selectTabBar: state.HookReducer.selectTabBar,
   }));
   useEffect(() => {
-    if (selectTabBar === "explore" && props.iconName === selectTabBar) {
+    if (props.iconName === selectTabBar) {
       fadeIn();
     }
   }, [selectTabBar]);
@@ -39,21 +34,58 @@ export default function AnimatedIcon(props) {
   };
 
   // mapping to convert a 0-1 range to a 0-360 deg'range
-  const degNum = fadeAnim.interpolate({
+  const exploreAnimated = fadeAnim.interpolate({
     inputRange: [0, 0.5, 1],
     outputRange: ["0deg", "20deg", "40deg"], //输出值
   });
 
-  return (
-    <Animated.View
-      style={[
-        {
-          alignItems: "center",
-          transform: [{ rotateZ: degNum }],
-          ...props.style,
-        },
-      ]}>
-      {icon[props.iconName]}
-    </Animated.View>
-  );
+  const homeAnimated = fadeAnim.interpolate({
+    inputRange: [0, 0.5, 1],
+    outputRange: [1, 1.1, 1.2], //输出值
+  });
+
+  const personAnimated = fadeAnim.interpolate({
+    inputRange: [0, 0.5, 1],
+    outputRange: [0, -5, 5], //输出值
+  });
+  const renderItem = {
+    home: (
+      <Animated.View
+        style={[
+          {
+            alignItems: "center",
+            transform: [{ scale: homeAnimated }],
+            ...props.style,
+          },
+        ]}>
+        <Icon size={35} name={"home"} color={"#7B8B6F"} />
+      </Animated.View>
+    ),
+    explore: (
+      <Animated.View
+        style={[
+          {
+            alignItems: "center",
+            transform: [{ rotateZ: exploreAnimated }],
+            ...props.style,
+          },
+        ]}>
+        <Icon size={35} name={"explore"} color={"#7B8B6F"} />
+      </Animated.View>
+    ),
+    person: (
+      <Animated.View
+        style={[
+          {
+            alignItems: "center",
+            transform: [{ translateX: personAnimated }],
+            ...props.style,
+          },
+        ]}>
+        <Icon size={35} name={"person"} color={"#7B8B6F"} />
+      </Animated.View>
+    ),
+  };
+
+  return renderItem[props.iconName];
 }

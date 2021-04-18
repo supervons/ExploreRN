@@ -19,7 +19,7 @@ import { useTabBarStatus } from "../../hook/useTabBarStatus";
  * Use Hooks to rewrite and compress the amount of code
  */
 export default function MyPage() {
-  useTabBarStatus("my");
+  useTabBarStatus("person");
   const route = useNavigation();
   const dispatch = useDispatch();
 
