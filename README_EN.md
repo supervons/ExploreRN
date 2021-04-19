@@ -11,7 +11,7 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 
 # Features
 
-| Function name | Brief description | Use component name and version |
+| Name | Description | Use component name and version |
 | ------------- | -------------------------------- | ------------------------------------------------------------ |
 | Picture selection | Choose a picture in the album, or take a photo | react-native-image-picker@2.3.4 |
 | Scan | Scan the QR code to get the information in the QR code | react-native-camera@3.8.0 |
@@ -21,6 +21,12 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 | Network request | Unified package network request | axios@0.19.0 |
 | Refactoring based Hook | Refactoring class page based on hook | react@17.0.1 |
 
+# TODO LIST
+
+| Name            | Description                               | Use the component name and version             |
+| --------------- | ----------------------------------------- | ---------------------------------------------- |
+| Skeleton screen | Promote the list,page-browsing experience | react-native-skeleton-content-nonexpo          |
+| International   | The app language switches and             | set up with the local system react-native-i18n |
 
 # Project Structure
 
