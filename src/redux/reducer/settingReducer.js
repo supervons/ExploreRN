@@ -2,7 +2,6 @@ import {
   FIRST_INSTALL,
   THEME_COLOR,
   INITIAL_PAGE,
-  SELECT_TAB_BAR,
 } from "../action/settingActionTypes";
 import { handleActions } from "redux-actions";
 import Theme from "../../styles/theme";
@@ -17,7 +16,6 @@ const initialState = {
   firstInstall: true,
   initialPage: "Login",
   themeColor: Theme.primary,
-  selectTabBar: "home",
 };
 
 const handler = {};
@@ -35,14 +33,6 @@ handler[INITIAL_PAGE] = (state, action) => {
   return {
     ...state,
     initialPage,
-  };
-};
-
-handler[SELECT_TAB_BAR] = (state, action) => {
-  const { selectTabBar } = action;
-  return {
-    ...state,
-    selectTabBar,
   };
 };
 
