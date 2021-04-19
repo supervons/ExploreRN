@@ -33,22 +33,22 @@ export default function AnimatedIcon(props) {
     }).start();
   };
 
-  // mapping to convert a 0-1 range to a 0-360 deg'range
-  const exploreAnimated = fadeAnim.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: ["0deg", "20deg", "40deg"], //输出值
-  });
+  /**
+   * Universal Animation Rendering
+   * @param outputRange 输出值
+   */
+  function animatedInterpolate(outputRange) {
+    return fadeAnim.interpolate({
+      inputRange: [0, 0.5, 1],
+      outputRange: outputRange,
+    });
+  }
 
-  const homeAnimated = fadeAnim.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: [1, 1.1, 1.2], //输出值
-  });
-
-  const personAnimated = fadeAnim.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: [0, -5, 5], //输出值
-  });
-
+  /**
+   * Universal Animation View
+   * @param transformObject 动画对象
+   * @param iconName 图标名称
+   */
   function commonAnimatedView(transformObject, iconName) {
     return (
       <Animated.View
@@ -63,10 +63,20 @@ export default function AnimatedIcon(props) {
       </Animated.View>
     );
   }
+
   const renderItem = {
-    home: commonAnimatedView({ scale: homeAnimated }, "home"),
-    explore: commonAnimatedView({ rotateZ: exploreAnimated }, "explore"),
-    person: commonAnimatedView({ translateX: personAnimated }, "person"),
+    home: commonAnimatedView(
+      { scale: animatedInterpolate([1, 1.1, 1.2]) },
+      "home",
+    ),
+    explore: commonAnimatedView(
+      { rotateZ: animatedInterpolate(["0deg", "20deg", "40deg"]) },
+      "explore",
+    ),
+    person: commonAnimatedView(
+      { translateX: animatedInterpolate([0, -5, 5]) },
+      "person",
+    ),
   };
 
   return renderItem[props.iconName];

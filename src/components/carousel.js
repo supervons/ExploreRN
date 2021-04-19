@@ -9,23 +9,35 @@ import commonStyles from "../styles/commonStyles";
  * use Hooks rewrite homepage carousel component
  */
 export default function CarouselComponent() {
-  const [introduction] = useState({
-    title_1: "This is SWiper",
-    title_2: "react-native good job",
-    title_3: "Hermes so fast",
-  });
+  const [introduction] = useState([
+    {
+      title: "This is SWiper",
+      style: commonStyles.slide1,
+    },
+    {
+      title: "react-native good job",
+      style: commonStyles.slide2,
+    },
+    {
+      title: "Hermes so fast",
+      style: commonStyles.slide3,
+    },
+  ]);
+
+  function renderView(slideStyle, title) {
+    return (
+      <View key={title} style={[slideStyle, { height: 150 }]}>
+        <Text style={commonStyles.text}>{title}</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={{ height: 150 }}>
       <Swiper showsButtons={true}>
-        <View style={[commonStyles.slide1, { height: 150 }]}>
-          <Text style={commonStyles.text}>{introduction.title_1}</Text>
-        </View>
-        <View style={[commonStyles.slide2, { height: 150 }]}>
-          <Text style={commonStyles.text}>{introduction.title_2}</Text>
-        </View>
-        <View style={[commonStyles.slide3, { height: 150 }]}>
-          <Text style={commonStyles.text}>{introduction.title_3}</Text>
-        </View>
+        {introduction.map(res => {
+          return renderView(res.style, res.title);
+        })}
       </Swiper>
     </View>
   );
