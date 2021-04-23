@@ -13,6 +13,7 @@ import { useNavigation } from "@react-navigation/core";
 import { useSelector, useDispatch } from "react-redux";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
+import { trackEvent } from "appcenter-analytics";
 
 /**
  * Created by supervons on 2019/08/08.
@@ -75,6 +76,7 @@ export default function MainPage() {
    * @param routeName
    */
   function toDemo(routeName) {
+    trackEvent(routeName);
     navigation.navigate(routeName);
   }
 

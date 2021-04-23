@@ -33,6 +33,7 @@
 		BC04B837ACF24A1190B35C2C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44915D517984848AC60CB68 /* Ionicons.ttf */; };
 		C702402F4FA042119BD1042B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1A5901635E04C85A879BFEC /* Fontisto.ttf */; };
 		DAC671AD2FFC108AB42663AD /* libPods-AwesomeProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3001112BBE2AC5102D5FF8 /* libPods-AwesomeProject.a */; };
+		E9F7699826327F6B0060685C /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9F7699726327F6B0060685C /* AppCenter-Config.plist */; };
 		EC897E3079544EB3AE452DDD /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8547369F6B6F417AB0B6B121 /* FontAwesome5_Solid.ttf */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		D4F7932EC060E54AC6CC8C24 /* libPods-AwesomeProject-AwesomeProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProject-AwesomeProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25EC1B3255A09F6BC076A3A /* Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-AwesomeProjectTests/Pods-AwesomeProject-AwesomeProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		E44915D517984848AC60CB68 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		E9F7699726327F6B0060685C /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F937307BF10548D58BA69201 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E9F7699726327F6B0060685C /* AppCenter-Config.plist */,
 			);
 			name = AwesomeProject;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				1C2F606F82164FBA8E340ACA /* Entypo.ttf in Resources */,
 				533AB2C88E8147E7B5498A0D /* EvilIcons.ttf in Resources */,
 				0E835D9A68CE4DB28E69FF7B /* Feather.ttf in Resources */,
+				E9F7699826327F6B0060685C /* AppCenter-Config.plist in Resources */,
 				16CDDAF6BCFE4627BAB410F9 /* FontAwesome.ttf in Resources */,
 				68A0D65CA8D14A5680ED02EC /* FontAwesome5_Brands.ttf in Resources */,
 				954861B5C0C24F5088A8A180 /* FontAwesome5_Regular.ttf in Resources */,
