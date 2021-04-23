@@ -28,13 +28,13 @@ class Axios {
 
     // 发起请求前拦截
     instance.interceptors.request.use(
-      (config) => {
+      config => {
         // 增加通用token
         config.headers.jwtToken = jwtToken;
         Loading.show();
         return config;
       },
-      (error) => {
+      error => {
         Loading.hide();
         console.log(error);
         return Promise.reject(error);
@@ -43,11 +43,11 @@ class Axios {
 
     // 响应回调前拦截
     instance.interceptors.response.use(
-      (response) => {
+      response => {
         Loading.hide();
         return response.data;
       },
-      (error) => {
+      error => {
         Loading.hide();
         return Promise.reject(error);
       },
@@ -73,7 +73,7 @@ class Axios {
 
 async function get(url, callback) {
   try {
-    let response = await instance.get(url).catch((resp) => {
+    let response = await instance.get(url).catch(resp => {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
@@ -94,7 +94,7 @@ async function get(url, callback) {
 
 async function post(url, params, callback) {
   try {
-    let response = await instance.post(url, params).catch((resp) => {
+    let response = await instance.post(url, params).catch(resp => {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
