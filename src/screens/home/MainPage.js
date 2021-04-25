@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import { trackEvent } from "appcenter-analytics";
+import ImagePicker from "react-native-image-crop-picker";
 
 /**
  * Created by supervons on 2019/08/08.
@@ -61,7 +62,7 @@ export default function MainPage() {
       icon: "image",
       color: "#8696A7",
       name: "gallery",
-      routeName: "",
+      routeName: "gallery",
     },
     {
       key: "jdSearch",
@@ -77,6 +78,15 @@ export default function MainPage() {
    */
   function toDemo(routeName) {
     trackEvent(routeName);
+    if (routeName === "gallery") {
+      ImagePicker.openPicker({
+        width: 300,
+        height: 400,
+        cropping: true,
+      }).then(image => {
+        console.log(image);
+      });
+    }
     navigation.navigate(routeName);
   }
 
