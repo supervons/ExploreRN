@@ -1,4 +1,9 @@
-import React, { useEffect } from "react";
+/**
+ * Created by supervons on 2019/08/08.
+ * 用户主界面
+ * user main page
+ */
+import React, { useEffect, useState, useRef } from "react";
 import {
   ScrollView,
   View,
@@ -6,6 +11,7 @@ import {
   StyleSheet,
   Text,
   Dimensions,
+  Image,
 } from "react-native";
 import CarouselComponent from "../../components/carousel";
 import { Icon } from "react-native-elements";
@@ -15,21 +21,21 @@ import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import { trackEvent } from "appcenter-analytics";
 import ImagePicker from "react-native-image-crop-picker";
+import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
+import LinearGradient from "react-native-linear-gradient";
+const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 
-/**
- * Created by supervons on 2019/08/08.
- * 用户主界面
- * user main page
- */
 const { width } = Dimensions.get("window");
 export default function MainPage() {
   useTabBarStatus("home");
+  const [showItem, setShowItem] = useState(false);
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const { userInfo, userToken } = useSelector(state => ({
     userInfo: state.UserReducer.userInfo,
     userToken: state.UserReducer.userToken,
   }));
+
   /**
    * Save user info and init route page.
    */
@@ -40,6 +46,9 @@ export default function MainPage() {
       type: INITIAL_PAGE,
       initialPage: "MainPage",
     });
+    setTimeout(() => {
+      setShowItem(true);
+    }, 1500);
   }, []);
 
   const demoList = [
@@ -47,21 +56,21 @@ export default function MainPage() {
       key: "charts",
       icon: "assessment",
       color: "#7A7281",
-      name: "charts",
+      name: "Charts",
       routeName: "eChartsDemoPage",
     },
     {
       key: "scanner",
       icon: "camera",
       color: "#7B8B6F",
-      name: "scanner",
+      name: "Scanner",
       routeName: "Scanner",
     },
     {
       key: "gallery",
       icon: "image",
       color: "#8696A7",
-      name: "gallery",
+      name: "Gallery",
       routeName: "gallery",
     },
     {
@@ -70,6 +79,20 @@ export default function MainPage() {
       color: "#965454",
       name: "JDSearch",
       routeName: "jdSearchDemo",
+    },
+    {
+      key: "skeleton",
+      name: "Skeleton",
+      color: "#6b5152",
+      image: require("../../resource/image/home/seleton.png"),
+      routeName: "skeleton",
+    },
+    {
+      key: "morandi",
+      name: "Morandi-Colors",
+      color: "#7a7281",
+      image: require("../../resource/image/home/colors.png"),
+      routeName: "morandi",
     },
   ];
   /**
@@ -86,6 +109,11 @@ export default function MainPage() {
       }).then(image => {
         console.log(image);
       });
+    } else if (routeName === "skeleton") {
+      setShowItem(false);
+      setTimeout(() => {
+        setShowItem(true);
+      }, 1500);
     }
     navigation.navigate(routeName);
   }
@@ -110,7 +138,16 @@ export default function MainPage() {
               key={res.key}>
               <View
                 style={[styles.item, { width: width / 4, height: width / 4 }]}>
-                <Icon size={48} name={res.icon} color={res.color} />
+                {res.image ? (
+                  <Image source={res.image} style={{ height: 48, width: 48 }} />
+                ) : (
+                  <Icon
+                    type="ion-icon"
+                    size={48}
+                    name={res.icon}
+                    color={res.color}
+                  />
+                )}
                 <Text style={{ color: res.color }}>{res.name}</Text>
               </View>
             </TouchableOpacity>
@@ -128,7 +165,35 @@ export default function MainPage() {
           backgroundColor: "#ffffff",
         }}>
         <CarouselComponent />
-        {renderFunView()}
+        {showItem ? (
+          renderFunView()
+        ) : (
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}>
+            {demoList.map(res => {
+              return (
+                <View
+                  key={res.key}
+                  style={[
+                    styles.item,
+                    { width: width / 4, height: width / 4 },
+                  ]}>
+                  <ShimmerPlaceholder
+                    shimmerStyle={{ width: 40, height: 40 }}
+                    visible={false}
+                  />
+                  <ShimmerPlaceholder
+                    shimmerStyle={{ width: 40, marginTop: 5 }}
+                    visible={false}
+                  />
+                </View>
+              );
+            })}
+          </View>
+        )}
       </ScrollView>
     </View>
   );
