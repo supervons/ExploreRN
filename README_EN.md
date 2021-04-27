@@ -2,12 +2,13 @@
 
 # project instruction
 
-    Explore the features of the new version of RN, integrate components, and build your own wheels! Welcome to join us:
-    qq group: 783071253
-    Email: supervons@sina.com
-    RN Version:0.64.0
-
-Old version address: (not old, 0.59.8) https://github.com/supervons/commonProject
+    1. Explore the RN features of the new version;
+    2. Integrate component experiments and build your own wheels!
+    3. Hone my architectural skills and continue coding and code optimization.
+    Welcome to join us:
+    Qq group: 783071253
+    Email address: supervons@sina.com
+    Current RN version: 0.64.0
 
 # Features
 
@@ -20,13 +21,13 @@ Old version address: (not old, 0.59.8) https://github.com/supervons/commonProjec
 | Redux Family Bucket | Use of redux and middleware | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3 .0 |
 | Network request | Unified package network request | axios@0.19.0 |
 | Refactoring based Hook | Refactoring class page based on hook | react@17.0.1 |
+| Skeleton screen | Improve the list and page browsing experience | react-native-shimmer-placeholder@2.0.7 |
 
 # TODO LIST
 
-| Name            | Description                               | Use the component name and version             |
-| --------------- | ----------------------------------------- | ---------------------------------------------- |
-| Skeleton screen | Promote the list,page-browsing experience | react-native-skeleton-content-nonexpo          |
-| International   | The app language switches and             | set up with the local system react-native-i18n |
+| Name          | Description                   | Use the component name and version             |
+| ------------- | ----------------------------- | ---------------------------------------------- |
+| International | The app language switches and | set up with the local system react-native-i18n |
 
 # Project Structure
 
