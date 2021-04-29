@@ -22,6 +22,7 @@ import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import { trackEvent } from "appcenter-analytics";
 import ImagePicker from "react-native-image-crop-picker";
 import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
+import { data } from "./MainPageData";
 import LinearGradient from "react-native-linear-gradient";
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 
@@ -51,50 +52,6 @@ export default function MainPage() {
     }, 1500);
   }, []);
 
-  const demoList = [
-    {
-      key: "charts",
-      icon: "assessment",
-      color: "#7A7281",
-      name: "Charts",
-      routeName: "eChartsDemoPage",
-    },
-    {
-      key: "scanner",
-      icon: "camera",
-      color: "#7B8B6F",
-      name: "Scanner",
-      routeName: "Scanner",
-    },
-    {
-      key: "gallery",
-      icon: "image",
-      color: "#8696A7",
-      name: "Gallery",
-      routeName: "gallery",
-    },
-    {
-      key: "jdSearch",
-      icon: "search",
-      color: "#965454",
-      name: "JDSearch",
-      routeName: "jdSearchDemo",
-    },
-    {
-      key: "skeleton",
-      name: "Skeleton",
-      color: "#6b5152",
-      image: require("../../resource/image/home/seleton.png"),
-      routeName: "skeleton",
-    },
-    {
-      key: "morandi",
-      name: "Morandi-Colors",
-      color: "#7a7281",
-      image: require("../../resource/image/home/colors.png"),
-      routeName: "morandi",
-    },
-  ];
   /**
    * 跳转demo页面
    * @param routeName
@@ -119,7 +76,7 @@ export default function MainPage() {
   }
 
   /**
-   * 渲染示例demo
+   * item render
    * @returns {*}
    */
   function renderFunView() {
@@ -129,7 +86,7 @@ export default function MainPage() {
           flexDirection: "row",
           flexWrap: "wrap",
         }}>
-        {demoList.map(res => {
+        {data.map(res => {
           return (
             <TouchableOpacity
               onPress={() => {
@@ -157,6 +114,36 @@ export default function MainPage() {
     );
   }
 
+  /**
+   * Skeleton render
+   */
+  function renderSkeletonView() {
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}>
+        {data.map(res => {
+          return (
+            <View
+              key={res.key}
+              style={[styles.item, { width: width / 4, height: width / 4 }]}>
+              <ShimmerPlaceholder
+                shimmerStyle={{ width: 40, height: 40 }}
+                visible={false}
+              />
+              <ShimmerPlaceholder
+                shimmerStyle={{ width: 40, marginTop: 5 }}
+                visible={false}
+              />
+            </View>
+          );
+        })}
+      </View>
+    );
+  }
+
   return (
     <View>
       <ScrollView
@@ -165,35 +152,7 @@ export default function MainPage() {
           backgroundColor: "#ffffff",
         }}>
         <CarouselComponent />
-        {showItem ? (
-          renderFunView()
-        ) : (
-          <View
-            style={{
-              flexDirection: "row",
-              flexWrap: "wrap",
-            }}>
-            {demoList.map(res => {
-              return (
-                <View
-                  key={res.key}
-                  style={[
-                    styles.item,
-                    { width: width / 4, height: width / 4 },
-                  ]}>
-                  <ShimmerPlaceholder
-                    shimmerStyle={{ width: 40, height: 40 }}
-                    visible={false}
-                  />
-                  <ShimmerPlaceholder
-                    shimmerStyle={{ width: 40, marginTop: 5 }}
-                    visible={false}
-                  />
-                </View>
-              );
-            })}
-          </View>
-        )}
+        {showItem ? renderFunView() : renderSkeletonView()}
       </ScrollView>
     </View>
   );
