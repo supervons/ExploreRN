@@ -17,8 +17,9 @@ import { useSelector } from "react-redux";
 const HomeStack = createStackNavigator();
 export function HomeStackScreen() {
   // Dynamic initial page
-  const { initialPage } = useSelector(state => ({
+  const { initialPage, themeColor } = useSelector(state => ({
     initialPage: state.SettingReducer.initialPage,
+    themeColor: state.SettingReducer.themeColor,
   }));
 
   return (
@@ -26,6 +27,10 @@ export function HomeStackScreen() {
       <HomeStack.Navigator
         initialRouteName={initialPage}
         screenOptions={{
+          headerStyle: {
+            backgroundColor: themeColor,
+          },
+          headerTintColor: "#fff",
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <HomeStack.Screen

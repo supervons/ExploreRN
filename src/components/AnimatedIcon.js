@@ -8,8 +8,9 @@ import { useSelector } from "react-redux";
  * @date 2021/04/17
  */
 export default function AnimatedIcon(props) {
-  const { selectTabBar } = useSelector(state => ({
+  const { selectTabBar, themeColor } = useSelector(state => ({
     selectTabBar: state.HookReducer.selectTabBar,
+    themeColor: state.SettingReducer.themeColor,
   }));
   useEffect(() => {
     if (props.iconName === selectTabBar) {
@@ -59,7 +60,7 @@ export default function AnimatedIcon(props) {
             ...props.style,
           },
         ]}>
-        <Icon size={35} name={iconName} color={"#7B8B6F"} />
+        <Icon size={35} name={iconName} color={themeColor} />
       </Animated.View>
     );
   }
