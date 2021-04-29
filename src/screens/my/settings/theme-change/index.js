@@ -60,30 +60,11 @@ export default function ThemeChange(props) {
           title={item.title}
           checked={themeColor === item.value}
           onPress={() => {
-            DeviceEventEmitter.emit("theme_change", item.value);
             dispatch({ type: THEME_COLOR, themeColor: item.value });
           }}
         />
       ))}
       <Divider style={{ backgroundColor: "black", marginBottom: 30 }} />
-      <ListItem
-        containerStyle={commonStyles.itemPadding}
-        title={"自定义"}
-        bottomDivider={true}
-        input={{
-          placeholder: "#ffffff/white",
-          onChangeText: text => {
-            if (text.length > 3) {
-              DeviceEventEmitter.emit("theme_change", text);
-            }
-          },
-          inputStyle: {
-            paddingTop: 0,
-            alignItems: "center",
-            fontSize: 15,
-          },
-        }}
-      />
       <Button
         icon={{
           name: "done",
