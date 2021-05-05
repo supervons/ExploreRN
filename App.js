@@ -16,6 +16,7 @@ import Loading from "./src/common/loading";
 import { Provider } from "react-redux";
 import configureStore from "./src/redux/store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 // 引入 redux 及 redux-persist 配置后的变量供使用
 const { store, persist } = configureStore();
@@ -44,7 +45,9 @@ export default function App() {
           translucent={true}
           barStyle={"dark-content"}
         />
-        <HomeStackScreen />
+        <RootSiblingParent>
+          <HomeStackScreen />
+        </RootSiblingParent>
         <Loading />
       </PersistGate>
     </Provider>
