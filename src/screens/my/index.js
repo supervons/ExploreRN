@@ -1,3 +1,12 @@
+/**
+ * Created by supervons on 2019/08/08.
+ * 我的页面
+ * my page
+ * Update by supervons on 2020/05/22.
+ * 使用 Hooks 方式重写，压缩代码量
+ * Use Hooks to rewrite and compress the amount of code
+ */
+
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, ScrollView, SafeAreaView } from "react-native";
@@ -8,16 +17,7 @@ import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
-// import RNImagePicker from 'react-native-image-picker';
 
-/**
- * Created by supervons on 2019/08/08.
- * 我的页面
- * my page
- * Update by supervons on 2020/05/22.
- * 使用 Hooks 方式重写，压缩代码量
- * Use Hooks to rewrite and compress the amount of code
- */
 export default function MyPage() {
   useTabBarStatus("person");
   const route = useNavigation();
@@ -53,14 +53,6 @@ export default function MyPage() {
       onPress: () => route.navigate("Settings"),
     },
     {
-      key: 53,
-      title: "图片选择",
-      icon: "image",
-      color: "#36648b",
-      hiddenRightIcon: true,
-      onPress: () => uploadFile(),
-    },
-    {
       key: 6,
       title: "退出登录",
       icon: "arrow-forward",
@@ -87,55 +79,6 @@ export default function MyPage() {
         ]),
     },
   ]);
-
-  /**
-   * 拍照或图片配置信息，可以对图片质量进行设置
-   */
-  // let options = {
-  //   cameraType: "back",
-  //   mediaType: "photo",
-  //   videoQuality: "high",
-  //   durationLimit: 10,
-  //   maxWidth: 300,
-  //   maxHeight: 300,
-  //   quality: 0.8,
-  //   angle: 0,
-  //   allowsEditing: true,
-  //   noData: false,
-  //   storageOptions: {
-  //     skipBackup: true,
-  //   },
-  // };
-
-  /**
-   * 文件上传示例
-   */
-  function uploadFile() {
-    // RNImagePicker.launchImageLibrary(options, res => {
-    //   let formData = new FormData();
-    //   let file = { uri: res.uri, type: 'multipart/form-data', name: 'image.png' };
-    //   formData.append('File', file);
-    //   formData.append('Name', '2');
-    //   formData.append('Path', 'w');
-    //   formData.append('OwnerId', '2');
-    //
-    //   // TODO 群友提供测试上传接口，慎用
-    //   // fetch('https://test.popbadminton.com/pan/api/files/upload?v=1.0', {
-    //   //   method: 'POST',
-    //   //   headers: {
-    //   //     'Content-Type': 'multipart/form-data'
-    //   //   },
-    //   //   body: formData
-    //   // })
-    //   //   .then(response => response.json())
-    //   //   .then(res => {
-    //   //     alert(JSON.stringify(res));
-    //   //   })
-    //   //   .catch(res => {
-    //   //     alert(JSON.stringify(res));
-    //   //   });
-    // });
-  }
 
   return (
     <ScrollView
