@@ -6,8 +6,6 @@
 import React, { useEffect } from "react";
 import { StyleSheet, ScrollView, Text, View, StatusBar } from "react-native";
 import newsAction from "../../actions/news";
-import ScrollableTabView from "../../components/SwiperComponent";
-import TabBarView from "./component/TabBarView";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 
 export default function Explore() {
@@ -19,51 +17,19 @@ export default function Explore() {
     });
   }, []);
   return (
-    <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#9DD6EB77",
+      }}>
       <View
         style={{
           height: StatusBar.currentHeight,
-        }}
-      />
-      <ScrollableTabView
-        tabBarActiveTextColor={"#ffffff"}
-        tabBarInactiveTextColor={"#D3D3D3"}
-        prerenderingSiblingsNumber={1}
-        tabBarUnderlineStyle={{
-          backgroundColor: "#ffffff",
-        }}
-        renderTabBar={() => <TabBarView />}>
-        <ScrollView
-          alwaysBounceVertical={false}
-          key={"news"}
-          style={{
-            backgroundColor: "#9DD6EB",
-          }}
-          tabLabel="新闻">
-          <Text style={styles.text}>新闻</Text>
-        </ScrollView>
-        <ScrollView
-          style={{
-            backgroundColor: "#9DD6EB",
-          }}
-          tabLabel="比赛">
-          <Text style={styles.text}>比赛</Text>
-        </ScrollView>
-        <ScrollView
-          style={{
-            backgroundColor: "#9DD6EB",
-          }}
-          tabLabel="活动">
-          <Text style={styles.text}>活动</Text>
-        </ScrollView>
-        <ScrollView
-          style={{
-            backgroundColor: "#9DD6EB",
-          }}
-          tabLabel="其他">
-          <Text style={styles.text}>其他</Text>
-        </ScrollView>
-      </ScrollableTabView>
+        }}>
+        <Text>{`To be continued...`}</Text>
+      </View>
     </View>
   );
 }
