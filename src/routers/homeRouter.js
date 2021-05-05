@@ -112,7 +112,7 @@ const routeInfo = [
   {
     name: "MorandiPage",
     options: {
-      title: "莫兰迪卡色系",
+      title: "莫兰迪色系",
       headerRight: () => (
         <View style={{ marginRight: 10 }}>
           <Icon
