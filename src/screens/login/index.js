@@ -2,11 +2,19 @@
  * Created by supervons on 2019/08/02.
  * 登录页
  * user login page
+ * The password box uses a secure keyboard.
+ * After a successful login, Redux stores user information
  */
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { View, Text, DeviceEventEmitter, ScrollView } from "react-native";
-import { Button, Input } from "react-native-elements";
+import {
+  View,
+  Text,
+  DeviceEventEmitter,
+  TextInput,
+  StyleSheet,
+} from "react-native";
+import { Button } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import userAction from "../../actions/user";
 import Toast from "../../components/toast";
@@ -75,39 +83,21 @@ export default function Login(props) {
       extraHeight={120}
       enableOnAndroid={true}
       enableResetScrollToCoords={true}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}>
+      <View style={styles.container}>
         <RotateImage style={{ marginTop: 100 }} />
-        <Input
-          containerStyle={{
-            marginTop: 10,
-            width: 300,
-            marginBottom: 15,
-            backgroundColor: "#DCDCDC",
-            borderRadius: 15,
-            height: 45,
-          }}
-          inputContainerStyle={{
-            borderBottomWidth: 0,
-          }}
+        <TextInput
+          style={styles.userNameStyle}
           placeholder="用户名"
+          placeholderTextColor={"#B1B1B2"}
           onChangeText={text => setLoginId(text)}
           vauel={loginId}
         />
         <SecurityKeyboardInput
           keyName={"password"}
           keyboardHeader={() => {
-            return <Text>欢迎加入！一起ExploreRN！</Text>;
+            return <Text>{`欢迎加入！一起ExploreRN！`}</Text>;
           }}
-          style={{
-            width: 300,
-            backgroundColor: "#DCDCDC",
-            borderRadius: 15,
-          }}
+          style={styles.passwordStyle}
           secureTextEntry={true}
           random={true}
           valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
@@ -125,9 +115,32 @@ export default function Login(props) {
           onPress={() => login()}
         />
         <Text style={{ width: 300, marginTop: 5 }}>
-          ©copyright xxx 版权所有
+          {`©copyright xxx 版权所有`}
         </Text>
       </View>
     </KeyboardAwareScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  userNameStyle: {
+    paddingHorizontal: 10,
+    fontSize: 18,
+    marginTop: 10,
+    width: 300,
+    marginBottom: 15,
+    backgroundColor: "#DCDCDC",
+    borderRadius: 15,
+    height: 45,
+  },
+  passwordStyle: {
+    width: 300,
+    backgroundColor: "#DCDCDC",
+    borderRadius: 15,
+  },
+});
