@@ -5,7 +5,7 @@
  */
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, View, Alert } from "react-native";
 import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
@@ -77,6 +77,12 @@ const Main = () => (
   </Tab.Navigator>
 );
 
+const tips = `"Morandi Colors" is named after the Italian painter George Morandi, a famous Italian oil painter. He has never been married in his life, and people call him a monk painter. (Morandi's color system is sometimes called sexually cold color, and it seems that there is a reason.) His creative style is also very clear, mostly in bottles and cans, and the color system is also very simple.
+
+The simplest understanding of "Morandi color series" is: adding a certain proportion of gray to the color, which is the so-called high-grade gray. High-grade gray is relatively not so individual and can be versatile in many places, so it is widely used.
+
+The color of this color series looks unassuming, not bright, but it has a sense of high-level. This is why everyone calls gray high-grade gray. The Morandi color system seems to have a gray tone, but it is In the whole picture, each other restricts and offsets each other, so that the vision reaches a perfect balance. It gives people a sense of peace, self-sustaining, soothing and elegant, and sometimes a little calm. In short, the more you look at it, the more you like it.`;
+
 /**
  * 总体导航配置
  * 其中，Main为带tabBar的主页面
@@ -107,6 +113,21 @@ const routeInfo = [
     name: "MorandiPage",
     options: {
       title: "莫兰迪卡色系",
+      headerRight: () => (
+        <View style={{ marginRight: 10 }}>
+          <Icon
+            name="question"
+            type="evilicon"
+            color="#ffffff"
+            size={35}
+            onPress={() =>
+              Alert.alert("Morandi Colors", tips, [
+                { text: "ok, i know and i like it!" },
+              ])
+            }
+          />
+        </View>
+      ),
     },
     component: MorandiPage,
   },
