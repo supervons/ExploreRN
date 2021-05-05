@@ -44,6 +44,6 @@ export const data = [
     name: "Morandi-Colors",
     color: "#7a7281",
     image: require("../../resource/image/home/colors.png"),
-    routeName: "morandi",
+    routeName: "MorandiPage",
   },
 ];

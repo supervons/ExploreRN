@@ -10,6 +10,7 @@ import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
 import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
+import MorandiPage from "../screens/home/morandi/MorandiPage";
 
 /**
  * @desc The my page route collection
@@ -101,6 +102,13 @@ const routeInfo = [
       header: () => <SafeAreaView style={{ backgroundColor: "red" }} />,
     },
     component: jdSearchDemo,
+  },
+  {
+    name: "MorandiPage",
+    options: {
+      title: "莫兰迪卡色系",
+    },
+    component: MorandiPage,
   },
 ];
 const pageViewRouter = [];
