@@ -5,6 +5,7 @@ import Theme from "../../../../styles/theme";
 import DeviceInfo from "react-native-device-info";
 import Toast from "../../../../components/toast";
 import Clipboard from "@react-native-community/clipboard";
+import I18n from "../../../../common/languages";
 
 /**
  * Created by supervons on 2019/08/12.
@@ -14,25 +15,25 @@ import Clipboard from "@react-native-community/clipboard";
 const list = [
   {
     key: 0,
-    title: "应用名称",
+    title: I18n.t("SystemInfo.appName"),
     rightTitle: DeviceInfo.getApplicationName(),
   },
   {
     key: 1,
-    title: "当前版本",
+    title: I18n.t("SystemInfo.version"),
     rightTitle: DeviceInfo.getVersion(),
   },
   {
     key: 2,
-    title: "作者",
+    title: I18n.t("SystemInfo.author"),
     rightTitle: "supervons",
   },
   {
     key: 3,
-    title: "联系邮箱",
+    title: I18n.t("SystemInfo.email"),
     rightTitle: "supervons@sina.com",
     onPress: text => {
-      Toast.showToast("复制邮箱成功，请粘贴使用");
+      Toast.showToast(I18n.t("SystemInfo.copySuc"));
       Clipboard.setString(text);
     },
   },

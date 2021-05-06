@@ -5,6 +5,7 @@ import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
 import Toast from "../../../../components/toast";
 import userAction from "../../../../actions/user";
+import I18n from "../../../../common/languages";
 
 /**
  * Created by supervons on 2019/09/06.
@@ -15,20 +16,20 @@ export default function UpdatePassword(props) {
   const renderItem = [
     {
       key: "oldPassword",
-      title: "原密码",
-      placeholder: "输入原密码",
+      title: I18n.t("ChangePassword.oldPassword"),
+      placeholder: I18n.t("ChangePassword.oldPasswordPlaceholder"),
       editable: false,
     },
     {
       key: "newPassword",
-      title: "新密码",
-      placeholder: "输入新密码",
+      title: I18n.t("ChangePassword.newPassword"),
+      placeholder: I18n.t("ChangePassword.newPasswordPlaceholder"),
       editable: true,
     },
     {
       key: "confirmPassword",
-      title: "确认密码",
-      placeholder: "再次输入新密码",
+      title: I18n.t("ChangePassword.confirmPassword"),
+      placeholder: I18n.t("ChangePassword.confirmPasswordPlaceholder"),
       editable: false,
     },
   ];

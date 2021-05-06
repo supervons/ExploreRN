@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DeviceEventEmitter, View } from "react-native";
 import { CheckBox, ListItem, Divider, Button } from "react-native-elements";
 import Theme from "../../../../styles/theme";
-import commonStyles from "../../../../styles/commonStyles";
-import { connect } from "react-redux";
+import I18n from "../../../../common/languages";
 import { THEME_COLOR } from "../../../../redux/action/settingActionTypes";
 
 /**
@@ -17,27 +16,27 @@ import { THEME_COLOR } from "../../../../redux/action/settingActionTypes";
 const colorList = [
   {
     key: 0,
-    title: "经典/Classic/#f4511E",
+    title: `${I18n.t("Theme.classic")}/#f4511E`,
     value: "#f4511E",
   },
   {
     key: 1,
-    title: "墨绿/Green/#00868B",
+    title: `${I18n.t("Theme.green")}/#00868B`,
     value: "#00868B",
   },
   {
     key: 2,
-    title: "红色/Red/#EE0000",
+    title: `${I18n.t("Theme.red")}/#EE0000`,
     value: "#EE0000",
   },
   {
     key: 3,
-    title: "蓝色/Blue/#63B8FF",
+    title: `${I18n.t("Theme.blue")}/#63B8FF`,
     value: "#63B8FF",
   },
   {
     key: 4,
-    title: "黑色/Black/#000000",
+    title: `${I18n.t("Theme.black")}/#000000`,
     value: "#000000",
   },
 ];
@@ -74,7 +73,7 @@ export default function ThemeChange(props) {
           marginTop: 15,
           backgroundColor: themeColor,
         }}
-        title="确定"
+        title={I18n.t("Button.ok")}
         onPress={() => props.navigation.pop()}
       />
     </View>

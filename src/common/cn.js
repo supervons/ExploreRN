@@ -11,6 +11,9 @@ export default {
     i18: "国际化",
     device: "%{counts} 个设备",
   },
+  Button: {
+    ok: "确定",
+  },
   Route: {
     home: "首页",
     explore: "发现",
@@ -34,5 +37,28 @@ export default {
     changePassword: "修改密码",
     systemInfo: "系统信息",
     changeTheme: "更换皮肤",
+  },
+  ChangePassword: {
+    title: "修改密码",
+    oldPassword: "原密码",
+    oldPasswordPlaceholder: "输入原密码",
+    newPassword: "新密码",
+    newPasswordPlaceholder: "输入新密码",
+    confirmPassword: "确认密码",
+    confirmPasswordPlaceholder: "再次输入新密码",
+  },
+  SystemInfo: {
+    appName: "应用名称",
+    version: "版本",
+    author: "作者",
+    email: "邮箱",
+    copySuc: "复制邮箱成功，请粘贴使用",
+  },
+  Theme: {
+    classic: "经典",
+    green: "墨绿",
+    red: "正红",
+    blue: "蓝色",
+    black: "暗黑",
   },
 };

@@ -11,6 +11,9 @@ export default {
     i18: "i18",
     device: "%{counts} devices",
   },
+  Button: {
+    ok: "OK",
+  },
   Route: {
     home: "Home",
     explore: "Explore",
@@ -34,5 +37,28 @@ export default {
     changePassword: "ChangePassword",
     systemInfo: "SystemInfo",
     changeTheme: "ChangeTheme",
+  },
+  ChangePassword: {
+    title: "ChangePassword",
+    oldPassword: "OldPassword",
+    oldPasswordPlaceholder: "Enter the original password",
+    newPassword: "NewPassword",
+    newPasswordPlaceholder: "Enter a new password",
+    confirmPassword: "ConfirmPassword",
+    confirmPasswordPlaceholder: "Confirm the new password",
+  },
+  SystemInfo: {
+    appName: "AppName",
+    version: "Version",
+    author: "Author",
+    email: "Email",
+    copySuc: "Copy mailbox successfully, please paste to use",
+  },
+  Theme: {
+    classic: "Classic",
+    green: "Green",
+    red: "Red",
+    blue: "Blue",
+    black: "Black",
   },
 };
