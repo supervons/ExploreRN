@@ -3,45 +3,46 @@
  * @author supervons
  * @date 2021/04/29
  */
+import I18n from "../../common/languages";
 export const data = [
   {
     key: "charts",
     icon: "assessment",
     color: "#7A7281",
-    name: "Charts",
+    name: I18n.t("Home.charts"),
     routeName: "eChartsDemoPage",
   },
   {
     key: "scanner",
     icon: "camera",
     color: "#7B8B6F",
-    name: "Scanner",
+    name: I18n.t("Home.scanner"),
     routeName: "Scanner",
   },
   {
     key: "gallery",
     icon: "image",
     color: "#8696A7",
-    name: "Gallery",
+    name: I18n.t("Home.gallery"),
     routeName: "gallery",
   },
   {
     key: "jdSearch",
     icon: "search",
     color: "#965454",
-    name: "JDSearch",
+    name: I18n.t("Home.jdsearch"),
     routeName: "jdSearchDemo",
   },
   {
     key: "skeleton",
-    name: "Skeleton",
+    name: I18n.t("Home.skeleton"),
     color: "#6b5152",
     image: require("../../resource/image/home/seleton.png"),
     routeName: "skeleton",
   },
   {
     key: "morandi",
-    name: "Morandi-Colors",
+    name: I18n.t("Home.morandi"),
     color: "#7a7281",
     image: require("../../resource/image/home/colors.png"),
     routeName: "MorandiPage",

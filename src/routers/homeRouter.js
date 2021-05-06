@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
 import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
 import MorandiPage from "../screens/home/morandi/MorandiPage";
+import I18n from "../common/languages";
 
 /**
  * @desc The my page route collection
@@ -30,21 +31,21 @@ const tabBarInfo = [
   {
     name: "MainPage",
     component: MainPage,
-    tabBarLabel: "首页",
+    tabBarLabel: I18n.t("Route.home"),
     selectIcon: <AnimatedIcon iconName={"home"} />,
     defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
   },
   {
     name: "Explore",
     component: Explore,
-    tabBarLabel: "发现",
+    tabBarLabel: I18n.t("Route.explore"),
     selectIcon: <AnimatedIcon iconName={"explore"} />,
     defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
   },
   {
     name: "My",
     component: My,
-    tabBarLabel: "我的",
+    tabBarLabel: I18n.t("Route.my"),
     selectIcon: <AnimatedIcon iconName={"person"} />,
     defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
   },

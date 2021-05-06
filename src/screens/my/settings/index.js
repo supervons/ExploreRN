@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
 import Theme from "../../../styles/theme";
 import { useNavigation } from "@react-navigation/core";
+import I18n from "../../../common/languages";
 
 /**
  * Created by supervons on 2019/08/12.
@@ -15,19 +16,19 @@ export default function Settings() {
   const list = [
     {
       key: 1,
-      title: "修改密码",
+      title: I18n.t("Settings.changePassword"),
       onPress: () => {
         route.navigate("UpdatePassword");
       },
     },
     {
       key: 2,
-      title: "系统信息",
+      title: I18n.t("Settings.systemInfo"),
       onPress: () => route.navigate("VersionInfo"),
     },
     {
       key: 3,
-      title: "更换皮肤",
+      title: I18n.t("Settings.changeTheme"),
       onPress: () => {
         route.navigate("ThemeChange", {
           transitionType: "forFadeToBottomAndroid",

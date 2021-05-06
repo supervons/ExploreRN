@@ -17,6 +17,7 @@ import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import RotateImage from "../../components/RotateImage";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
+import I18n from "../../common/languages";
 
 export default function MyPage() {
   useTabBarStatus("person");
@@ -26,35 +27,35 @@ export default function MyPage() {
   const [list] = useState([
     {
       key: 1,
-      title: "基本信息",
+      title: I18n.t("MyPage.baseInfo"),
       icon: "person",
       color: "#058bb3",
       onPress: () => route.navigate("BaseInfo"),
     },
     {
       key: 2,
-      title: "收藏",
+      title: I18n.t("MyPage.favorite"),
       icon: "favorite",
       color: "#ff616f",
       onPress: () => alert("2"),
     },
     {
       key: 3,
-      title: "系统特性",
+      title: I18n.t("MyPage.systemIntroduction"),
       icon: "invert-colors",
       color: "#36fffb",
       onPress: () => route.navigate("SystemIntroduction", { type: true }),
     },
     {
       key: 4,
-      title: "设置",
+      title: I18n.t("MyPage.setting"),
       icon: "settings",
       color: "#36648b",
       onPress: () => route.navigate("Settings"),
     },
     {
       key: 6,
-      title: "退出登录",
+      title: I18n.t("MyPage.logout"),
       icon: "arrow-forward",
       color: "#a2b5cd",
       hiddenRightIcon: true,

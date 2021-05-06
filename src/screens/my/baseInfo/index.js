@@ -6,6 +6,7 @@ import Toast from "../../../components/toast";
 import userAction from "../../../actions/user";
 import { USER_INFO } from "../../../redux/action/userActionTypes";
 import { connect } from "react-redux";
+import I18n from "../../../common/languages";
 import commonStyles from "../../../styles/commonStyles";
 
 /**
@@ -58,31 +59,31 @@ function BaseInfo() {
     const userInfoJson = [
       {
         key: "loginId",
-        title: "账号",
+        title: I18n.t("BaseInfos.account"),
         rightTitle: global.userInfo.loginId,
         editable: false,
       },
       {
         key: "userName",
-        title: "姓名",
+        title: I18n.t("BaseInfos.name"),
         rightTitle: global.userInfo.userName,
         editable: true,
       },
       {
         key: "userSex",
-        title: "性别",
+        title: I18n.t("BaseInfos.sex"),
         rightTitle: global.userInfo.userSex,
         editable: false,
       },
       {
         key: "userCellPhone",
-        title: "手机号",
+        title: I18n.t("BaseInfos.phone"),
         rightTitle: global.userInfo.userCellPhone,
         editable: true,
       },
       {
         key: "userAddress",
-        title: "地址",
+        title: I18n.t("BaseInfos.address"),
         rightTitle: global.userInfo.userAddress,
         editable: true,
       },
