@@ -16,18 +16,22 @@
 | ------------- | -------------------------------- | ------------------------------------------------------------ |
 | Picture selection | Choose a picture in the album, or take a photo | react-native-image-picker@2.3.4 |
 | Scan | Scan the QR code to get the information in the QR code | react-native-camera@3.8.0 |
-| Skin change | Change system navigation head and button colors | react-navigation@3.11.1 |
+| Theme change | Change system navigation head and button colors | react-navigation@3.11.1 |
 | UI library | Project UI library | react-native-elements@3.1.0 |
 | Redux Family Bucket | Use of redux and middleware | redux@4.0.4<br />redux-persist@5.10.0<br />redux-logger@3.0.6<br />redux-thunk@2.3 .0 |
 | Network request | Unified package network request | axios@0.19.0 |
 | Refactoring based Hook | Refactoring class page based on hook | react@17.0.1 |
 | Skeleton screen | Improve the list and page browsing experience | react-native-shimmer-placeholder@2.0.7 |
+| Language Localize | APP language switch, with the local system Settings | react-native-localize@2.0.3 + i18n-js@3.8.0 |
 
 # TODO LIST
 
-| Name          | Description                   | Use the component name and version             |
-| ------------- | ----------------------------- | ---------------------------------------------- |
-| International | The app language switches and | set up with the local system react-native-i18n |
+- [x] Theme Change
+- [x] Skeleton
+- [x] Language Localize
+- [x] Morandi-Colors
+- [ ] Perfect preview page
+- [ ] Multiple Bundle Support
 
 # Project Structure
 
