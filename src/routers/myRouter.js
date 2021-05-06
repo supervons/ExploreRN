@@ -12,6 +12,7 @@ import SystemIntroduction from "../screens/systemIntroduction";
 import UpdatePassword from "../screens/my/settings/update-password";
 import Scanner from "../screens/scanner/scanner";
 import ScannerResult from "../screens/scanner/scannerResult";
+import I18n from "../common/languages";
 
 /**
  * @desc The my page route collection
@@ -33,37 +34,37 @@ const routeInfo = [
   },
   {
     name: "Settings",
-    options: { title: "设置" },
+    options: { title: I18n.t("Route.settings") },
     component: Settings,
   },
   {
     name: "VersionInfo",
-    options: { title: "版本信息" },
+    options: { title: I18n.t("Route.systemInfo") },
     component: VersionInfo,
   },
   {
     name: "ThemeChange",
-    options: { title: "换肤" },
+    options: { title: I18n.t("Route.theme") },
     component: ThemeChange,
   },
   {
     name: "BaseInfo",
-    options: { title: "基本信息" },
+    options: { title: I18n.t("Route.baseInfo") },
     component: BaseInfo,
   },
   {
     name: "SystemIntroduction",
-    options: { title: "欢迎页", header: () => null },
+    options: { title: I18n.t("Route.welcome"), header: () => null },
     component: SystemIntroduction,
   },
   {
     name: "UpdatePassword",
-    options: { title: "修改密码" },
+    options: { title: I18n.t("Route.changePassword") },
     component: UpdatePassword,
   },
   {
     name: "Scanner",
-    options: { title: "扫一扫" },
+    options: { title: I18n.t("Route.scanner") },
     component: Scanner,
   },
   {

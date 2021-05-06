@@ -99,13 +99,13 @@ const routeInfo = [
   },
   {
     name: "eChartsDemoPage",
-    options: { title: "图表示例" },
+    options: { title: I18n.t("Route.echartsDemo") },
     component: eChartsDemoPage,
   },
   {
     name: "jdSearchDemo",
     options: {
-      title: "仿京东头部搜索",
+      title: I18n.t("Route.echartsDemo"),
       header: () => <SafeAreaView style={{ backgroundColor: "red" }} />,
     },
     component: jdSearchDemo,
@@ -113,7 +113,7 @@ const routeInfo = [
   {
     name: "MorandiPage",
     options: {
-      title: "莫兰迪色系",
+      title: I18n.t("Route.morandi"),
       headerRight: () => (
         <View style={{ marginRight: 10 }}>
           <Icon
