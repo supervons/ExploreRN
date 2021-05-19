@@ -115,7 +115,7 @@ export default function Login(props) {
           onPress={() => login()}
         />
         <Text style={{ width: 300, marginTop: 5 }}>
-          {`©copyright xxx 版权所有`}
+          {`©copyright supervons all right reserved`}
         </Text>
       </View>
     </KeyboardAwareScrollView>
