@@ -1,3 +1,14 @@
+/**
+ * Created by supervons on 2019/08/21.
+ * 系统功能介绍界面，可以用做第一次进入系统的首屏
+ * System function introduction page, Can be used as the first screen to enter the system for the first time
+ *
+ * Update by supervons on 2021/04/10
+ * Hook update
+ *
+ * Update by supervons on 2021/05/23
+ * Update : Each page displays an animation
+ */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
@@ -8,16 +19,9 @@ import { FIRST_INSTALL } from "../../redux/action/settingActionTypes";
 import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";
 
-/**
- * Created by supervons on 2019/08/21.
- * 系统功能介绍界面，可以用做第一次进入系统的首屏
- * System function introduction page, Can be used as the first screen to enter the system for the first time
- *
- * Update by supervons on 2021/04/10
- * Hook update
- */
 export default function SystemIntroduction(props) {
   const firstInstall = useSelector(state => state.SettingReducer.firstInstall);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const dispatch = useDispatch();
   const route = new useNavigation();
   const [introductionMap] = useState([
@@ -41,6 +45,7 @@ export default function SystemIntroduction(props) {
       component: (
         <Button
           title={"嗯，朕已知晓"}
+          style={{ width: 200 }}
           onPress={() => {
             if (firstInstall) {
               dispatch({
@@ -57,18 +62,23 @@ export default function SystemIntroduction(props) {
     },
   ]);
 
-  function renderItem(style, title, enTitle, component, key) {
+  function renderItem(style, title, enTitle, component, key, index) {
     return (
       <View key={key} style={[style, { flex: 1 }]}>
-        <Animatable.View animation="zoomInUp">
-          <View style={{ margin: 30 }}>
-            <Text style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>
-              {title}
-            </Text>
-            <Text style={commonStyles.text}>{enTitle}</Text>
-          </View>
-        </Animatable.View>
-        {component}
+        {currentIndex === index ? (
+          <Animatable.View animation="zoomIn">
+            <View style={{ margin: 30 }}>
+              <Text
+                style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>
+                {title}
+              </Text>
+              <Text style={commonStyles.text}>{enTitle}</Text>
+            </View>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              {component}
+            </View>
+          </Animatable.View>
+        ) : null}
       </View>
     );
   }
@@ -77,7 +87,12 @@ export default function SystemIntroduction(props) {
     <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
       <StatusBar hidden={true} barStyle={"light-content"} />
       <View style={{ flex: 1 }}>
-        <Swiper loop={false} loadMinimal={false}>
+        <Swiper
+          onMomentumScrollEnd={(index, context) => {
+            setCurrentIndex(context.index);
+          }}
+          loop={false}
+          loadMinimal={false}>
           {introductionMap.map((item, i) =>
             renderItem(
               item.style,
@@ -85,6 +100,7 @@ export default function SystemIntroduction(props) {
               item.enTitle,
               item.component,
               item.key,
+              i,
             ),
           )}
         </Swiper>
