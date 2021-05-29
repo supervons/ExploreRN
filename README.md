@@ -23,6 +23,7 @@
 | 基于hook重写 | 基于hook重写class页面            | react@17.0.1                                                 |
 | 骨架屏       | 提升列表、页面浏览体验           | react-native-shimmer-placeholder@2.0.7                       |
 | 国际化       | app语言切换，随本地系统设置      | react-native-localize@2.0.3 + i18n-js@3.8.0                  |
+| 组件可拖拽   | 组件元素随触摸拖拽移动位置       | react-native-draggable@3.3.0                                 |
 
 # 待开发
 
@@ -30,6 +31,7 @@
 - [x] 骨架屏
 - [x] 多语言支持
 - [x] 莫兰迪卡色系
+- [x] 组件可拖拽支持
 - [ ] 完善的预览页面
 - [ ] 多bundle支持
 

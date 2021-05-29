@@ -23,6 +23,7 @@
 | Refactoring based Hook | Refactoring class page based on hook | react@17.0.1 |
 | Skeleton screen | Improve the list and page browsing experience | react-native-shimmer-placeholder@2.0.7 |
 | Language Localize | APP language switch, with the local system Settings | react-native-localize@2.0.3 + i18n-js@3.8.0 |
+| Components-Dragged | Component elements move with touch drag and drop | react-native-draggable@3.3.0 |
 
 # TODO LIST
 
@@ -30,6 +31,7 @@
 - [x] Skeleton
 - [x] Language Localize
 - [x] Morandi-Colors
+- [x] Components are drag-and-drop supported
 - [ ] Perfect preview page
 - [ ] Multiple Bundle Support
 
