@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
 import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
 import MorandiPage from "../screens/home/morandi/MorandiPage";
+import DraggablePage from "../screens/home/drag/DraggablePage";
 import I18n from "../common/languages";
 
 /**
@@ -131,6 +132,13 @@ const routeInfo = [
       ),
     },
     component: MorandiPage,
+  },
+  {
+    name: "DraggablePage",
+    options: {
+      title: I18n.t("Route.draggable"),
+    },
+    component: DraggablePage,
   },
 ];
 const pageViewRouter = [];

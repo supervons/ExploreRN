@@ -8,6 +8,7 @@ export default {
     jdsearch: "JDsearch",
     skeleton: "Skeleton",
     morandi: "Morandi-Colors",
+    draggable: "Draggable",
     i18: "i18",
     device: "%{counts} devices",
   },
@@ -27,6 +28,7 @@ export default {
     scanner: "Scanner",
     echartsDemo: "Echarts-Demo",
     morandi: "Morandi-Colors",
+    draggable: "Draggable-Demo",
   },
   MyPage: {
     baseInfo: "BaseInfo",

@@ -47,4 +47,11 @@ export const data = [
     image: require("../../resource/image/home/colors.png"),
     routeName: "MorandiPage",
   },
+  {
+    key: "draggable",
+    name: I18n.t("Home.draggable"),
+    color: "#7a7281",
+    image: require("../../resource/image/home/drag.png"),
+    routeName: "DraggablePage",
+  },
 ];

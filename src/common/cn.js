@@ -8,6 +8,7 @@ export default {
     jdsearch: "京东搜索",
     skeleton: "骨架屏",
     morandi: "莫兰迪色系",
+    draggable: "可拖拽",
     i18: "国际化",
     device: "%{counts} 个设备",
   },
@@ -27,6 +28,7 @@ export default {
     scanner: "扫一扫",
     echartsDemo: "图表示例",
     morandi: "莫兰迪色系",
+    draggable: "可拖拽示例",
   },
   MyPage: {
     baseInfo: "基本信息",
