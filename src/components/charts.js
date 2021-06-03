@@ -1,70 +1,62 @@
-import React from 'react';
-import { View } from 'react-native';
-import RNEChartsPro from 'react-native-echarts-pro';
+import React from "react";
+import { View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
 export default function ChartsComponent() {
   const pieOption = {
-    color: this.colors,
     tooltip: {
-      backgroundColor: 'rgba(255,255,255,0.8)',
-      borderColor: '#668BEE',
-      borderWidth: 1,
-      padding: [5, 10],
-      textStyle: {
-        color: '#24283C',
-        fontSize: 12
-      },
-      trigger: 'item',
-      // formatter: '{b} <br/>{c} : ({d}%)',
-      formatter: function(a) {
-        return (
-          '<i style="display: inline-block;width: 10px;height: 10px;background: ' +
-          a['color'] +
-          ';margin-right: 5px;border-radius: 50%;}"></i>' +
-          a['name'] +
-          '</br>测试:  ' +
-          a['value'] +
-          '个 ' +
-          '<br>占比:  ' +
-          a['percent'] +
-          '%'
-        );
-      }
+      trigger: "axis",
+    },
+    legend: {
+      type: "scroll", // 设置图例翻页
+      orient: "horizontal", // 图例横
+      data: ["邮件营销", "联盟广告", "视频广告", "直接访问", "搜索引擎"],
+    },
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
+    },
+    xAxis: {
+      type: "category",
+      boundaryGap: false,
+      data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+    },
+    yAxis: {
+      type: "value",
     },
     series: [
       {
-        name: '广告访问来源',
-        type: 'pie',
-        legendHoverLink: true,
-        hoverAnimation: true,
-        avoidLabelOverlap: true,
-        startAngle: 180,
-        radius: '55%',
-        center: ['50%', '35%'],
-        data: [{ value: 105.2, name: 'android' }, { value: 310, name: 'iOS' }, { value: 234, name: 'web' }],
-        label: {
-          normal: {
-            show: true,
-            textStyle: {
-              fontSize: 12,
-              color: '#23273C'
-            }
-          }
-        },
-        emphasis: {
-          lable: {
-            show: true,
-            fontSize: 12,
-            color: '#668BEE'
-          },
-          itemStyle: {
-            show: true,
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
+        name: "邮件营销",
+        type: "line",
+        stack: "总量",
+        data: [120, 132, 101, 134, 90, 230, 210],
+      },
+      {
+        name: "联盟广告",
+        type: "line",
+        stack: "总量",
+        data: [220, 182, 191, 234, 290, 330, 310],
+      },
+      {
+        name: "视频广告",
+        type: "line",
+        stack: "总量",
+        data: [150, 232, 201, 154, 190, 330, 410],
+      },
+      {
+        name: "直接访问",
+        type: "line",
+        stack: "总量",
+        data: [320, 332, 301, 334, 390, 330, 320],
+      },
+      {
+        name: "搜索引擎",
+        type: "line",
+        stack: "总量",
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+      },
+    ],
   };
 
   return (
