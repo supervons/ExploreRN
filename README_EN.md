@@ -6,9 +6,9 @@
     2. Integrate component experiments and build your own wheels!
     3. Hone my architectural skills and continue coding and code optimization.
     Welcome to join us:
-    Qq group: 783071253
+    QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.64.0
+    Current RN version: 0.64.1
 
 # Features
 
