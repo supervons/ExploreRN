@@ -10,6 +10,10 @@
     邮箱：supervons@sina.com
     当前RN版本：0.64.1
 
+# 预览
+#### 动态tab-bar
+<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" style="zoom:60%;" align="center"/>
+
 # 功能
 
 | 功能名称     | 简述                             | 使用组件名称及版本                                           |
