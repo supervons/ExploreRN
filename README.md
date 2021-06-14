@@ -37,7 +37,7 @@
 
 # 预览
 #### 动态tab-bar
-<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" align="center"/>
+<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" style="height: 200px;" align="center"/>
 
 #### 骨架屏
 <img src="./preview/skeleton.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
