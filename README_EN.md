@@ -32,8 +32,28 @@
 - [x] Language Localize
 - [x] Morandi-Colors
 - [x] Components are drag-and-drop supported
-- [ ] Perfect preview page
+- [x] Perfect preview page
 - [ ] Multiple Bundle Support
+
+
+# Preview
+#### Dynamic TAB-Bar
+<img src="./preview/dynamic-tab.gif" alt="DynamicTAB-Bar" style="height: 200px;" align="center"/>
+
+#### Skeleton
+<img src="./preview/skeleton.gif" alt="Skeleton" align="center"/>
+
+#### Draggable
+<img src="./preview/draggable.gif" alt="Draggable" align="center"/>
+
+#### I18
+<img src="./preview/zh-setting.png" alt="中文" align="center"/> <img src="./preview/en-setting.png" alt="英文" align="center"/>
+
+#### Theme
+<img src="./preview/change-theme.gif" alt="Theme" align="center"/>
+
+#### Morandi-Color
+<img src="./preview/morandi.png" alt="Morandi-Color" align="center"/>
 
 # Project Structure
 

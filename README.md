@@ -30,9 +30,9 @@
 - [x] 换肤
 - [x] 骨架屏
 - [x] 多语言支持
-- [x] 莫兰迪卡色系
+- [x] 莫兰迪色卡
 - [x] 组件可拖拽支持
-- [ ] 完善的预览页面
+- [x] 完善的预览页面
 - [ ] 多bundle支持
 
 # 预览
@@ -40,18 +40,19 @@
 <img src="./preview/dynamic-tab.gif" alt="动态tab-bar" style="height: 200px;" align="center"/>
 
 #### 骨架屏
-<img src="./preview/skeleton1.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+<img src="./preview/skeleton.gif" alt="骨架屏" align="center"/>
 
 #### 组件可拖拽
-<img src="./preview/dragger.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+<img src="./preview/draggable.gif" alt="组件可拖拽" align="center"/>
 
-#### 随系统语言改变
+#### I18国际化
+<img src="./preview/zh-setting.png" alt="中文" align="center"/><img src="./preview/en-setting.png" alt="英文" align="center"/>
 
 #### 主题换肤
-<img src="./preview/change-theme.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+<img src="./preview/change-theme.gif" alt="主题换肤" align="center"/>
 
-#### 莫兰迪卡色系
-<img src="./preview/morandi.png" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+#### 莫兰迪色卡
+<img src="./preview/morandi.png" alt="莫兰迪色卡" align="center"/>
 
 # 项目结构
 
