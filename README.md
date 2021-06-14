@@ -10,10 +10,6 @@
     邮箱：supervons@sina.com
     当前RN版本：0.64.1
 
-# 预览
-#### 动态tab-bar
-<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" style="zoom:60%;" align="center"/>
-
 # 功能
 
 | 功能名称     | 简述                             | 使用组件名称及版本                                           |
@@ -38,6 +34,24 @@
 - [x] 组件可拖拽支持
 - [ ] 完善的预览页面
 - [ ] 多bundle支持
+
+# 预览
+#### 动态tab-bar
+<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" align="center"/>
+
+#### 骨架屏
+<img src="./preview/skeleton.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+
+#### 组件可拖拽
+<img src="./preview/dragger.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+
+#### 随系统语言改变
+
+#### 主题换肤
+<img src="./preview/change-theme.gif" alt="动态tab-bar" style="zoom:30%;" align="center"/>
+
+#### 莫兰迪卡色系
+<img src="./preview/morandi.png" alt="动态tab-bar" style="zoom:30%;" align="center"/>
 
 # 项目结构
 
