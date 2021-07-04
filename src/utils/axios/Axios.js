@@ -77,13 +77,9 @@ async function get(url, callback) {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
-    if (response.code) {
+    if (response.code === 0) {
       // 判断业务逻辑返回状态值
-      if (response.code.toUpperCase() === "SUCCESS") {
-        return response;
-      } else {
-        return Promise.reject(response.msg || response.message);
-      }
+      return response;
     } else {
       return Promise.reject(response.message);
     }
@@ -98,15 +94,11 @@ async function post(url, params, callback) {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
-    if (response.code) {
+    if (response.code === 0) {
       // 判断业务逻辑返回状态值
-      if (response.code.toUpperCase() === "SUCCESS") {
-        return response;
-      } else {
-        return Promise.reject(response.msg || response.message);
-      }
+      return response.data;
     } else {
-      return Promise.reject(response.message);
+      return Promise.reject(response.msg);
     }
   } catch (e) {
     console.log("---->" + e);

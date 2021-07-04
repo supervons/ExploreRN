@@ -21,6 +21,7 @@ import Toast from "../../components/toast";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import RotateImage from "../../components/RotateImage";
+import md5 from "md5";
 // 用户 token
 global.jwtToken = "";
 // 用户信息
@@ -61,20 +62,20 @@ export default function Login(props) {
       return;
     }
     const params = {
-      loginId: loginId,
-      passWord: passWord,
+      uId: loginId,
+      password: md5(passWord),
     };
     userAction.userLogin(params).then(resp => {
       dispatch({
         type: USER_TOKEN,
-        userToken: resp.auxiliaryData.jwtToken,
+        userToken: resp.token,
       });
       dispatch({
         type: USER_INFO,
-        userInfo: resp.data,
+        userInfo: resp.userInfo,
       });
-      global.jwtToken = resp.auxiliaryData.jwtToken;
-      global.userInfo = resp.data;
+      global.jwtToken = resp.token;
+      global.userInfo = resp.userInfo;
       props.navigation.replace("MainPage");
     });
   }

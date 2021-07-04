@@ -7,7 +7,7 @@ import Toast from "../components/toast";
  * @returns {Promise<any | never>}
  */
 const userLogin = params => {
-  return Axios.POST("/user/loginAction", params)
+  return Axios.POST("/api/v1/token", params)
     .then(resp => {
       return Promise.resolve(resp);
     })
