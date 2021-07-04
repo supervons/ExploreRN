@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import md5 from "md5";
 import { View } from "react-native";
 import { Button, ListItem } from "react-native-elements";
 import Theme from "../../../../styles/theme";
@@ -35,6 +36,11 @@ export default function UpdatePassword(props) {
   ];
   const [userInfo, setUserInfo] = useState({});
 
+  /**
+   * Update user password.
+   * Need old password and new password can't same with it.
+   * Use md5 encryption.
+   */
   function updatePassword() {
     if (
       !userInfo.oldPassword ||
@@ -49,10 +55,15 @@ export default function UpdatePassword(props) {
         if (userInfo.oldPassword === userInfo.newPassword) {
           Toast.showToast("请输入不同的新密码噢!");
         } else {
-          userInfo.loginId = userInfo.loginId;
-          userAction.updatePassword(userInfo).then(resp => {
-            Toast.showToast(resp.msg);
-            this.props.navigation.pop(2);
+          const params = {
+            ...userInfo,
+            id: global.userInfo.id,
+            oldPassword: md5(userInfo.oldPassword),
+            newPassword: md5(userInfo.newPassword),
+          };
+          userAction.updatePassword(params).then(resp => {
+            Toast.showToast("update password success!");
+            props.navigation.pop(2);
           });
         }
       }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import Constants from "../../common/constants";
 import Loading from "../../common/loading";
+import Toast from "../../components/toast";
 
 /**
  * Created by supervons on 2019/08/05.
@@ -30,7 +31,7 @@ class Axios {
     instance.interceptors.request.use(
       config => {
         // 增加通用token
-        config.headers.jwtToken = jwtToken;
+        config.headers.Authorization = global.jwtToken;
         Loading.show();
         return config;
       },
@@ -63,11 +64,27 @@ class Axios {
   }
 
   // post 请求
-  POST(url, params) {
+  POST(url, params, method) {
     if (!url || !params || typeof params != "object") {
       throw new Error("params is undefined or not an object");
     }
     return post(commonHosts + url, params);
+  }
+
+  // put 请求
+  PUT(url, params) {
+    if (!url || !params || typeof params != "object") {
+      throw new Error("params is undefined or not an object");
+    }
+    return post(commonHosts + url, params, "put");
+  }
+
+  // delete 请求
+  DELETE(url, params) {
+    if (!url || !params || typeof params != "object") {
+      throw new Error("params is undefined or not an object");
+    }
+    return post(commonHosts + url, params, "delete");
   }
 }
 
@@ -88,9 +105,9 @@ async function get(url, callback) {
   }
 }
 
-async function post(url, params, callback) {
+async function post(url, params, method = "post") {
   try {
-    let response = await instance.post(url, params).catch(resp => {
+    let response = await instance[method](url, params).catch(resp => {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
@@ -98,7 +115,8 @@ async function post(url, params, callback) {
       // 判断业务逻辑返回状态值
       return response.data;
     } else {
-      return Promise.reject(response.msg);
+      Toast.showToast(response.message || response.msg);
+      return Promise.reject(response.msg || "server error!");
     }
   } catch (e) {
     console.log("---->" + e);

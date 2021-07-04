@@ -5,6 +5,7 @@
  * The password box uses a secure keyboard.
  * After a successful login, Redux stores user information
  */
+import md5 from "md5";
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -21,7 +22,6 @@ import Toast from "../../components/toast";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import RotateImage from "../../components/RotateImage";
-import md5 from "md5";
 // 用户 token
 global.jwtToken = "";
 // 用户信息
@@ -74,7 +74,7 @@ export default function Login(props) {
         type: USER_INFO,
         userInfo: resp.userInfo,
       });
-      global.jwtToken = resp.token;
+      global.jwtToken = "Bearer " + resp.token;
       global.userInfo = resp.userInfo;
       props.navigation.replace("MainPage");
     });

@@ -39,12 +39,11 @@ const updateUserInfo = params => {
  * @returns {Promise<any | never>}
  */
 const updatePassword = params => {
-  return Axios.POST("/user/updatePassword", params)
+  return Axios.PUT(`/api/v1/user/password/${params.id}`, params)
     .then(resp => {
       return Promise.resolve(resp);
     })
     .catch(resp => {
-      Toast.showToast(resp);
       return Promise.reject(resp);
     });
 };
