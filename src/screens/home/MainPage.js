@@ -42,7 +42,7 @@ export default function MainPage() {
    */
   useEffect(() => {
     global.userInfo = userInfo;
-    global.userToken = userToken;
+    global.jwtToken = userToken;
     dispatch({
       type: INITIAL_PAGE,
       initialPage: "MainPage",

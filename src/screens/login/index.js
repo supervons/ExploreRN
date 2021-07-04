@@ -66,15 +66,16 @@ export default function Login(props) {
       password: md5(passWord),
     };
     userAction.userLogin(params).then(resp => {
+      const token = `Bearer ${resp.token}`;
       dispatch({
         type: USER_TOKEN,
-        userToken: resp.token,
+        userToken: token,
       });
       dispatch({
         type: USER_INFO,
         userInfo: resp.userInfo,
       });
-      global.jwtToken = "Bearer " + resp.token;
+      global.jwtToken = token;
       global.userInfo = resp.userInfo;
       props.navigation.replace("MainPage");
     });
