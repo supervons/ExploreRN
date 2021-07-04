@@ -60,7 +60,7 @@ function BaseInfo() {
       {
         key: "loginId",
         title: I18n.t("BaseInfos.account"),
-        rightTitle: global.userInfo.loginId,
+        rightTitle: global.userInfo.uId,
         editable: false,
       },
       {
@@ -78,7 +78,7 @@ function BaseInfo() {
       {
         key: "userCellPhone",
         title: I18n.t("BaseInfos.phone"),
-        rightTitle: global.userInfo.userCellPhone,
+        rightTitle: global.userInfo.userCellphone,
         editable: true,
       },
       {
