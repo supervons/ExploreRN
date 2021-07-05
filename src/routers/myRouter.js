@@ -3,6 +3,7 @@ import {
   CardStyleInterpolators,
 } from "@react-navigation/stack";
 import React from "react";
+import { View } from "react-native";
 import My from "../screens/my";
 import Settings from "../screens/my/settings";
 import VersionInfo from "../screens/my/settings/version";
@@ -54,7 +55,13 @@ const routeInfo = [
   },
   {
     name: "SystemIntroduction",
-    options: { title: I18n.t("Route.welcome"), header: () => null },
+    options: {
+      title: I18n.t("Route.welcome"),
+      header: () => (
+        // Bug fix: android remain the style of the previous page.
+        <View style={{ height: 1, backgroundColor: "transparent" }} />
+      ),
+    },
     component: SystemIntroduction,
   },
   {

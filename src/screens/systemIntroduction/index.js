@@ -85,7 +85,7 @@ export default function SystemIntroduction(props) {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
-      <StatusBar hidden={true} barStyle={"light-content"} />
+      <StatusBar barStyle={"light-content"} />
       <View style={{ flex: 1 }}>
         <Swiper
           onMomentumScrollEnd={(index, context) => {
