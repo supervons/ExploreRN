@@ -82,9 +82,7 @@ export default function MyPage() {
   ]);
 
   return (
-    <ScrollView
-      alwaysBounceVertical={false}
-      style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
+    <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
       <RotateImage />
       {list.map((item, i) => (
