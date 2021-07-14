@@ -44,7 +44,11 @@ export default function RotateImage(props) {
         containerStyle={{ marginTop: 25, marginBottom: 15 }}
         rounded
         size="xlarge"
-        source={require("../resource/image/avatar/logo.png")}
+        source={
+          props.avatarUri !== undefined
+            ? { uri: props.avatarUri }
+            : require("../resource/image/avatar/logo.png")
+        }
       />
     </Animated.View>
   );

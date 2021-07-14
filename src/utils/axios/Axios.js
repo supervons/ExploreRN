@@ -32,7 +32,6 @@ class Axios {
       config => {
         // 增加通用token
         config.headers.Authorization = global.jwtToken;
-        Loading.show();
         return config;
       },
       error => {
@@ -56,39 +55,46 @@ class Axios {
   }
 
   // get 请求
-  GET(url) {
+  GET(url, showLoading = true) {
     if (!url) {
       throw new Error("url is undefined");
     }
-    return get(commonHosts + url);
+    return get(commonHosts + url, showLoading);
   }
 
   // post 请求
-  POST(url, params, method) {
+  POST(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
       throw new Error("params is undefined or not an object");
     }
-    return post(commonHosts + url, params);
+    return post(commonHosts + url, params, "post", showLoading);
   }
 
   // put 请求
-  PUT(url, params) {
+  PUT(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
       throw new Error("params is undefined or not an object");
     }
-    return post(commonHosts + url, params, "put");
+    return post(commonHosts + url, params, "put", showLoading);
   }
 
   // delete 请求
-  DELETE(url, params) {
+  DELETE(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
       throw new Error("params is undefined or not an object");
     }
-    return post(commonHosts + url, params, "delete");
+    return post(commonHosts + url, params, "delete", showLoading);
   }
 }
 
-async function get(url, callback) {
+/**
+ * COMMON GET POST
+ * @param url
+ * @param showLoading - Loading indicator
+ * @returns {Promise<*>}
+ */
+async function get(url, showLoading) {
+  showLoading && Loading.show();
   try {
     let response = await instance.get(url).catch(resp => {
       return resp;
@@ -105,7 +111,8 @@ async function get(url, callback) {
   }
 }
 
-async function post(url, params, method = "post") {
+async function post(url, params, method = "post", showLoading = true) {
+  showLoading && Loading.show();
   try {
     let response = await instance[method](url, params).catch(resp => {
       return resp;

@@ -17,10 +17,12 @@ import {
 } from "react-native";
 import { Button } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import userAction from "../../actions/user";
-import Toast from "../../components/toast";
-import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import { debounce } from "../../utils/commonFun";
+import { getProfile } from "../../actions/profile";
+import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
+import Toast from "../../components/toast";
+import userAction from "../../actions/user";
 import RotateImage from "../../components/RotateImage";
 // 用户 token
 global.jwtToken = "";
@@ -30,6 +32,7 @@ global.userInfo = {};
 export default function Login(props) {
   const [loginId, setLoginId] = useState("");
   const [passWord, setPassWord] = useState("");
+  const [userAvatarUri, setUserAvatarUri] = useState("");
   const dispatch = useDispatch();
   const [todos, dispath] = useReducer((state, action) => {
     if (action === "add") {
@@ -43,6 +46,7 @@ export default function Login(props) {
     userToken: state.UserReducer.userToken,
     userInfo: state.UserReducer.userInfo,
   }));
+
   useEffect(() => {
     // 判断 redux-persist 缓存中是否有数据，有则取出直接登录
     if (userToken && userInfo) {
@@ -55,6 +59,10 @@ export default function Login(props) {
     // Global navigation for not in router pages
     global.navigation = props.navigation;
   }, []);
+
+  useEffect(() => {
+    debounce(getUserAvatar, 500);
+  }, [loginId]);
 
   function login() {
     if (!loginId || !passWord) {
@@ -80,13 +88,25 @@ export default function Login(props) {
       props.navigation.replace("MainPage");
     });
   }
+
+  /**
+   * Use debounce function optimization profile network request.
+   */
+  function getUserAvatar() {
+    getProfile(loginId).then(res => {
+      setUserAvatarUri(
+        res.data.profile[0] && res.data.profile[0].file_access_path,
+      );
+    });
+  }
+
   return (
     <KeyboardAwareScrollView
       extraHeight={120}
       enableOnAndroid={true}
       enableResetScrollToCoords={true}>
       <View style={styles.container}>
-        <RotateImage style={{ marginTop: 100 }} />
+        <RotateImage avatarUri={userAvatarUri} style={{ marginTop: 100 }} />
         <TextInput
           style={styles.userNameStyle}
           placeholder="用户名"
