@@ -61,7 +61,9 @@ export default function Login(props) {
   }, []);
 
   useEffect(() => {
-    debounce(getUserAvatar, 500);
+    if (loginId) {
+      debounce(getUserAvatar, 500);
+    }
   }, [loginId]);
 
   function login() {

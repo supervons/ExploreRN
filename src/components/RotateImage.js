@@ -45,7 +45,7 @@ export default function RotateImage(props) {
         rounded
         size="xlarge"
         source={
-          props.avatarUri !== undefined
+          props.avatarUri
             ? { uri: props.avatarUri }
             : require("../resource/image/avatar/logo.png")
         }
