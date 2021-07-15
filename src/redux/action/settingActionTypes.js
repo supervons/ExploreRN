@@ -17,7 +17,7 @@ export const FIRST_INSTALL = "FIRST_INSTALL";
 export const INITIAL_PAGE = "INITIAL_PAGE";
 
 /**
- * 系统主题颜色
- * System theme color
+ * 用户配置信息
+ * User profile info.
  */
-export const THEME_COLOR = "THEME_COLOR";
+export const PROFILE_INFO = "PROFILE_INFO";

@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DeviceEventEmitter, View } from "react-native";
-import { CheckBox, ListItem, Divider, Button } from "react-native-elements";
+import { View } from "react-native";
+import { CheckBox, Divider, Button } from "react-native-elements";
+
+import { PROFILE_INFO } from "../../../../redux/action/settingActionTypes";
+import { updateProfile } from "../../../../actions/profile";
 import Theme from "../../../../styles/theme";
 import I18n from "../../../../common/languages";
-import { THEME_COLOR } from "../../../../redux/action/settingActionTypes";
 
-/**
- * Created by supervons on 2019/08/20.
- * 皮肤更换页面
- * Skin replacement page
- * Update Hook by supervons on 2021/04/10.
- */
 const colorList = [
   {
     key: 0,
@@ -40,10 +36,15 @@ const colorList = [
   },
 ];
 
+/**
+ * Created by supervons on 2019/08/20.
+ * 皮肤更换页面
+ * Skin replacement page
+ * Update Hook by supervons on 2021/04/10.
+ */
 export default function ThemeChange(props) {
-  const themeColor = useSelector(state => state.SettingReducer.themeColor);
+  const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
   const dispatch = useDispatch();
-
   return (
     <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <Divider style={{ backgroundColor: "black", marginTop: 30 }} />
@@ -56,9 +57,18 @@ export default function ThemeChange(props) {
             backgroundColor: item.value,
           }}
           title={item.title}
-          checked={themeColor === item.value}
+          checked={profileInfo.theme === item.value}
           onPress={() => {
-            dispatch({ type: THEME_COLOR, themeColor: item.value });
+            const tempProfileInfo = { ...profileInfo };
+            tempProfileInfo.theme = item.value;
+            dispatch({
+              type: PROFILE_INFO,
+              profileInfo: tempProfileInfo,
+            });
+            // TODO - update user profile.
+            // updateProfile(tempProfileInfo).then(res => {
+            //   alert(JSON.stringify(res));
+            // });
           }}
         />
       ))}
@@ -70,7 +80,7 @@ export default function ThemeChange(props) {
         }}
         buttonStyle={{
           marginTop: 15,
-          backgroundColor: themeColor,
+          backgroundColor: profileInfo.theme,
         }}
         title={I18n.t("Button.ok")}
         onPress={() => props.navigation.pop()}

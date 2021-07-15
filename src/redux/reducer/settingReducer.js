@@ -1,10 +1,9 @@
 import {
   FIRST_INSTALL,
-  THEME_COLOR,
   INITIAL_PAGE,
+  PROFILE_INFO,
 } from "../action/settingActionTypes";
 import { handleActions } from "redux-actions";
-import Theme from "../../styles/theme";
 /**
  * Created by supervons on 2019/08/20.
  * 系统相关设置，是否第一次安装启动
@@ -15,7 +14,9 @@ import Theme from "../../styles/theme";
 const initialState = {
   firstInstall: true,
   initialPage: "Login",
-  themeColor: Theme.primary,
+  profileInfo: {
+    theme: "#00868B",
+  },
 };
 
 const handler = {};
@@ -36,11 +37,11 @@ handler[INITIAL_PAGE] = (state, action) => {
   };
 };
 
-handler[THEME_COLOR] = (state, action) => {
-  const { themeColor } = action;
+handler[PROFILE_INFO] = (state, action) => {
+  const { profileInfo } = action;
   return {
     ...state,
-    themeColor,
+    profileInfo,
   };
 };
 export default handleActions(handler, initialState);

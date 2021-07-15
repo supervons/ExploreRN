@@ -1,13 +1,7 @@
 import md5 from "md5";
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  View,
-  Text,
-  DeviceEventEmitter,
-  TextInput,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
@@ -34,15 +28,8 @@ export default function Login(props) {
   const [passWord, setPassWord] = useState("");
   const [userAvatarUri, setUserAvatarUri] = useState("");
   const dispatch = useDispatch();
-  const [todos, dispath] = useReducer((state, action) => {
-    if (action === "add") {
-      return state + 1;
-    }
-    return state;
-  }, 0);
 
-  const { themeColor, userToken, userInfo } = useSelector(state => ({
-    themeColor: state.SettingReducer.themeColor,
+  const { userToken, userInfo } = useSelector(state => ({
     userToken: state.UserReducer.userToken,
     userInfo: state.UserReducer.userInfo,
   }));
@@ -54,8 +41,6 @@ export default function Login(props) {
       global.userInfo = userInfo;
       props.navigation.replace("MainPage");
     }
-    // Give the redux themeColor, emit router theme change
-    DeviceEventEmitter.emit("theme_change", themeColor);
     // Global navigation for not in router pages
     global.navigation = props.navigation;
   }, []);

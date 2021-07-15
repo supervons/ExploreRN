@@ -1,14 +1,3 @@
-/**
- * Created by supervons on 2019/08/21.
- * 系统功能介绍界面，可以用做第一次进入系统的首屏
- * System function introduction page, Can be used as the first screen to enter the system for the first time
- *
- * Update by supervons on 2021/04/10
- * Hook update
- *
- * Update by supervons on 2021/05/23
- * Update : Each page displays an animation
- */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
@@ -19,6 +8,12 @@ import { FIRST_INSTALL } from "../../redux/action/settingActionTypes";
 import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";
 
+/**
+ * Created by supervons on 2019/08/21.
+ * 系统功能介绍界面，可以用做第一次进入系统的首屏
+ * System function introduction page, Can be used as the first screen to enter the system for the first time
+ * Each page displays an animation
+ */
 export default function SystemIntroduction(props) {
   const firstInstall = useSelector(state => state.SettingReducer.firstInstall);
   const [currentIndex, setCurrentIndex] = useState(0);

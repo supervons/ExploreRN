@@ -17,6 +17,23 @@ const getProfile = userId => {
     });
 };
 
+/**
+ * 更新用户配置信息
+ * @param params 用户配置信息
+ * @returns {Promise<any | never>}
+ */
+const updateProfile = params => {
+  return Axios.POST(`/api/v1/profile`, params)
+    .then(resp => {
+      return Promise.resolve(resp);
+    })
+    .catch(resp => {
+      Toast.showToast(resp);
+      return Promise.reject(resp);
+    });
+};
+
 module.exports = {
   getProfile,
+  updateProfile,
 };

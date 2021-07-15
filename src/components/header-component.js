@@ -15,12 +15,10 @@ import { useSelector } from "react-redux";
  * header component
  */
 export default function HeaderComponent(props) {
-  const { themeColor } = useSelector(state => ({
-    themeColor: state.SettingReducer.themeColor,
-  }));
+  const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
   return (
     <View>
-      <SafeAreaView style={{ backgroundColor: themeColor }} />
+      <SafeAreaView style={{ backgroundColor: profileInfo.theme }} />
       <StatusBar
         animated={false}
         hidden={false}
@@ -30,7 +28,7 @@ export default function HeaderComponent(props) {
       />
       {props.header === null ? null : (
         <Header
-          backgroundColor={themeColor}
+          backgroundColor={profileInfo.theme}
           containerStyle={
             Platform.OS === "ios"
               ? { paddingTop: 5, height: 50 }
@@ -40,7 +38,7 @@ export default function HeaderComponent(props) {
             <Icon
               style={{ marginTop: 35 }}
               onPress={props.rightOnPress}
-              underlayColor={themeColor}
+              underlayColor={profileInfo.theme}
               type={props.type}
               name={props.rightIcon}
               color={props.rightColor ? props.rightColor : "#ffffff"}
@@ -70,7 +68,7 @@ export default function HeaderComponent(props) {
                   justifyContent: "center",
                 }}>
                 <Icon
-                  underlayColor={themeColor}
+                  underlayColor={profileInfo.theme}
                   name={"arrow-back"}
                   color={props.rightColor ? props.rightColor : "#ffffff"}
                 />

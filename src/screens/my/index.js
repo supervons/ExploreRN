@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, ScrollView, SafeAreaView } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
-import Theme from "../../styles/theme";
 import { useDispatch } from "react-redux";
+
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
-import RotateImage from "../../components/RotateImage";
+import { PROFILE_INFO } from "../../redux/action/settingActionTypes";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
+import { getProfile } from "../../actions/profile";
 import I18n from "../../common/languages";
+import Theme from "../../styles/theme";
+import RotateImage from "../../components/RotateImage";
 
 /**
- * Created by supervons on 2019/08/08.
- * 我的页面
- * my page
- * Update by supervons on 2020/05/22.
+ * My Page
  * 使用 Hooks 方式重写，压缩代码量
+ * 需注意在此页面获取用户头像、签名及主题色信息并存入redux.
  * Use Hooks to rewrite and compress the amount of code
  */
 export default function MyPage() {
   useTabBarStatus("person");
   const route = useNavigation();
   const dispatch = useDispatch();
+  const [userAvatarUri, setUserAvatarUri] = useState("");
 
   const [list] = useState([
     {
@@ -80,10 +82,24 @@ export default function MyPage() {
     },
   ]);
 
+  useEffect(() => {
+    //  Get user profile info.
+    const { uId } = global.userInfo;
+    // TODO get uer profile.
+    // getProfile(uId).then(res => {
+    //   const { profile } = res.data;
+    //   dispatch({
+    //     type: PROFILE_INFO,
+    //     profileInfo: profile && profile[0],
+    //   });
+    //   setUserAvatarUri(profile[0] && profile[0].file_access_path);
+    // });
+  }, []);
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
-      <RotateImage />
+      <RotateImage avatarUri={userAvatarUri} />
       {list.map((item, i) => (
         <ListItem
           containerStyle={{ alignItems: "center" }}
