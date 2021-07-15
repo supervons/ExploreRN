@@ -13,7 +13,7 @@ import { Icon } from "react-native-elements";
 /**
  * Created by supervons on 2019/10/20.
  * 扫一扫及拍照页面
- * explore page
+ * Explore page
  */
 export default class Scanner extends Component {
   constructor(props) {

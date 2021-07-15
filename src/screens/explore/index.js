@@ -1,13 +1,13 @@
-/**
- * Created by supervons on 2019/08/14.
- * 发现页面
- * explore page
- */
 import React, { useEffect } from "react";
 import { StyleSheet, ScrollView, Text, View, StatusBar } from "react-native";
 import newsAction from "../../actions/news";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 
+/**
+ * Created by supervons on 2019/08/14.
+ * 发现页面
+ * Explore page
+ */
 export default function Explore() {
   useTabBarStatus("explore");
   useEffect(() => {

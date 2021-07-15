@@ -1,8 +1,3 @@
-/**
- * Morandica color scale
- * @author supervons
- * @date 2021/05/05
- */
 import React from "react";
 import {
   ScrollView,
@@ -14,8 +9,12 @@ import {
 } from "react-native";
 import Toast from "../../../components/toast";
 import Clipboard from "@react-native-community/clipboard";
-
 const { height, width } = Dimensions.get("window");
+/**
+ * Morandica color scale
+ * @author supervons
+ * @date 2021/05/05
+ */
 export default function MorandiPage() {
   function selectColor(res) {
     Toast.showToast(`copied successfully, please paste to use! ${res}`);

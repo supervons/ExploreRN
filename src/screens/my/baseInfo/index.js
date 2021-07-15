@@ -12,7 +12,7 @@ import commonStyles from "../../../styles/commonStyles";
 /**
  * Created by supervons on 2019/08/15.
  * 基本信息页面
- * base info page
+ * Base info page
  */
 let _this;
 

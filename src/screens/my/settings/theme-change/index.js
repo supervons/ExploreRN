@@ -10,7 +10,6 @@ import { THEME_COLOR } from "../../../../redux/action/settingActionTypes";
  * Created by supervons on 2019/08/20.
  * 皮肤更换页面
  * Skin replacement page
- *
  * Update Hook by supervons on 2021/04/10.
  */
 const colorList = [

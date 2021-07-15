@@ -10,7 +10,7 @@ import I18n from "../../../../common/languages";
 /**
  * Created by supervons on 2019/08/12.
  * 版本信息页面
- * version info page
+ * Version info page
  */
 const list = [
   {

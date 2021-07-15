@@ -8,9 +8,8 @@ import I18n from "../../../common/languages";
 /**
  * Created by supervons on 2019/08/12.
  * 设置页面
- * settings page
+ * Settings page
  */
-
 export default function Settings() {
   const route = useNavigation();
   const list = [

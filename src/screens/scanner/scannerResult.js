@@ -4,7 +4,7 @@ import { StyleSheet, Text, Image, View } from "react-native";
 /**
  * Created by supervons on 2019/10/20.
  * 扫一扫及拍照结果页面
- * explore page
+ * Explore page
  */
 export default function Scanner(props) {
   return (

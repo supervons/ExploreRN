@@ -1,8 +1,3 @@
-/**
- * Created by supervons on 2019/08/08.
- * 用户主界面
- * user main page
- */
 import React, { useEffect, useState, useRef } from "react";
 import {
   ScrollView,
@@ -25,8 +20,13 @@ import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
 import { data } from "./MainPageData";
 import LinearGradient from "react-native-linear-gradient";
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
-
 const { width } = Dimensions.get("window");
+
+/**
+ * Created by supervons on 2019/08/08.
+ * 用户主界面
+ * User main page
+ */
 export default function MainPage() {
   useTabBarStatus("home");
   const [showItem, setShowItem] = useState(false);

@@ -1,12 +1,3 @@
-/**
- * Created by supervons on 2019/08/08.
- * 我的页面
- * my page
- * Update by supervons on 2020/05/22.
- * 使用 Hooks 方式重写，压缩代码量
- * Use Hooks to rewrite and compress the amount of code
- */
-
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import { View, Alert, ScrollView, SafeAreaView } from "react-native";
@@ -19,6 +10,14 @@ import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import I18n from "../../common/languages";
 
+/**
+ * Created by supervons on 2019/08/08.
+ * 我的页面
+ * my page
+ * Update by supervons on 2020/05/22.
+ * 使用 Hooks 方式重写，压缩代码量
+ * Use Hooks to rewrite and compress the amount of code
+ */
 export default function MyPage() {
   useTabBarStatus("person");
   const route = useNavigation();

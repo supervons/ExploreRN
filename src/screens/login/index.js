@@ -1,10 +1,3 @@
-/**
- * Created by supervons on 2019/08/02.
- * 登录页
- * user login page
- * The password box uses a secure keyboard.
- * After a successful login, Redux stores user information
- */
 import md5 from "md5";
 import React, { useState, useEffect, useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -29,6 +22,13 @@ global.jwtToken = "";
 // 用户信息
 global.userInfo = {};
 
+/**
+ * Created by supervons on 2019/08/02.
+ * 登录页
+ * User login page
+ * The password box uses a secure keyboard.
+ * After a successful login, Redux stores user information
+ */
 export default function Login(props) {
   const [loginId, setLoginId] = useState("");
   const [passWord, setPassWord] = useState("");

@@ -11,7 +11,7 @@ import I18n from "../../../../common/languages";
 /**
  * Created by supervons on 2019/09/06.
  * 修改密码页面
- * update password page
+ * Update password page
  */
 export default function UpdatePassword(props) {
   const renderItem = [
