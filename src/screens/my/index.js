@@ -86,14 +86,14 @@ export default function MyPage() {
     //  Get user profile info.
     const { uId } = global.userInfo;
     // TODO get uer profile.
-    // getProfile(uId).then(res => {
-    //   const { profile } = res.data;
-    //   dispatch({
-    //     type: PROFILE_INFO,
-    //     profileInfo: profile && profile[0],
-    //   });
-    //   setUserAvatarUri(profile[0] && profile[0].file_access_path);
-    // });
+    getProfile(uId).then(res => {
+      const { profile } = res.data;
+      // dispatch({
+      //   type: PROFILE_INFO,
+      //   profileInfo: profile && profile[0],
+      // });
+      setUserAvatarUri(profile[0] && profile[0].file_access_path);
+    });
   }, []);
 
   return (
