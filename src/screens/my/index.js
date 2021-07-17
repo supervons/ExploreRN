@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/core";
 import {
+  Text,
   View,
   Alert,
+  StyleSheet,
   ScrollView,
   SafeAreaView,
   DeviceEventEmitter,
@@ -32,7 +34,10 @@ export default function MyPage() {
   const route = useNavigation();
   const dispatch = useDispatch();
   const [userAvatarUri, setUserAvatarUri] = useState("");
-  const userInfo = useSelector(state => state.UserReducer.userInfo);
+  const { userInfo, profileInfo } = useSelector(state => ({
+    userInfo: state.UserReducer.userInfo,
+    profileInfo: state.SettingReducer.profileInfo,
+  }));
 
   const [list] = useState([
     {
@@ -123,6 +128,14 @@ export default function MyPage() {
     <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
       <RotateImage avatarUri={userAvatarUri} />
+      <View style={styles.mottoStyle}>
+        <Text
+          numberOfLines={2}
+          ellipsizeMode={"tail"}
+          style={styles.mottoTextStyle}>
+          {profileInfo.motto || "--"}
+        </Text>
+      </View>
       {list.map((item, i) => (
         <ListItem
           containerStyle={{ alignItems: "center" }}
@@ -155,3 +168,16 @@ export default function MyPage() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  mottoStyle: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 10,
+    paddingHorizontal: 20,
+  },
+  mottoTextStyle: {
+    color: "#999999",
+    fontSize: 16,
+  },
+});
