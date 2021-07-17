@@ -1,11 +1,11 @@
 import React from "react";
 import { View } from "react-native";
 import { ListItem } from "react-native-elements";
-import Theme from "../../../../styles/theme";
 import DeviceInfo from "react-native-device-info";
-import Toast from "../../../../components/toast";
 import Clipboard from "@react-native-community/clipboard";
+import Theme from "../../../../styles/theme";
 import I18n from "../../../../common/languages";
+import Toast from "../../../../components/toast";
 
 /**
  * Created by supervons on 2019/08/12.

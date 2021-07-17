@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { View } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
-import Theme from "../../../styles/theme";
 import { useNavigation } from "@react-navigation/core";
+import Theme from "../../../styles/theme";
 import I18n from "../../../common/languages";
 
 /**

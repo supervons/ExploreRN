@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Animated, View } from "react-native";
+import { View } from "react-native";
 import { ListItem, Button, Avatar } from "react-native-elements";
 import Theme from "../../../styles/theme";
 import Toast from "../../../components/toast";
