@@ -22,6 +22,7 @@ export default {
     settings: "设置",
     systemInfo: "系统信息",
     theme: "换肤",
+    profile: "头像&签名",
     baseInfo: "基本信息",
     welcome: "欢迎页",
     changePassword: "修改密码",
@@ -38,6 +39,8 @@ export default {
     logout: "退出登录",
   },
   BaseInfos: {
+    avatar: "头像",
+    motto: "签名",
     account: "账号",
     name: "姓名",
     sex: "性别",

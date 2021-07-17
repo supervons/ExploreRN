@@ -42,34 +42,27 @@ export default function MyPage() {
   const [list] = useState([
     {
       key: 1,
-      title: I18n.t("MyPage.baseInfo"),
-      icon: "person",
-      color: "#058bb3",
-      onPress: () => route.navigate("BaseInfo"),
-    },
-    {
-      key: 2,
       title: I18n.t("MyPage.favorite"),
       icon: "favorite",
       color: "#ff616f",
       onPress: () => alert("2"),
     },
     {
-      key: 3,
+      key: 2,
       title: I18n.t("MyPage.systemIntroduction"),
       icon: "invert-colors",
       color: "#36fffb",
       onPress: () => route.navigate("SystemIntroduction", { type: true }),
     },
     {
-      key: 4,
+      key: 3,
       title: I18n.t("MyPage.setting"),
       icon: "settings",
       color: "#36648b",
       onPress: () => route.navigate("Settings"),
     },
     {
-      key: 6,
+      key: 4,
       title: I18n.t("MyPage.logout"),
       icon: "arrow-forward",
       color: "#a2b5cd",
@@ -124,10 +117,14 @@ export default function MyPage() {
     });
   }
 
+  function avatarPress() {
+    route.push("BaseInfo");
+  }
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>
       <SafeAreaView style={{ backgroundColor: Theme.commonBackColor }} />
-      <RotateImage avatarUri={userAvatarUri} />
+      <RotateImage avatarPress={avatarPress} avatarUri={userAvatarUri} />
       <View style={styles.mottoStyle}>
         <Text
           numberOfLines={2}

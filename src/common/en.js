@@ -22,6 +22,7 @@ export default {
     settings: "Settings",
     systemInfo: "System-Info",
     theme: "Theme",
+    profile: "Avatar&Motto",
     baseInfo: "Base-Info",
     welcome: "Welcome",
     changePassword: "Change-Password",
@@ -38,6 +39,8 @@ export default {
     logout: "LogOut",
   },
   BaseInfos: {
+    avatar: "Avatar",
+    motto: "Motto",
     account: "Account",
     name: "Name",
     sex: "Sex",

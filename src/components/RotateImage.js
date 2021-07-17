@@ -40,7 +40,7 @@ export default function RotateImage(props) {
         },
       ]}>
       <Avatar
-        onPress={fadeIn}
+        onPress={props.avatarPress ? props.avatarPress : fadeIn}
         containerStyle={{ marginTop: 25, marginBottom: 15 }}
         rounded
         size="xlarge"

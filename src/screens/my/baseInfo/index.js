@@ -1,62 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
-import { ListItem, Button } from "react-native-elements";
+import { Animated, View } from "react-native";
+import { ListItem, Button, Avatar } from "react-native-elements";
 import Theme from "../../../styles/theme";
 import Toast from "../../../components/toast";
 import userAction from "../../../actions/user";
 import { USER_INFO } from "../../../redux/action/userActionTypes";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import I18n from "../../../common/languages";
 import commonStyles from "../../../styles/commonStyles";
 
 /**
  * Created by supervons on 2019/08/15.
- * 基本信息页面
- * Base info page
+ * 基本信息页面，可以修改头像及签名.
+ * Base info page, user can change avatar and motto.
  */
-let _this;
-
 function BaseInfo() {
-  const [userInfo] = useState(getUserInfo());
+  const [userInfo, setUserInfo] = useState([]);
   const [saveButtonShow, setSaveButtonShow] = useState(false);
+  const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
 
-  // static navigationOptions = {
-  //   headerTitle: "个人基本信息",
-  //   headerRight: (
-  //     <Button
-  //       type="clear"
-  //       onPress={() => _changeSaveButtonState()}
-  //       icon={{
-  //         name: "edit",
-  //         size: 20,
-  //         color: "white",
-  //       }}
-  //     />
-  //   ),
-  // };
-
-  function changeSaveButtonState(type) {
-    // 当保存接口成功调用时，type为true，其余则不更新全局的userInfo
-    if (type) {
-      setSaveButtonShow(!saveButtonShow);
-      props.setUserInfo(userInfo);
-    } else {
-      setState({
-        userInfo: global.userInfo,
-        saveButtonShow: !saveButtonShow,
-      });
-    }
-  }
-
-  function updateUserInfo() {
-    userAction.updateUserInfo(userInfo).then(resp => {
-      Toast.showToast(resp.msg);
-      changeSaveButtonState(true);
-    });
-  }
-
-  function getUserInfo() {
+  useEffect(() => {
     const userInfoJson = [
+      {
+        key: "avatar",
+        title: I18n.t("BaseInfos.avatar"),
+        rightTitle: profileInfo.file_access_path,
+        editable: false,
+      },
+      {
+        key: "motto",
+        title: I18n.t("BaseInfos.motto"),
+        rightTitle: profileInfo.motto,
+        editable: false,
+      },
       {
         key: "loginId",
         title: I18n.t("BaseInfos.account"),
@@ -88,7 +64,26 @@ function BaseInfo() {
         editable: true,
       },
     ];
-    return userInfoJson;
+    setUserInfo(userInfoJson);
+  }, [profileInfo]);
+  function changeSaveButtonState(type) {
+    // 当保存接口成功调用时，type为true，其余则不更新全局的userInfo
+    if (type) {
+      setSaveButtonShow(!saveButtonShow);
+      props.setUserInfo(userInfo);
+    } else {
+      setState({
+        userInfo: global.userInfo,
+        saveButtonShow: !saveButtonShow,
+      });
+    }
+  }
+
+  function updateUserInfo() {
+    userAction.updateUserInfo(userInfo).then(resp => {
+      Toast.showToast(resp.msg);
+      changeSaveButtonState(true);
+    });
   }
 
   function _renderItemView(i, title, rightTitle) {
@@ -102,11 +97,30 @@ function BaseInfo() {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
+            alignItems: "center",
           }}>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+            }}>
             <ListItem.Title>{title}</ListItem.Title>
           </View>
-          <ListItem.Subtitle>{rightTitle}</ListItem.Subtitle>
+          {i === 0 ? (
+            <ListItem.Subtitle>
+              <Avatar
+                rounded
+                size="medium"
+                source={
+                  rightTitle
+                    ? { uri: rightTitle }
+                    : require("../../../resource/image/avatar/logo.png")
+                }
+              />
+            </ListItem.Subtitle>
+          ) : (
+            <ListItem.Subtitle>{rightTitle}</ListItem.Subtitle>
+          )}
         </ListItem.Content>
       </ListItem>
     );
