@@ -15,7 +15,6 @@ let instance = axios;
 const commonHosts = Constants.serverUrl;
 
 /**
- * Created by supervons on 2019/08/05.
  * 基于 axios 的网络请求组件
  * Axios-based network request component
  */
@@ -56,6 +55,7 @@ class Axios {
         }
       },
     );
+    this.paramError = "params is undefined or not an object";
   }
 
   // get 请求
@@ -69,7 +69,7 @@ class Axios {
   // post 请求
   POST(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
-      throw new Error("params is undefined or not an object");
+      throw new Error(this.paramError);
     }
     return post(commonHosts + url, params, "post", showLoading);
   }
@@ -77,15 +77,35 @@ class Axios {
   // put 请求
   PUT(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
-      throw new Error("params is undefined or not an object");
+      throw new Error(this.paramError);
     }
     return post(commonHosts + url, params, "put", showLoading);
+  }
+
+  // post includes file
+  POST_FILE(url, params, showLoading) {
+    if (!url || !params || typeof params != "object") {
+      throw new Error(this.paramError);
+    }
+    return post(commonHosts + url, params, "post", showLoading, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+  }
+
+  // put includes file
+  PUT_FILE(url, params, showLoading) {
+    if (!url || !params || typeof params != "object") {
+      throw new Error(this.paramError);
+    }
+    return post(commonHosts + url, params, "put", showLoading, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
   }
 
   // delete 请求
   DELETE(url, params, showLoading) {
     if (!url || !params || typeof params != "object") {
-      throw new Error("params is undefined or not an object");
+      throw new Error(this.paramError);
     }
     return post(commonHosts + url, params, "delete", showLoading);
   }
@@ -115,10 +135,18 @@ async function get(url, showLoading) {
   }
 }
 
-async function post(url, params, method = "post", showLoading = true) {
+async function post(
+  url,
+  params,
+  method = "post",
+  showLoading = true,
+  config = {
+    headers: { "Content-Type": "application/json" },
+  },
+) {
   showLoading && Loading.show();
   try {
-    let response = await instance[method](url, params).catch(resp => {
+    let response = await instance[method](url, params, config).catch(resp => {
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常
