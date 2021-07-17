@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import md5 from "md5";
 import { View } from "react-native";
-import { Button, ListItem } from "react-native-elements";
+import { ListItem } from "react-native-elements";
 import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
 import Toast from "../../../../components/toast";
+import Button from "../../../../common/button";
 import userAction from "../../../../actions/user";
 import I18n from "../../../../common/languages";
 

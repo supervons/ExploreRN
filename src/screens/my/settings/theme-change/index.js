@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { View } from "react-native";
-import { CheckBox, Divider, Button } from "react-native-elements";
+import { CheckBox, Divider } from "react-native-elements";
 
 import { PROFILE_INFO } from "../../../../redux/action/settingActionTypes";
-import ProfileAction from "../../../../actions/profile";
-import Toast from "../../../../components/toast";
-import I18n from "../../../../common/languages";
 import Theme from "../../../../styles/theme";
+import Button from "../../../../common/button";
+import I18n from "../../../../common/languages";
+import Toast from "../../../../components/toast";
+import ProfileAction from "../../../../actions/profile";
 
 const colorList = [
   {
@@ -82,10 +83,6 @@ export default function ThemeChange(props) {
         icon={{
           name: "done",
           color: "white",
-        }}
-        buttonStyle={{
-          marginTop: 15,
-          backgroundColor: profileInfo.theme,
         }}
         title={I18n.t("Button.ok")}
         onPress={() => props.navigation.pop()}
