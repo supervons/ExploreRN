@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/core";
-import { View, Alert, ScrollView, SafeAreaView } from "react-native";
+import {
+  View,
+  Alert,
+  ScrollView,
+  SafeAreaView,
+  DeviceEventEmitter,
+} from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 import { useDispatch } from "react-redux";
 
@@ -17,7 +23,9 @@ import RotateImage from "../../components/RotateImage";
  * My Page
  * 使用 Hooks 方式重写，压缩代码量
  * 需注意在此页面获取用户头像、签名及主题色信息并存入redux.
+ * 因为底部导航不是懒加载，故可以在此页面监听token是否过期监听.
  * Use Hooks to rewrite and compress the amount of code
+ * Because the bottom navigation is not lazy to load, you can listen on this page
  */
 export default function MyPage() {
   useTabBarStatus("person");
@@ -69,13 +77,7 @@ export default function MyPage() {
           {
             text: "确定",
             onPress: () => {
-              dispatch({ type: USER_TOKEN, value: "" });
-              dispatch({ type: USER_INFO, value: {} });
-              dispatch({
-                type: INITIAL_PAGE,
-                initialPage: "Login",
-              });
-              route.replace("Login");
+              logout();
             },
           },
         ]),
@@ -94,7 +96,30 @@ export default function MyPage() {
       // });
       setUserAvatarUri(profile[0] && profile[0].file_access_path);
     });
+    // Add listener to monitor whether tokens are expired
+    const subscribeLogout = DeviceEventEmitter.addListener(
+      "LOGOUT_ACTION",
+      () => {
+        logout();
+      },
+    );
+    return function cleanup() {
+      subscribeLogout.remove();
+    };
   }, []);
+
+  function logout() {
+    dispatch({ type: USER_TOKEN, value: "" });
+    dispatch({ type: USER_INFO, value: {} });
+    dispatch({
+      type: INITIAL_PAGE,
+      initialPage: "Login",
+    });
+    route.reset({
+      index: 0,
+      routes: [{ name: "Login" }],
+    });
+  }
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>

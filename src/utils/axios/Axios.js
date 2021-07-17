@@ -1,13 +1,9 @@
+import { DeviceEventEmitter } from "react-native";
 import axios from "axios";
 import Constants from "../../common/constants";
 import Loading from "../../common/loading";
 import Toast from "../../components/toast";
 
-/**
- * Created by supervons on 2019/08/05.
- * 基于 axios 的网络请求组件
- * Axios-based network request component
- */
 let defaultConfig = {
   timeout: 3000,
   headers: {
@@ -17,8 +13,12 @@ let defaultConfig = {
 let instance = axios;
 // 请求地址 host
 const commonHosts = Constants.serverUrl;
-// const commonHosts = 'http://www.superfys.top:8080/commonProject';
 
+/**
+ * Created by supervons on 2019/08/05.
+ * 基于 axios 的网络请求组件
+ * Axios-based network request component
+ */
 class Axios {
   constructor(props) {
     if (props && typeof props == "object") {
@@ -36,7 +36,6 @@ class Axios {
       },
       error => {
         Loading.hide();
-        console.log(error);
         return Promise.reject(error);
       },
     );
@@ -49,7 +48,12 @@ class Axios {
       },
       error => {
         Loading.hide();
-        return Promise.reject(error);
+        if (error.response.status === 401) {
+          Toast.showToast("Token has expired, please login again!");
+          DeviceEventEmitter.emit("LOGOUT_ACTION");
+        } else {
+          return Promise.reject(error);
+        }
       },
     );
   }
