@@ -23,7 +23,7 @@ const getProfile = userId => {
  * @returns {Promise<any | never>}
  */
 const updateProfile = params => {
-  return Axios.POST(`/api/v1/profile`, params)
+  return Axios.PUT_FILE(`/api/v1/profile`, params, false)
     .then(resp => {
       return Promise.resolve(resp);
     })

@@ -4,9 +4,10 @@ import { View } from "react-native";
 import { CheckBox, Divider, Button } from "react-native-elements";
 
 import { PROFILE_INFO } from "../../../../redux/action/settingActionTypes";
-import { updateProfile } from "../../../../actions/profile";
-import Theme from "../../../../styles/theme";
+import ProfileAction from "../../../../actions/profile";
+import Toast from "../../../../components/toast";
 import I18n from "../../../../common/languages";
+import Theme from "../../../../styles/theme";
 
 const colorList = [
   {
@@ -65,10 +66,14 @@ export default function ThemeChange(props) {
               type: PROFILE_INFO,
               profileInfo: tempProfileInfo,
             });
-            // TODO - update user profile.
-            // updateProfile(tempProfileInfo).then(res => {
-            //   alert(JSON.stringify(res));
-            // });
+            let formData = new FormData();
+            formData.append("id", tempProfileInfo.id);
+            formData.append("theme", item.value);
+            ProfileAction.updateProfile(formData)
+              .then(res => {})
+              .catch(res => {
+                Toast.showToast("update theme failed!" + res.msg);
+              });
           }}
         />
       ))}
