@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { ListItem, Button, Avatar } from "react-native-elements";
+import { useSelector } from "react-redux";
+import { ListItem, Avatar } from "react-native-elements";
 import Theme from "../../../styles/theme";
-import Toast from "../../../components/toast";
-import userAction from "../../../actions/user";
-import { USER_INFO } from "../../../redux/action/userActionTypes";
-import { connect, useSelector } from "react-redux";
 import I18n from "../../../common/languages";
 import commonStyles from "../../../styles/commonStyles";
 
