@@ -39,6 +39,10 @@ export default function MyPage() {
     profileInfo: state.SettingReducer.profileInfo,
   }));
 
+  useEffect(() => {
+    setUserAvatarUri(profileInfo.file_access_path);
+  }, [profileInfo]);
+
   const [list] = useState([
     {
       key: 1,
@@ -90,7 +94,6 @@ export default function MyPage() {
         type: PROFILE_INFO,
         profileInfo: profile && profile[0],
       });
-      setUserAvatarUri(profile[0] && profile[0].file_access_path);
     });
     // Add listener to monitor whether tokens are expired
     const subscribeLogout = DeviceEventEmitter.addListener(

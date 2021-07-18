@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
-import { useSelector } from "react-redux";
+import { View, StyleSheet } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import { ListItem, Avatar } from "react-native-elements";
+import ImagePicker from "react-native-image-crop-picker";
+import { PROFILE_INFO } from "../../../redux/action/settingActionTypes";
 import Theme from "../../../styles/theme";
 import I18n from "../../../common/languages";
+import Toast from "../../../components/toast";
+import ProfileAction from "../../../actions/profile";
 import commonStyles from "../../../styles/commonStyles";
 
 /**
@@ -14,6 +18,7 @@ import commonStyles from "../../../styles/commonStyles";
 export default function BaseInfo() {
   const [userInfo, setUserInfo] = useState([]);
   const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const userInfoJson = [
@@ -63,24 +68,52 @@ export default function BaseInfo() {
     setUserInfo(userInfoJson);
   }, [profileInfo]);
 
+  function itemAction(index) {
+    if (index === 0) {
+      uploadFile();
+    }
+  }
+
+  /**
+   * Upload avatar and refresh redux profile info.
+   */
+  function uploadFile() {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      let formData = new FormData();
+      let file = {
+        uri: image.path,
+        type: "multipart/form-data",
+        name: "image.png",
+      };
+      formData.append("files", file);
+      formData.append("id", profileInfo.id);
+      ProfileAction.updateProfile(formData)
+        .then(res => {
+          dispatch({
+            type: PROFILE_INFO,
+            profileInfo: res.profileInfo,
+          });
+        })
+        .catch(res => {
+          Toast.showToast("update theme failed!" + res.msg);
+        });
+    });
+  }
+
   function _renderItemView(i, title, rightTitle) {
     return (
-      <ListItem bottomDivider key={i}>
+      <ListItem onPress={() => itemAction(i)} bottomDivider key={i}>
         <ListItem.Content
           key={i}
           containerStyle={commonStyles.itemPadding}
-          rightTitleStyle={{ width: 170, textAlign: "right" }}
+          rightTitleStyle={styles.listRightTitle}
           bottomDivider={true}
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-            }}>
+          style={styles.listItemContent}>
+          <View style={styles.listTitle}>
             <ListItem.Title>{title}</ListItem.Title>
           </View>
           {i === 0 ? (
@@ -111,3 +144,19 @@ export default function BaseInfo() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  listItemContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  listRightTitle: {
+    width: 170,
+    textAlign: "right",
+  },
+  listTitle: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+});
