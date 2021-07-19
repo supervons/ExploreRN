@@ -5,7 +5,7 @@ import Loading from "../../common/loading";
 import Toast from "../../components/toast";
 
 let defaultConfig = {
-  timeout: 3000,
+  timeout: 6000,
   headers: {
     "Content-Type": "application/json",
   },
@@ -47,7 +47,7 @@ class Axios {
       },
       error => {
         Loading.hide();
-        if (error.response.status === 401) {
+        if (error.response && error.response.status === 401) {
           Toast.showToast("Token has expired, please login again!");
           DeviceEventEmitter.emit("LOGOUT_ACTION");
         } else {
