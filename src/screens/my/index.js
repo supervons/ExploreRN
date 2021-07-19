@@ -49,7 +49,7 @@ export default function MyPage() {
       title: I18n.t("MyPage.favorite"),
       icon: "favorite",
       color: "#ff616f",
-      onPress: () => alert("2"),
+      onPress: () => alert("TO BE CONTINUE!"),
     },
     {
       key: 2,
@@ -72,13 +72,13 @@ export default function MyPage() {
       color: "#a2b5cd",
       hiddenRightIcon: true,
       onPress: () =>
-        Alert.alert("退出登录", "退出后，下次需要重新登录", [
+        Alert.alert(I18n.t("MyPage.logoutTitle"), I18n.t("MyPage.logoutTips"), [
           {
-            text: "取消",
+            text: I18n.t("MyPage.logoutCancel"),
             onPress: () => {},
           },
           {
-            text: "确定",
+            text: I18n.t("MyPage.logoutSure"),
             onPress: () => {
               logout();
             },

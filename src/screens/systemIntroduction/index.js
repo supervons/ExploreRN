@@ -7,6 +7,7 @@ import { FIRST_INSTALL } from "../../redux/action/settingActionTypes";
 import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";
 import Button from "../../common/button";
+import I18n from "../../common/languages";
 
 /**
  * Created by supervons on 2019/08/21.
@@ -23,23 +24,20 @@ export default function SystemIntroduction(props) {
     {
       key: "introduction_1",
       style: commonStyles.slide1,
-      title: "本项目包含了大量的 RN 组件",
-      enTitle: "This project contains a large number of RN components",
+      title: I18n.t("SystemIntroduction.introduction_1"),
     },
     {
       key: "introduction_2",
       style: commonStyles.slide2,
-      title: "源码 github 不断更新",
-      enTitle: "Source code github often updated",
+      title: I18n.t("SystemIntroduction.introduction_2"),
     },
     {
       key: "introduction_3",
       style: commonStyles.slide3,
-      title: "欢迎你的加入与关注",
-      enTitle: "Welcome to join and star",
+      title: I18n.t("SystemIntroduction.introduction_3"),
       component: (
         <Button
-          title={"嗯，朕已知晓"}
+          title={I18n.t("Button.joke")}
           style={{ width: 200 }}
           onPress={() => {
             if (firstInstall) {
@@ -67,7 +65,6 @@ export default function SystemIntroduction(props) {
                 style={[commonStyles.text, { fontSize: 22, marginTop: 25 }]}>
                 {title}
               </Text>
-              <Text style={commonStyles.text}>{enTitle}</Text>
             </View>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               {component}

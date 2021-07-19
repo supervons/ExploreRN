@@ -12,8 +12,16 @@ export default {
     i18: "i18",
     device: "%{counts} devices",
   },
+  Login: {
+    userName: "Type your username",
+    password: "Type your password",
+    loginButton: "LOGIN",
+    loginTips: "Please type your access info!",
+    keyboardTitle: "Hey,man! This is ExploreRN!",
+  },
   Button: {
     ok: "OK",
+    joke: "OK，Cheers!",
   },
   Route: {
     home: "Home",
@@ -37,6 +45,11 @@ export default {
     favorite: "Favorite",
     setting: "Setting",
     logout: "LogOut",
+    logoutTitle: "LOGOUT",
+    logoutTips:
+      "After logout, you need to type username and password next time.",
+    logoutCancel: "CANCEL",
+    logoutSure: "OK",
   },
   BaseInfos: {
     avatar: "Avatar",
@@ -67,6 +80,11 @@ export default {
     author: "Author",
     email: "Email",
     copySuc: "Copy mailbox successfully, please paste to use",
+  },
+  SystemIntroduction: {
+    introduction_1: "20 + React-Native Components!",
+    introduction_2: "All code in github!",
+    introduction_3: "Come dance with me!",
   },
   Theme: {
     classic: "Classic",

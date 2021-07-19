@@ -11,6 +11,7 @@ import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import Toast from "../../components/toast";
 import userAction from "../../actions/user";
 import RotateImage from "../../components/RotateImage";
+import I18n from "../../common/languages";
 // 用户 token
 global.jwtToken = "";
 // 用户信息
@@ -53,7 +54,7 @@ export default function Login(props) {
 
   function login() {
     if (!loginId || !passWord) {
-      Toast.showToast("请您先完善登录信息！");
+      Toast.showToast(I18n.t("Login.loginTips"));
       return;
     }
     const params = {
@@ -96,7 +97,7 @@ export default function Login(props) {
         <RotateImage avatarUri={userAvatarUri} style={{ marginTop: 100 }} />
         <TextInput
           style={styles.userNameStyle}
-          placeholder="用户名"
+          placeholder={I18n.t("Login.userName")}
           placeholderTextColor={"#B1B1B2"}
           onChangeText={text => setLoginId(text)}
           vauel={loginId}
@@ -104,7 +105,7 @@ export default function Login(props) {
         <SecurityKeyboardInput
           keyName={"password"}
           keyboardHeader={() => {
-            return <Text>{`欢迎加入！一起ExploreRN！`}</Text>;
+            return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
           }}
           style={styles.passwordStyle}
           secureTextEntry={true}
@@ -113,14 +114,14 @@ export default function Login(props) {
           secureTextStyle={{ left: 12, fontSize: 10 }}
           cursorStyle={{ left: 8 }}
           keyboardType={"string"}
-          placeholder={"密码"}
+          placeholder={I18n.t("Login.password")}
           placeholderTextColor={"#B1B1B2"}
           onChangeText={text => setPassWord(text)}
         />
         <Button
           buttonStyle={{ width: 300 }}
           containerStyle={{ marginTop: 30 }}
-          title="登录"
+          title={I18n.t("Login.loginButton")}
           onPress={() => login()}
         />
         <Text style={{ width: 300, marginTop: 5 }}>

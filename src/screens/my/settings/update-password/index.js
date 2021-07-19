@@ -111,7 +111,7 @@ export default function UpdatePassword(props) {
         buttonStyle={{
           marginTop: 15,
         }}
-        title="确认"
+        title={I18n.t("Button.ok")}
         onPress={() => updatePassword()}
       />
     </View>

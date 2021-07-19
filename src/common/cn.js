@@ -12,8 +12,16 @@ export default {
     i18: "国际化",
     device: "%{counts} 个设备",
   },
+  Login: {
+    userName: "在此输入用户名...",
+    password: "在此输入密码...",
+    loginButton: "登录",
+    loginTips: "请输入你的授权信息!",
+    keyboardTitle: "同学，一起探索RN吧！",
+  },
   Button: {
     ok: "确定",
+    joke: "OK，朕已知晓",
   },
   Route: {
     home: "首页",
@@ -37,6 +45,10 @@ export default {
     favorite: "收藏",
     setting: "设置",
     logout: "退出登录",
+    logoutTitle: "退出登录",
+    logoutTips: "退出后，下次需要重新登录",
+    logoutCancel: "取消",
+    logoutSure: "OK",
   },
   BaseInfos: {
     avatar: "头像",
@@ -67,6 +79,11 @@ export default {
     author: "作者",
     email: "邮箱",
     copySuc: "复制邮箱成功，请粘贴使用",
+  },
+  SystemIntroduction: {
+    introduction_1: "本项目包含了大量的 RN 组件",
+    introduction_2: "源码 github 不断更新",
+    introduction_3: "欢迎你的加入与关注！",
   },
   Theme: {
     classic: "经典",
