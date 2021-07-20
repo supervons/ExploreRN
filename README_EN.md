@@ -36,7 +36,7 @@
 - [x] Morandi-Colors
 - [x] Components are drag-and-drop supported
 - [x] Perfect preview page
-- [ ] Use new KOA api application
+- [x] Use new KOA api application
 - [ ] Change avatar and show avatar history
 - [ ] Multiple Bundle Support
 
