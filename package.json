@@ -27,6 +27,8 @@
     "appcenter-crashes": "4.1.0",
     "axios": "0.21.1",
     "i18n-js": "^3.8.0",
+    "lottie-ios": "^3.1.8",
+    "lottie-react-native": "^4.0.2",
     "md5": "^2.3.0",
     "react": "17.0.1",
     "react-native": "^0.64.2",
