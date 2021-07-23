@@ -13,6 +13,6 @@ export default {
   commonBackColor: "#eef0f2",
   tabSelected: "#f4511E",
   tabUnSelected: "#999",
-  loadingBackgroundColor: "rgba(0,0,0,0.3)",
+  loadingBackgroundColor: "rgba(255,255,255,0.7)",
   loadingTextColor: "#fff",
 };

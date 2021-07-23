@@ -1,19 +1,13 @@
 /**
  * Created by supervons on 2019/08/19.
- * 展示加载 loading
+ * 展示加载 loading, 随机 lottie 动画
  * 在需要界面调用 Loading.show() 来进行显示，Loading.hide() 进行隐藏
- * loading component
+ * loading component, random lottie animation.
  * In the required interface call Loading.show () to display, Loading.hide () to hide
  */
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator,
-  Dimensions,
-} from "react-native";
-import Spinkit from "react-native-spinkit";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
+import LottieView from "lottie-react-native";
 import Theme from "../styles/theme";
 
 const { width, height } = Dimensions.get("window");
@@ -26,18 +20,17 @@ class Loading extends Component {
     _this = this;
     this.state = {
       show: false,
-      type: [
-        "CircleFlip",
-        "Bounce",
-        "Wave",
-        "FadingCircle",
-        "FadingCircleAlt",
-        "WanderingCubes",
-        "Pulse",
-        "ChasingDots",
-        "ThreeBounce",
-        "Circle",
-        "9CubeGrid",
+      loadingArray: [
+        require("../resource/lottie/loading/loading0.json"),
+        require("../resource/lottie/loading/loading1.json"),
+        require("../resource/lottie/loading/loading2.json"),
+        require("../resource/lottie/loading/loading3.json"),
+        require("../resource/lottie/loading/loading4.json"),
+        require("../resource/lottie/loading/loading5.json"),
+        require("../resource/lottie/loading/loading6.json"),
+        require("../resource/lottie/loading/loading7.json"),
+        require("../resource/lottie/loading/loading8.json"),
+        require("../resource/lottie/loading/loading9.json"),
       ],
     };
   }
@@ -50,38 +43,17 @@ class Loading extends Component {
   };
 
   render() {
-    // 随机动画
-    const random = (Math.random().toFixed(1) * 11).toFixed(0) % 11;
-    // 随机颜色
-    const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16);
+    const randomNum = (Math.random(100) * 10).toFixed(0) % 10;
     if (this.state.show) {
       return (
         <View style={styles.LoadingPage}>
-          <View
-            style={{
-              width: 100,
-              height: 100,
-              backgroundColor: Theme.loadingBackgroundColor,
-              opacity: 1,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 7,
-              zIndex: 999,
-            }}>
-            <Spinkit
-              isVisible={this.state.show}
-              size={40}
-              type={this.state.type[random]}
-              color={color}
+          <View style={styles.ss}>
+            <LottieView
+              loop
+              autoPlay
+              speed={1}
+              source={this.state.loadingArray[randomNum]}
             />
-            <Text
-              style={{
-                marginLeft: 10,
-                color: Theme.loadingTextColor,
-                marginTop: 10,
-              }}>
-              正在加载...
-            </Text>
           </View>
         </View>
       );
@@ -102,5 +74,15 @@ const styles = StyleSheet.create({
     height: height,
     justifyContent: "center",
     alignItems: "center",
+  },
+  ss: {
+    width: 80,
+    height: 80,
+    backgroundColor: Theme.loadingBackgroundColor,
+    opacity: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 7,
+    zIndex: 999,
   },
 });
