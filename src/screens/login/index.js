@@ -1,10 +1,11 @@
 import md5 from "md5";
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import LottieView from "lottie-react-native";
 import { debounce } from "../../utils/commonFun";
 import { getProfile } from "../../actions/profile";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
@@ -28,6 +29,8 @@ export default function Login(props) {
   const [loginId, setLoginId] = useState("");
   const [passWord, setPassWord] = useState("");
   const [userAvatarUri, setUserAvatarUri] = useState("");
+  const [animationFLag, setAnimationFLag] = useState(false);
+  const lottieAnimation = useRef(null);
   const dispatch = useDispatch();
 
   const { userToken, userInfo } = useSelector(state => ({
@@ -78,10 +81,23 @@ export default function Login(props) {
   }
 
   /**
+   * Start animation or pause it.
+   */
+  function startAnimation() {
+    if (animationFLag) {
+      lottieAnimation.current.pause();
+    } else {
+      lottieAnimation.current.play();
+    }
+    setAnimationFLag(!animationFLag);
+  }
+
+  /**
    * Use debounce function optimization profile network request.
    */
   function getUserAvatar() {
     getProfile(loginId).then(res => {
+      startAnimation();
       setUserAvatarUri(
         res.data.profile[0] && res.data.profile[0].file_access_path,
       );
@@ -94,7 +110,11 @@ export default function Login(props) {
       enableOnAndroid={true}
       enableResetScrollToCoords={true}>
       <View style={styles.container}>
-        <RotateImage avatarUri={userAvatarUri} style={{ marginTop: 100 }} />
+        <RotateImage
+          avatarPress={() => startAnimation()}
+          avatarUri={userAvatarUri}
+          style={{ marginTop: 100 }}
+        />
         <TextInput
           style={styles.userNameStyle}
           placeholder={I18n.t("Login.userName")}
@@ -127,6 +147,12 @@ export default function Login(props) {
         <Text style={{ width: 300, marginTop: 5 }}>
           {`©copyright supervons all right reserved`}
         </Text>
+        <LottieView
+          ref={lottieAnimation}
+          style={{ zIndex: -100, position: "absolute" }}
+          source={require("../../resource/lottie/fireworks.json")}
+          speed={1}
+        />
       </View>
     </KeyboardAwareScrollView>
   );

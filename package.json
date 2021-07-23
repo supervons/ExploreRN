@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "link-adb": "adb kill-server && adb server && adb shell"
+    "linkadb": "adb kill-server && adb server && adb shell"
   },
   "dependencies": {
     "@ant-design/react-native": "^4.0.7",
