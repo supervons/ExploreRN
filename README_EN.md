@@ -37,6 +37,7 @@
 - [x] Components are drag-and-drop supported
 - [x] Perfect preview page
 - [x] Use new KOA api application
+- [x] Better animation - Lottie
 - [ ] Change avatar and show avatar history
 - [ ] Multiple Bundle Support
 
