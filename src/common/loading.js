@@ -18,6 +18,7 @@ class Loading extends Component {
   constructor(props) {
     super(props);
     _this = this;
+    _this.refLottie = null;
     this.state = {
       show: false,
       loadingArray: [
@@ -36,8 +37,13 @@ class Loading extends Component {
   }
 
   static show = () => {
-    _this.setState({ show: true });
+    _this.setState({ show: true }, () => {
+      setTimeout(() => {
+        _this.refLottie.play();
+      }, 10);
+    });
   };
+
   static hide = () => {
     _this.setState({ show: false });
   };
@@ -49,8 +55,9 @@ class Loading extends Component {
         <View style={styles.LoadingPage}>
           <View style={styles.ss}>
             <LottieView
-              loop
-              autoPlay
+              ref={refLottie => {
+                _this.refLottie = refLottie;
+              }}
               speed={1}
               source={this.state.loadingArray[randomNum]}
             />
