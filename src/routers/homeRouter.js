@@ -12,6 +12,7 @@ import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
 import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
 import MorandiPage from "../screens/home/morandi/MorandiPage";
 import DraggablePage from "../screens/home/drag/DraggablePage";
+import LottiePage from "../screens/home/Lottie/index";
 import I18n from "../common/languages";
 
 /**
@@ -139,6 +140,13 @@ const routeInfo = [
       title: I18n.t("Route.draggable"),
     },
     component: DraggablePage,
+  },
+  {
+    name: "LottiePage",
+    options: {
+      title: I18n.t("Route.lottie"),
+    },
+    component: LottiePage,
   },
 ];
 const pageViewRouter = [];

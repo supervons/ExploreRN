@@ -54,4 +54,11 @@ export const data = [
     image: require("../../resource/image/home/drag.png"),
     routeName: "DraggablePage",
   },
+  {
+    key: "lottie",
+    name: I18n.t("Home.lottie"),
+    color: "#7a7281",
+    image: require("../../resource/image/home/lottie.webp"),
+    routeName: "LottiePage",
+  },
 ];

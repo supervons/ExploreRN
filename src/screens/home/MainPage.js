@@ -8,17 +8,17 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import CarouselComponent from "../../components/carousel";
 import { Icon } from "react-native-elements";
+import { trackEvent } from "appcenter-analytics";
 import { useNavigation } from "@react-navigation/core";
 import { useSelector, useDispatch } from "react-redux";
+import ImagePicker from "react-native-image-crop-picker";
+import LinearGradient from "react-native-linear-gradient";
+import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
+import CarouselComponent from "../../components/carousel";
 import { INITIAL_PAGE } from "../../redux/action/settingActionTypes";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
-import { trackEvent } from "appcenter-analytics";
-import ImagePicker from "react-native-image-crop-picker";
-import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
 import { data } from "./MainPageData";
-import LinearGradient from "react-native-linear-gradient";
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 const { width } = Dimensions.get("window");
 

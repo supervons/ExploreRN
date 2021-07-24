@@ -9,6 +9,7 @@ export default {
     skeleton: "骨架屏",
     morandi: "莫兰迪色系",
     draggable: "可拖拽",
+    lottie: "Lottie动画",
     i18: "国际化",
     device: "%{counts} 个设备",
   },
@@ -38,6 +39,7 @@ export default {
     echartsDemo: "图表示例",
     morandi: "莫兰迪色系",
     draggable: "可拖拽示例",
+    lottie: "Lottie动画示例",
   },
   MyPage: {
     baseInfo: "基本信息",

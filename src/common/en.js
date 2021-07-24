@@ -9,6 +9,7 @@ export default {
     skeleton: "Skeleton",
     morandi: "Morandi-Colors",
     draggable: "Draggable",
+    lottie: "Lottie Animation",
     i18: "i18",
     device: "%{counts} devices",
   },
@@ -38,6 +39,7 @@ export default {
     echartsDemo: "Echarts-Demo",
     morandi: "Morandi-Colors",
     draggable: "Draggable-Demo",
+    lottie: "Lottie-Demo",
   },
   MyPage: {
     baseInfo: "BaseInfo",
