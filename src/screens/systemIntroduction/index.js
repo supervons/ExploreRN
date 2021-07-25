@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
 import { View, Text, StatusBar } from "react-native";
 import Swiper from "../../components/SwiperComponent";
-import { FIRST_INSTALL } from "../../redux/action/settingActionTypes";
+import {
+  FIRST_INSTALL,
+  INITIAL_PAGE,
+} from "../../redux/action/settingActionTypes";
 import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";
 import Button from "../../common/button";
@@ -41,9 +44,15 @@ export default function SystemIntroduction(props) {
           style={{ width: 200 }}
           onPress={() => {
             if (firstInstall) {
+              // If the first installation starts, after clicking confirm.
+              // Reset the start page to Login and set the first installation status to false
               dispatch({
                 type: FIRST_INSTALL,
                 firstInstall: false,
+              });
+              dispatch({
+                type: INITIAL_PAGE,
+                initialPage: "Login",
               });
               route.replace("Login");
             } else {

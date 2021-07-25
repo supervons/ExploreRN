@@ -6,14 +6,14 @@ import {
 import { handleActions } from "redux-actions";
 /**
  * Created by supervons on 2019/08/20.
- * 系统相关设置，是否第一次安装启动
+ * 系统相关设置，是否第一次安装启动，首次启动显示介绍页.
  * System related settings, whether to start the first time
  */
 
 // 初始化数据
 const initialState = {
   firstInstall: true,
-  initialPage: "Login",
+  initialPage: "SystemIntroduction",
   profileInfo: {
     theme: "#00868B",
   },
