@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Dimensions } from "react-native";
 import LottieView from "lottie-react-native";
 
@@ -10,6 +10,12 @@ import LottieView from "lottie-react-native";
  */
 const { width } = Dimensions.get("window");
 export default function LottiePage() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 400);
+  });
   const lottieAnimations = [
     require("../../../resource/lottie/loading/loading0.json"),
     require("../../../resource/lottie/loading/loading1.json"),
@@ -21,33 +27,38 @@ export default function LottiePage() {
     require("../../../resource/lottie/loading/loading7.json"),
     require("../../../resource/lottie/loading/loading8.json"),
     require("../../../resource/lottie/loading/loading9.json"),
+    require("../../../resource/lottie/loading/loading10.json"),
+    require("../../../resource/lottie/loading/loading11.json"),
   ];
   return (
     <View style={{ flex: 1 }}>
       <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-        {lottieAnimations.map((res, index) => {
-          return (
-            <View
-              style={{
-                borderWidth: 1,
-                borderColor: "#999999",
-                borderLeftWidth: 0,
-                borderTopWidth: 0,
-                width: width / 4,
-                height: 100,
-              }}>
-              <LottieView source={res} speed={1} autoPlay loop />
-            </View>
-          );
-        })}
+        {show &&
+          lottieAnimations.map((res, index) => {
+            return (
+              <View
+                style={{
+                  borderWidth: 1,
+                  borderColor: "#999999",
+                  borderLeftWidth: 0,
+                  borderTopWidth: 0,
+                  width: width / 4,
+                  height: 100,
+                }}>
+                <LottieView source={res} speed={1} autoPlay loop />
+              </View>
+            );
+          })}
       </View>
       <View style={{ flex: 1 }}>
-        <LottieView
-          source={require("../../../resource/lottie/fireworks.json")}
-          speed={1}
-          autoPlay
-          loop
-        />
+        {show && (
+          <LottieView
+            source={require("../../../resource/lottie/fireworks.json")}
+            speed={1}
+            autoPlay
+            loop
+          />
+        )}
       </View>
     </View>
   );

@@ -32,6 +32,8 @@ class Loading extends Component {
         require("../resource/lottie/loading/loading7.json"),
         require("../resource/lottie/loading/loading8.json"),
         require("../resource/lottie/loading/loading9.json"),
+        require("../resource/lottie/loading/loading10.json"),
+        require("../resource/lottie/loading/loading11.json"),
       ],
     };
   }
@@ -49,7 +51,7 @@ class Loading extends Component {
   };
 
   render() {
-    const randomNum = (Math.random(100) * 10).toFixed(0) % 10;
+    const randomNum = (Math.random(100) * 11).toFixed(0) % 12;
     if (this.state.show) {
       return (
         <View style={styles.LoadingPage}>
@@ -59,7 +61,7 @@ class Loading extends Component {
                 _this.refLottie = refLottie;
               }}
               speed={1}
-              source={this.state.loadingArray[randomNum]}
+              source={this.state.loadingArray[10]}
             />
           </View>
         </View>
