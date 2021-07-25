@@ -61,7 +61,7 @@ class Loading extends Component {
                 _this.refLottie = refLottie;
               }}
               speed={1}
-              source={this.state.loadingArray[10]}
+              source={this.state.loadingArray[randomNum]}
             />
           </View>
         </View>
