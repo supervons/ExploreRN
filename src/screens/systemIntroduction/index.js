@@ -29,19 +29,19 @@ export default function SystemIntroduction(props) {
       key: "introduction_1",
       style: commonStyles.slide1,
       title: I18n.t("SystemIntroduction.introduction_1"),
-      animation: require("../../resource/lottie/systemIntroduction/page1.json"),
+      animation: require("../../resource/lottie/systemIntroduction/react.json"),
     },
     {
       key: "introduction_2",
       style: commonStyles.slide2,
       title: I18n.t("SystemIntroduction.introduction_2"),
-      animation: require("../../resource/lottie/systemIntroduction/page2.json"),
+      animation: require("../../resource/lottie/systemIntroduction/github.json"),
     },
     {
       key: "introduction_3",
       style: commonStyles.slide3,
       title: I18n.t("SystemIntroduction.introduction_3"),
-      animation: require("../../resource/lottie/systemIntroduction/page3.json"),
+      animation: require("../../resource/lottie/systemIntroduction/welcome.json"),
       component: (
         <Button
           title={I18n.t("Button.joke")}
