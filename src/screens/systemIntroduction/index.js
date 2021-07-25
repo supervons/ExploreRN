@@ -11,6 +11,7 @@ import * as Animatable from "react-native-animatable";
 import commonStyles from "../../styles/commonStyles";
 import Button from "../../common/button";
 import I18n from "../../common/languages";
+import LottieView from "lottie-react-native";
 
 /**
  * Created by supervons on 2019/08/21.
@@ -28,16 +29,19 @@ export default function SystemIntroduction(props) {
       key: "introduction_1",
       style: commonStyles.slide1,
       title: I18n.t("SystemIntroduction.introduction_1"),
+      animation: require("../../resource/lottie/systemIntroduction/page1.json"),
     },
     {
       key: "introduction_2",
       style: commonStyles.slide2,
       title: I18n.t("SystemIntroduction.introduction_2"),
+      animation: require("../../resource/lottie/systemIntroduction/page2.json"),
     },
     {
       key: "introduction_3",
       style: commonStyles.slide3,
       title: I18n.t("SystemIntroduction.introduction_3"),
+      animation: require("../../resource/lottie/systemIntroduction/page3.json"),
       component: (
         <Button
           title={I18n.t("Button.joke")}
@@ -64,9 +68,22 @@ export default function SystemIntroduction(props) {
     },
   ]);
 
-  function renderItem(style, title, enTitle, component, key, index) {
+  function renderItem(style, title, enTitle, animation, component, key, index) {
     return (
       <View key={key} style={[style, { flex: 1 }]}>
+        {currentIndex === index && (
+          <LottieView
+            speed={1}
+            autoPlay
+            source={animation}
+            style={{
+              height: 200,
+              position: "absolute",
+              margin: "auto",
+              bottom: "35%",
+            }}
+          />
+        )}
         {currentIndex === index ? (
           <Animatable.View animation="zoomIn">
             <View style={{ margin: 30 }}>
@@ -99,6 +116,7 @@ export default function SystemIntroduction(props) {
               item.style,
               item.title,
               item.enTitle,
+              item.animation,
               item.component,
               item.key,
               i,
