@@ -97,10 +97,16 @@ export default function Login(props) {
    */
   function getUserAvatar() {
     getProfile(loginId).then(res => {
-      startAnimation();
-      setUserAvatarUri(
-        res.data.profile[0] && res.data.profile[0].file_access_path,
-      );
+      if (res.data.profile.length !== 0) {
+        startAnimation();
+        setUserAvatarUri(
+          res.data.profile[0] && res.data.profile[0].file_access_path,
+        );
+      } else {
+        lottieAnimation.current.reset();
+        setAnimationFLag(false);
+        setUserAvatarUri();
+      }
     });
   }
 
