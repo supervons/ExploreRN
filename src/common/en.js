@@ -41,6 +41,9 @@ export default {
     draggable: "Draggable-Demo",
     lottie: "Lottie-Demo",
   },
+  Explore: {
+    tips: "To be continued...",
+  },
   MyPage: {
     baseInfo: "BaseInfo",
     systemIntroduction: "SystemIntroduction",

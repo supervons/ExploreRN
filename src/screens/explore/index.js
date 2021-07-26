@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { StyleSheet, ScrollView, Text, View, StatusBar } from "react-native";
-import newsAction from "../../actions/news";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
+import I18n from "../../common/languages";
 
 /**
  * Created by supervons on 2019/08/14.
@@ -28,7 +28,7 @@ export default function Explore() {
         style={{
           height: StatusBar.currentHeight,
         }}>
-        <Text>{`To be continued...`}</Text>
+        <Text>{I18n.t("Explore.tips")}</Text>
       </View>
     </View>
   );

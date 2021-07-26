@@ -41,6 +41,9 @@ export default {
     draggable: "可拖拽示例",
     lottie: "Lottie动画示例",
   },
+  Explore: {
+    tips: "未完待续...",
+  },
   MyPage: {
     baseInfo: "基本信息",
     systemIntroduction: "系统特性",
