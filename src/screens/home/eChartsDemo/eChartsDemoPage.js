@@ -1,5 +1,5 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { InteractionManager, View } from "react-native";
 import ChartsComponent from "../../../components/charts";
 import ChartsLiquidFill from "../../../components/chartsLiquidfill";
 
@@ -9,10 +9,18 @@ import ChartsLiquidFill from "../../../components/chartsLiquidfill";
  * @date 2021/01/20
  */
 export default function eChartsDemoPage() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    InteractionManager.runAfterInteractions(() => {
+      setShow(true);
+    }, []);
+  });
   return (
-    <View style={{ flex: 1 }}>
-      <ChartsComponent />
-      <ChartsLiquidFill />
-    </View>
+    show && (
+      <View style={{ flex: 1 }}>
+        <ChartsComponent />
+        <ChartsLiquidFill />
+      </View>
+    )
   );
 }
