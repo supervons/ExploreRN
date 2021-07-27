@@ -13,6 +13,9 @@ export default {
     i18: "i18",
     device: "%{counts} devices",
   },
+  Lottie: {
+    tips: `click to play or pause`,
+  },
   Login: {
     userName: "Type your username",
     password: "Type your password",

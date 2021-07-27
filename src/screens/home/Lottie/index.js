@@ -11,6 +11,7 @@ import LinearGradient from "react-native-linear-gradient";
 import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 import LottieItemView from "./LottieItemView";
+import I18n from "../../../common/languages";
 const { width } = Dimensions.get("window");
 export default function LottiePage() {
   const [show, setShow] = useState(false);
@@ -46,7 +47,11 @@ export default function LottiePage() {
               );
             })
           : loadingView()}
-        {show ? <Text>{`点击可以暂停/启动`}</Text> : null}
+        {show ? (
+          <View style={styles.tipsTextStyle}>
+            <Text>{I18n.t("Lottie.tips")}</Text>
+          </View>
+        ) : null}
       </View>
       <View style={{ flex: 1 }}>
         {show && (
@@ -87,5 +92,11 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: "center",
     alignItems: "center",
+  },
+  tipsTextStyle: {
+    width: width,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 15,
   },
 });

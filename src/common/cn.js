@@ -13,6 +13,9 @@ export default {
     i18: "国际化",
     device: "%{counts} 个设备",
   },
+  Lottie: {
+    tips: `点击可以暂停/启动`,
+  },
   Login: {
     userName: "在此输入用户名...",
     password: "在此输入密码...",
