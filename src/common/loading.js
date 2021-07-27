@@ -41,7 +41,7 @@ class Loading extends Component {
   static show = () => {
     _this.setState({ show: true }, () => {
       setTimeout(() => {
-        _this.refLottie.play();
+        _this.refLottie && _this.refLottie.play();
       }, 10);
     });
   };
