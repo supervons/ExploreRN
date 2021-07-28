@@ -55,7 +55,7 @@ class Loading extends Component {
     if (this.state.show) {
       return (
         <View style={styles.LoadingPage}>
-          <View style={styles.ss}>
+          <View style={styles.contentStyle}>
             <LottieView
               ref={refLottie => {
                 _this.refLottie = refLottie;
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  ss: {
+  contentStyle: {
     width: 80,
     height: 80,
     backgroundColor: Theme.loadingBackgroundColor,

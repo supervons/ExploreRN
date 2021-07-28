@@ -10,12 +10,6 @@ import I18n from "../../common/languages";
  */
 export default function Explore() {
   useTabBarStatus("explore");
-  useEffect(() => {
-    const params = { pageNo: 1, itemNo: 2 };
-    // newsAction.getNewsList(params).then(resp => {
-    //   console.log(JSON.stringify(resp));
-    // });
-  }, []);
   return (
     <View
       style={{

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Animated } from "react-native";
 import { Avatar } from "react-native-elements";
 /**
