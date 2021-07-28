@@ -38,7 +38,9 @@
 - [x] Perfect preview page
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
-- [ ] Change avatar and show avatar history
+- [ ] Change avatar and show avatar history - 50%
+- [ ] Map
+- [ ] Push
 - [ ] Multiple Bundle Support
 
 
