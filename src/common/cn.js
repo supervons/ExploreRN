@@ -45,7 +45,7 @@ export default {
     lottie: "Lottie动画示例",
   },
   Explore: {
-    tips: "未完待续...",
+    tips: "敬请期待...",
   },
   MyPage: {
     baseInfo: "基本信息",
