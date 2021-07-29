@@ -15,7 +15,7 @@
 
 # Preview download（Android）
 #### Firim : http://d.firim.top/25th
-<img src="./preview/dowload-apk.png" alt="download" style="height: 200px;" align="center"/>
+<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
 
 # Features
 

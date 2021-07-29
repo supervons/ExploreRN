@@ -15,7 +15,7 @@
 
 # 预览下载（仅Android）
 #### Firim : http://d.firim.top/25th
-<img src="./preview/dowload-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
+<img src="./preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
 
 # 功能
 
