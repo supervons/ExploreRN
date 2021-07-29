@@ -13,6 +13,10 @@
 ### 基于Koa2 + Typescript 打造高可用的NodeJS后台
 ### 地址：https://github.com/supervons/ExploreKoa
 
+# 预览下载（仅Android）
+#### Firim : http://d.firim.top/25th
+<img src="./preview/dowload-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
+
 # 功能
 
 | 功能名称     | 简述                             | 使用组件名称及版本                                           |
