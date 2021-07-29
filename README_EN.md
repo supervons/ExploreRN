@@ -13,10 +13,6 @@
 ### Based on KOA2 + TypeScript - highly available NodeJS Web Server
 ### Address: https://github.com/supervons/ExploreKoa
 
-# Preview download（Android）
-#### Firim : http://d.firim.top/25th
-<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
-
 # Features
 
 | Name | Description | Use component name and version |
@@ -105,6 +101,10 @@ cd ios && pod install
 
     android: react-native run-android
     ios: Xcode selects AwesomeProject.xcworkspace to start
+
+# Preview download（Android）
+#### Firim : http://d.firim.top/25th
+<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
 
 # Test account
 
