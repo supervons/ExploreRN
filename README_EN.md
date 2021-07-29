@@ -8,7 +8,16 @@
     QQ group: 783071253
     Email address: supervons@sina.com
     Current RN version: 0.64.1
-    
+
+### Download（Android）
+#### Firim : http://d.firim.top/25th
+<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
+
+### Test account
+
+    Username: test
+    Password: test
+
 # NodeJS Web Server 
 ### Based on KOA2 + TypeScript - highly available NodeJS Web Server
 ### Address: https://github.com/supervons/ExploreKoa
@@ -101,12 +110,3 @@ cd ios && pod install
 
     android: react-native run-android
     ios: Xcode selects AwesomeProject.xcworkspace to start
-
-# Preview download（Android）
-#### Firim : http://d.firim.top/25th
-<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
-
-# Test account
-
-    Username: test
-    Password: test

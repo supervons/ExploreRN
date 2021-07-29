@@ -9,6 +9,15 @@
     邮箱：supervons@sina.com
     当前RN版本：0.64.1
 
+### 下载（Android）
+#### Firim : http://d.firim.top/25th
+<img src="./preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
+
+### 测试账号
+
+    用户名：test
+    密码：test
+
 # 项目后台
 ### 基于Koa2 + Typescript 打造高可用的NodeJS后台
 ### 地址：https://github.com/supervons/ExploreKoa
@@ -100,12 +109,3 @@ cd ios && pod install
 
     android: react-native run-android
     ios: Xcode选择AwesomeProject.xcworkspace启动
-
-# 预览下载（仅Android）
-#### Firim : http://d.firim.top/25th
-<img src="./preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
-
-# 测试账号
-
-    用户名：test
-    密码：test
