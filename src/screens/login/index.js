@@ -1,11 +1,11 @@
-import md5 from "md5";
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import { Button } from "react-native-elements";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import { View, Text, TextInput, StyleSheet } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
+import md5 from "md5";
 import { debounce } from "../../utils/commonFun";
 import { getProfile } from "../../actions/profile";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";

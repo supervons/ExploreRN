@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import I18n from "../../common/languages";
