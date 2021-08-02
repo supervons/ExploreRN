@@ -99,9 +99,7 @@ export default function Login(props) {
     getProfile(loginId).then(res => {
       if (res.data.profile.length !== 0) {
         startAnimation();
-        setUserAvatarUri(
-          res.data.profile[0] && res.data.profile[0].file_access_path,
-        );
+        setUserAvatarUri(res.data?.profile[0]?.file_access_path);
       } else {
         lottieAnimation.current.reset();
         setAnimationFLag(false);

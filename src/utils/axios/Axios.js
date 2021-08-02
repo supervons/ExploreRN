@@ -47,7 +47,7 @@ class Axios {
       },
       error => {
         Loading.hide();
-        if (error.response && error.response.status === 401) {
+        if (error?.response?.status === 401) {
           Toast.showToast("Token has expired, please login again!");
           DeviceEventEmitter.emit("LOGOUT_ACTION");
         } else {
