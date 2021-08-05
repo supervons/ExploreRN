@@ -61,7 +61,12 @@ export default function ChartsComponent() {
 
   return (
     <View style={{ height: 300, paddingTop: 25 }}>
-      <RNEChartsPro height={250} option={pieOption} />
+      <RNEChartsPro
+        onPress={res => alert(JSON.stringify(res))}
+        legendSelectChanged={res => alert(res)}
+        height={250}
+        option={pieOption}
+      />
     </View>
   );
 }
