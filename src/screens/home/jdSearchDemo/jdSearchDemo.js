@@ -114,11 +114,7 @@ export default function jdSearchDemo(props) {
         stickyHeaderIndices={[1]}
         scrollEventThrottle={16}
         showsVerticalScrollIndicator={false}
-        style={{
-          zIndex: -1,
-          marginTop: -60,
-          backgroundColor: "#ffffff",
-        }}>
+        style={styles.scrollViewStyle}>
         <View style={{ height: 50, backgroundColor: "red" }} />
         <View style={styles.textInputView}>
           <View
@@ -144,12 +140,7 @@ export default function jdSearchDemo(props) {
             />
           </View>
         </View>
-        <View
-          style={{
-            height: 1000,
-            justifyContent: "center",
-            alignItems: "center",
-          }}>
+        <View style={styles.buttonStyle}>
           <Button onPress={() => props.navigation.pop()} title={"Back Home"} />
         </View>
       </ScrollView>
@@ -158,6 +149,11 @@ export default function jdSearchDemo(props) {
 }
 
 const styles = StyleSheet.create({
+  scrollViewStyle: {
+    zIndex: -1,
+    marginTop: -60,
+    backgroundColor: "#ffffff",
+  },
   textInputView: {
     backgroundColor: "red",
     height: 60,
@@ -179,5 +175,10 @@ const styles = StyleSheet.create({
     left: 20,
     height: 40,
     width: 40,
+  },
+  buttonStyle: {
+    height: 1000,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

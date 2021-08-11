@@ -11,13 +11,7 @@ import I18n from "../../common/languages";
 export default function Explore() {
   useTabBarStatus("explore");
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#9DD6EB77",
-      }}>
+    <View style={styles.container}>
       <View
         style={{
           height: StatusBar.currentHeight,
@@ -29,9 +23,10 @@ export default function Explore() {
 }
 
 const styles = StyleSheet.create({
-  text: {
-    color: "#fff",
-    fontSize: 30,
-    fontWeight: "bold",
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#9DD6EB77",
   },
 });
