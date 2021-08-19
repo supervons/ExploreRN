@@ -1,6 +1,7 @@
 export default {
   filter: "filters",
   delayTime: "delay time",
+  exitApp: "Press again to exit",
   Home: {
     charts: "Charts",
     scanner: "Scanner",

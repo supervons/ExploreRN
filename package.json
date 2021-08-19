@@ -51,6 +51,7 @@
     "react-native-screens": "^2.15.2",
     "react-native-shimmer-placeholder": "^2.0.7",
     "react-native-spinkit": "1.5.1",
+    "react-native-root-siblings": "4.1.1",
     "react-native-supervons-custom-keyboard": "^1.4.2",
     "react-native-swiper": "^1.6.0",
     "react-native-vector-icons": "8.0.0",

@@ -1,6 +1,7 @@
 export default {
   filter: "筛选",
   delayTime: "延时",
+  exitApp: "再按一次退出应用",
   Home: {
     charts: "图表",
     scanner: "拍照",
