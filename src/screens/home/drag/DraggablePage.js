@@ -5,7 +5,7 @@ import Draggable from "react-native-draggable";
 /**
  * @desc Draggable demo page.
  * Usage in https://github.com/tongyy/react-native-draggable.
- * @author YS.Feng
+ * @author supervons
  * @date 2021/05/29
  */
 const { height } = Dimensions.get("window");
