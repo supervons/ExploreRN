@@ -71,8 +71,9 @@ export default function MainPage() {
       setTimeout(() => {
         setShowItem(true);
       }, 1500);
+    } else {
+      navigation.navigate(routeName);
     }
-    navigation.navigate(routeName);
   }
 
   /**
