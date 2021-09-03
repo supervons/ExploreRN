@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Dimensions, Button } from "react-native";
+import { View, Dimensions, Button, StyleSheet } from "react-native";
 import Draggable from "react-native-draggable";
 import Animated, {
   withSpring,
@@ -23,19 +23,15 @@ export default function DraggablePage() {
   });
   return (
     <View>
-      <Animated.View style={[animatedStyles]}>
-        <Draggable
-          x={200}
-          y={300}
-          animatedViewProps={{ height: height }}
-          renderSize={56}
-          renderColor="black"
-          renderText="A"
-          isCircle
-          shouldReverse
-          onShortPressRelease={() => alert("touched!!")}
-        />
-      </Animated.View>
+      <Draggable
+        x={200}
+        y={300}
+        animatedViewProps={{ height: height }}
+        isCircle
+        shouldReverse
+        onShortPressRelease={() => alert("touched!!")}>
+        <Animated.View style={[styles.ballStyle, animatedStyles]} />
+      </Draggable>
       <Button
         title={"Move The Ball"}
         onPress={() => {
@@ -51,3 +47,12 @@ export default function DraggablePage() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  ballStyle: {
+    borderRadius: 28,
+    height: 56,
+    width: 56,
+    backgroundColor: "black",
+  },
+});
