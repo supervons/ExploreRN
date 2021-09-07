@@ -62,6 +62,15 @@ export default function ChartsComponent() {
   return (
     <View style={{ height: 300, paddingTop: 25 }}>
       <RNEChartsPro
+        webViewSettings={{
+          scrollEnabled: true,
+          onLoadEnd: () => {
+            alert(1);
+          },
+          style: {
+            backgroundColor: "black",
+          },
+        }}
         onPress={res => alert(JSON.stringify(res))}
         legendSelectChanged={res => alert(res)}
         height={250}
