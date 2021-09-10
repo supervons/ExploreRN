@@ -7,7 +7,7 @@
 ### 欢迎加入我们：
     QQ群：783071253
     邮箱：supervons@sina.com
-    当前RN版本：0.65.0
+    当前RN版本：0.65.1
 
 ### 下载（Android）
 #### Firim : http://d.firim.top/25th
