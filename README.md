@@ -51,6 +51,7 @@
 - [ ] 地图集成
 - [ ] 推送集成
 - [ ] 多bundle支持
+- [ ] Typescript
 
 # 预览
 #### 动态tab-bar

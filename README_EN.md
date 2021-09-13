@@ -51,6 +51,7 @@
 - [ ] Map
 - [ ] Push
 - [ ] Multiple Bundle Support
+- [ ] Typescript
 
 
 # Preview
