@@ -1,3 +1,8 @@
+/**
+ * @desc Header search demo.
+ * @author supervons
+ * @date 2021/04/16
+ */
 import React, { useState, useRef, useEffect } from "react";
 import {
   StyleSheet,
@@ -9,11 +14,6 @@ import {
 } from "react-native";
 import { Dimensions, ScrollView, Text, View } from "react-native";
 
-/**
- * @desc 仿京东头部搜索条
- * @author supervons
- * @date 2021/04/16
- */
 const { width } = Dimensions.get("window");
 export default function jdSearchDemo(props) {
   const [offsetY, setOffsetY] = useState(0);

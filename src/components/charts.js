@@ -65,7 +65,7 @@ export default function ChartsComponent() {
         webViewSettings={{
           scrollEnabled: true,
           onLoadEnd: () => {
-            alert(1);
+            console.log("onLoadEnd...");
           },
           style: {
             backgroundColor: "black",

@@ -1,3 +1,6 @@
+/**
+ * CN I18 config file.
+ */
 export default {
   filter: "filters",
   delayTime: "delay time",

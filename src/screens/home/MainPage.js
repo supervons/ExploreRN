@@ -1,3 +1,7 @@
+/**
+ * Created by supervons on 2019/08/08.
+ * User main page
+ */
 import React, { useEffect, useState } from "react";
 import {
   ScrollView,
@@ -22,11 +26,6 @@ import { data } from "./MainPageData";
 const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 const { width } = Dimensions.get("window");
 
-/**
- * Created by supervons on 2019/08/08.
- * 用户主界面
- * User main page
- */
 export default function MainPage() {
   useTabBarStatus("home");
   const [showItem, setShowItem] = useState(false);

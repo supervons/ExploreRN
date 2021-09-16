@@ -1,3 +1,7 @@
+/**
+ * Created by supervons on 2019/09/06.
+ * Update password page
+ */
 import React, { useState } from "react";
 import md5 from "md5";
 import { View } from "react-native";
@@ -9,11 +13,6 @@ import Button from "../../../../common/button";
 import userAction from "../../../../actions/user";
 import I18n from "../../../../common/languages";
 
-/**
- * Created by supervons on 2019/09/06.
- * 修改密码页面
- * Update password page
- */
 export default function UpdatePassword(props) {
   const renderItem = [
     {

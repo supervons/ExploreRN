@@ -1,3 +1,7 @@
+/**
+ * Created by supervons on 2019/08/12.
+ * Version info page
+ */
 import React from "react";
 import { View } from "react-native";
 import { ListItem } from "react-native-elements";
@@ -7,11 +11,6 @@ import Theme from "../../../../styles/theme";
 import I18n from "../../../../common/languages";
 import Toast from "../../../../components/toast";
 
-/**
- * Created by supervons on 2019/08/12.
- * 版本信息页面
- * Version info page
- */
 const list = [
   {
     key: 0,

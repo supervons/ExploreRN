@@ -1,3 +1,7 @@
+/**
+ * Created by supervons on 2019/08/15.
+ * Base info page, user can change avatar and motto.
+ */
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,11 +14,6 @@ import Toast from "../../../components/toast";
 import ProfileAction from "../../../actions/profile";
 import commonStyles from "../../../styles/commonStyles";
 
-/**
- * Created by supervons on 2019/08/15.
- * 基本信息页面，可以修改头像及签名.
- * Base info page, user can change avatar and motto.
- */
 export default function BaseInfo() {
   const [userInfo, setUserInfo] = useState([]);
   const profileInfo = useSelector(state => state.SettingReducer.profileInfo);

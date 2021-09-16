@@ -1,3 +1,6 @@
+/**
+ * CN I18 config file.
+ */
 export default {
   filter: "筛选",
   delayTime: "延时",

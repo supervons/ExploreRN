@@ -1,3 +1,9 @@
+/**
+ * @desc Draggable and reanimated demo page.
+ * Usage in https://github.com/tongyy/react-native-draggable.
+ * @author supervons
+ * @date 2021/05/29
+ */
 import React from "react";
 import { View, Dimensions, Button, StyleSheet } from "react-native";
 import Draggable from "react-native-draggable";
@@ -7,12 +13,6 @@ import Animated, {
   useAnimatedStyle,
 } from "react-native-reanimated";
 
-/**
- * @desc Draggable and reanimated demo page.
- * Usage in https://github.com/tongyy/react-native-draggable.
- * @author supervons
- * @date 2021/05/29
- */
 const { height } = Dimensions.get("window");
 export default function DraggablePage() {
   const offset = useSharedValue(0);

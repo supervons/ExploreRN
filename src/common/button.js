@@ -1,4 +1,4 @@
-import { Button as RNAButton } from "react-native-elements";
+import { Button as RNEButton } from "react-native-elements";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 export default function Button(props) {
   const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
   return (
-    <RNAButton
+    <RNEButton
       {...props}
       icon={{
         name: "done",

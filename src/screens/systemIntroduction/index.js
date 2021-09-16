@@ -1,3 +1,9 @@
+/**
+ * Created by supervons on 2019/08/21.
+ * 系统功能介绍界面，可以用做第一次进入系统的首屏
+ * System function introduction page, Can be used as the first screen to enter the system for the first time
+ * Each page displays an animation
+ */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
@@ -13,12 +19,6 @@ import Button from "../../common/button";
 import I18n from "../../common/languages";
 import LottieView from "lottie-react-native";
 
-/**
- * Created by supervons on 2019/08/21.
- * 系统功能介绍界面，可以用做第一次进入系统的首屏
- * System function introduction page, Can be used as the first screen to enter the system for the first time
- * Each page displays an animation
- */
 export default function SystemIntroduction(props) {
   const firstInstall = useSelector(state => state.SettingReducer.firstInstall);
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,3 +1,7 @@
+/**
+ * Created by supervons on 2019/08/12.
+ * Settings page
+ */
 import React from "react";
 import { View } from "react-native";
 import { Icon, ListItem } from "react-native-elements";
@@ -5,11 +9,6 @@ import { useNavigation } from "@react-navigation/core";
 import Theme from "../../../styles/theme";
 import I18n from "../../../common/languages";
 
-/**
- * Created by supervons on 2019/08/12.
- * 设置页面
- * Settings page
- */
 export default function Settings() {
   const route = useNavigation();
   const list = [

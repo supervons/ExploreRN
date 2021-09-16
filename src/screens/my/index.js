@@ -1,3 +1,11 @@
+/**
+ * My Page
+ * 使用 Hooks 方式重写，压缩代码量
+ * 需注意在此页面获取用户头像、签名及主题色信息并存入redux.
+ * 因为底部导航不是懒加载，故可以在此页面监听token是否过期监听.
+ * Use Hooks to rewrite and compress the amount of code
+ * Because the bottom navigation is not lazy to load, you can listen on this page
+ */
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/core";
 import {
@@ -21,14 +29,6 @@ import I18n from "../../common/languages";
 import Theme from "../../styles/theme";
 import RotateImage from "../../components/RotateImage";
 
-/**
- * My Page
- * 使用 Hooks 方式重写，压缩代码量
- * 需注意在此页面获取用户头像、签名及主题色信息并存入redux.
- * 因为底部导航不是懒加载，故可以在此页面监听token是否过期监听.
- * Use Hooks to rewrite and compress the amount of code
- * Because the bottom navigation is not lazy to load, you can listen on this page
- */
 export default function MyPage() {
   useTabBarStatus("person");
   const route = useNavigation();
