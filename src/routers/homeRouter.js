@@ -69,6 +69,9 @@ const Main = () => (
           name={res.name}
           component={res.component}
           options={{
+            header: () => (
+              <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />
+            ),
             tabBarLabel: res.tabBarLabel,
             tabBarIcon: ({ focused }) => {
               return focused ? res.selectIcon : res.defaultIcon;
