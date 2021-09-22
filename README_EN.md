@@ -37,7 +37,7 @@
 | Language Localize | APP language switch, with the local system Settings | react-native-localize@2.0.3 + i18n-js@3.8.0 |
 | Components-Dragged | Component elements move with touch drag and drop | react-native-draggable@3.3.0 |
 
-# TODO LIST
+# Finished
 
 - [x] Theme Change
 - [x] Skeleton
@@ -47,6 +47,11 @@
 - [x] Perfect preview page
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
+
+# TODO LIST
+
+- [ ] Register.
+- [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push
