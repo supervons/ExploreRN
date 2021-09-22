@@ -26,6 +26,8 @@ export default {
     loginButton: "登录",
     loginTips: "请完善用户名及密码!",
     keyboardTitle: "同学，一起探索RN吧！",
+    ForgetPassword: "忘记密码？",
+    Register: "新注册",
   },
   Button: {
     ok: "确定",

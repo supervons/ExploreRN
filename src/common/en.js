@@ -26,6 +26,8 @@ export default {
     loginButton: "LOGIN",
     loginTips: "Please type your access info!",
     keyboardTitle: "Hey,man! This is ExploreRN!",
+    ForgetPassword: "Forget Password?",
+    Register: "Register",
   },
   Button: {
     ok: "OK",

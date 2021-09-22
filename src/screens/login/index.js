@@ -8,7 +8,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
@@ -32,6 +38,10 @@ export default function Login(props) {
   const [animationFLag, setAnimationFLag] = useState(false);
   const lottieAnimation = useRef(null);
   const dispatch = useDispatch();
+  const operationConfig = [
+    { key: "ForgetPassword", I18: "Login.ForgetPassword" },
+    { key: "Register", I18: "Login.Register" },
+  ];
 
   const { userToken, userInfo } = useSelector(state => ({
     userToken: state.UserReducer.userToken,
@@ -148,6 +158,17 @@ export default function Login(props) {
           title={I18n.t("Login.loginButton")}
           onPress={() => login()}
         />
+        <View style={{ alignItems: "center", marginTop: 10 }}>
+          <View style={styles.operationView}>
+            {operationConfig.map(res => {
+              return (
+                <TouchableOpacity key={res.name}>
+                  <Text style={styles.operationText}>{I18n.t(res.I18)}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        </View>
         <Text style={{ width: 300, marginTop: 5 }}>
           {`©copyright supervons all right reserved`}
         </Text>
@@ -182,5 +203,15 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: "#DCDCDC",
     borderRadius: 15,
+  },
+  operationView: {
+    width: 300,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  operationText: {
+    marginTop: 5,
+    color: "#4089d6",
+    fontWeight: "bold",
   },
 });
