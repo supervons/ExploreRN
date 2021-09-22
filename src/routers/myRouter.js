@@ -91,6 +91,5 @@ routeInfo.map(res => {
     />,
   );
 });
-export const MyRouter = pageViewRouter;
 
-exports.default = MyRouter;
+export const MyRouter = pageViewRouter;
