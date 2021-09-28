@@ -11,6 +11,7 @@ import {
 import Login from "../screens/login/index";
 import { HomeRouter } from "./homeRouter";
 import { MyRouter } from "./myRouter";
+import { CommonRouter } from "./commonRouter";
 import { NavigationContainer } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 
@@ -40,6 +41,7 @@ export function HomeStackScreen() {
         />
         {HomeRouter}
         {MyRouter}
+        {CommonRouter}
       </HomeStack.Navigator>
     </NavigationContainer>
   );

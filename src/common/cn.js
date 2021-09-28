@@ -28,6 +28,8 @@ export default {
     keyboardTitle: "同学，一起探索RN吧！",
     ForgetPassword: "忘记密码？",
     Register: "新注册",
+    Copyright: "©supervons 版权所有，MIT-2021",
+    CopyrightTitle: "版权说明",
   },
   Button: {
     ok: "确定",

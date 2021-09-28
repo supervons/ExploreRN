@@ -28,6 +28,8 @@ export default {
     keyboardTitle: "Hey,man! This is ExploreRN!",
     ForgetPassword: "Forget Password?",
     Register: "Register",
+    Copyright: "©copyright by supervons MIT,2021",
+    CopyrightTitle: "Copyright",
   },
   Button: {
     ok: "OK",

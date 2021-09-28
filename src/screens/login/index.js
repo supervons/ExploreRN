@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/core";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import md5 from "md5";
@@ -38,6 +39,7 @@ export default function Login(props) {
   const [animationFLag, setAnimationFLag] = useState(false);
   const lottieAnimation = useRef(null);
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   const operationConfig = [
     { key: "ForgetPassword", I18: "Login.ForgetPassword" },
     { key: "Register", I18: "Login.Register" },
@@ -169,9 +171,17 @@ export default function Login(props) {
             })}
           </View>
         </View>
-        <Text style={{ width: 300, marginTop: 5 }}>
-          {`©copyright supervons all right reserved`}
-        </Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push("EmbeddedWebview", {
+              titleName: I18n.t("Login.CopyrightTitle"),
+              url: "https://github.com/supervons/ExploreRN/blob/master/LICENSE",
+            });
+          }}>
+          <Text style={{ width: 300, marginTop: 5, color: "#3b845a" }}>
+            {I18n.t("Login.Copyright")}
+          </Text>
+        </TouchableOpacity>
         <LottieView
           ref={lottieAnimation}
           style={{ zIndex: -100, position: "absolute" }}
