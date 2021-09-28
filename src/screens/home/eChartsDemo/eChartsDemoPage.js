@@ -26,10 +26,10 @@ export default function eChartsDemoPage() {
       <ScrollView style={{ flex: 1 }}>
         <ModuleHeadTitle title={I18n.t("Home.eCharts.chartsDemo")} />
         <ChartsComponent />
-        <ModuleHeadTitle title={I18n.t("Home.eCharts.liquidDemo")} />
-        <ChartsLiquidFill />
         <ModuleHeadTitle title={I18n.t("Home.eCharts.extensionDemo")} />
         <ChartsExtension />
+        <ModuleHeadTitle title={I18n.t("Home.eCharts.liquidDemo")} />
+        <ChartsLiquidFill />
       </ScrollView>
     )
   );

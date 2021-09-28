@@ -63,12 +63,13 @@ export default function ChartsComponent() {
     <View style={{ backgroundColor: "#fff", height: 300, paddingTop: 25 }}>
       <RNEChartsPro
         webViewSettings={{
+          startInLoadingState: true,
           scrollEnabled: true,
           onLoadEnd: () => {
             console.log("onLoadEnd...");
           },
           style: {
-            backgroundColor: "black",
+            backgroundColor: "#fff",
           },
         }}
         onPress={res => alert(JSON.stringify(res))}

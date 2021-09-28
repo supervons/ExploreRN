@@ -90,6 +90,9 @@ export default function ChartsComponent() {
   return (
     <View style={{ backgroundColor: "#fff", height: 300, paddingTop: 25 }}>
       <RNEChartsPro
+        webViewSettings={{
+          startInLoadingState: true,
+        }}
         extension={[
           EW,
           "https://cdn.jsdelivr.net/npm/echarts-liquidfill@3.0.0/dist/echarts-liquidfill.min.js",
