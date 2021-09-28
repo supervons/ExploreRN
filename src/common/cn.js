@@ -16,6 +16,11 @@ export default {
     lottie: "Lottie动画",
     i18: "国际化",
     device: "%{counts} 个设备",
+    eCharts: {
+      chartsDemo: "Echarts 示例",
+      liquidDemo: "水球图示例",
+      extensionDemo: "扩展示例",
+    },
   },
   Lottie: {
     tips: `点击可以暂停/启动`,

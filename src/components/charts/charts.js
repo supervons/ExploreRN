@@ -60,7 +60,7 @@ export default function ChartsComponent() {
   };
 
   return (
-    <View style={{ height: 300, paddingTop: 25 }}>
+    <View style={{ backgroundColor: "#fff", height: 300, paddingTop: 25 }}>
       <RNEChartsPro
         webViewSettings={{
           scrollEnabled: true,

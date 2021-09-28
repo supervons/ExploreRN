@@ -33,7 +33,7 @@ export default function ChartsLiquidFillComponent() {
   };
 
   return (
-    <View style={{ height: 300, paddingTop: 25 }}>
+    <View style={{ backgroundColor: "#fff", height: 300, paddingTop: 25 }}>
       <RNEChartsLiquidFill
         height={250}
         onPress={tt => alert(tt)}

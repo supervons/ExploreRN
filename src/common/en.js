@@ -16,6 +16,11 @@ export default {
     lottie: "Lottie Animation",
     i18: "i18",
     device: "%{counts} devices",
+    eCharts: {
+      chartsDemo: "Echarts-Demo",
+      liquidDemo: "Liquid-Demo",
+      extensionDemo: "Extension-Demo",
+    },
   },
   Lottie: {
     tips: `click to play or pause`,
