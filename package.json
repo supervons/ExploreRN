@@ -54,7 +54,7 @@
     "react-native-supervons-custom-keyboard": "^1.4.5",
     "react-native-swiper": "^1.6.0",
     "react-native-vector-icons": "8.0.0",
-    "react-native-webview": "^11.6.6",
+    "react-native-webview": "^11.14.0",
     "react-redux": "7.2.2",
     "react-timer-mixin": "^0.13.4",
     "redux": "4.0.5",
