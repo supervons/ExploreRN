@@ -7,20 +7,9 @@
 import React from "react";
 import { View, Dimensions, Button, StyleSheet } from "react-native";
 import Draggable from "react-native-draggable";
-import Animated, {
-  withSpring,
-  useSharedValue,
-  useAnimatedStyle,
-} from "react-native-reanimated";
 
 const { height } = Dimensions.get("window");
 export default function DraggablePage() {
-  const offset = useSharedValue(0);
-  const animatedStyles = useAnimatedStyle(() => {
-    return {
-      transform: [{ translateX: offset.value * 255 }],
-    };
-  });
   return (
     <View>
       <Draggable
@@ -29,21 +18,7 @@ export default function DraggablePage() {
         animatedViewProps={{ height: height }}
         isCircle
         shouldReverse
-        onShortPressRelease={() => alert("touched!!")}>
-        <Animated.View style={[styles.ballStyle, animatedStyles]} />
-      </Draggable>
-      <Button
-        title={"Move The Ball"}
-        onPress={() => {
-          offset.value = withSpring(Math.random());
-        }}
-      />
-      <Button
-        title={"Reset The Ball"}
-        onPress={() => {
-          offset.value = withSpring(0);
-        }}
-      />
+        onShortPressRelease={() => alert("touched!!")}></Draggable>
     </View>
   );
 }
