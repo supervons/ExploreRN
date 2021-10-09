@@ -13,12 +13,16 @@ export default function DraggablePage() {
   return (
     <View>
       <Draggable
+        renderSize={56}
+        renderColor="black"
+        renderText="SV"
         x={200}
         y={300}
         animatedViewProps={{ height: height }}
         isCircle
         shouldReverse
-        onShortPressRelease={() => alert("touched!!")}></Draggable>
+        onShortPressRelease={() => alert("touched!!")}
+      />
     </View>
   );
 }
