@@ -114,5 +114,10 @@ cd ios && pod install
 
 # Run
 
+`android`: 
+- react-native run-android
+- runAndroid.sh
     android: react-native run-android
-    ios: Xcode selects AwesomeProject.xcworkspace to start
+    
+`ios`: 
+- Xcode selects AwesomeProject.xcworkspace to start
