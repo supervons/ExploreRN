@@ -12,17 +12,9 @@ import ChartsExtension from "../../../components/charts/chartsExtension";
 import ModuleHeadTitle from "../../../components/ModuleHeadTitle";
 import I18n from "../../../common/languages";
 
-export default function eChartsDemoPage() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    Loading.show();
-    InteractionManager.runAfterInteractions(() => {
-      setShow(true);
-      Loading.hide();
-    }, []);
-  });
-  return (
-    show && (
+export default class eChartsDemoPage extends React.Component {
+  render() {
+    return (
       <ScrollView style={{ flex: 1 }}>
         <ModuleHeadTitle title={I18n.t("Home.eCharts.chartsDemo")} />
         <ChartsComponent />
@@ -31,6 +23,6 @@ export default function eChartsDemoPage() {
         <ModuleHeadTitle title={I18n.t("Home.eCharts.liquidDemo")} />
         <ChartsLiquidFill />
       </ScrollView>
-    )
-  );
+    );
+  }
 }
