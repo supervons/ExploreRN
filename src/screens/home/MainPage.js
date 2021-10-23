@@ -130,11 +130,11 @@ export default function MainPage() {
               key={res.key}
               style={[styles.item, { width: width / 4, height: width / 4 }]}>
               <ShimmerPlaceholder
-                shimmerStyle={{ width: 40, height: 40 }}
+                shimmerStyle={{ borderRadius: 5, width: 40, height: 40 }}
                 visible={false}
               />
               <ShimmerPlaceholder
-                shimmerStyle={{ width: 40, marginTop: 5 }}
+                shimmerStyle={{ borderRadius: 3, width: 40, marginTop: 5 }}
                 visible={false}
               />
             </View>
