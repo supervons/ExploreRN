@@ -145,13 +145,13 @@ export default function MainPage() {
   }
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
+      <CarouselComponent />
       <ScrollView
         alwaysBounceVertical={false}
         style={{
           backgroundColor: "#ffffff",
         }}>
-        <CarouselComponent />
         {showItem ? renderFunView() : renderSkeletonView()}
       </ScrollView>
     </View>
