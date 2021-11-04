@@ -40,7 +40,7 @@ export default function MyPage() {
   }));
 
   useEffect(() => {
-    setUserAvatarUri(profileInfo.file_access_path);
+    setUserAvatarUri(profileInfo?.file_access_path);
   }, [profileInfo]);
 
   const [list] = useState([
@@ -133,7 +133,7 @@ export default function MyPage() {
           numberOfLines={2}
           ellipsizeMode={"tail"}
           style={styles.mottoTextStyle}>
-          {profileInfo.motto || "--"}
+          {(profileInfo && profileInfo.motto) || "--"}
         </Text>
       </View>
       {list.map((item, i) => (

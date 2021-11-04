@@ -24,13 +24,13 @@ export default function BaseInfo() {
       {
         key: "avatar",
         title: I18n.t("BaseInfos.avatar"),
-        rightTitle: profileInfo.file_access_path,
+        rightTitle: profileInfo?.file_access_path,
         editable: false,
       },
       {
         key: "motto",
         title: I18n.t("BaseInfos.motto"),
-        rightTitle: profileInfo.motto,
+        rightTitle: profileInfo?.motto,
         editable: false,
       },
       {
@@ -89,7 +89,9 @@ export default function BaseInfo() {
         name: "image.png",
       };
       formData.append("files", file);
+      console.log(JSON.stringify(profileInfo));
       formData.append("id", profileInfo.id);
+      formData.append("userId", profileInfo.user_id);
       ProfileAction.updateProfile(formData)
         .then(res => {
           dispatch({
