@@ -89,9 +89,10 @@ export default function BaseInfo() {
         name: "image.png",
       };
       formData.append("files", file);
-      console.log(JSON.stringify(profileInfo));
-      formData.append("id", profileInfo.id);
-      formData.append("userId", profileInfo.user_id);
+      if (profileInfo?.id) {
+        formData.append("id", profileInfo.id);
+      }
+      formData.append("userId", global.userInfo.uId);
       ProfileAction.updateProfile(formData)
         .then(res => {
           dispatch({
