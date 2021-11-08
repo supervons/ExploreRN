@@ -17,7 +17,7 @@ export default function Button(props) {
         ...props.icon,
       }}
       buttonStyle={{
-        backgroundColor: profileInfo?.theme,
+        backgroundColor: profileInfo?.theme || "#00868B",
         marginHorizontal: 15,
         ...props.buttonStyle,
       }}

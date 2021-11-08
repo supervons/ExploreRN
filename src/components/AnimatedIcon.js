@@ -60,7 +60,11 @@ export default function AnimatedIcon(props) {
             ...props.style,
           },
         ]}>
-        <Icon size={35} name={iconName} color={profileInfo?.theme} />
+        <Icon
+          size={35}
+          name={iconName}
+          color={profileInfo?.theme || "#00868B"}
+        />
       </Animated.View>
     );
   }

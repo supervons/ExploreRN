@@ -59,7 +59,7 @@ export default function ThemeChange(props) {
             backgroundColor: item.value,
           }}
           title={item.title}
-          checked={profileInfo.theme === item.value}
+          checked={profileInfo?.theme === item.value}
           onPress={() => {
             const tempProfileInfo = { ...profileInfo };
             tempProfileInfo.theme = item.value;
@@ -69,6 +69,7 @@ export default function ThemeChange(props) {
             });
             let formData = new FormData();
             formData.append("id", tempProfileInfo.id);
+            formData.append("userId", global.userInfo.uId);
             formData.append("theme", item.value);
             ProfileAction.updateProfile(formData)
               .then(res => {})

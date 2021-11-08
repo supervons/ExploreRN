@@ -29,7 +29,7 @@ export function HomeStackScreen() {
         initialRouteName={initialPage}
         screenOptions={{
           headerStyle: {
-            backgroundColor: profileInfo?.theme,
+            backgroundColor: profileInfo?.theme || "#00868B",
           },
           headerTintColor: "#fff",
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
