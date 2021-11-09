@@ -136,7 +136,7 @@ export default function Login(props) {
           placeholder={I18n.t("Login.userName")}
           placeholderTextColor={"#B1B1B2"}
           onChangeText={text => setLoginId(text)}
-          vauel={loginId}
+          value={loginId}
         />
         <SecurityKeyboardInput
           keyName={"password"}
