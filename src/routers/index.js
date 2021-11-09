@@ -9,6 +9,7 @@ import {
   CardStyleInterpolators,
 } from "@react-navigation/stack";
 import Login from "../screens/login/index";
+import Register from "../screens/register/index";
 import { HomeRouter } from "./homeRouter";
 import { MyRouter } from "./myRouter";
 import { CommonRouter } from "./commonRouter";
@@ -39,6 +40,7 @@ export function HomeStackScreen() {
           options={{ header: () => null }}
           component={Login}
         />
+        <HomeStack.Screen name={"Register"} component={Register} />
         {HomeRouter}
         {MyRouter}
         {CommonRouter}

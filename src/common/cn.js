@@ -36,6 +36,14 @@ export default {
     Copyright: "©supervons 版权所有，MIT-2021",
     CopyrightTitle: "版权说明",
   },
+  Register: {
+    userName: "注册用户名...",
+    password: "密码...",
+    email: "邮箱地址...",
+    emailCode: "邮箱验证码...",
+    send: "发送邮件",
+    registerButton: "立即注册",
+  },
   Button: {
     ok: "确定",
     joke: "OK，朕已知晓",

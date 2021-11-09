@@ -164,7 +164,11 @@ export default function Login(props) {
           <View style={styles.operationView}>
             {operationConfig.map(res => {
               return (
-                <TouchableOpacity key={res.name}>
+                <TouchableOpacity
+                  key={res.name}
+                  onPress={() =>
+                    res.key === "Register" && navigation.push(res.key)
+                  }>
                   <Text style={styles.operationText}>{I18n.t(res.I18)}</Text>
                 </TouchableOpacity>
               );

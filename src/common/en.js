@@ -36,6 +36,14 @@ export default {
     Copyright: "©copyright by supervons MIT,2021",
     CopyrightTitle: "Copyright",
   },
+  Register: {
+    userName: "Type user name...",
+    password: "Password...",
+    email: "E-mail Address...",
+    emailCode: "E-mail code...",
+    send: "Send",
+    registerButton: "Register",
+  },
   Button: {
     ok: "OK",
     joke: "OK，Cheers!",
