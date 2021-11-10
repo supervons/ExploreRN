@@ -1,7 +1,6 @@
 /**
  * Created by supervons on 2021/11/09.
- * 注册页
- * Register page
+ * Register page.
  * Use email code register.
  */
 import React, { useState } from "react";
@@ -10,6 +9,12 @@ import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import I18n from "../../common/languages";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import {
+  checkUserById,
+  sendEmailCode,
+  registerByEmailCode,
+} from "../../actions/register";
+import Toast from "../../components/toast";
 
 export default function Register(props) {
   // User register info
@@ -19,35 +24,48 @@ export default function Register(props) {
     userEmail: "",
     code: "",
   });
-  return (
-    <View style={{ justifyContent: "center", alignItems: "center" }}>
-      <View style={{ height: 100, width: 300, zIndex: 99, marginBottom: -14 }}>
-        <LottieView source={require("./octopus.json")} speed={1} autoPlay />
+  const [canUseId, setCanUseId] = useState(false);
+
+  /**
+   * uId view, check whether exist.
+   * @returns uId view
+   */
+  function uIdView() {
+    return (
+      <View style={{ justifyContent: "center" }}>
+        <TextInput
+          style={styles.userNameStyle}
+          placeholder={I18n.t("Register.userName")}
+          placeholderTextColor={"#B1B1B2"}
+          onChangeText={uId => setRegisterInfo({ ...registerInfo, uId })}
+          onBlur={() => {
+            checkUserById(registerInfo.uId)
+              .then(res => {
+                setCanUseId(true);
+              })
+              .catch(res => {
+                setCanUseId(false);
+              });
+          }}
+        />
+        {canUseId && (
+          <View style={styles.successLottieStyle}>
+            <View style={{ width: 45, height: 45 }}>
+              <LottieView
+                source={require("./ok.json")}
+                speed={2}
+                autoPlay
+                loop={false}
+              />
+            </View>
+          </View>
+        )}
       </View>
-      <TextInput
-        style={styles.userNameStyle}
-        placeholder={I18n.t("Register.userName")}
-        placeholderTextColor={"#B1B1B2"}
-        onChangeText={uId => setRegisterInfo({ ...registerInfo, uId })}
-      />
-      <SecurityKeyboardInput
-        keyName={"registerPassword"}
-        keyboardHeader={() => {
-          return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
-        }}
-        style={styles.passwordStyle}
-        secureTextEntry={true}
-        random={true}
-        valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
-        secureTextStyle={{ left: 12, fontSize: 10 }}
-        cursorStyle={{ left: 8 }}
-        keyboardType={"string"}
-        placeholder={I18n.t("Register.password")}
-        placeholderTextColor={"#B1B1B2"}
-        onChangeText={password =>
-          setRegisterInfo({ ...registerInfo, password })
-        }
-      />
+    );
+  }
+
+  function emailView() {
+    return (
       <View
         style={{
           flexDirection: "row",
@@ -71,6 +89,7 @@ export default function Register(props) {
           />
         </View>
         <Button
+          onPress={() => sendEmail()}
           disabled={
             !registerInfo.uId ||
             !registerInfo.password ||
@@ -81,14 +100,57 @@ export default function Register(props) {
           title={I18n.t("Register.send")}
         />
       </View>
+    );
+  }
+
+  function sendEmail() {
+    sendEmailCode({
+      uId: registerInfo.uId,
+      email: registerInfo.userEmail,
+    }).then(res => {
+      Toast.showToast("Send success!");
+    });
+  }
+
+  function register() {
+    registerByEmailCode(registerInfo).then(res => {
+      navigation.push("SuccessView");
+    });
+  }
+
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <View style={{ height: 100, width: 300, zIndex: 99, marginBottom: -14 }}>
+        <LottieView source={require("./octopus.json")} speed={1} autoPlay />
+      </View>
+      {uIdView()}
+      <SecurityKeyboardInput
+        keyName={"registerPassword"}
+        keyboardHeader={() => {
+          return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
+        }}
+        style={styles.passwordStyle}
+        secureTextEntry={true}
+        random={true}
+        valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
+        secureTextStyle={{ left: 12, fontSize: 10 }}
+        cursorStyle={{ left: 8 }}
+        keyboardType={"string"}
+        placeholder={I18n.t("Register.password")}
+        placeholderTextColor={"#B1B1B2"}
+        onChangeText={password =>
+          setRegisterInfo({ ...registerInfo, password })
+        }
+      />
+      {emailView()}
       <Button
+        onPress={() => register()}
         disabled={
           !registerInfo.uId ||
           !registerInfo.password ||
           !registerInfo.userEmail ||
           !registerInfo.code
         }
-        onPress={() => navigation.push("SuccessView")}
         buttonStyle={{ width: 300 }}
         containerStyle={{ marginTop: 10 }}
         title={I18n.t("Register.registerButton")}
@@ -136,5 +198,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
     color: "#4089d6",
     fontWeight: "bold",
+  },
+  successLottieStyle: {
+    position: "absolute",
+    right: 0,
+    width: 50,
+    height: 50,
   },
 });
