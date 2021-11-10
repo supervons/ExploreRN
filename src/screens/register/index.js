@@ -23,7 +23,7 @@ export default function Register(props) {
         placeholderTextColor={"#B1B1B2"}
       />
       <SecurityKeyboardInput
-        keyName={"password"}
+        keyName={"registerPassword"}
         keyboardHeader={() => {
           return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
         }}
@@ -36,7 +36,6 @@ export default function Register(props) {
         keyboardType={"string"}
         placeholder={I18n.t("Register.password")}
         placeholderTextColor={"#B1B1B2"}
-        onChangeText={text => setPassWord(text)}
       />
       <View
         style={{
