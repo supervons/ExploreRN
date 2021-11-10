@@ -15,12 +15,7 @@ export default function Register(props) {
   return (
     <View style={{ justifyContent: "center", alignItems: "center" }}>
       <View style={{ height: 100, width: 300, zIndex: 99, marginBottom: -14 }}>
-        <LottieView
-          source={require("./octopus.json")}
-          speed={1}
-          autoPlay
-          loop
-        />
+        <LottieView source={require("./octopus.json")} speed={1} autoPlay />
       </View>
       <TextInput
         style={styles.userNameStyle}
@@ -68,6 +63,7 @@ export default function Register(props) {
         />
       </View>
       <Button
+        onPress={() => navigation.push("SuccessView")}
         buttonStyle={{ width: 300 }}
         containerStyle={{ marginTop: 10 }}
         title={I18n.t("Register.registerButton")}

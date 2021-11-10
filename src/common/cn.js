@@ -41,7 +41,7 @@ export default {
     password: "密码...",
     email: "邮箱地址...",
     emailCode: "邮箱验证码...",
-    send: "发送邮件",
+    send: "发送\n邮件",
     registerButton: "立即注册",
   },
   Button: {

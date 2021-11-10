@@ -10,6 +10,7 @@ import {
 } from "@react-navigation/stack";
 import Login from "../screens/login/index";
 import Register from "../screens/register/index";
+import SuccessView from "../screens/common/success/SuccessView";
 import { HomeRouter } from "./homeRouter";
 import { MyRouter } from "./myRouter";
 import { CommonRouter } from "./commonRouter";
@@ -41,6 +42,11 @@ export function HomeStackScreen() {
           component={Login}
         />
         <HomeStack.Screen name={"Register"} component={Register} />
+        <HomeStack.Screen
+          name={"SuccessView"}
+          options={{ header: () => null }}
+          component={SuccessView}
+        />
         {HomeRouter}
         {MyRouter}
         {CommonRouter}
