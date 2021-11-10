@@ -128,7 +128,7 @@ async function get(url, showLoading) {
       // 判断业务逻辑返回状态值
       return response;
     } else {
-      return Promise.reject(response.message);
+      return Promise.reject(response.msg || "server error!");
     }
   } catch (e) {
     console.log(e);
