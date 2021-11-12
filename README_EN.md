@@ -121,3 +121,6 @@ cd ios && pod install
     
 `ios`: 
 - Xcode selects AwesomeProject.xcworkspace to start
+
+# Setting server URL
+file `src/common/constants.js` setting value `serverUrl`.

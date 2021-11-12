@@ -118,3 +118,6 @@ cd ios && pod install
 
 `ios`: 
 - Xcode选择AwesomeProject.xcworkspace启动
+
+# 设置服务端URL
+`src/common/constants.js` 中设置 `serverUrl`
