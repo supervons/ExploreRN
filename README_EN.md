@@ -124,3 +124,15 @@ cd ios && pod install
 
 # Setting server URL
 file `src/common/constants.js` setting value `serverUrl`.
+
+# Internationalized language settings
+
+`/src/common/languages.js` Set the supported languages ​​in the, currently supports `CN`、`EN`
+
+In `/src/common/cn.js`、`/src/common/en.js`Set up language config.
+
+Code use:
+```javascript
+I18n.t("Register.userEmptyToast") // 注册页面用户名空时提示语
+```
+

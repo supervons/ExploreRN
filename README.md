@@ -121,3 +121,13 @@ cd ios && pod install
 
 # 设置服务端URL
 `src/common/constants.js` 中设置 `serverUrl`
+
+# 国际化语言设置
+`/src/common/languages.js` 中设置支持的语言，目前支持 `CN`、`EN`
+
+对应在 `/src/common/cn.js`、`/src/common/en.js` 设置相关语言包
+
+页面使用：
+```javascript
+I18n.t("Register.userEmptyToast") // 注册页面用户名空时提示语
+```
