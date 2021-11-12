@@ -38,6 +38,7 @@ export default {
   },
   Register: {
     userName: "Type user name...",
+    userEmptyToast: "please type user name！",
     password: "Password...",
     email: "E-mail Address...",
     emailCode: "E-mail code...",

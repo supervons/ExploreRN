@@ -39,13 +39,17 @@ export default function Register(props) {
           placeholderTextColor={"#B1B1B2"}
           onChangeText={uId => setRegisterInfo({ ...registerInfo, uId })}
           onBlur={() => {
-            checkUserById(registerInfo.uId)
-              .then(res => {
-                setCanUseId(true);
-              })
-              .catch(res => {
-                setCanUseId(false);
-              });
+            if (registerInfo.uId) {
+              checkUserById(registerInfo.uId)
+                .then(res => {
+                  setCanUseId(true);
+                })
+                .catch(res => {
+                  setCanUseId(false);
+                });
+            } else {
+              Toast.showToast(I18n.t("Register.userEmptyToast"));
+            }
           }}
         />
         {canUseId && (

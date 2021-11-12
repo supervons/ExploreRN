@@ -38,6 +38,7 @@ export default {
   },
   Register: {
     userName: "注册用户名...",
+    userEmptyToast: "请输入用户名！",
     password: "密码...",
     email: "邮箱地址...",
     emailCode: "邮箱验证码...",
