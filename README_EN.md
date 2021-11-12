@@ -133,6 +133,6 @@ In `/src/common/cn.js`、`/src/common/en.js`Set up language config.
 
 Code use:
 ```javascript
-I18n.t("Register.userEmptyToast") // 注册页面用户名空时提示语
+I18n.t("Register.userEmptyToast") // Prompt when the username is empty on the registration page
 ```
 
