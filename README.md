@@ -1,4 +1,4 @@
-[简体中文](./README.md) | [English](./README_EN.md)
+简体中文 | [English](./README_EN.md)
 
 # 项目目的
 ### 1.探索新版本RN特性；

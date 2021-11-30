@@ -1,4 +1,4 @@
-[简体中文](./README.md) | [English](./README_EN.md)
+[简体中文](./README.md) | English
 
 # project instruction
 ### 1. Explore the RN features of the new version;
