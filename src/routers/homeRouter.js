@@ -59,8 +59,14 @@ const Tab = createBottomTabNavigator();
 const Main = () => (
   <Tab.Navigator
     lazy={false}
-    tabBarOptions={{
-      activeTintColor: "#7B8B6F",
+    screenOptions={{
+      tabBarActiveTintColor: "#333333",
+      tabBarStyle: [
+        {
+          display: "flex",
+        },
+        null,
+      ],
     }}>
     {tabBarInfo.map(res => {
       return (
