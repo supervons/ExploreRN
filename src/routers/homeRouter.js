@@ -56,7 +56,7 @@ const tabBarInfo = [
  * 循环渲染tabBar
  */
 const Tab = createBottomTabNavigator();
-const Main = () => (
+const APP = () => (
   <Tab.Navigator
     lazy={false}
     screenOptions={{
@@ -97,16 +97,16 @@ The color of this color series looks unassuming, not bright, but it has a sense 
 
 /**
  * 总体导航配置
- * 其中，Main为带tabBar的主页面
+ * 其中，Home为带tabBar的主页面
  */
 const routeInfo = [
   {
-    name: "MainPage",
+    name: "APP",
     options: {
       title: "",
       header: () => <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />,
     },
-    component: Main,
+    component: APP,
   },
   {
     name: "eChartsDemoPage",

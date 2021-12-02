@@ -55,7 +55,7 @@ export default function Login(props) {
     if (userToken && userInfo) {
       global.jwtToken = userToken;
       global.userInfo = userInfo;
-      props.navigation.replace("MainPage");
+      props.navigation.replace("APP");
     }
     // Global navigation for not in router pages
     global.navigation = props.navigation;
@@ -88,7 +88,7 @@ export default function Login(props) {
       });
       global.jwtToken = token;
       global.userInfo = resp.userInfo;
-      props.navigation.replace("MainPage");
+      props.navigation.replace("APP");
     });
   }
 

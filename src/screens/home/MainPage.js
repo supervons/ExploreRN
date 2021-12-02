@@ -44,7 +44,7 @@ export default function MainPage() {
     global.jwtToken = userToken;
     dispatch({
       type: INITIAL_PAGE,
-      initialPage: "MainPage",
+      initialPage: "APP",
     });
     setTimeout(() => {
       setShowItem(true);
