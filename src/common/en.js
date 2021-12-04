@@ -21,6 +21,9 @@ export default {
       liquidDemo: "Liquid-Demo",
       extensionDemo: "Extension-Demo",
     },
+    search: {
+      back: "Back Home",
+    },
   },
   Lottie: {
     tips: `click to play or pause`,

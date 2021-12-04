@@ -261,7 +261,7 @@ export default class SwiperComponent extends Component {
     return Object.assign({}, this.state, this.internals);
   }
 
-  onLayout = (event) => {
+  onLayout = event => {
     const { width, height } = event.nativeEvent.layout;
     const offset = (this.internals.offset = {});
     const state = { width, height };
@@ -340,7 +340,7 @@ export default class SwiperComponent extends Component {
    * Scroll begin handle
    * @param  {object} e native event
    */
-  onScrollBegin = (e) => {
+  onScrollBegin = e => {
     // update scroll state
     this.internals.isScrolling = true;
     this.props.onScrollBeginDrag &&
@@ -351,7 +351,7 @@ export default class SwiperComponent extends Component {
    * Scroll end handle
    * @param  {object} e native event
    */
-  onScrollEnd = (e) => {
+  onScrollEnd = e => {
     // update scroll state
     this.internals.isScrolling = false;
 
@@ -382,7 +382,7 @@ export default class SwiperComponent extends Component {
    * Drag end handle
    * @param {object} e native event
    */
-  onScrollEndDrag = (e) => {
+  onScrollEndDrag = e => {
     const { contentOffset } = e.nativeEvent;
     const { horizontal, children } = this.props;
     const { index } = this.state;
@@ -524,7 +524,7 @@ export default class SwiperComponent extends Component {
         prop !== "onScrollBeginDrag"
       ) {
         let originResponder = props[prop];
-        overrides[prop] = (e) => originResponder(e, this.fullState(), this);
+        overrides[prop] = e => originResponder(e, this.fullState(), this);
       }
     }
 
@@ -656,11 +656,11 @@ export default class SwiperComponent extends Component {
     );
   };
 
-  refScrollView = (view) => {
+  refScrollView = view => {
     this.scrollView = view;
   };
 
-  onPageScrollStateChanged = (state) => {
+  onPageScrollStateChanged = state => {
     switch (state) {
       case "dragging":
         return this.onScrollBegin();
@@ -671,7 +671,7 @@ export default class SwiperComponent extends Component {
     }
   };
 
-  renderScrollView = (pages) => {
+  renderScrollView = pages => {
     if (Platform.OS === "ios") {
       return (
         <ScrollView

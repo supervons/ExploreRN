@@ -21,6 +21,9 @@ export default {
       liquidDemo: "水球图示例",
       extensionDemo: "扩展示例",
     },
+    search: {
+      back: "返回首页",
+    },
   },
   Lottie: {
     tips: `点击可以暂停/启动`,

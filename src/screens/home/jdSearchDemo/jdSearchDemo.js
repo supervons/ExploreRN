@@ -13,6 +13,7 @@ import {
   StatusBar,
 } from "react-native";
 import { Dimensions, ScrollView, Text, View } from "react-native";
+import I18n from "../../../common/languages";
 
 const { width } = Dimensions.get("window");
 export default function jdSearchDemo(props) {
@@ -141,7 +142,10 @@ export default function jdSearchDemo(props) {
           </View>
         </View>
         <View style={styles.buttonStyle}>
-          <Button onPress={() => props.navigation.pop()} title={"Back Home"} />
+          <Button
+            onPress={() => props.navigation.pop()}
+            title={I18n.t("Home.search.back")}
+          />
         </View>
       </ScrollView>
     </View>
