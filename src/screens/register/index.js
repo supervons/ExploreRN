@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
+import md5 from "md5";
 import I18n from "../../common/languages";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import {
@@ -142,9 +143,9 @@ export default function Register(props) {
         keyboardType={"string"}
         placeholder={I18n.t("Register.password")}
         placeholderTextColor={"#B1B1B2"}
-        onChangeText={password =>
-          setRegisterInfo({ ...registerInfo, password })
-        }
+        onChangeText={password => {
+          setRegisterInfo({ ...registerInfo, password: md5(password) });
+        }}
       />
       {emailView()}
       <Button
