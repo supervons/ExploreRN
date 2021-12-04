@@ -3,7 +3,7 @@
  * Register page.
  * Use email code register.
  */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
@@ -16,8 +16,9 @@ import {
   registerByEmailCode,
 } from "../../actions/register";
 import Toast from "../../components/toast";
+import { validEmail } from "../../utils/commonValidFun";
 
-export default function Register(props) {
+export default function Register() {
   // User register info
   const [registerInfo, setRegisterInfo] = useState({
     uId: "",
@@ -25,8 +26,8 @@ export default function Register(props) {
     userEmail: "",
     code: "",
   });
-  const [canUseId, setCanUseId] = useState(false);
-
+  const [canUseId, setCanUseId] = useState("");
+  const useNameInputRef = new useRef(null);
   /**
    * uId view, check whether exist.
    * @returns uId view
@@ -35,6 +36,7 @@ export default function Register(props) {
     return (
       <View style={{ justifyContent: "center" }}>
         <TextInput
+          ref={useNameInputRef}
           style={styles.userNameStyle}
           placeholder={I18n.t("Register.userName")}
           placeholderTextColor={"#B1B1B2"}
@@ -53,18 +55,24 @@ export default function Register(props) {
             }
           }}
         />
-        {canUseId && (
-          <View style={styles.successLottieStyle}>
-            <View style={{ width: 45, height: 45 }}>
+        {canUseId !== "" ? (
+          <View
+            style={[styles.successLottieStyle, { height: canUseId ? 50 : 40 }]}>
+            <View
+              style={{ width: canUseId ? 45 : 35, height: canUseId ? 45 : 35 }}>
               <LottieView
-                source={require("./ok.json")}
-                speed={2}
+                source={
+                  canUseId
+                    ? require("../../resource/lottie/register/ok.json")
+                    : require("../../resource/lottie/register/error.json")
+                }
+                speed={1}
                 autoPlay
                 loop={false}
               />
             </View>
           </View>
-        )}
+        ) : null}
       </View>
     );
   }
@@ -82,9 +90,18 @@ export default function Register(props) {
             style={styles.emailStyle}
             placeholder={I18n.t("Register.email")}
             placeholderTextColor={"#B1B1B2"}
-            onChangeText={userEmail =>
-              setRegisterInfo({ ...registerInfo, userEmail })
-            }
+            onChangeText={userEmail => {
+              if (validEmail(userEmail)) {
+                setRegisterInfo({ ...registerInfo, userEmail });
+              } else {
+                setRegisterInfo({ ...registerInfo, userEmail: "" });
+              }
+            }}
+            onBlur={() => {
+              if (!validEmail(registerInfo.userEmail)) {
+                Toast.showToast("Email check failed!");
+              }
+            }}
           />
           <TextInput
             style={styles.emailStyle}
@@ -126,10 +143,15 @@ export default function Register(props) {
   return (
     <View style={{ justifyContent: "center", alignItems: "center" }}>
       <View style={{ height: 100, width: 300, zIndex: 99, marginBottom: -14 }}>
-        <LottieView source={require("./octopus.json")} speed={1} autoPlay />
+        <LottieView
+          source={require("../../resource/lottie/register/octopus.json")}
+          speed={1}
+          autoPlay
+        />
       </View>
       {uIdView()}
       <SecurityKeyboardInput
+        onFocus={() => useNameInputRef.current.blur()}
         keyName={"registerPassword"}
         keyboardHeader={() => {
           return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
@@ -208,6 +230,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     width: 50,
-    height: 50,
   },
 });
