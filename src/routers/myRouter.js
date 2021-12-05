@@ -1,7 +1,4 @@
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { View } from "react-native";
 import My from "../screens/my";
@@ -59,7 +56,7 @@ const routeInfo = [
       title: I18n.t("Route.welcome"),
       header: () => (
         // Bug fix: android remain the style of the previous page.
-        <View style={{ height: 1, backgroundColor: "transparent" }} />
+        <View style={{ height: 0.1, backgroundColor: "transparent" }} />
       ),
     },
     component: SystemIntroduction,
@@ -71,7 +68,7 @@ const routeInfo = [
   },
   {
     name: "Scanner",
-    options: { title: I18n.t("Route.scanner") },
+    options: { title: I18n.t("Route.scanner"), header: () => null },
     component: Scanner,
   },
   {

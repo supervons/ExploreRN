@@ -3,7 +3,8 @@
  * 扫一扫及拍照页面
  * Explore page
  */
-import React, { Component } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/core";
 import {
   StyleSheet,
   Text,
@@ -15,128 +16,109 @@ import {
 import { RNCamera } from "react-native-camera";
 import { Icon } from "react-native-elements";
 
-export default class Scanner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      moveAnim: new Animated.Value(0),
-      FlashMode: false,
-      showCamera: true,
-    };
-    this.isBarcodeRead = false;
-  }
+export default function Scanner() {
+  const [moveAnim] = useState(new Animated.Value(-200));
+  const [flashMode, setFlashMode] = useState(false);
+  const [showCamera, setShowCamera] = useState(true);
+  const [isBarcodeRead, setIsBarcodeRead] = useState(false);
+  const route = useNavigation();
+  const rncRef = useRef(null);
 
-  // 去掉导航条设置，全屏扫描
-  static navigationOptions = {
-    header: null,
-  };
-
-  componentDidMount() {
-    this.startAnimation();
-  }
-
+  useEffect(() => {
+    startAnimation();
+  }, []);
   /**
    * 监听当结果页返回时，重新启动相机监听扫描事件
    */
-  restartScanner = () => {
-    this.setState({ showCamera: true });
-  };
+  function restartScanner() {
+    setShowCamera(true);
+  }
 
-  startAnimation = () => {
-    this.state.moveAnim.setValue(-200);
-    Animated.timing(this.state.moveAnim, {
+  function startAnimation() {
+    moveAnim.setValue(-200);
+    Animated.timing(moveAnim, {
       toValue: 0,
       duration: 1500,
       easing: Easing.linear,
       useNativeDriver: true, // 添加这一行
-    }).start(() => this.startAnimation());
-  };
+    }).start(() => startAnimation());
+  }
 
   // 扫描事件
-  onBarCodeRead = result => {
-    if (!this.isBarcodeRead) {
-      this.isBarcodeRead = true;
+  function onBarCodeRead() {
+    if (!isBarcodeRead) {
+      setIsBarcodeRead(true);
       // 卸载扫一扫组件，否则还会持续扫描
-      this.setState({ showCamera: false });
-      this.props.navigation.navigate("ScannerResult", {
+      setShowCamera(true);
+      route.navigate("ScannerResult", {
         imageUri: null,
         scannerResult: JSON.stringify(result),
       });
     }
-  };
+  }
 
   // 拍照事件
-  takePicture = async () => {
-    if (this.camera) {
+  async function takePicture() {
+    if (rncRef) {
       const options = { quality: 0.5, base64: true };
-      const data = await this.camera.takePictureAsync(options);
-      this.setState({ showCamera: false });
-      this.props.navigation.push("ScannerResult", {
+      const data = await rncRef.current.takePictureAsync(options);
+      setShowCamera(false);
+      route.push("ScannerResult", {
         imageUri: data.uri,
         scannerResult: "",
-        restartScanner: this.restartScanner,
+        restartScanner: restartScanner,
       });
     }
-  };
+  }
 
   // 闪光灯开关
-  _changeFlashMode() {
-    this.setState({
-      FlashMode: !this.state.FlashMode,
-    });
+  function _changeFlashMode() {
+    setFlashMode(flashMode => !flashMode);
   }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        {this.state.showCamera ? (
-          <RNCamera
-            ref={ref => {
-              this.camera = ref;
-            }}
-            style={styles.preview}
-            type={RNCamera.Constants.Type.back}
-            flashMode={this.state.FlashMode ? 1 : 0}
-            onBarCodeRead={this.onBarCodeRead}>
-            <View style={styles.rectangleContainer}>
-              <View style={styles.rectangle} />
-              <Animated.View
-                style={[
-                  styles.border,
-                  { transform: [{ translateY: this.state.moveAnim }] },
-                ]}
-              />
-              <Text style={styles.rectangleText}>
-                将二维码放入框内，即可自动扫描
-              </Text>
-              <View style={{ flexDirection: "row", marginTop: 15 }}>
-                <TouchableOpacity
-                  onPress={() => this.props.navigation.goBack()}>
-                  <Icon name="keyboard-arrow-left" size={36} color={"green"} />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={this.takePicture.bind(this)}
-                  style={{ marginLeft: 25 }}>
-                  <Icon name="camera" size={36} color={"green"} />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={this._changeFlashMode.bind(this)}
-                  style={{ marginLeft: 25 }}>
-                  <Icon
-                    name="highlight"
-                    size={36}
-                    color={this.state.FlashMode ? "green" : "gray"}
-                  />
-                </TouchableOpacity>
-              </View>
+  return (
+    <View style={styles.container}>
+      {showCamera ? (
+        <RNCamera
+          ref={rncRef}
+          style={styles.preview}
+          type={RNCamera.Constants.Type.back}
+          flashMode={flashMode ? 1 : 0}
+          onBarCodeRead={onBarCodeRead}>
+          <View style={styles.rectangleContainer}>
+            <View style={styles.rectangle} />
+            <Animated.View
+              style={[styles.border, { transform: [{ translateY: moveAnim }] }]}
+            />
+            <Text style={styles.rectangleText}>
+              将二维码放入框内，即可自动扫描
+            </Text>
+            <View style={{ flexDirection: "row", marginTop: 15 }}>
+              <TouchableOpacity onPress={() => route.goBack()}>
+                <Icon name="keyboard-arrow-left" size={36} color={"green"} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={takePicture}
+                style={{ marginLeft: 25 }}>
+                <Icon name="camera" size={36} color={"green"} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={_changeFlashMode}
+                style={{ marginLeft: 25 }}>
+                <Icon
+                  name="highlight"
+                  size={36}
+                  color={flashMode ? "green" : "gray"}
+                />
+              </TouchableOpacity>
             </View>
-          </RNCamera>
-        ) : (
-          <View />
-        )}
-      </View>
-    );
-  }
+          </View>
+        </RNCamera>
+      ) : (
+        <View />
+      )}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
