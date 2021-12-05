@@ -47,10 +47,10 @@
 - [x] Perfect preview page
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
+- [x] Email register
 
 # TODO LIST
 
-- [ ] Register.
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
