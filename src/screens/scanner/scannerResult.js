@@ -3,20 +3,25 @@
  * 扫一扫及拍照结果页面
  * Explore page
  */
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, Image, View } from "react-native";
 
 export default function Scanner(props) {
+  useEffect(() => {
+    return function cleanUp() {
+      props.route.params.restartScanner();
+    };
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.rectangleContainer}>
-        <Text>{props.navigation.state.params.scannerResult || ""}</Text>
+        <Text>{props.route.params.scannerResult || ""}</Text>
         <Image
           style={{ height: 300, width: 300 }}
           source={
-            props.navigation.state.params.imageUri == null
+            props.route.params.imageUri == null
               ? require("../../resource/image/avatar/logo.png")
-              : { uri: props.navigation.state.params.imageUri }
+              : { uri: props.route.params.imageUri }
           }
         />
       </View>

@@ -33,11 +33,14 @@ export default class Scanner extends Component {
 
   componentDidMount() {
     this.startAnimation();
-    // 监听当结果页返回时，重新启动相机监听扫描事件
-    this.props.navigation.addListener("didFocus", () =>
-      this.setState({ showCamera: true }),
-    );
   }
+
+  /**
+   * 监听当结果页返回时，重新启动相机监听扫描事件
+   */
+  restartScanner = () => {
+    this.setState({ showCamera: true });
+  };
 
   startAnimation = () => {
     this.state.moveAnim.setValue(-200);
@@ -71,6 +74,7 @@ export default class Scanner extends Component {
       this.props.navigation.push("ScannerResult", {
         imageUri: data.uri,
         scannerResult: "",
+        restartScanner: this.restartScanner,
       });
     }
   };
