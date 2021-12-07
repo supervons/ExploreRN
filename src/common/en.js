@@ -26,7 +26,7 @@ export default {
     },
   },
   Lottie: {
-    tips: `click to play or pause`,
+    tips: `Click to play or pause`,
   },
   Login: {
     userName: "Type your username",
@@ -41,7 +41,7 @@ export default {
   },
   Register: {
     userName: "Type user name...",
-    userEmptyToast: "please type user name！",
+    userEmptyToast: "Please type user name！",
     password: "Password...",
     email: "E-mail Address...",
     emailCode: "E-mail code...",
