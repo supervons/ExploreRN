@@ -2,10 +2,10 @@ import Axios from "../utils/axios/Axios";
 import Toast from "../components/toast";
 
 /**
- * Verify user name whether exists.
+ * Verify uId or userEmail whether exists.
  */
-const checkUserById = userId => {
-  return Axios.GET(`/api/v1/uid/${userId}`)
+const getUniqueTicket = (userId, userEmail = undefined) => {
+  return Axios.GET(`/api/v1/unique/${userId}/${userEmail}`)
     .then(resp => {
       return Promise.resolve(resp);
     })
@@ -40,7 +40,7 @@ const registerByEmailCode = params => {
     });
 };
 module.exports = {
-  checkUserById,
+  getUniqueTicket,
   sendEmailCode,
   registerByEmailCode,
 };

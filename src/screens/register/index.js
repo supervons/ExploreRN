@@ -11,7 +11,7 @@ import md5 from "md5";
 import I18n from "../../common/languages";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import {
-  checkUserById,
+  getUniqueTicket,
   sendEmailCode,
   registerByEmailCode,
 } from "../../actions/register";
@@ -43,9 +43,11 @@ export default function Register() {
           onChangeText={uId => setRegisterInfo({ ...registerInfo, uId })}
           onBlur={() => {
             if (registerInfo.uId) {
-              checkUserById(registerInfo.uId)
+              getUniqueTicket(registerInfo.uId)
                 .then(res => {
-                  setCanUseId(true);
+                  if (res.code === 0) {
+                    setCanUseId(true);
+                  }
                 })
                 .catch(res => {
                   setCanUseId(false);
