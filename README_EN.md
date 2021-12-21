@@ -7,7 +7,7 @@
 #### Welcome to join us:
     QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.66.3
+    Current RN version: 0.66.4
 
 ### Download（Android）
 #### Firim : http://d.firim.top/25th
@@ -127,7 +127,7 @@ file `src/common/constants.js` setting value `serverUrl`.
 
 # Internationalized language settings
 
-`/src/common/languages.js` Set the supported languages ​​in the, currently supports `CN`、`EN`
+`/src/common/languages.js` Set the supported languages in the, currently supports `CN`、`EN`
 
 In `/src/common/cn.js`、`/src/common/en.js`Set up language config.
 
