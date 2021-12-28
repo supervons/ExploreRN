@@ -51,12 +51,12 @@
 
 # TODO LIST
 
+- [ ] Multiple Bundle Support
+- [ ] Typescript
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push
-- [ ] Multiple Bundle Support
-- [ ] Typescript
 
 
 # Preview
