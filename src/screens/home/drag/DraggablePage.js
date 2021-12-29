@@ -5,7 +5,7 @@
  * @date 2021/05/29
  */
 import React from "react";
-import { View, Dimensions, Button, StyleSheet } from "react-native";
+import { View, Dimensions, StyleSheet } from "react-native";
 import Draggable from "react-native-draggable";
 
 const { height } = Dimensions.get("window");

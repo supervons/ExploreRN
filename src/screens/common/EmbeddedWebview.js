@@ -4,7 +4,7 @@
  * General Webview component, with its own forward and back button, and dynamic judgment whether can forward and back
  */
 import React, { useState, useRef } from "react";
-import { Button, View, SafeAreaView } from "react-native";
+import { View, SafeAreaView } from "react-native";
 import WebView from "react-native-webview";
 import AntDesign from "react-native-vector-icons/AntDesign";
 

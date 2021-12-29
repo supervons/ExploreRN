@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import LottieView from "lottie-react-native";
 import { Button } from "react-native-elements";
-import I18n from "../../../common/languages";
 
 export default function SuccessView(props) {
   useEffect(() => {});

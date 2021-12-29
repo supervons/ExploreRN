@@ -3,9 +3,8 @@
  * @author supervons
  * @date 2021/01/20
  */
-import React, { useEffect, useState } from "react";
-import { InteractionManager, ScrollView, Text, View } from "react-native";
-import Loading from "../../../common/loading";
+import React from "react";
+import { ScrollView } from "react-native";
 import ChartsComponent from "../../../components/charts/charts";
 import ChartsLiquidFill from "../../../components/charts/chartsLiquidfill";
 import ChartsExtension from "../../../components/charts/chartsExtension";
