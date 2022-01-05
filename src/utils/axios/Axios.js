@@ -60,33 +60,21 @@ class Axios {
 
   // get 请求
   GET(url, showLoading = true) {
-    if (!url) {
-      throw new Error("url is undefined");
-    }
     return get(commonHosts + url, showLoading);
   }
 
   // post 请求
   POST(url, params, showLoading) {
-    if (!url || !params || typeof params != "object") {
-      throw new Error(this.paramError);
-    }
     return post(commonHosts + url, params, "post", showLoading);
   }
 
   // put 请求
   PUT(url, params, showLoading) {
-    if (!url || !params || typeof params != "object") {
-      throw new Error(this.paramError);
-    }
     return post(commonHosts + url, params, "put", showLoading);
   }
 
   // post includes file
   POST_FILE(url, params, showLoading) {
-    if (!url || !params || typeof params != "object") {
-      throw new Error(this.paramError);
-    }
     return post(commonHosts + url, params, "post", showLoading, {
       headers: { "Content-Type": "multipart/form-data" },
     });
@@ -94,9 +82,6 @@ class Axios {
 
   // put includes file
   PUT_FILE(url, params, showLoading) {
-    if (!url || !params || typeof params != "object") {
-      throw new Error(this.paramError);
-    }
     return post(commonHosts + url, params, "put", showLoading, {
       headers: { "Content-Type": "multipart/form-data" },
     });
@@ -104,9 +89,6 @@ class Axios {
 
   // delete 请求
   DELETE(url, params, showLoading) {
-    if (!url || !params || typeof params != "object") {
-      throw new Error(this.paramError);
-    }
     return post(commonHosts + url, params, "delete", showLoading);
   }
 }
@@ -118,6 +100,9 @@ class Axios {
  * @returns {Promise<*>}
  */
 async function get(url, showLoading) {
+  if (!url) {
+    throw new Error("url is undefined");
+  }
   showLoading && Loading.show();
   try {
     let response = await instance.get(url).catch(resp => {
@@ -144,6 +129,9 @@ async function post(
     headers: { "Content-Type": "application/json" },
   },
 ) {
+  if (!url || !params || typeof params != "object") {
+    throw new Error(this.paramError);
+  }
   showLoading && Loading.show();
   try {
     let response = await instance[method](url, params, config).catch(resp => {
