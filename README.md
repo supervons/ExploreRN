@@ -11,7 +11,7 @@
 
 ### 下载（Android）
 #### Firim : http://d.firim.top/25th
-<img src="./preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
 
 ### 测试账号
 
@@ -60,22 +60,22 @@
 
 # 预览
 #### 动态tab-bar
-<img src="./preview/dynamic-tab.gif" alt="动态tab-bar" style="height: 200px;" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/dynamic-tab.gif" alt="动态tab-bar" style="height: 200px;" align="center"/>
 
 #### 骨架屏
-<img src="./preview/skeleton.gif" alt="骨架屏" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/skeleton.gif" alt="骨架屏" align="center"/>
 
 #### 组件可拖拽
-<img src="./preview/draggable.gif" alt="组件可拖拽" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/draggable.gif" alt="组件可拖拽" align="center"/>
 
 #### I18国际化
-<img src="./preview/zh-setting.png" alt="中文" align="center"/><img src="./preview/en-setting.png" alt="英文" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/zh-setting.png" alt="中文" align="center"/><img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/en-setting.png" alt="英文" align="center"/>
 
 #### 主题换肤
-<img src="./preview/change-theme.gif" alt="主题换肤" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/change-theme.gif" alt="主题换肤" align="center"/>
 
 #### 莫兰迪色卡
-<img src="./preview/morandi.png" alt="莫兰迪色卡" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/morandi.png" alt="莫兰迪色卡" align="center"/>
 
 # 项目结构
 

@@ -11,7 +11,7 @@
 
 ### Download（Android）
 #### Firim : http://d.firim.top/25th
-<img src="./preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
 
 ### Test account
 
@@ -61,22 +61,22 @@
 
 # Preview
 #### Dynamic TAB-Bar
-<img src="./preview/dynamic-tab.gif" alt="DynamicTAB-Bar" style="height: 200px;" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/dynamic-tab.gif" alt="DynamicTAB-Bar" style="height: 200px;" align="center"/>
 
 #### Skeleton
-<img src="./preview/skeleton.gif" alt="Skeleton" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/skeleton.gif" alt="Skeleton" align="center"/>
 
 #### Draggable
-<img src="./preview/draggable.gif" alt="Draggable" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/draggable.gif" alt="Draggable" align="center"/>
 
 #### I18
-<img src="./preview/zh-setting.png" alt="中文" align="center"/> <img src="./preview/en-setting.png" alt="英文" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/zh-setting.png" alt="中文" align="center"/> <img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/en-setting.png" alt="英文" align="center"/>
 
 #### Theme
-<img src="./preview/change-theme.gif" alt="Theme" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/change-theme.gif" alt="Theme" align="center"/>
 
 #### Morandi-Color
-<img src="./preview/morandi.png" alt="Morandi-Color" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/morandi.png" alt="Morandi-Color" align="center"/>
 
 # Project Structure
 
