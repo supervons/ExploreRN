@@ -5,7 +5,7 @@
  * @date 2021/05/29
  */
 import React from "react";
-import { View, Dimensions, StyleSheet } from "react-native";
+import { View, Dimensions } from "react-native";
 import Draggable from "react-native-draggable";
 
 const { height } = Dimensions.get("window");
@@ -26,12 +26,3 @@ export default function DraggablePage() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  ballStyle: {
-    borderRadius: 28,
-    height: 56,
-    width: 56,
-    backgroundColor: "black",
-  },
-});

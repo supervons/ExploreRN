@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Text, View } from "react-native";
 import LottieView from "lottie-react-native";
 import { Button } from "react-native-elements";
 
 export default function SuccessView(props) {
-  useEffect(() => {});
   return (
     <View style={{ flex: 1 }}>
       <View style={{ height: 300 }}>
