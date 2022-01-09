@@ -2,7 +2,6 @@ import Axios from "../utils/axios/Axios";
 
 /**
  * 用户登录
- * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
 const userLogin = params => {
@@ -11,7 +10,6 @@ const userLogin = params => {
 
 /**
  * 修改用户信息 目前支持姓名，手机号及地址
- * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
 const updateUserInfo = params => {
@@ -20,7 +18,6 @@ const updateUserInfo = params => {
 
 /**
  * 修改密码
- * @param params {loginId, passWord}
  * @returns {Promise<any | never>}
  */
 const updatePassword = params => {

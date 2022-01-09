@@ -3,7 +3,6 @@ import Toast from "../components/toast";
 
 /**
  * 新闻列表接口
- * @param params {pageNo, itemNo}
  * @returns {Promise<any | never>}
  */
 const getNewsList = params => {
