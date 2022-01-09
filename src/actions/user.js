@@ -1,5 +1,4 @@
 import Axios from "../utils/axios/Axios";
-import Toast from "../components/toast";
 
 /**
  * 用户登录
@@ -7,14 +6,7 @@ import Toast from "../components/toast";
  * @returns {Promise<any | never>}
  */
 const userLogin = params => {
-  return Axios.POST("/api/v1/token", params)
-    .then(resp => {
-      return Promise.resolve(resp);
-    })
-    .catch(resp => {
-      Toast.showToast(resp);
-      return Promise.reject(resp);
-    });
+  return Axios.POST("/api/v1/token", params);
 };
 
 /**
@@ -23,14 +15,7 @@ const userLogin = params => {
  * @returns {Promise<any | never>}
  */
 const updateUserInfo = params => {
-  return Axios.POST("/user/updateUser", params)
-    .then(resp => {
-      return Promise.resolve(resp);
-    })
-    .catch(resp => {
-      Toast.showToast(resp);
-      return Promise.reject(resp);
-    });
+  return Axios.POST("/user/updateUser", params);
 };
 
 /**
@@ -39,13 +24,7 @@ const updateUserInfo = params => {
  * @returns {Promise<any | never>}
  */
 const updatePassword = params => {
-  return Axios.PUT(`/api/v1/user/password/${params.id}`, params)
-    .then(resp => {
-      return Promise.resolve(resp);
-    })
-    .catch(resp => {
-      return Promise.reject(resp);
-    });
+  return Axios.PUT(`/api/v1/user/password/${params.id}`, params);
 };
 
 module.exports = {

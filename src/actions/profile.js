@@ -7,14 +7,7 @@ import Toast from "../components/toast";
  * @returns {Promise<any | never>}
  */
 const getProfile = userId => {
-  return Axios.GET(`/api/v1/profile/${userId}`, false)
-    .then(resp => {
-      return Promise.resolve(resp);
-    })
-    .catch(resp => {
-      Toast.showToast(resp);
-      return Promise.reject(resp);
-    });
+  return Axios.GET(`/api/v1/profile/${userId}`, false);
 };
 
 /**
@@ -23,14 +16,7 @@ const getProfile = userId => {
  * @returns {Promise<any | never>}
  */
 const updateProfile = params => {
-  return Axios.PUT_FILE(`/api/v1/profile`, params, false)
-    .then(resp => {
-      return Promise.resolve(resp);
-    })
-    .catch(resp => {
-      Toast.showToast(resp);
-      return Promise.reject(resp);
-    });
+  return Axios.PUT_FILE(`/api/v1/profile`, params, false);
 };
 
 module.exports = {
