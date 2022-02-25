@@ -40,6 +40,7 @@
     "react-native-echarts-pro": "^1.7.5",
     "react-native-elements": "3.1.0",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-adaptive-utils": "0.0.1",
     "react-native-image-crop-picker": "^0.36.0",
     "react-native-keyboard-aware-scroll-view": "github:APSL/react-native-keyboard-aware-scroll-view#pull/501/head",
     "react-native-linear-gradient": "^2.5.6",
