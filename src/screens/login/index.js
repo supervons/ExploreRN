@@ -8,6 +8,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+import { debounce } from "react-native-adaptive-utils";
 import {
   View,
   Text,
@@ -20,7 +21,6 @@ import { useNavigation } from "@react-navigation/core";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import md5 from "md5";
-import { debounce } from "../../utils/commonFun";
 import { getProfile } from "../../actions/profile";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import Toast from "../../components/toast";
