@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from "react-native";
 import RNEChartsLiquidFill from "react-native-echarts-liquidfill";
-import RNEChartsPro from "./chartsExtension";
 
 /**
  * @desc liquidfill demo
