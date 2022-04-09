@@ -10,15 +10,15 @@
  * @flow
  */
 import React, { useEffect } from "react";
-import { HomeStackScreen } from "./src/routers/index";
-import { StatusBar, BackHandler } from "react-native";
-import Loading from "./src/common/loading";
 import { Provider } from "react-redux";
-import configureStore from "./src/redux/store/store";
+import { StatusBar, BackHandler } from "react-native";
 import { PersistGate } from "redux-persist/integration/react";
 import { RootSiblingParent } from "react-native-root-siblings";
-import Toast from "./src/components/toast";
-import I18n from "./src/common/languages";
+import { HomeStackScreen } from "~/routers/index";
+import Loading from "~/common/loading";
+import configureStore from "~/redux/store/store";
+import Toast from "~/components/toast";
+import I18n from "~/common/languages";
 
 // 引入 redux 及 redux-persist 配置后的变量供使用
 const { store, persist } = configureStore();
