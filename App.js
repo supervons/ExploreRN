@@ -11,7 +11,7 @@
  */
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
-import { StatusBar, BackHandler } from "react-native";
+import { StatusBar, BackHandler, Platform } from "react-native";
 import { PersistGate } from "redux-persist/integration/react";
 import { RootSiblingParent } from "react-native-root-siblings";
 import { HomeStackScreen } from "~/routers/index";
