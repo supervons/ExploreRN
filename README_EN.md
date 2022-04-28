@@ -51,7 +51,7 @@
 
 # TODO LIST
 
-- [ ] Upgrade to new version 0.67.3
+- [ ] Upgrade to new version 0.68
 - [ ] Multiple Bundle Support
 - [ ] Typescript
 - [ ] Retrieve password by e-mail.
