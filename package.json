@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "linkadb": "adb kill-server && adb server && adb shell",
-    "linkadbwin": "adb connect 127.0.0.1:7555"
+    "win11": "adb connect 127.0.0.1:7555"
   },
   "dependencies": {
     "@ant-design/react-native": "^4.2.0",
