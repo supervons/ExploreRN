@@ -10,7 +10,7 @@
     Current RN version: 0.66.4
 
 ### Download（Android）
-#### Firim : http://d.firim.top/25th
+#### Firim : http://d.maps9.com/25th
 <img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/download-apk.png" alt="download" style="height: 200px;" align="center"/>
 
 ### Test account
