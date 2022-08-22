@@ -11,7 +11,7 @@
 
 ### 下载（Android）
 #### Firim : http://d.maps9.com/25th
-<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.0/preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
+<img src="https://cdn.jsdelivr.net/gh/supervons/ExploreRN@2.0.1/preview/download-apk.png" alt="下载地址" style="height: 200px;" align="center"/>
 
 ### 测试账号
 
