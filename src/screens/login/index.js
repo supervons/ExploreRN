@@ -7,7 +7,6 @@
  */
 import React, { useState, useEffect, useRef } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import { debounce } from "react-native-adaptive-utils";
 import {
   View,
@@ -138,18 +137,17 @@ export default function Login(props) {
           onChangeText={text => setLoginId(text)}
           value={loginId}
         />
-        <SecurityKeyboardInput
+        <TextInput
           keyName={"password"}
+          style={styles.userNameStyle}
           keyboardHeader={() => {
             return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
           }}
-          style={styles.passwordStyle}
           secureTextEntry={true}
           random={true}
           valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
           secureTextStyle={{ left: 12, fontSize: 10 }}
           cursorStyle={{ left: 8 }}
-          keyboardType={"string"}
           placeholder={I18n.t("Login.password")}
           placeholderTextColor={"#B1B1B2"}
           onChangeText={text => setPassWord(text)}

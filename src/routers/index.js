@@ -41,15 +41,15 @@ export function HomeStackScreen() {
           options={{ header: () => null }}
           component={Login}
         />
-        <HomeStack.Screen name={"Register"} component={Register} />
-        <HomeStack.Screen
-          name={"SuccessView"}
-          options={{ header: () => null }}
-          component={SuccessView}
-        />
-        {HomeRouter}
-        {MyRouter}
-        {CommonRouter}
+        {/*<HomeStack.Screen name={"Register"} component={Register} />*/}
+        {/*<HomeStack.Screen*/}
+        {/*  name={"SuccessView"}*/}
+        {/*  options={{ header: () => null }}*/}
+        {/*  component={SuccessView}*/}
+        {/*/>*/}
+        {/*{HomeRouter}*/}
+        {/*{MyRouter}*/}
+        {/*{CommonRouter}*/}
       </HomeStack.Navigator>
     </NavigationContainer>
   );

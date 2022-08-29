@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import {
   Text,
   View,
-  ViewPropTypes,
   ScrollView,
   Dimensions,
   TouchableOpacity,
