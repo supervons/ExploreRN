@@ -32,7 +32,7 @@ export const data = [
     icon: "search",
     color: "#965454",
     name: I18n.t("Home.jdsearch"),
-    routeName: "jdSearchDemo",
+    routeName: "JdSearchDemo",
   },
   {
     key: "skeleton",

@@ -11,7 +11,7 @@ import ChartsExtension from "../../../components/charts/chartsExtension";
 import ModuleHeadTitle from "../../../components/ModuleHeadTitle";
 import I18n from "../../../common/languages";
 
-export default function eChartsDemoPage() {
+export default function EChartsDemoPage() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
