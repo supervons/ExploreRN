@@ -150,14 +150,14 @@ const routeInfo = [
     },
     component: DraggablePage,
   },
-  // TODO-Crash
-  // {
-  //   name: "LottiePage",
-  //   options: {
-  //     title: I18n.t("Route.lottie"),
-  //   },
-  //   component: LottiePage,
-  // },
+  // TODO-Multiple-Crash-iOS
+  {
+    name: "LottiePage",
+    options: {
+      title: I18n.t("Route.lottie"),
+    },
+    component: LottiePage,
+  },
 ];
 const pageViewRouter = [];
 routeInfo.map(res => {
