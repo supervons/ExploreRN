@@ -12,7 +12,8 @@ export default function Button(props) {
     <RNEButton
       {...props}
       icon={{
-        name: "done",
+        //TODO -icon
+        // name: "done",
         color: "white",
         ...props.icon,
       }}

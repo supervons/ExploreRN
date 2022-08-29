@@ -34,23 +34,23 @@ const tabBarInfo = [
     name: "MainPage",
     component: MainPage,
     tabBarLabel: I18n.t("Route.home"),
-    selectIcon: <AnimatedIcon iconName={"home"} />,
-    defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
+    // selectIcon: <AnimatedIcon iconName={"home"} />,
+    // defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
   },
-  {
-    name: "Explore",
-    component: Explore,
-    tabBarLabel: I18n.t("Route.explore"),
-    selectIcon: <AnimatedIcon iconName={"explore"} />,
-    defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
-  },
-  {
-    name: "My",
-    component: My,
-    tabBarLabel: I18n.t("Route.my"),
-    selectIcon: <AnimatedIcon iconName={"person"} />,
-    defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
-  },
+  // {
+  //   name: "Explore",
+  //   component: Explore,
+  //   tabBarLabel: I18n.t("Route.explore"),
+  //   selectIcon: <AnimatedIcon iconName={"explore"} />,
+  //   defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
+  // },
+  // {
+  //   name: "My",
+  //   component: My,
+  //   tabBarLabel: I18n.t("Route.my"),
+  //   selectIcon: <AnimatedIcon iconName={"person"} />,
+  //   defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
+  // },
 ];
 /**
  * 循环渲染tabBar
@@ -78,10 +78,10 @@ const APP = () => (
             header: () => (
               <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />
             ),
-            tabBarLabel: res.tabBarLabel,
-            tabBarIcon: ({ focused }) => {
-              return focused ? res.selectIcon : res.defaultIcon;
-            },
+            // tabBarLabel: res.tabBarLabel,
+            // tabBarIcon: ({ focused }) => {
+            //   return focused ? res.selectIcon : res.defaultIcon;
+            // },
           }}
         />
       );
@@ -100,14 +100,14 @@ The color of this color series looks unassuming, not bright, but it has a sense 
  * 其中，Home为带tabBar的主页面
  */
 const routeInfo = [
-  {
-    name: "APP",
-    options: {
-      title: "",
-      header: () => <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />,
-    },
-    component: APP,
-  },
+  // {
+  //   name: "APP",
+  //   options: {
+  //     title: "",
+  //     header: () => <SafeAreaView style={{ backgroundColor: "#9DD6EB77" }} />,
+  //   },
+  //   component: APP,
+  // },
   {
     name: "eChartsDemoPage",
     options: { title: I18n.t("Route.echartsDemo") },
@@ -127,17 +127,18 @@ const routeInfo = [
       title: I18n.t("Route.morandi"),
       headerRight: () => (
         <View style={{ marginRight: 10 }}>
-          <Icon
-            name="question"
-            type="evilicon"
-            color="#ffffff"
-            size={35}
-            onPress={() =>
-              Alert.alert("Morandi Colors", tips, [
-                { text: "ok, i know and i like it!" },
-              ])
-            }
-          />
+          {/*TODO-Replace-image*/}
+          {/*<Icon*/}
+          {/*  name="question"*/}
+          {/*  type="evilicon"*/}
+          {/*  color="#ffffff"*/}
+          {/*  size={35}*/}
+          {/*  onPress={() =>*/}
+          {/*    Alert.alert("Morandi Colors", tips, [*/}
+          {/*      { text: "ok, i know and i like it!" },*/}
+          {/*    ])*/}
+          {/*  }*/}
+          {/*/>*/}
         </View>
       ),
     },
@@ -150,13 +151,14 @@ const routeInfo = [
     },
     component: DraggablePage,
   },
-  {
-    name: "LottiePage",
-    options: {
-      title: I18n.t("Route.lottie"),
-    },
-    component: LottiePage,
-  },
+  // TODO-Crash
+  // {
+  //   name: "LottiePage",
+  //   options: {
+  //     title: I18n.t("Route.lottie"),
+  //   },
+  //   component: LottiePage,
+  // },
 ];
 const pageViewRouter = [];
 routeInfo.map(res => {

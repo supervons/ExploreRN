@@ -16,6 +16,7 @@ import { MyRouter } from "./myRouter";
 import { CommonRouter } from "./commonRouter";
 import { NavigationContainer } from "@react-navigation/native";
 import { useSelector } from "react-redux";
+import MainPage from "~/screens/home/MainPage";
 
 const HomeStack = createStackNavigator();
 export function HomeStackScreen() {
@@ -42,13 +43,18 @@ export function HomeStackScreen() {
           component={Login}
         />
         <HomeStack.Screen name={"Register"} component={Register} />
-        {/*<HomeStack.Screen*/}
-        {/*  name={"SuccessView"}*/}
-        {/*  options={{ header: () => null }}*/}
-        {/*  component={SuccessView}*/}
-        {/*/>*/}
-        {/*{HomeRouter}*/}
-        {/*{MyRouter}*/}
+        <HomeStack.Screen
+          name={"SuccessView"}
+          options={{ header: () => null }}
+          component={SuccessView}
+        />
+          <HomeStack.Screen
+            name={"APP"}
+            options={{ header: () => null }}
+            component={MainPage}
+          />
+        {HomeRouter}
+        {MyRouter}
         {/*{CommonRouter}*/}
       </HomeStack.Navigator>
     </NavigationContainer>

@@ -12,13 +12,14 @@ export const data = [
     name: I18n.t("Home.charts"),
     routeName: "eChartsDemoPage",
   },
-  {
-    key: "scanner",
-    icon: "camera",
-    color: "#7B8B6F",
-    name: I18n.t("Home.scanner"),
-    routeName: "Scanner",
-  },
+  // TODO - camera
+  // {
+  //   key: "scanner",
+  //   icon: "camera",
+  //   color: "#7B8B6F",
+  //   name: I18n.t("Home.scanner"),
+  //   routeName: "Scanner",
+  // },
   {
     key: "gallery",
     icon: "image",
