@@ -9,7 +9,8 @@ import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import md5 from "md5";
 import I18n from "../../common/languages";
-import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
+// TODO- keyboard upgrade
+// import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import {
   getUniqueTicket,
   sendEmailCode,
@@ -152,19 +153,20 @@ export default function Register() {
         />
       </View>
       {uIdView()}
-      <SecurityKeyboardInput
+      <TextInput
         onFocus={() => useNameInputRef.current.blur()}
         keyName={"registerPassword"}
         keyboardHeader={() => {
           return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
         }}
-        style={styles.passwordStyle}
+        // style={styles.passwordStyle}
+        style={styles.userNameStyle}
         secureTextEntry={true}
         random={true}
         valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
         secureTextStyle={{ left: 12, fontSize: 10 }}
         cursorStyle={{ left: 8 }}
-        keyboardType={"string"}
+        // keyboardType={"string"}
         placeholder={I18n.t("Register.password")}
         placeholderTextColor={"#B1B1B2"}
         onChangeText={password => {
