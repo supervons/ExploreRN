@@ -1,4 +1,4 @@
-import fReact, { useRef } from "react";
+import React, { useRef } from "react";
 import { View, Button } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 export default function ChartsComponent() {
