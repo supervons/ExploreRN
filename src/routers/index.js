@@ -50,7 +50,7 @@ export function HomeStackScreen() {
         />
         {HomeRouter}
         {MyRouter}
-        {/*{CommonRouter}*/}
+        {CommonRouter}
       </HomeStack.Navigator>
     </NavigationContainer>
   );
