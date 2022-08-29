@@ -7,7 +7,7 @@
  * @date 2021/04/17
  */
 import { useEffect } from "react";
-import { SELECT_TAB_BAR } from "../redux/action/hookActionTypes";
+import { SELECT_TAB_BAR } from "~/redux/action/hookActionTypes";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
 

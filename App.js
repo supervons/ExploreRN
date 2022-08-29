@@ -43,20 +43,20 @@ export default function App() {
   }
 
   return (
-      // 外层需 Provider 包裹， PersistGate 中的 loading 需为一个组件，否则在启动页后会有短暂黑屏
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persist}>
-          <StatusBar
-              animated={false}
-              backgroundColor={"transparent"}
-              translucent={true}
-              barStyle={"dark-content"}
-          />
-          <RootSiblingParent>
-            <HomeStackScreen />
-          </RootSiblingParent>
-          <Loading />
-        </PersistGate>
-      </Provider>
+    // 外层需 Provider 包裹， PersistGate 中的 loading 需为一个组件，否则在启动页后会有短暂黑屏
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persist}>
+        <StatusBar
+          animated={false}
+          backgroundColor={"transparent"}
+          translucent={true}
+          barStyle={"dark-content"}
+        />
+        <RootSiblingParent>
+          <HomeStackScreen />
+        </RootSiblingParent>
+        <Loading />
+      </PersistGate>
+    </Provider>
   );
 }
