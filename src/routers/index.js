@@ -48,11 +48,6 @@ export function HomeStackScreen() {
           options={{ header: () => null }}
           component={SuccessView}
         />
-          <HomeStack.Screen
-            name={"APP"}
-            options={{ header: () => null }}
-            component={MainPage}
-          />
         {HomeRouter}
         {MyRouter}
         {/*{CommonRouter}*/}

@@ -98,13 +98,12 @@ export default function MainPage() {
                 {res.image ? (
                   <Image source={res.image} style={{ height: 48, width: 48 }} />
                 ) : (
-                  <Image source={res.image} style={{ height: 48, width: 48 }} />
-                  // <Icon
-                  //   type="ion-icon"
-                  //   size={48}
-                  //   name={res.icon}
-                  //   color={res.color}
-                  // />
+                  <Icon
+                    type="ion-icon"
+                    size={48}
+                    name={res.icon}
+                    color={res.color}
+                  />
                 )}
                 <Text style={{ color: res.color }}>{res.name}</Text>
               </View>
