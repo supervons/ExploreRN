@@ -7,7 +7,7 @@
 #### Welcome to join us:
     QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.66.4
+    Current RN version: 0.69.0
 
 ### Download（Android）
 #### Firim : http://d.firim.top/25th
