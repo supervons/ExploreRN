@@ -66,11 +66,12 @@ const routeInfo = [
     options: { title: I18n.t("Route.changePassword") },
     component: UpdatePassword,
   },
-  {
-    name: "Scanner",
-    options: { title: I18n.t("Route.scanner"), header: () => null },
-    component: Scanner,
-  },
+  // TODO-redesign
+  // {
+  //   name: "Scanner",
+  //   options: { title: I18n.t("Route.scanner"), header: () => null },
+  //   component: Scanner,
+  // },
   {
     name: "ScannerResult",
     options: { title: "扫描结果" },
