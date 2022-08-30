@@ -8,8 +8,8 @@ import React from "react";
 import { SafeAreaView, View, Alert } from "react-native";
 import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import eChartsDemoPage from "../screens/home/eChartsDemo/eChartsDemoPage";
-import jdSearchDemo from "../screens/home/jdSearchDemo/jdSearchDemo";
+import EChartsDemoPage from "../screens/home/eChartsDemo/EChartsDemoPage";
+import JdSearchDemo from "../screens/home/jdSearchDemo/JdSearchDemo";
 import MorandiPage from "../screens/home/morandi/MorandiPage";
 import DraggablePage from "../screens/home/drag/DraggablePage";
 import LottiePage from "../screens/home/Lottie/index";
@@ -111,15 +111,15 @@ const routeInfo = [
   {
     name: "eChartsDemoPage",
     options: { title: I18n.t("Route.echartsDemo") },
-    component: eChartsDemoPage,
+    component: EChartsDemoPage,
   },
   {
-    name: "jdSearchDemo",
+    name: "JdSearchDemo",
     options: {
       title: I18n.t("Route.echartsDemo"),
       header: () => <SafeAreaView style={{ backgroundColor: "red" }} />,
     },
-    component: jdSearchDemo,
+    component: JdSearchDemo,
   },
   {
     name: "MorandiPage",
@@ -150,6 +150,7 @@ const routeInfo = [
     },
     component: DraggablePage,
   },
+  // TODO-Multiple-Crash-iOS
   {
     name: "LottiePage",
     options: {

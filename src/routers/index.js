@@ -16,6 +16,7 @@ import { MyRouter } from "./myRouter";
 import { CommonRouter } from "./commonRouter";
 import { NavigationContainer } from "@react-navigation/native";
 import { useSelector } from "react-redux";
+import MainPage from "~/screens/home/MainPage";
 
 const HomeStack = createStackNavigator();
 export function HomeStackScreen() {

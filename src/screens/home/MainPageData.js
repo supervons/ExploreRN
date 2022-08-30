@@ -12,6 +12,7 @@ export const data = [
     name: I18n.t("Home.charts"),
     routeName: "eChartsDemoPage",
   },
+  // TODO - camera
   {
     key: "scanner",
     icon: "camera",
@@ -31,7 +32,7 @@ export const data = [
     icon: "search",
     color: "#965454",
     name: I18n.t("Home.jdsearch"),
-    routeName: "jdSearchDemo",
+    routeName: "JdSearchDemo",
   },
   {
     key: "skeleton",

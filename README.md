@@ -7,7 +7,7 @@
 ### 欢迎加入我们：
     QQ群：783071253
     邮箱：supervons@sina.com
-    当前RN版本：0.66.4
+    当前RN版本：0.69.5
 
 ### 下载（Android）
 #### Firim : http://d.maps9.com/25th
@@ -48,10 +48,10 @@
 - [x] 使用新KOA搭建后端
 - [x] 更好的动画Lottie
 - [x] 邮箱注册
+- [x] 更新到最新版本0.69.5
 
 # 待开发
 
-- [ ] 更新到最新版本0.69
 - [ ] 多bundle支持
 - [ ] Typescript
 - [ ] 邮箱找回密码
