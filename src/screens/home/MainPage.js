@@ -61,7 +61,8 @@ export default function MainPage() {
       ImagePicker.openPicker({
         width: 300,
         height: 400,
-        cropping: true,
+        multiple: true,
+        maxFiles: 50,
       }).then(image => {
         console.log(image);
       });
