@@ -121,6 +121,11 @@ export default function ChartsComponent() {
         paddingTop: 25,
       }}>
       <RNEChartsPro
+        eventActions={{
+          finished:()=>{
+            alert(1)
+          }
+        }}
         ref={echartsRef}
         webViewSettings={{
           startInLoadingState: true,
