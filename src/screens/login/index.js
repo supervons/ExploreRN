@@ -163,7 +163,7 @@ export default function Login(props) {
             {operationConfig.map(res => {
               return (
                 <TouchableOpacity
-                  key={res.name}
+                  key={res.key}
                   onPress={() =>
                     res.key === "Register" && navigation.push(res.key)
                   }>
