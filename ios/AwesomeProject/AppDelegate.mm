@@ -91,6 +91,12 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 #endif
 }
 
+- (void)applicationWillTerminate:(UIApplication*)application
+{
+// The listener APP was killed
+NSLog(@"程序被杀死，applicationWillTerminate");
+}
+
 #if RCT_NEW_ARCH_ENABLED
 
 #pragma mark - RCTCxxBridgeDelegate
