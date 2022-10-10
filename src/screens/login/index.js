@@ -23,7 +23,7 @@ import md5 from "md5";
 import { getProfile } from "../../actions/profile";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import Toast from "../../components/toast";
-import userAction from "../../actions/user";
+import { userLogin } from "../../actions/user";
 import RotateImage from "../../components/RotateImage";
 import I18n from "../../common/languages";
 // 用户 token
@@ -75,7 +75,7 @@ export default function Login(props) {
       uId: loginId,
       password: md5(passWord),
     };
-    userAction.userLogin(params).then(resp => {
+    userLogin(params).then(resp => {
       const token = `Bearer ${resp.token}`;
       dispatch({
         type: USER_TOKEN,

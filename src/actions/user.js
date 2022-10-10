@@ -24,8 +24,4 @@ const updatePassword = params => {
   return Axios.PUT(`/api/v1/user/password/${params.id}`, params);
 };
 
-module.exports = {
-  userLogin,
-  updateUserInfo,
-  updatePassword,
-};
+export { userLogin, updateUserInfo, updatePassword };

@@ -18,7 +18,4 @@ const updateProfile = params => {
   return Axios.PUT_FILE(`/api/v1/profile`, params, false);
 };
 
-module.exports = {
-  getProfile,
-  updateProfile,
-};
+export { getProfile, updateProfile };

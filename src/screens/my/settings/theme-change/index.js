@@ -8,7 +8,7 @@ import Theme from "../../../../styles/theme";
 import Button from "../../../../common/button";
 import I18n from "../../../../common/languages";
 import Toast from "../../../../components/toast";
-import ProfileAction from "../../../../actions/profile";
+import { updateProfile } from "../../../../actions/profile";
 
 const colorList = [
   {
@@ -71,7 +71,7 @@ export default function ThemeChange(props) {
             formData.append("id", tempProfileInfo.id);
             formData.append("userId", global.userInfo.uId);
             formData.append("theme", item.value);
-            ProfileAction.updateProfile(formData)
+            updateProfile(formData)
               .then(res => {})
               .catch(res => {
                 Toast.showToast("update theme failed!" + res.msg);

@@ -8,6 +8,4 @@ const getNewsList = params => {
   return Axios.POST("/news/queryNewsInfo", params);
 };
 
-module.exports = {
-  getNewsList,
-};
+export { getNewsList };

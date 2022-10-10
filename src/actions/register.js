@@ -18,8 +18,4 @@ const registerByEmailCode = params => {
   return Axios.POST(`/api/v1/user`, params);
 };
 
-module.exports = {
-  getUniqueTicket,
-  sendEmailCode,
-  registerByEmailCode,
-};
+export { getUniqueTicket, sendEmailCode, registerByEmailCode };

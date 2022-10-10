@@ -11,7 +11,7 @@ import { PROFILE_INFO } from "../../../redux/action/settingActionTypes";
 import Theme from "../../../styles/theme";
 import I18n from "../../../common/languages";
 import Toast from "../../../components/toast";
-import ProfileAction from "../../../actions/profile";
+import { updateProfile } from "../../../actions/profile";
 import commonStyles from "../../../styles/commonStyles";
 
 export default function BaseInfo() {
@@ -93,7 +93,7 @@ export default function BaseInfo() {
         formData.append("id", profileInfo.id);
       }
       formData.append("userId", global.userInfo.uId);
-      ProfileAction.updateProfile(formData)
+      updateProfile(formData)
         .then(res => {
           dispatch({
             type: PROFILE_INFO,

@@ -10,7 +10,7 @@ import Theme from "../../../../styles/theme";
 import commonStyles from "../../../../styles/commonStyles";
 import Toast from "../../../../components/toast";
 import Button from "../../../../common/button";
-import userAction from "../../../../actions/user";
+import { updatePassword as updatePasswordAction } from "../../../../actions/user";
 import I18n from "../../../../common/languages";
 
 export default function UpdatePassword(props) {
@@ -61,7 +61,7 @@ export default function UpdatePassword(props) {
             oldPassword: md5(userInfo.oldPassword),
             newPassword: md5(userInfo.newPassword),
           };
-          userAction.updatePassword(params).then(resp => {
+          updatePasswordAction(params).then(resp => {
             Toast.showToast("update password success!");
             props.navigation.pop(2);
           });
