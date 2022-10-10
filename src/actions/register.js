@@ -1,5 +1,4 @@
 import Axios from "../utils/axios/Axios";
-import Toast from "../components/toast";
 
 /**
  * Verify uId or userEmail whether exists.

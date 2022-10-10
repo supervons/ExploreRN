@@ -1,5 +1,4 @@
 import Axios from "../utils/axios/Axios";
-import Toast from "../components/toast";
 
 /**
  * 新闻列表接口

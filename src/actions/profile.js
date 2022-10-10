@@ -1,5 +1,4 @@
 import Axios from "../utils/axios/Axios";
-import Toast from "../components/toast";
 
 /**
  * 获取用户配置信息
