@@ -122,9 +122,9 @@ export default function ChartsComponent() {
       }}>
       <RNEChartsPro
         eventActions={{
-          finished:()=>{
-            alert(1)
-          }
+          finished: () => {
+            alert(1);
+          },
         }}
         ref={echartsRef}
         webViewSettings={{

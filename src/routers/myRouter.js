@@ -8,7 +8,6 @@ import ThemeChange from "../screens/my/settings/theme-change";
 import BaseInfo from "../screens/my/baseInfo";
 import SystemIntroduction from "../screens/systemIntroduction";
 import UpdatePassword from "../screens/my/settings/update-password";
-import Scanner from "../screens/scanner/scanner";
 import ScannerResult from "../screens/scanner/scannerResult";
 import I18n from "../common/languages";
 

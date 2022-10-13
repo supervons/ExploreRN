@@ -6,7 +6,7 @@
  * In the required interface call Loading.show () to display, Loading.hide () to hide
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import LottieView from "lottie-react-native";
 import Theme from "../styles/theme";
 

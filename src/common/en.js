@@ -26,7 +26,7 @@ export default {
     },
   },
   Lottie: {
-    tips: `Click to play or pause`,
+    tips: "Click to play or pause",
   },
   Login: {
     userName: "Type your username",

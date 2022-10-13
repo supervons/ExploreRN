@@ -26,7 +26,7 @@ export default {
     },
   },
   Lottie: {
-    tips: `点击可以暂停/启动`,
+    tips: "点击可以暂停/启动",
   },
   Login: {
     userName: "在此输入用户名...",
