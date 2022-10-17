@@ -8,6 +8,7 @@ import { InteractionManager, ScrollView } from "react-native";
 import ChartsComponent from "../../../components/charts/charts";
 import ChartsLiquidFill from "../../../components/charts/chartsLiquidfill";
 import ChartsExtension from "../../../components/charts/chartsExtension";
+import MapCharts from "../../../components/charts/mapCharts";
 import ModuleHeadTitle from "../../../components/ModuleHeadTitle";
 import I18n from "../../../common/languages";
 
@@ -24,6 +25,8 @@ export default function EChartsDemoPage() {
         <>
           <ModuleHeadTitle title={I18n.t("Home.eCharts.chartsDemo")} />
           <ChartsComponent />
+          <ModuleHeadTitle title={I18n.t("Home.eCharts.mapDemo")} />
+          <MapCharts />
           <ModuleHeadTitle title={I18n.t("Home.eCharts.extensionDemo")} />
           <ChartsExtension />
           <ModuleHeadTitle title={I18n.t("Home.eCharts.liquidDemo")} />

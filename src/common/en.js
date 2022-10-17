@@ -18,6 +18,7 @@ export default {
     device: "%{counts} devices",
     eCharts: {
       chartsDemo: "Echarts-Demo",
+      mapDemo: "Map-Demo",
       liquidDemo: "Liquid-Demo",
       extensionDemo: "Extension-Demo",
     },

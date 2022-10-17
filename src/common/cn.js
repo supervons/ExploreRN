@@ -18,6 +18,7 @@ export default {
     device: "%{counts} 个设备",
     eCharts: {
       chartsDemo: "Echarts 示例",
+      mapDemo: "地图示例",
       liquidDemo: "水球图示例",
       extensionDemo: "扩展示例",
     },
