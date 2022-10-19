@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 
-export default function MapCharts() {
+export default function MapCharts(props) {
   const mapData = {
     visualMap: {
       show: true,
@@ -66,9 +66,13 @@ export default function MapCharts() {
   };
 
   return (
-    <View style={{ height: 300 }}>
+    <View
+      style={{ height: 288 }}
+      onStartShouldSetResponderCapture={() => {
+        props.handleStop(false);
+      }}>
       <RNEChartsPro
-        height={250}
+        height={288}
         option={mapData}
         onPress={res => {
           alert(JSON.stringify(res));

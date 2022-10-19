@@ -123,7 +123,7 @@ export default function ChartsComponent() {
       <RNEChartsPro
         eventActions={{
           finished: () => {
-            alert(1);
+            console.log(1);
           },
         }}
         ref={echartsRef}
