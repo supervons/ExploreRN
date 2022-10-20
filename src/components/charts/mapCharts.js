@@ -66,14 +66,13 @@ export default function MapCharts(props) {
   };
 
   return (
-    <View
-      style={{ height: 288 }}
-      onStartShouldSetResponderCapture={() => {
-        props.handleStop(false);
-      }}>
+    <View style={{ height: 288 }}>
       <RNEChartsPro
         height={288}
         option={mapData}
+        webViewSettings={{
+          nestedScrollEnabled: true,
+        }}
         onPress={res => {
           alert(JSON.stringify(res));
         }}
