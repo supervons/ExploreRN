@@ -9,8 +9,8 @@ import { useSelector } from "react-redux";
  */
 export default function AnimatedIcon(props) {
   const { selectTabBar, profileInfo } = useSelector(state => ({
-    selectTabBar: state.HookReducer.selectTabBar,
-    profileInfo: state.SettingReducer.profileInfo,
+    selectTabBar: state?.HookReducer.selectTabBar,
+    profileInfo: state?.SettingReducer.profileInfo,
   }));
   useEffect(() => {
     if (props.iconName === selectTabBar) {

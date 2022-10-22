@@ -11,11 +11,11 @@ const getUniqueTicket = (userId, userEmail = undefined) => {
  * Send email to user.
  */
 const sendEmailCode = params => {
-  return Axios.POST(`/api/v1/email`, params);
+  return Axios.POST("/api/v1/email", params);
 };
 
 const registerByEmailCode = params => {
-  return Axios.POST(`/api/v1/user`, params);
+  return Axios.POST("/api/v1/user", params);
 };
 
 export { getUniqueTicket, sendEmailCode, registerByEmailCode };

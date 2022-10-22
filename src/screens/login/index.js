@@ -45,8 +45,8 @@ export default function Login(props) {
   ];
 
   const { userToken, userInfo } = useSelector(state => ({
-    userToken: state.UserReducer.userToken,
-    userInfo: state.UserReducer.userInfo,
+    userToken: state?.UserReducer.userToken,
+    userInfo: state?.UserReducer.userInfo,
   }));
 
   useEffect(() => {

@@ -45,7 +45,7 @@ const colorList = [
  * Update Hook by supervons on 2021/04/10.
  */
 export default function ThemeChange(props) {
-  const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
+  const profileInfo = useSelector(state => state?.SettingReducer.profileInfo);
   const dispatch = useDispatch();
   return (
     <View style={{ flex: 1, backgroundColor: Theme.commonBackColor }}>

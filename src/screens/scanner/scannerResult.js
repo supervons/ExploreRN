@@ -19,7 +19,7 @@ export default function Scanner(props) {
         <Image
           style={{ height: 300, width: 300 }}
           source={
-            props.route.params.imageUri == null
+            props.route.params.imageUri === null
               ? require("../../resource/image/avatar/logo.png")
               : { uri: props.route.params.imageUri }
           }

@@ -27,7 +27,7 @@ export default function LottiePage() {
   function loadingView() {
     return lottieAnimations.map(res => {
       return (
-        <View style={styles.lottieItemStyle}>
+        <View key={res.key} style={styles.lottieItemStyle}>
           <ShimmerPlaceholder shimmerStyle={{ width: 70, height: 70 }} />
         </View>
       );
@@ -41,7 +41,8 @@ export default function LottiePage() {
           ? lottieAnimations.map(res => {
               return (
                 <LottieItemView
-                  source={res}
+                  key={res.key}
+                  source={res.json}
                   lottieItemStyle={styles.lottieItemStyle}
                 />
               );
@@ -68,18 +69,54 @@ export default function LottiePage() {
 }
 
 const lottieAnimations = [
-  require("../../../resource/lottie/loading/loading0.json"),
-  require("../../../resource/lottie/loading/loading1.json"),
-  require("../../../resource/lottie/loading/loading2.json"),
-  require("../../../resource/lottie/loading/loading3.json"),
-  require("../../../resource/lottie/loading/loading4.json"),
-  require("../../../resource/lottie/loading/loading5.json"),
-  require("../../../resource/lottie/loading/loading6.json"),
-  require("../../../resource/lottie/loading/loading7.json"),
-  require("../../../resource/lottie/loading/loading8.json"),
-  require("../../../resource/lottie/loading/loading9.json"),
-  require("../../../resource/lottie/loading/loading10.json"),
-  require("../../../resource/lottie/loading/loading11.json"),
+  {
+    json: require("../../../resource/lottie/loading/loading0.json"),
+    key: "l0",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading1.json"),
+    key: "l1",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading2.json"),
+    key: "l2",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading3.json"),
+    key: "l3",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading4.json"),
+    key: "l4",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading5.json"),
+    key: "l5",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading6.json"),
+    key: "l6",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading7.json"),
+    key: "l7",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading8.json"),
+    key: "l8",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading9.json"),
+    key: "l9",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading10.json"),
+    key: "l10",
+  },
+  {
+    json: require("../../../resource/lottie/loading/loading11.json"),
+    key: "l11",
+  },
 ];
 
 const styles = StyleSheet.create({

@@ -35,8 +35,8 @@ export default function MyPage() {
   const dispatch = useDispatch();
   const [userAvatarUri, setUserAvatarUri] = useState("");
   const { userInfo, profileInfo } = useSelector(state => ({
-    userInfo: state.UserReducer.userInfo,
-    profileInfo: state.SettingReducer.profileInfo,
+    userInfo: state?.UserReducer.userInfo,
+    profileInfo: state?.SettingReducer.profileInfo,
   }));
 
   useEffect(() => {

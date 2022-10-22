@@ -15,7 +15,7 @@ const getProfile = userId => {
  * @returns {Promise<any | never>}
  */
 const updateProfile = params => {
-  return Axios.PUT_FILE(`/api/v1/profile`, params, false);
+  return Axios.PUT_FILE("/api/v1/profile", params, false);
 };
 
 export { getProfile, updateProfile };
