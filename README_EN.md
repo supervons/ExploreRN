@@ -58,6 +58,7 @@
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push
+- [ ] Upgrade to new version 0.70.4
 
 
 # Preview
