@@ -4,6 +4,9 @@ import RNEChartsPro from "react-native-echarts-pro";
 export default function ChartsComponent() {
   const echartsRef = new useRef(null);
   const pieOption = {
+    textStyle: {
+      fontFamily: "JY",
+    },
     tooltip: {
       trigger: "axis",
     },
@@ -69,6 +72,9 @@ export default function ChartsComponent() {
   function change() {
     echartsRef.current.setNewOption(
       {
+        textStyle: {
+          fontFamily: "JY",
+        },
         tooltip: {
           trigger: "axis",
         },
@@ -137,6 +143,7 @@ export default function ChartsComponent() {
             backgroundColor: "#fff",
           },
         }}
+        fontFamilyPath={`@font-face {font-family:"JY";src:url("file:///android_asset/fonts/JY.ttf");}`}
         onPress={res => alert(JSON.stringify(res))}
         legendSelectChanged={res => alert(res)}
         height={250}

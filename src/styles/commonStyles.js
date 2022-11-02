@@ -22,14 +22,15 @@ const commonStyles = StyleSheet.create({
     backgroundColor: "#97CAE5",
   },
   slide3: {
+    color: "red",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#92BBD9",
   },
   text: {
-    color: "#fff",
+    fontFamily: "JY",
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: "JY bold",
   },
 });
 
