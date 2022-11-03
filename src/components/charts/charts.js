@@ -1,11 +1,14 @@
 import React, { useRef } from "react";
 import { View, Button } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
+import FontCSS from "./TEST";
+import FontCSS2 from "./TEST2";
 export default function ChartsComponent() {
   const echartsRef = new useRef(null);
   const pieOption = {
     textStyle: {
-      fontFamily: "JY",
+      fontFamily: "TEST",
+      fontSize: 15,
     },
     tooltip: {
       trigger: "axis",
@@ -132,6 +135,10 @@ export default function ChartsComponent() {
             console.log(1);
           },
         }}
+        fontFamilies={[
+          { fontName: "TEST", fontFile: FontCSS },
+          { fontName: "TEST2", fontFile: FontCSS2 },
+        ]}
         ref={echartsRef}
         webViewSettings={{
           startInLoadingState: true,
@@ -143,7 +150,6 @@ export default function ChartsComponent() {
             backgroundColor: "#fff",
           },
         }}
-        fontFamilyPath={`@font-face {font-family:"JY";src:url("file:///android_asset/fonts/JY.ttf");}`}
         onPress={res => alert(JSON.stringify(res))}
         legendSelectChanged={res => alert(res)}
         height={250}
