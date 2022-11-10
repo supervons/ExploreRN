@@ -28,9 +28,7 @@ const commonStyles = StyleSheet.create({
     backgroundColor: "#92BBD9",
   },
   text: {
-    fontFamily: "JY",
     fontSize: 30,
-    fontWeight: "JY bold",
   },
 });
 
