@@ -42,6 +42,7 @@ export default function EChartsDemoPage() {
             <ModuleHeadTitle title={I18n.t("Home.eCharts.chartsDemo")} />
             <ChartsComponent />
             <ModuleHeadTitle title={I18n.t("Home.eCharts.mapDemo")} />
+            <MapCharts />
             <ModuleHeadTitle title={I18n.t("Home.eCharts.extensionDemo")} />
             <ChartsExtension />
             <ModuleHeadTitle title={I18n.t("Home.eCharts.liquidDemo")} />
