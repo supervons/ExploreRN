@@ -94,9 +94,9 @@ PODS:
   - fmt (6.2.1)
   - glog (0.3.5)
   - libevent (2.1.12)
-  - lottie-ios (3.4.2)
+  - lottie-ios (3.5.0)
   - lottie-react-native (5.1.4):
-    - lottie-ios (~> 3.4.0)
+    - lottie-ios (~> 3.5.0)
     - React-Core
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.06.28.00-v2):
@@ -316,7 +316,7 @@ PODS:
     - ReactCommon/turbomodule/core
   - react-native-viewpager (5.0.11):
     - React-Core
-  - react-native-webview (11.23.0):
+  - react-native-webview (11.23.1):
     - React-Core
   - React-perflogger (0.69.5)
   - React-RCTActionSheet (0.69.5):
@@ -636,8 +636,8 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  lottie-ios: 6bbc53eef6957e4744a50321507015fba72d8ca6
-  lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  lottie-react-native: f00d55936805d0155d5ec3ca7b3205b07728af44
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: 4d8508a426467c48885f1151029bc15fa5d7b3b8
   RCTRequired: 85c60c4bde8241278be2c93420de4c65475a2151
@@ -655,7 +655,7 @@ SPEC CHECKSUMS:
   React-logger: 15c734997c06fe9c9b88e528fb7757601e7a56df
   react-native-safe-area-context: deca3b734e6ad82df91bd6e68f3eb48bbb96b758
   react-native-viewpager: d054b58bf3d377e6b99558da6766463ff7e9b220
-  react-native-webview: c09ea739796b91286ae1f581d2db536b48c33911
+  react-native-webview: a192040320142d8f10d652a745c46e4f43e37f8c
   React-perflogger: 367418425c5e4a9f0f80385ee1eaacd2a7348f8e
   React-RCTActionSheet: e4885e7136f98ded1137cd3daccc05eaed97d5a6
   React-RCTAnimation: 7c5a74f301c9b763343ba98a3dd776ed2676993f
