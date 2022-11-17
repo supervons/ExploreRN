@@ -57,8 +57,8 @@
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
-- [ ] Push
-- [ ] Upgrade to new version 0.70.4
+- [ ] Push-iOS、HUAWEI、Xiaomi
+- [ ] Upgrade to new version 0.70.6
 
 
 # Preview
