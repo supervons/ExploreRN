@@ -19,11 +19,16 @@ import Loading from "~/common/loading";
 import configureStore from "~/redux/store/store";
 import Toast from "~/components/toast";
 import I18n from "~/common/languages";
-
+import * as Sentry from "@sentry/react-native";
+Sentry.init({
+  dsn:
+    "https:YOUR_SENTRY_PROJECT_DSN",
+});
+Sentry.setUser({ name: "test_user" });
 // 引入 redux 及 redux-persist 配置后的变量供使用
 const { store, persist } = configureStore();
 
-export default function App() {
+const APP = function () {
   let lastBackPressed = 0;
   useEffect(() => {
     if (Platform.OS === "android") {
@@ -59,4 +64,5 @@ export default function App() {
       </PersistGate>
     </Provider>
   );
-}
+};
+export default Sentry.wrap(APP);

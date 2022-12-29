@@ -406,6 +406,10 @@ PODS:
   - RNScreens (3.17.0):
     - React-Core
     - React-RCTImage
+  - RNSentry (4.12.0):
+    - React-Core
+    - Sentry/HybridSDK (= 7.31.3)
+  - Sentry/HybridSDK (7.31.3)
   - SocketRocket (0.6.0)
   - TOCropViewController (2.6.1)
   - VisionCamera (2.14.1):
@@ -488,6 +492,7 @@ DEPENDENCIES:
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - VisionCamera (from `../node_modules/react-native-vision-camera`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -508,6 +513,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - Sentry
     - SocketRocket
     - TOCropViewController
     - YogaKit
@@ -607,6 +613,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-localize"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   VisionCamera:
     :path: "../node_modules/react-native-vision-camera"
   Yoga:
@@ -675,6 +683,8 @@ SPEC CHECKSUMS:
   RNImageCropPicker: ffbba608264885c241cbf3a8f78eb7aeeb978241
   RNLocalize: 9ea94b8496a2402df9b152e3901855c9d0df2238
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
+  RNSentry: 4c09f4dd9740cb9b33e94303de5b6d0dbeb0737d
+  Sentry: 08884c523575ec0f6690d94ed3ccb0246a1600bf
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   VisionCamera: eab608fb1c1ac78a0b461f56297f1031ca5895be

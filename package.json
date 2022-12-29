@@ -21,6 +21,7 @@
     "@react-navigation/native": "6.0.12",
     "@react-navigation/routers": "6.1.2",
     "@react-navigation/stack": "6.2.3",
+    "@sentry/react-native": "^4.12.0",
     "appcenter": "4.4.5",
     "appcenter-analytics": "4.4.5",
     "appcenter-crashes": "4.4.5",
