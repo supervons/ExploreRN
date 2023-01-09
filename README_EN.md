@@ -49,6 +49,7 @@
 - [x] Better animation - Lottie
 - [x] Email register
 - [x] Upgrade to new version 0.69.5
+- [x] Add Sentry error monitor
 
 # TODO LIST
 
