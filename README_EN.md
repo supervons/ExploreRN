@@ -59,7 +59,7 @@
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push-iOS、HUAWEI、Xiaomi
-- [ ] Upgrade to new version 0.70.6
+- [ ] Upgrade to new version 0.71.1
 
 
 # Preview
