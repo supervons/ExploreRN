@@ -53,13 +53,14 @@
 
 # TODO LIST
 
+- [ ] Upgrade to new version 0.71.2
+- [ ] Create `react-native-echarts-pro` complete test case page.
 - [ ] Multiple Bundle Support
 - [ ] Typescript
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push-iOS、HUAWEI、Xiaomi
-- [ ] Upgrade to new version 0.71.1
 
 
 # Preview
