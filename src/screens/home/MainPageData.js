@@ -7,7 +7,7 @@ import I18n from "../../common/languages";
 export const data = [
   {
     key: "charts",
-    icon: "assessment",
+    image: require("../../resource/image/home/charts.png"),
     color: "#7A7281",
     name: I18n.t("Home.charts"),
     routeName: "eChartsDemoPage",
