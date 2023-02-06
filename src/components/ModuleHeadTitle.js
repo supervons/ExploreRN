@@ -2,29 +2,40 @@
  * Generic module header.
  */
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, Dimensions, View, StyleSheet } from "react-native";
+const { width } = Dimensions.get("window");
 export default function ModuleHeadTitle(props) {
   return (
     <View style={styles.container}>
-      <View style={[styles.tipIcon, { height: props.tipIconHeight }]} />
-      <Text>{props.title}</Text>
+      <View
+        style={[
+          styles.tipIcon,
+          { backgroundColor: props.current ? "red" : "#3c3f41" },
+        ]}></View>
+      <Text
+        style={{
+          fontSize: 16,
+          color: props.current ? "red" : "#3c3f41",
+        }}>
+        {props.title}
+      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 5,
     marginTop: 5,
     backgroundColor: "#fff",
     flexDirection: "row",
-    flex: 1,
+    alignItems: "center",
+    width: width / 2 - 20,
+    height: 50,
   },
   tipIcon: {
-    height: 15,
+    height: 45,
     width: 5,
     borderRadius: 5,
-    backgroundColor: "red",
-    marginRight: 5,
+    marginHorizontal: 5,
   },
 });
