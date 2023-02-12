@@ -55,6 +55,7 @@
 
 - [ ] Upgrade to new version 0.71.2
 - [ ] Create `react-native-echarts-pro` complete test case page.
+- [ ] Use sass change css style
 - [ ] Multiple Bundle Support
 - [ ] Typescript
 - [ ] Retrieve password by e-mail.

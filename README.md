@@ -55,6 +55,7 @@
 
 - [ ] 更新到最新版本0.71.2
 - [ ] 创建完整的 `react-native-echarts-pro` 测试用例页面
+- [ ] 使用 sass 改造 css 样式
 - [ ] 多bundle支持
 - [ ] Typescript
 - [ ] 邮箱找回密码
