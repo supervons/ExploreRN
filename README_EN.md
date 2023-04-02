@@ -62,6 +62,7 @@
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
 - [ ] Push-iOS、HUAWEI、Xiaomi
+- [ ] Add Websocket demo.
 
 
 # Preview

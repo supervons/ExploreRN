@@ -62,6 +62,7 @@
 - [ ] 头像更换及头像历史记录 - 50%
 - [ ] 地图集成
 - [ ] 推送集成-iOS、HUAWEI、Xiaomi
+- [ ] 增加 Websocket 示例
 
 # 预览
 #### 动态tab-bar
