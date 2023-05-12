@@ -24,7 +24,7 @@ import I18n from "../common/languages";
 import MainPage from "../screens/home/MainPage";
 import Explore from "../screens/explore/index";
 import My from "../screens/my/index";
-import AnimatedIcon from "../components/AnimatedIcon";
+import AnimatedLottieIcon from "../components/AnimatedLottieIcon";
 const HomeStack = createStackNavigator();
 /**
  * 底部导航组件配置
@@ -34,21 +34,21 @@ const tabBarInfo = [
     name: "MainPage",
     component: MainPage,
     tabBarLabel: I18n.t("Route.home"),
-    selectIcon: <AnimatedIcon iconName={"home"} />,
+    selectIcon: <AnimatedLottieIcon iconName={"home"} />,
     defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
   },
   {
     name: "Explore",
     component: Explore,
     tabBarLabel: I18n.t("Route.explore"),
-    selectIcon: <AnimatedIcon iconName={"explore"} />,
+    selectIcon: <AnimatedLottieIcon iconName={"explore"} />,
     defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
   },
   {
     name: "My",
     component: My,
     tabBarLabel: I18n.t("Route.my"),
-    selectIcon: <AnimatedIcon iconName={"person"} />,
+    selectIcon: <AnimatedLottieIcon iconName={"person"} />,
     defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
   },
 ];
