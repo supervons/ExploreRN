@@ -39,6 +39,7 @@
 
 # Finished
 
+- [x] Dynamic TAB-Bar
 - [x] Theme Change
 - [x] Skeleton
 - [x] Language Localize
