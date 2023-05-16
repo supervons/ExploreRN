@@ -5,7 +5,7 @@
  */
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { SafeAreaView, View, Alert } from "react-native";
+import { SafeAreaView, View, Alert, Image } from "react-native";
 import { Icon } from "react-native-elements";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import EChartsDemoPage from "../screens/home/eChartsDemo/EChartsDemoPage";
@@ -35,21 +35,39 @@ const tabBarInfo = [
     component: MainPage,
     tabBarLabel: I18n.t("Route.home"),
     selectIcon: <AnimatedLottieIcon iconName={"home"} />,
-    defaultIcon: <Icon size={25} name={"home"} color={"#AFB0B2"} />,
+    defaultIcon: (
+      <Image
+        style={{ width: 23 }}
+        resizeMode={"contain"}
+        source={require("../resource/image/tab/home.png")}
+      />
+    ),
   },
   {
     name: "Explore",
     component: Explore,
     tabBarLabel: I18n.t("Route.explore"),
     selectIcon: <AnimatedLottieIcon iconName={"explore"} />,
-    defaultIcon: <Icon size={25} name={"explore"} color={"#AFB0B2"} />,
+    defaultIcon: (
+      <Image
+        style={{ width: 23 }}
+        resizeMode={"contain"}
+        source={require("../resource/image/tab/explore.png")}
+      />
+    ),
   },
   {
     name: "My",
     component: My,
     tabBarLabel: I18n.t("Route.my"),
     selectIcon: <AnimatedLottieIcon iconName={"person"} />,
-    defaultIcon: <Icon size={25} name={"person"} color={"#AFB0B2"} />,
+    defaultIcon: (
+      <Image
+        style={{ width: 23 }}
+        resizeMode={"contain"}
+        source={require("../resource/image/tab/my.png")}
+      />
+    ),
   },
 ];
 /**
