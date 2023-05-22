@@ -64,6 +64,7 @@
 - [ ] 地图集成
 - [ ] 推送集成-iOS、HUAWEI、Xiaomi
 - [ ] 增加 Websocket 示例
+- [ ] 增加 H5 交互示例
 
 # 预览
 #### 动态tab-bar

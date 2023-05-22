@@ -64,6 +64,7 @@
 - [ ] Map
 - [ ] Push-iOS、HUAWEI、Xiaomi
 - [ ] Add Websocket demo.
+- [ ] Add H5 PostMessage demo.
 
 
 # Preview
