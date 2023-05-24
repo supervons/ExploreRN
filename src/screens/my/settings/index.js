@@ -15,23 +15,17 @@ export default function Settings() {
     {
       key: 1,
       title: I18n.t("Settings.changePassword"),
-      onPress: () => {
-        route.navigate("UpdatePassword");
-      },
+      routeName: "UpdatePassword",
     },
     {
       key: 2,
       title: I18n.t("Settings.systemInfo"),
-      onPress: () => route.navigate("VersionInfo"),
+      routeName: "VersionInfo",
     },
     {
       key: 3,
       title: I18n.t("Settings.changeTheme"),
-      onPress: () => {
-        route.navigate("ThemeChange", {
-          transitionType: "forFadeToBottomAndroid",
-        });
-      },
+      routeName: "ThemeChange",
     },
   ];
   return (
@@ -39,7 +33,7 @@ export default function Settings() {
       {list.map((item, i) => (
         <ListItem
           containerStyle={{ alignItems: "center" }}
-          onPress={() => item.onPress()}
+          onPress={() => route.navigate(item.routeName)}
           key={i}
           bottomDivider>
           <ListItem.Content
