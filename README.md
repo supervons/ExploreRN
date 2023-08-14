@@ -66,6 +66,7 @@
 - [ ] 增加 Websocket 示例
 - [ ] 增加 H5 交互示例
 - [ ] 增加网络请求 Hook.
+- [ ] 增加 patch 脚本.
 
 # 预览
 #### 动态tab-bar
@@ -113,6 +114,8 @@
 ```
 
 # 安装依赖
+- 修改 node_modules/lottie-react-native/lottie-react-native.podspec 文件， 25 行 to 3.5.0
+- 修改 node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm 文件， 927 行 `id<RCTBridgeModule>` 替换成 `Class`
 
 ```shell
 npm install

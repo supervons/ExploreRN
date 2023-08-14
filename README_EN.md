@@ -66,6 +66,7 @@
 - [ ] Add Websocket demo.
 - [ ] Add H5 PostMessage demo.
 - [ ] Add network request Hook.
+- [ ] Add patch script.
 
 
 # Preview
@@ -114,6 +115,9 @@
 ```
 
 # Installation dependencies
+
+- Change node_modules/lottie-react-native/lottie-react-native.podspec, line 25 to 3.5.0
+- Change node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm, line 927 `id<RCTBridgeModule>` to `Class`
 
 ```sh
 npm install
