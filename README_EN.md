@@ -51,6 +51,7 @@
 - [x] Email register
 - [x] Upgrade to new version 0.69.5
 - [x] Add Sentry error monitor
+- [x] Support TypeScript
 
 # TODO LIST
 
@@ -58,7 +59,6 @@
 - [ ] Create `react-native-echarts-pro` complete test case page.
 - [ ] Use sass change css style
 - [ ] Multiple Bundle Support
-- [ ] Typescript
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
