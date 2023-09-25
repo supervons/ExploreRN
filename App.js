@@ -29,9 +29,13 @@ import * as Sentry from "@sentry/react-native";
 
 import { accelerometer } from "react-native-sensors";
 
-const subscription = accelerometer.subscribe(
-  ({ x, y, z, timestamp }) => {},
-  // console.log({ x, y, z, timestamp }),
+const subscriber = accelerometer.subscribe(
+  ({ x, y, z, timestamp }) => {
+    console.log(timestamp);
+  },
+  err => {
+    console.log(err);
+  },
 );
 const { store, persist } = configureStore();
 
