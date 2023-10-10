@@ -1,4 +1,3 @@
-let timeout = null;
 /**
  * Email check function
  * @param emailString Email strings.

@@ -11,8 +11,11 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  ScrollView,
+  Text,
+  View,
+  Dimensions,
 } from "react-native";
-import { Dimensions, ScrollView, Text, View } from "react-native";
 import I18n from "../../../common/languages";
 
 const { width } = Dimensions.get("window");
