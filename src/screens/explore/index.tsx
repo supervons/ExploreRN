@@ -8,7 +8,7 @@ import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { useTabBarStatus } from "../../hook/useTabBarStatus";
 import I18n from "../../common/languages";
 
-export default function Explore() {
+export default function Explore(): JSX.Element {
   useTabBarStatus("explore");
   return (
     <View style={styles.container}>
