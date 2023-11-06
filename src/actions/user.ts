@@ -1,26 +1,30 @@
 import Axios from "../utils/axios/Axios";
 
 /**
- * 用户登录
+ * User login.
  * @returns {Promise<any | never>}
  */
-const userLogin = params => {
+const userLogin = (params: { uId: string; password: string }) => {
   return Axios.POST("/api/v1/token", params);
 };
 
 /**
- * 修改用户信息 目前支持姓名，手机号及地址
+ * Change user info.
  * @returns {Promise<any | never>}
  */
-const updateUserInfo = params => {
+const updateUserInfo = (params: object) => {
   return Axios.POST("/user/updateUser", params);
 };
 
 /**
- * 修改密码
+ * Change password
  * @returns {Promise<any | never>}
  */
-const updatePassword = params => {
+const updatePassword = (params: {
+  id: any;
+  oldPassword?: any;
+  newPassword?: any;
+}) => {
   return Axios.PUT(`/api/v1/user/password/${params.id}`, params);
 };
 

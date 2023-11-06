@@ -1,10 +1,10 @@
 import Axios from "../utils/axios/Axios";
 
 /**
- * 新闻列表接口
+ * News list.
  * @returns {Promise<any | never>}
  */
-const getNewsList = params => {
+const getNewsList = (params: object) => {
   return Axios.POST("/news/queryNewsInfo", params);
 };
 
