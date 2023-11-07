@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import UserReducer from "./userReducer";
 import SettingReducer from "./settingReducer";
 import HookReducer from "./hookReducer";
+import InteractionReducer from "./interactionReducer";
 
 /**
  * Created by supervons on 2019/08/20.
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   UserReducer,
   SettingReducer,
   HookReducer,
+  InteractionReducer,
 });
 
 export default rootReducer;
