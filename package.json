@@ -23,6 +23,7 @@
     "@react-navigation/stack": "6.2.3",
     "@sentry/cli": "^1.74.4",
     "@sentry/react-native": "^4.12.0",
+    "@types/i18n-js": "^3.8.7",
     "appcenter": "4.4.5",
     "appcenter-analytics": "4.4.5",
     "appcenter-crashes": "4.4.5",
