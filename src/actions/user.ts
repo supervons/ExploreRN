@@ -2,7 +2,6 @@ import Axios from "../utils/axios/Axios";
 
 /**
  * User login.
- * @returns {Promise<any | never>}
  */
 const userLogin = (params: { uId: string; password: string }) => {
   return Axios.POST("/api/v1/token", params);
@@ -10,7 +9,6 @@ const userLogin = (params: { uId: string; password: string }) => {
 
 /**
  * Change user info.
- * @returns {Promise<any | never>}
  */
 const updateUserInfo = (params: object) => {
   return Axios.POST("/user/updateUser", params);
@@ -18,7 +16,6 @@ const updateUserInfo = (params: object) => {
 
 /**
  * Change password
- * @returns {Promise<any | never>}
  */
 const updatePassword = (params: {
   id: any;

@@ -14,6 +14,9 @@ const sendEmailCode = (params: { uId: string; email: string }) => {
   return Axios.POST("/api/v1/email", params);
 };
 
+/**
+ * User register.
+ */
 const registerByEmailCode = (params: {
   uId: string;
   password: string;
