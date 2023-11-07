@@ -1,13 +1,18 @@
 import { Button as RNEButton } from "react-native-elements";
 import React from "react";
-import { useSelector } from "react-redux";
+import { RootStateOrAny, useSelector } from "react-redux";
 
 /**
  * Unified button base on react-native-elements button.
  * Unify colors and styles.
  */
-export default function Button(props) {
-  const profileInfo = useSelector(state => state.SettingReducer.profileInfo);
+export default function Button(props: {
+  icon?: object;
+  buttonStyle?: object;
+}): JSX.Element {
+  const profileInfo = useSelector(
+    (state: RootStateOrAny) => state.SettingReducer.profileInfo,
+  );
   return (
     <RNEButton
       {...props}
