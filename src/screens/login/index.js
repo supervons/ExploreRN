@@ -20,6 +20,7 @@ import { useNavigation } from "@react-navigation/core";
 import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import md5 from "md5";
+import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import { getProfile } from "../../actions/profile";
 import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
 import Toast from "../../components/toast";
@@ -137,12 +138,13 @@ export default function Login(props) {
           onChangeText={text => setLoginId(text)}
           value={loginId}
         />
-        <TextInput
+        <SecurityKeyboardInput
           keyName={"password"}
-          style={styles.userNameStyle}
+          style={styles.passwordStyle}
           keyboardHeader={() => {
             return <Text>{I18n.t("Login.keyboardTitle")}</Text>;
           }}
+          keyboardType={"string"}
           secureTextEntry={true}
           random={true}
           valueStyle={{ fontSize: 18, left: 1, marginLeft: 10 }}
