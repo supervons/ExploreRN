@@ -6,7 +6,7 @@ import React from "react";
 import { View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 import EW from "./echarts-wordcloud.min";
-export default function ChartsComponent() {
+export default function ChartsComponent(): JSX.Element {
   const pieOption = {
     title: {
       text: "词云", //标题

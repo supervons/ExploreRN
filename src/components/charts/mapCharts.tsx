@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 
-export default function MapCharts(props) {
+export default function MapCharts(): JSX.Element {
   const mapData = {
     visualMap: {
       show: true,

@@ -3,8 +3,12 @@ import { View, Button } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 import FontCSS from "./TEST";
 import FontCSS2 from "./TEST2";
-export default function ChartsComponent() {
-  const echartsRef = new useRef(null);
+interface RNEChartsPro {
+  setNewOption: Function;
+}
+
+export default function ChartsComponent(): JSX.Element {
+  const echartsRef = useRef<RNEChartsPro>(null);
   const pieOption = {
     textStyle: {
       fontFamily: "TEST",
@@ -73,7 +77,7 @@ export default function ChartsComponent() {
   };
 
   function change() {
-    echartsRef.current.setNewOption(
+    echartsRef?.current?.setNewOption(
       {
         textStyle: {
           fontFamily: "JY",
