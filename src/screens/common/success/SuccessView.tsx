@@ -2,8 +2,15 @@ import React from "react";
 import { Text, View } from "react-native";
 import LottieView from "lottie-react-native";
 import { Button } from "react-native-elements";
-
-export default function SuccessView(props) {
+type MyProps = {
+  route: {
+    params: {
+      successTitle: string;
+    };
+  };
+  navigation: any;
+};
+export default function SuccessView(props: MyProps): JSX.Element {
   return (
     <View style={{ flex: 1 }}>
       <View style={{ height: 300 }}>
@@ -25,7 +32,7 @@ export default function SuccessView(props) {
         }}>
         <Button
           onPress={() => {
-            navigation.popToTop();
+            props.navigation.popToTop();
           }}
           buttonStyle={{ width: 150, backgroundColor: "#b9b9b9" }}
           containerStyle={{ marginTop: 10 }}
