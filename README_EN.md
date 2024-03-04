@@ -7,7 +7,7 @@
 #### Welcome to join us:
     QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.69.9
+    Current RN version: 0.73.4
 
 ### Download（Android）
 #### Firim : http://d.maps9.com/25th
@@ -49,13 +49,12 @@
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
 - [x] Email register
-- [x] Upgrade to new version 0.69.5
+- [x] Upgrade to new version 0.73.4
 - [x] Add Sentry error monitor
 - [x] Support TypeScript
 
 # TODO LIST
 
-- [ ] Upgrade to new version 0.71.2
 - [ ] Create `react-native-echarts-pro` complete test case page.
 - [ ] Use sass change css style
 - [ ] Multiple Bundle Support

@@ -7,7 +7,7 @@
 ### 欢迎加入我们：
     QQ群：783071253
     邮箱：supervons@sina.com
-    当前RN版本：0.69.9
+    当前RN版本：0.73.4
 
 ### 下载（Android）
 #### Firim : http://d.maps9.com/25th
@@ -49,13 +49,12 @@
 - [x] 使用新KOA搭建后端
 - [x] 更好的动画Lottie
 - [x] 邮箱注册
-- [x] 更新到最新版本0.69.5
+- [x] 更新到最新版本0.73.4
 - [x] 增加 Sentry 错误日志监控
 - [x] 支持 TypeScript
 
 # 待开发
 
-- [ ] 更新到最新版本0.71.2
 - [ ] 创建完整的 `react-native-echarts-pro` 测试用例页面
 - [ ] 使用 sass 改造 css 样式
 - [ ] 多bundle支持
