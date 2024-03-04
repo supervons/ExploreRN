@@ -45,6 +45,7 @@ export default function Loading(): JSX.Element {
         <View style={styles.LoadingPage}>
           <View style={styles.contentStyle}>
             <LottieView
+              style={{ width: 100, height: 100 }}
               ref={loadingRef}
               speed={1}
               source={loadingArray[randomNum]}

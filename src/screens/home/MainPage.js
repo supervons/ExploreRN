@@ -13,7 +13,7 @@ import {
   Image,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import { trackEvent } from "appcenter-analytics";
+// import { trackEvent } from "appcenter-analytics";
 import { useNavigation } from "@react-navigation/core";
 import { useSelector, useDispatch } from "react-redux";
 import ImagePicker from "react-native-image-crop-picker";
@@ -56,7 +56,7 @@ export default function MainPage() {
    * @param routeName
    */
   function toDemo(routeName) {
-    trackEvent(routeName);
+    // trackEvent(routeName);
     if (routeName === "gallery") {
       ImagePicker.openPicker({
         width: 300,

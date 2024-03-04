@@ -9,6 +9,9 @@
       "es2019",
       "dom"
     ],
+    "paths": {
+      "~/*": ["src/*"]
+    },
     "module": "commonjs",
     "types": ["react-native", "jest"],
     "moduleResolution": "node",

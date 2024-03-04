@@ -21,10 +21,10 @@ import { Button } from "react-native-elements";
 import LottieView from "lottie-react-native";
 import md5 from "md5";
 import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
-import { getProfile } from "../../actions/profile";
-import { USER_TOKEN, USER_INFO } from "../../redux/action/userActionTypes";
+import { getProfile } from "~/actions/profile";
+import { USER_TOKEN, USER_INFO } from "~/redux/action/userActionTypes";
 import Toast from "../../components/toast";
-import { userLogin } from "../../actions/user";
+import { userLogin } from "~/actions/user";
 import RotateImage from "../../components/RotateImage";
 import I18n from "../../common/languages";
 // 用户 token
@@ -108,16 +108,27 @@ export default function Login(props) {
    * Use debounce function optimization profile network request.
    */
   function getUserAvatar() {
-    getProfile(loginId).then(res => {
-      if (res.data.profile.length !== 0) {
-        startAnimation();
-        setUserAvatarUri(res.data?.profile[0]?.file_access_path);
-      } else {
-        lottieAnimation.current.reset();
-        setAnimationFLag(false);
-        setUserAvatarUri();
-      }
-    });
+    // fetch("http://39.105.24.114:8088/api/v1/profile/test")
+    //   .then(response => response.json())
+    //   .then(data => alert(JSON.stringify(data)))
+    //   .catch(res => {
+    //     alert(JSON.stringify(res));
+    //   });
+    // return;
+    getProfile(loginId)
+      .then(res => {
+        if (res.data.profile.length !== 0) {
+          startAnimation();
+          setUserAvatarUri(res.data?.profile[0]?.file_access_path);
+        } else {
+          lottieAnimation.current.reset();
+          setAnimationFLag(false);
+          setUserAvatarUri();
+        }
+      })
+      .catch(res => {
+        alert(JSON.stringify(res));
+      });
   }
 
   return (

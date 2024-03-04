@@ -57,10 +57,10 @@ export default function LottiePage() {
       <View style={{ flex: 1 }}>
         {show && (
           <LottieView
+            style={{ width: 400, height: 400 }}
             source={require("../../../resource/lottie/fireworks.json")}
             speed={1}
             autoPlay
-            loop
           />
         )}
       </View>

@@ -19,7 +19,7 @@ import Loading from "~/common/loading";
 import configureStore from "~/redux/store/store";
 import Toast from "~/components/toast";
 import I18n from "~/common/languages";
-import * as Sentry from "@sentry/react-native";
+// import * as Sentry from "@sentry/react-native";
 // Sentry.init({
 //   dsn:
 //     "https:YOUR_SENTRY_PROJECT_DSN",
@@ -27,16 +27,16 @@ import * as Sentry from "@sentry/react-native";
 // Sentry.setUser({ name: "test_user" });
 // 引入 redux 及 redux-persist 配置后的变量供使用
 
-import { accelerometer } from "react-native-sensors";
+// import { accelerometer } from "react-native-sensors";
 
-const subscriber = accelerometer.subscribe(
-  ({ x, y, z, timestamp }) => {
-    console.log(timestamp);
-  },
-  err => {
-    console.log(err);
-  },
-);
+// const subscriber = accelerometer.subscribe(
+//   ({ x, y, z, timestamp }) => {
+//     console.log(timestamp);
+//   },
+//   err => {
+//     console.log(err);
+//   },
+// );
 const { store, persist } = configureStore();
 
 const APP = function () {
@@ -76,4 +76,4 @@ const APP = function () {
     </Provider>
   );
 };
-export default Sentry.wrap(APP);
+export default APP;

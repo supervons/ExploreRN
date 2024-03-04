@@ -19,6 +19,7 @@ export default function LottieItemView(props) {
       }}
       style={props.lottieItemStyle}>
       <LottieView
+        style={{ width: 100, height: 100 }}
         ref={lottieRef}
         source={props.source}
         speed={1}

@@ -7,13 +7,13 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../reducer";
 import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import AsyncStorage from "@react-native-community/async-storage";
 import logger from "redux-logger";
 const middleWares = [thunk];
 
 const persistConfig = {
   key: "root", // 对于数据 key 的定义
-  storage, // 选择的存储引擎
+  storage: AsyncStorage, // 选择的存储引擎
   whitelist: ["UserReducer", "SettingReducer"], // 白名单，位于数组中的会被缓存
 };
 

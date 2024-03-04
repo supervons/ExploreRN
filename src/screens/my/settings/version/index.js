@@ -6,7 +6,7 @@ import React from "react";
 import { View } from "react-native";
 import { ListItem } from "react-native-elements";
 import DeviceInfo from "react-native-device-info";
-import Clipboard from "@react-native-community/clipboard";
+// import Clipboard from "@react-native-community/clipboard";
 import Theme from "../../../../styles/theme";
 import I18n from "../../../../common/languages";
 import Toast from "../../../../components/toast";
@@ -33,7 +33,7 @@ const list = [
     rightTitle: "supervons@sina.com",
     onPress: text => {
       Toast.showToast(I18n.t("SystemInfo.copySuc"));
-      Clipboard.setString(text);
+      // Clipboard.setString(text);
     },
   },
 ];

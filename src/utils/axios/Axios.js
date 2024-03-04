@@ -1,8 +1,8 @@
 import { DeviceEventEmitter } from "react-native";
 import axios from "axios";
-import Constants from "../../common/constants";
-import Loading from "../../common/loading";
-import Toast from "../../components/toast";
+import Constants from "~/common/constants";
+import Loading from "~/common/loading";
+import Toast from "~/components/toast";
 
 let defaultConfig = {
   timeout: 6000,
@@ -106,6 +106,7 @@ async function get(url, showLoading) {
   showLoading && Loading.show();
   try {
     let response = await instance.get(url).catch(resp => {
+      alert(JSON.stringify(resp));
       return resp;
     });
     // 判断服务器返回状态，根据 code 来判断，没有则表示服务器状态异常

@@ -80,7 +80,8 @@ export default function SystemIntroduction(props) {
               height: 200,
               position: "absolute",
               margin: "auto",
-              bottom: "35%",
+              bottom: "45%",
+              width: 200,
             }}
           />
         )}
