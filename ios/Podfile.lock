@@ -70,9 +70,9 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - hermes-engine (0.73.3):
-    - hermes-engine/Pre-built (= 0.73.3)
-  - hermes-engine/Pre-built (0.73.3)
+  - hermes-engine (0.73.4):
+    - hermes-engine/Pre-built (= 0.73.4)
+  - hermes-engine/Pre-built (0.73.4)
   - libevent (2.1.12)
   - lottie-ios (4.4.0)
   - lottie-react-native (6.6.0):
@@ -1127,9 +1127,7 @@ PODS:
     - React-jsi (= 0.73.4)
     - React-logger (= 0.73.4)
     - React-perflogger (= 0.73.4)
-  - RNCAsyncStorage (1.21.0):
-    - React-Core
-  - RNCClipboard (1.5.1):
+  - RNCAsyncStorage (1.12.1):
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
@@ -1153,8 +1151,6 @@ PODS:
   - RNScreens (3.29.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
-    - React-Core
-  - RNSensors (7.3.6):
     - React-Core
   - RNSentry (4.15.2):
     - React-Core
@@ -1246,15 +1242,13 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
-  - "RNCClipboard (from `../node_modules/@react-native-community/clipboard`)"
+  - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - RNScreens (from `../node_modules/react-native-screens`)
-  - RNSensors (from `../node_modules/react-native-sensors`)
   - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1385,9 +1379,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
-    :path: "../node_modules/@react-native-async-storage/async-storage"
-  RNCClipboard:
-    :path: "../node_modules/@react-native-community/clipboard"
+    :path: "../node_modules/@react-native-community/async-storage"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNDeviceInfo:
@@ -1400,8 +1392,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-localize"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-  RNSensors:
-    :path: "../node_modules/react-native-sensors"
   RNSentry:
     :path: "../node_modules/@sentry/react-native"
   RNVectorIcons:
@@ -1426,7 +1416,7 @@ SPEC CHECKSUMS:
   FlipperKit: 37525a5d056ef9b93d1578e04bc3ea1de940094f
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
-  hermes-engine: 5420539d016f368cd27e008f65f777abd6098c56
+  hermes-engine: b2669ce35fc4ac14f523b307aff8896799829fe2
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: ef1be1f90d54255f08e09d767950e43714661178
   lottie-react-native: 34cfb1db79d0feb7bf7b200d4a4e2f164b0c5f58
@@ -1475,15 +1465,13 @@ SPEC CHECKSUMS:
   React-runtimescheduler: ed48e5faac6751e66ee1261c4bd01643b436f112
   React-utils: 6e5ad394416482ae21831050928ae27348f83487
   ReactCommon: 840a955d37b7f3358554d819446bffcf624b2522
-  RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
-  RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
+  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
   RNGestureHandler: deda62b8339496ba721a45e0f3e2d7a319932cee
   RNImageCropPicker: e7ab6fb43d2fc3e84651e786ef4a080d63b0ed3d
   RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
   RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
-  RNSensors: 117ba71c7eeeea0407ea0c0bb79e3495d602049b
   RNSentry: 4ea90ea061624364637e8077d965bf2e50478066
   RNVectorIcons: 210f910e834e3485af40693ad4615c1ec22fc02b
   Sentry: 4c9babff9034785067c896fd580b1f7de44da020
@@ -1491,6 +1479,6 @@ SPEC CHECKSUMS:
   TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   Yoga: 64cd2a583ead952b0315d5135bf39e053ae9be70
 
-PODFILE CHECKSUM: c10375f542c1c2be0cf898957fccf8dae40dce16
+PODFILE CHECKSUM: d53bdf8aabb36356f8fadab9233bbbb85ff61bf9
 
 COCOAPODS: 1.11.2
