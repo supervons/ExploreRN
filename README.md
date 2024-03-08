@@ -117,7 +117,7 @@
 - 修改 node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm 文件， 927 行 `id<RCTBridgeModule>` 替换成 `Class`
 
 ```shell
-npm install
+yarn install
 # 如果是 iOS 则需要执行以下操作，确保网络畅通
 cd ios && pod install 
 ```

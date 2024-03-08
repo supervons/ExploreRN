@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Toast from "../../../components/toast";
-// import Clipboard from "@react-native-community/clipboard";
+import Clipboard from "@react-native-clipboard/clipboard";
 const { height, width } = Dimensions.get("window");
 /**
  * Morandica color scale
@@ -18,7 +18,7 @@ const { height, width } = Dimensions.get("window");
 export default function MorandiPage() {
   function selectColor(res) {
     Toast.showToast(`copied successfully, please paste to use! ${res}`);
-    // Clipboard.setString(res);
+    Clipboard.setString(res);
   }
   return (
     <ScrollView style={{ flex: 1 }}>

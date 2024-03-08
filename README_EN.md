@@ -119,7 +119,7 @@
 - Change node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm, line 927 `id<RCTBridgeModule>` to `Class`
 
 ```sh
-npm install
+yarn install
 # If it is iOS, you need to perform the following operations to ensure that the network is unblocked
 cd ios && pod install
 ```
