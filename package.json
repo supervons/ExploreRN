@@ -37,6 +37,7 @@
     "react-native-animatable": "^1.4.0",
     "react-native-device-info": "^10.12.0",
     "react-native-draggable": "^3.3.0",
+    "react-native-sensors": "^7.3.6",
     "react-native-echarts-liquidfill": "^1.0.1",
     "react-native-echarts-pro": "^1.9.1",
     "react-native-elements": "^3.4.3",
