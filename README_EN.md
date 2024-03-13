@@ -1,5 +1,7 @@
 [简体中文](./README.md) | English
 
+[![Android-build CI](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml/badge.svg)](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml)
+
 # project instruction
 ### 1. Explore the RN features of the new version;
 ### 2. Integrate component experiments and build your own wheels!

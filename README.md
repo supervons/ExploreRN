@@ -1,5 +1,7 @@
 简体中文 | [English](./README_EN.md)
 
+[![Android-build CI](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml/badge.svg)](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml)
+
 # 项目目的
 ### 1.探索新版本RN特性；
 ### 2.集成各类组件并实验，造自己的轮子！
