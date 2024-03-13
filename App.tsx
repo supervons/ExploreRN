@@ -19,11 +19,11 @@ import Loading from "~/common/loading";
 import configureStore from "~/redux/store/store";
 import Toast from "~/components/toast";
 import I18n from "~/common/languages";
-// import * as Sentry from "@sentry/react-native";
-// Sentry.init({
-//   dsn: "https://www.baidu.com",
-// });
-// Sentry.setUser({ name: "test_user" });
+import * as Sentry from "@sentry/react-native";
+Sentry.init({
+  dsn: "https://your@your.ingest.us.sentry.io/0000", // replace your sentry DSN.
+});
+Sentry.setUser({ name: "test_user" });
 // 引入 redux 及 redux-persist 配置后的变量供使用
 
 import { accelerometer } from "react-native-sensors";
