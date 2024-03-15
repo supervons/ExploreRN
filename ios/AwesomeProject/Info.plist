@@ -72,6 +72,10 @@
       <string>Zocial.ttf</string>
       <string>Fontisto.ttf</string>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>$(PRODUCT_NAME) needs access to your Location.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>$(PRODUCT_NAME) needs access to your Location.</string>
     <key>NSCameraUsageDescription</key>
     <string>$(PRODUCT_NAME) needs access to your Camera.</string>
     <!-- optionally, if you want to record audio: -->

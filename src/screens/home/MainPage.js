@@ -19,6 +19,7 @@ import { useSelector, useDispatch } from "react-redux";
 import ImagePicker from "react-native-image-crop-picker";
 import LinearGradient from "react-native-linear-gradient";
 import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
+import Geolocation from "@react-native-community/geolocation";
 import CarouselComponent from "~/components/carousel";
 import { INITIAL_PAGE } from "~/redux/action/settingActionTypes";
 import { useTabBarStatus } from "~/hook/useTabBarStatus";
@@ -49,6 +50,15 @@ export default function MainPage() {
     setTimeout(() => {
       setShowItem(true);
     }, 1500);
+    // Get location
+    Geolocation.getCurrentPosition(
+      info => {
+        console.log("Current location:" + JSON.stringify(info));
+      },
+      error => {
+        console.log(JSON.stringify(error));
+      },
+    );
   }, []);
 
   /**
