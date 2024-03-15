@@ -54,6 +54,7 @@
 - [x] Upgrade to new version 0.73.4
 - [x] Add Sentry error monitor
 - [x] Support TypeScript
+- [x] Get location
 
 # TODO LIST
 
@@ -115,11 +116,11 @@
 |-- . preettierrc	// Prettierrc code format the directory
 ```
 
+# Environmental
+- node > 18
+- JDK > 17
+
 # Installation dependencies
-
-- Change node_modules/lottie-react-native/lottie-react-native.podspec, line 25 to 3.5.0
-- Change node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm, line 927 `id<RCTBridgeModule>` to `Class`
-
 ```sh
 yarn install
 # If it is iOS, you need to perform the following operations to ensure that the network is unblocked

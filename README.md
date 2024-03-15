@@ -1,7 +1,6 @@
 简体中文 | [English](./README_EN.md)
 
 [![Android-build CI](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml/badge.svg)](https://github.com/supervons/ExploreRN/actions/workflows/android-build.yml)
-
 # 项目目的
 ### 1.探索新版本RN特性；
 ### 2.集成各类组件并实验，造自己的轮子！
@@ -54,6 +53,7 @@
 - [x] 更新到最新版本0.73.4
 - [x] 增加 Sentry 错误日志监控
 - [x] 支持 TypeScript
+- [x] 地理位置获取
 
 # 待开发
 
@@ -113,10 +113,11 @@
 |-- package-lock.json	// 同上
 |-- .prettierrc	// prettierrc 代码格式化目录
 ```
+# 环境要求
+- node > 18
+- JDK > 17
 
 # 安装依赖
-- 修改 node_modules/lottie-react-native/lottie-react-native.podspec 文件， 25 行 to 3.5.0
-- 修改 node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm 文件， 927 行 `id<RCTBridgeModule>` 替换成 `Class`
 
 ```shell
 yarn install
