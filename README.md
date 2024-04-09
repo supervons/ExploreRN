@@ -8,7 +8,7 @@
 ### 欢迎加入我们：
     QQ群：783071253
     邮箱：supervons@sina.com
-    当前RN版本：0.73.4
+    当前RN版本：0.73.6
 
 ### 下载（Android）
 #### Firim : http://d.maps9.com/25th

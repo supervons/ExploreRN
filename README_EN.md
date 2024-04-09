@@ -9,7 +9,7 @@
 #### Welcome to join us:
     QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.73.4
+    Current RN version: 0.73.6
 
 ### Download（Android）
 #### Firim : http://d.maps9.com/25th
