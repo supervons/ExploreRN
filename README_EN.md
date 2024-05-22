@@ -69,6 +69,8 @@
 - [ ] Add H5 PostMessage demo.
 - [ ] Add network request Hook.
 - [ ] Add patch script.
+- [ ] Add second floor.
+- [ ] Add gyroscope animation.
 
 
 # Preview
