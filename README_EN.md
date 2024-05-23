@@ -9,7 +9,7 @@
 #### Welcome to join us:
     QQ group: 783071253
     Email address: supervons@sina.com
-    Current RN version: 0.73.6
+    Current RN version: 0.74.1
 
 ### Download（Android）
 #### Firim : http://d.maps9.com/25th
@@ -51,7 +51,7 @@
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
 - [x] Email register
-- [x] Upgrade to new version 0.73.4
+- [x] Upgrade to new version 0.74.1
 - [x] Add Sentry error monitor
 - [x] Support TypeScript
 - [x] Get location
