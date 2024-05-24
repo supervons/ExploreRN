@@ -34,4 +34,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: yarn install  && cd android && ./gradlew assembleRelease
+      - run: npm install -g yarn@4.2.2 && yarn install  && cd android && ./gradlew assembleRelease
