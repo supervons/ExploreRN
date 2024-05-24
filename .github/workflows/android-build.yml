@@ -34,4 +34,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm install  && cd android && ./gradlew assembleRelease
+      - run: yarn install  && cd android && ./gradlew assembleRelease
