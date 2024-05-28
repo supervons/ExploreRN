@@ -1003,6 +1003,8 @@ PODS:
     - React-Core
   - react-native-viewpager (5.0.11):
     - React-Core
+  - react-native-voice (3.2.4):
+    - React-Core
   - react-native-webview (13.7.1):
     - DoubleConversion
     - glog
@@ -1386,6 +1388,7 @@ DEPENDENCIES:
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-viewpager (from `../node_modules/@react-native-community/viewpager`)"
+  - "react-native-voice (from `../node_modules/@react-native-voice/voice`)"
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1510,6 +1513,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-viewpager:
     :path: "../node_modules/@react-native-community/viewpager"
+  react-native-voice:
+    :path: "../node_modules/@react-native-voice/voice"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-nativeconfig:
@@ -1625,6 +1630,7 @@ SPEC CHECKSUMS:
   react-native-geolocation: 0dc0ee19de4cf2c85d42dd847e1e752a5a7a53d4
   react-native-safe-area-context: dcab599c527c2d7de2d76507a523d20a0b83823d
   react-native-viewpager: b99b53127d830885917ef84809c5065edd614a78
+  react-native-voice: f5e8eec2278451d0017eb6a30a6ccc726aca34e0
   react-native-webview: e507c4058331c43546200e8e8529453e73a98635
   React-nativeconfig: b0073a590774e8b35192fead188a36d1dca23dec
   React-NativeModulesApple: df46ff3e3de5b842b30b4ca8a6caae6d7c8ab09f

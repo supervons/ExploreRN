@@ -72,6 +72,10 @@
       <string>Zocial.ttf</string>
       <string>Fontisto.ttf</string>
     </array>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Description of why you require the use of the microphone</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Description of why you require the use of the speech recognition</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>$(PRODUCT_NAME) needs access to your Location.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
