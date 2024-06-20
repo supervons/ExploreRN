@@ -57,6 +57,7 @@
 
 # 待开发
 
+- [ ] 全屏水印实现.
 - [ ] 创建完整的 `react-native-echarts-pro` 测试用例页面
 - [ ] 使用 sass 改造 css 样式
 - [ ] 多bundle支持

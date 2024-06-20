@@ -58,6 +58,7 @@
 
 # TODO LIST
 
+- [ ] Full screen watermarking.
 - [ ] Create `react-native-echarts-pro` complete test case page.
 - [ ] Use sass change css style
 - [ ] Multiple Bundle Support
