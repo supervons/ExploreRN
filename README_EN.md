@@ -73,6 +73,7 @@
 - [ ] Add route jump animation, flip, drawer, second floor animation.
 - [ ] Add gyroscope animation.
 - [ ] Update react-navigation to 7.x.
+- [ ] Voice Assistant.
 
 
 # Preview
