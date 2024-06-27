@@ -14,6 +14,7 @@ export default {
     morandi: "Morandi-Colors",
     draggable: "Draggable",
     lottie: "Lottie Animation",
+    sensors: "sensors",
     i18: "i18",
     device: "%{counts} devices",
     eCharts: {

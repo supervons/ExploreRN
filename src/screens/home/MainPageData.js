@@ -62,4 +62,10 @@ export const data = [
     image: require("../../resource/image/home/lottie.webp"),
     routeName: "LottiePage",
   },
+  {
+    key: "sensors",
+    name: I18n.t("Home.sensors"),
+    color: "#7a7281",
+    image: require("../../resource/image/home/sensors.png"),
+  },
 ];

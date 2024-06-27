@@ -14,6 +14,7 @@ export default {
     morandi: "莫兰迪色系",
     draggable: "可拖拽",
     lottie: "Lottie动画",
+    sensors: "陀螺仪",
     i18: "国际化",
     device: "%{counts} 个设备",
     eCharts: {
