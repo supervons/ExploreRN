@@ -13,6 +13,7 @@ import JdSearchDemo from "../screens/home/jdSearchDemo/JdSearchDemo";
 import MorandiPage from "../screens/home/morandi/MorandiPage";
 import DraggablePage from "../screens/home/drag/DraggablePage";
 import LottiePage from "../screens/home/Lottie/index";
+import Sensors from "../screens/home/sensors/sensors";
 import I18n from "../common/languages";
 
 /**
@@ -175,6 +176,13 @@ const routeInfo = [
       title: I18n.t("Route.lottie"),
     },
     component: LottiePage,
+  },
+  {
+    name: "Sensors",
+    options: {
+      title: I18n.t("Route.sensors"),
+    },
+    component: Sensors,
   },
 ];
 const pageViewRouter = [];

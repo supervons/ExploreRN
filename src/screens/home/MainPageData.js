@@ -67,5 +67,6 @@ export const data = [
     name: I18n.t("Home.sensors"),
     color: "#7a7281",
     image: require("../../resource/image/home/sensors.png"),
+    routeName: "Sensors",
   },
 ];
