@@ -4,7 +4,7 @@
  * @date 2021/04/29
  */
 import I18n from "../../common/languages";
-export const data = [
+export const data: object = [
   {
     key: "charts",
     image: require("../../resource/image/home/charts.png"),
