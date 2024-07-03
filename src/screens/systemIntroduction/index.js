@@ -48,8 +48,10 @@ export default function SystemIntroduction(props) {
           style={{ width: 200 }}
           onPress={() => {
             if (firstInstall) {
-              // If the first installation starts, after clicking confirm.
-              // Reset the start page to Login and set the first installation status to false
+              /**
+               * If the first installation starts, after clicking confirm.
+               * Reset the start page to Login and set the first installation status to false.
+               */
               dispatch({
                 type: FIRST_INSTALL,
                 firstInstall: false,

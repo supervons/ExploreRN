@@ -108,13 +108,6 @@ export default function Login(props) {
    * Use debounce function optimization profile network request.
    */
   function getUserAvatar() {
-    // fetch("http://39.105.24.114:8088/api/v1/profile/test")
-    //   .then(response => response.json())
-    //   .then(data => alert(JSON.stringify(data)))
-    //   .catch(res => {
-    //     alert(JSON.stringify(res));
-    //   });
-    // return;
     getProfile(loginId)
       .then(res => {
         if (res.data.profile.length !== 0) {

@@ -273,8 +273,10 @@ export default class SwiperComponent extends Component {
       offset[this.state.dir] =
         this.state.dir === "y" ? height * setup : width * setup;
     }
-    // only update the offset in state if needed, updating offset while swiping
-    // causes some bad jumping / stuttering
+    /**
+     * only update the offset in state if needed, updating offset while swiping
+     * causes some bad jumping / stuttering
+     */
     if (
       !this.state.offset ||
       width !== this.state.width ||
@@ -283,10 +285,10 @@ export default class SwiperComponent extends Component {
       state.offset = offset;
     }
 
-    // related to https://github.com/leecade/react-native-swiper/issues/570
-    // contentOffset is not working in react 0.48.x so we need to use scrollTo
-    // to emulate offset.
-
+    /** related to https://github.com/leecade/react-native-swiper/issues/570
+     * contentOffset is not working in react 0.48.x so we need to use scrollTo
+     * to emulate offset.
+     */
     if (Platform.OS === "ios") {
       if (this.initialRender && this.state.total > 1) {
         this.scrollView.scrollTo({ ...offset, animated: false });
@@ -415,9 +417,12 @@ export default class SwiperComponent extends Component {
     // Do nothing if offset no change.
     if (!diff) return;
 
-    // Note: if touch very very quickly and continuous,
-    // the variation of `index` more than 1.
-    // parseInt() ensures it's always an integer
+    /**
+     * Note: if touch very very quickly and continuous,
+     * the variation of `index` more than 1.
+     * parseInt() ensures it's always an integer
+     * @type {number}
+     */
     index = parseInt(index + Math.round(diff / step));
 
     if (this.props.loop) {
@@ -440,11 +445,13 @@ export default class SwiperComponent extends Component {
 
     // only update offset in state if loopJump is true
     if (loopJump) {
-      // when swiping to the beginning of a looping set for the third time,
-      // the new offset will be the same as the last one set in state.
-      // Setting the offset to the same thing will not do anything,
-      // so we increment it by 1 then immediately set it to what it should be,
-      // after render.
+      /**
+       * when swiping to the beginning of a looping set for the third time,
+       * the new offset will be the same as the last one set in state.
+       * Setting the offset to the same thing will not do anything,
+       * so we increment it by 1 then immediately set it to what it should be,
+       * after render.
+       */
       if (offset[dir] === this.internals.offset[dir]) {
         newState.offset = { x: 0, y: 0 };
         newState.offset[dir] = offset[dir] + 1;

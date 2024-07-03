@@ -10,7 +10,6 @@ import LottieView from "lottie-react-native";
 import md5 from "md5";
 import I18n from "../../common/languages";
 // TODO- keyboard upgrade
-// import { SecurityKeyboardInput } from "react-native-supervons-custom-keyboard";
 import {
   getUniqueTicket,
   sendEmailCode,
