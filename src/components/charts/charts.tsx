@@ -39,7 +39,9 @@ export default function ChartsComponent(): JSX.Element {
     yAxis: {
       type: "value",
       axisLabel: {
-        formatter: "{value} kg",
+        formatter: `function (value) {
+              return value +"kg";
+          }`,
       },
     },
     series: [
@@ -104,7 +106,9 @@ export default function ChartsComponent(): JSX.Element {
         yAxis: {
           type: "value",
           axisLabel: {
-            formatter: "{value} kg",
+            formatter: `function (value) {
+              return value +"kg";
+            }`,
           },
         },
         series: [
@@ -139,6 +143,7 @@ export default function ChartsComponent(): JSX.Element {
             console.log(1);
           },
         }}
+        enableParseStringFunction
         fontFamilies={[
           { fontName: "TEST", fontFile: FontCSS },
           { fontName: "TEST2", fontFile: FontCSS2 },

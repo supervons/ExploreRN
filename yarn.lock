@@ -3667,7 +3667,7 @@ __metadata:
     react-native-device-info: "npm:^10.12.0"
     react-native-draggable: "npm:^3.3.0"
     react-native-echarts-liquidfill: "npm:^1.0.1"
-    react-native-echarts-pro: "npm:^1.9.1"
+    react-native-echarts-pro: "npm:1.9.2"
     react-native-elements: "npm:^3.4.3"
     react-native-gesture-handler: "npm:^2.15.0"
     react-native-image-crop-picker: "npm:^0.40.3"
@@ -10000,12 +10000,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-echarts-pro@npm:^1.9.1":
-  version: 1.9.1
-  resolution: "react-native-echarts-pro@npm:1.9.1"
-  peerDependencies:
-    react-native-webview: ^11.26.0
-  checksum: 10c0/4158c0c486b7bb1b3029e9c1ecdfb7626eeed396d36a9bc3c397a0c8c265b1dbcea43c8a500c85ebc7839c2a2938088069aa61f646a89c91c33a91a26c1815c5
+"react-native-echarts-pro@npm:1.9.2":
+  version: 1.9.2
+  resolution: "react-native-echarts-pro@npm:1.9.2"
+  checksum: 10c0/1223182122f01a9635d0745aeb2188e2c89ad7ea4f9074115564c629a14d3238fba9d10e12bb086ab9b49f3fd38d93e17225adc246808913b63cd3faf6e549c9
   languageName: node
   linkType: hard
 
