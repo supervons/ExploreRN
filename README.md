@@ -64,7 +64,7 @@
 - [ ] 邮箱找回密码
 - [ ] 头像更换及头像历史记录 - 50%
 - [ ] 地图集成
-- [ ] 推送集成-iOS、HUAWEI、Xiaomi
+- [ ] 推送集成-iOS、HUAWEI、Xiaomi、极光
 - [ ] 增加 Websocket 示例
 - [ ] 增加 H5 交互示例
 - [ ] 增加网络请求 Hook.

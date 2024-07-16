@@ -65,7 +65,7 @@
 - [ ] Retrieve password by e-mail.
 - [ ] Change avatar and show avatar history - 50%
 - [ ] Map
-- [ ] Push-iOS、HUAWEI、Xiaomi
+- [ ] Push-iOS、HUAWEI、Xiaomi、JPush
 - [ ] Add Websocket demo.
 - [ ] Add H5 PostMessage demo.
 - [ ] Add network request Hook.
