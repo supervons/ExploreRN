@@ -74,7 +74,7 @@
 - [ ] Add gyroscope animation.
 - [ ] Update react-navigation to 7.x.
 - [ ] Voice Assistant.
-
+- [ ] Add GPT model.
 
 # Preview
 #### Dynamic TAB-Bar
