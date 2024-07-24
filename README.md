@@ -73,6 +73,7 @@
 - [ ] 增加陀螺仪动画.
 - [ ] 更新 react-navigation 至 7.x 版本.
 - [ ] 接入 GPT 语音助手.
+- [ ] 接入 AI 识别(OpenCV).
 
 # 预览
 #### 动态tab-bar
