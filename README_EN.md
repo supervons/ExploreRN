@@ -51,7 +51,6 @@
 - [x] Use new KOA api application
 - [x] Better animation - Lottie
 - [x] Email register
-- [x] Upgrade to new version 0.74.1
 - [x] Add Sentry error monitor
 - [x] Support TypeScript
 - [x] Get location
@@ -75,6 +74,7 @@
 - [ ] Update react-navigation to 7.x.
 - [ ] Add GPT Voice Assistant.
 - [ ] Add AI recognition(OpenCV).
+- [ ] Upgrade to new version 0.75.0
 
 # Preview
 #### Dynamic TAB-Bar
