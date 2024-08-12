@@ -138,6 +138,7 @@ export default function ChartsComponent(): JSX.Element {
         paddingTop: 25,
       }}>
       <RNEChartsPro
+        renderMode={"svg"}
         eventActions={{
           finished: () => {
             console.log(1);

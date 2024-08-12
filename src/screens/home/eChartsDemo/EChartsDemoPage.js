@@ -5,6 +5,7 @@
  */
 import React, { useState, useEffect } from "react";
 import { TouchableOpacity, View } from "react-native";
+import { captureScreen } from "react-native-view-shot";
 import ChartsComponent from "../../../components/charts/charts";
 import ChartsLiquidFill from "../../../components/charts/chartsLiquidfill";
 import ChartsExtension from "../../../components/charts/chartsExtension";
@@ -26,7 +27,21 @@ export default function EChartsDemoPage() {
     { title: I18n.t("Home.eCharts.liquidDemo"), key: "ChartsLiquidFill" },
   ];
   const [currentDemo, setCurrentDemo] = useState("ChartsComponent");
-  useEffect(() => {}, []);
+  useEffect(async () => {
+    setTimeout(() => {
+      // on mount
+      captureScreen({
+        format: "jpg",
+        quality: 0.8,
+        result: "base64",
+      }).then(
+        uri => {
+          console.log("Image saved to", uri);
+        },
+        error => console.error("Oops, snapshot failed", error),
+      );
+    }, 3000);
+  }, []);
 
   return (
     <View
