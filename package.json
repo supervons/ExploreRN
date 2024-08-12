@@ -58,6 +58,7 @@
     "react-native-shimmer-placeholder": "^2.0.9",
     "react-native-supervons-custom-keyboard": "^1.4.6",
     "react-native-vector-icons": "^10.0.3",
+    "react-native-view-shot": "4.0.0-alpha.3",
     "react-native-webview": "^13.7.1",
     "react-redux": "7.2.8",
     "react-timer-mixin": "^0.13.4",
