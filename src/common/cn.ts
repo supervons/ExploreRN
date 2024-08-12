@@ -70,6 +70,7 @@ export default {
     morandi: "莫兰迪色系",
     draggable: "可拖拽示例",
     lottie: "Lottie动画示例",
+    sensors: "陀螺仪",
   },
   Explore: {
     tips: "敬请期待...",

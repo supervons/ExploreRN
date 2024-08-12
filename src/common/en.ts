@@ -70,6 +70,7 @@ export default {
     morandi: "Morandi-Colors",
     draggable: "Draggable-Demo",
     lottie: "Lottie-Demo",
+    sensors: "sensors",
   },
   Explore: {
     tips: "To be continued...",
