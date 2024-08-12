@@ -27,7 +27,7 @@ export default function EChartsDemoPage() {
     { title: I18n.t("Home.eCharts.liquidDemo"), key: "ChartsLiquidFill" },
   ];
   const [currentDemo, setCurrentDemo] = useState("ChartsComponent");
-  useEffect(async () => {
+  useEffect(() => {
     setTimeout(() => {
       // on mount
       captureScreen({
