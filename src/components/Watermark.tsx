@@ -17,7 +17,7 @@ interface WatermarkProps {
  */
 const Watermark: React.FC<WatermarkProps> = (props) => {
   // 从Redux状态中获取水印设置
-  const { text, opacity, rotate, colors } = useSelector(state => state.WatermarkReducer);
+  const { text, opacity, rotate, colors } = useSelector((state: { WatermarkReducer: WatermarkProps }) => state.WatermarkReducer);
   const { width, height } = Dimensions.get('window');
   const rows = Math.ceil(height / 100);
   const cols = Math.ceil(width / 200);
@@ -33,8 +33,9 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
               {
                 top: rowIndex * 100,
                 left: colIndex * 200,
-                opacity,
-                transform: [{ rotate }],
+                opacity: opacity,
+                // 修复transform类型错误，确保rotate值为AnimatableStringValue类型
+                transform: rotate ? [{ rotate: rotate as string }] : undefined,
               },
             ]}>
             <Text>
