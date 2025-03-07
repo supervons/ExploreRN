@@ -9,17 +9,18 @@
  * @format
  * @flow
  */
-import React, { useEffect } from "react";
-import { Provider } from "react-redux";
-import { StatusBar, BackHandler, Platform } from "react-native";
-import { PersistGate } from "redux-persist/integration/react";
-import { RootSiblingParent } from "react-native-root-siblings";
-import { HomeStackScreen } from "~/routers/index";
-import Loading from "~/common/loading";
-import configureStore from "~/redux/store/store";
-import Toast from "~/components/toast";
-import I18n from "~/common/languages";
 import * as Sentry from "@sentry/react-native";
+import React, { useEffect } from "react";
+import { BackHandler, Platform, StatusBar } from "react-native";
+import { RootSiblingParent } from "react-native-root-siblings";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import I18n from "~/common/languages";
+import Loading from "~/common/loading";
+import Toast from "~/components/toast";
+import Watermark from "~/components/Watermark";
+import configureStore from "~/redux/store/store";
+import { HomeStackScreen } from "~/routers/index";
 Sentry.init({
   dsn: "https://your@your.ingest.us.sentry.io/0000", // replace your sentry DSN.
 });
@@ -70,6 +71,7 @@ const APP = function () {
         <RootSiblingParent>
           <HomeStackScreen />
         </RootSiblingParent>
+        <Watermark />
         <Loading />
       </PersistGate>
     </Provider>
