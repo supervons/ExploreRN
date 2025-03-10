@@ -31,7 +31,7 @@
     "appcenter": "^5.0.1",
     "appcenter-analytics": "^5.0.1",
     "appcenter-crashes": "^5.0.1",
-    "axios": "0.28.0",
+    "axios": "1.8.2",
     "babel-plugin-root-import": "^6.6.0",
     "i18n-js": "^3.8.0",
     "lottie-react-native": "^6.6.0",
