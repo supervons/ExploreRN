@@ -3801,7 +3801,7 @@ __metadata:
     react-native-screens: "npm:^3.29.0"
     react-native-sensors: "npm:^7.3.6"
     react-native-shimmer-placeholder: "npm:^2.0.9"
-    react-native-supervons-custom-keyboard: "npm:^1.4.6"
+    react-native-supervons-custom-keyboard: "npm:^1.4.7"
     react-native-vector-icons: "npm:^10.0.3"
     react-native-view-shot: "npm:4.0.0-alpha.3"
     react-native-webview: "npm:^13.7.1"
@@ -10105,16 +10105,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-supervons-custom-keyboard@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "react-native-supervons-custom-keyboard@npm:1.4.6"
+"react-native-supervons-custom-keyboard@npm:^1.4.7":
+  version: 1.4.7
+  resolution: "react-native-supervons-custom-keyboard@npm:1.4.7"
   dependencies:
     create-react-class: "npm:^15.5.4"
   peerDependencies:
     deprecated-react-native-prop-types: ^4.1.0
     react-native: ^0.41.2
     react-native-windows: 0.41.0-rc.1
-  checksum: 10c0/f4e6e599b5b04306d67226d5d3002de83f132a3763a150011bde5b2667ae02e663aa33d876851aca4da271892fc3dc9d2b9e4fae1b8890e1ff5e2b1b27d84c36
+  checksum: 10c0/58110a6f77318d6a8975b0282c93ee55ced64a5b872323e94dd575870e53d13e7bf3820eafd586f655985c3c6f30c220331547b94ada13bd9903afe902384052
   languageName: node
   linkType: hard
 
