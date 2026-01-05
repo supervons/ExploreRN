@@ -14,6 +14,8 @@ import MorandiPage from "../screens/home/morandi/MorandiPage";
 import DraggablePage from "../screens/home/drag/DraggablePage";
 import LottiePage from "../screens/home/Lottie/index";
 import Sensors from "../screens/home/sensors/sensors";
+import RadarScreen from "../screens/home/radar/RadarScreen";
+import PhotoEditor from "../screens/home/photoEditor/PhotoEditor";
 import I18n from "../common/languages";
 
 /**
@@ -183,6 +185,20 @@ const routeInfo = [
       title: I18n.t("Route.sensors"),
     },
     component: Sensors,
+  },
+  {
+    name: "RadarScreen",
+    options: {
+      title: "雷达扫描",
+    },
+    component: RadarScreen,
+  },
+  {
+    name: "PhotoEditor",
+    options: {
+      title: "美图编辑",
+    },
+    component: PhotoEditor,
   },
 ];
 const pageViewRouter = [];

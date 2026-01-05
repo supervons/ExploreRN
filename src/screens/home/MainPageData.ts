@@ -69,4 +69,18 @@ export const data: object = [
     image: require("../../resource/image/home/sensors.png"),
     routeName: "Sensors",
   },
+  {
+    key: "radar",
+    name: "雷达",
+    color: "#00ff00",
+    icon: "radio",
+    routeName: "RadarScreen",
+  },
+  {
+    key: "photoEditor",
+    name: "美图",
+    color: "#FF6B6B",
+    icon: "image",
+    routeName: "PhotoEditor",
+  },
 ];
